@@ -1,0 +1,41 @@
+<div class="yotpo-widget-instance" 
+  data-yotpo-instance-id="458312" 
+  product-handle="{{product.handle}}" 
+  widget-type="SubscriptionsAddToCartWidget" 
+  full-format-product-price="{{ product.price | money }}"
+  should-auto-inject="false"
+  hooks_on="true"
+  hooks-selling-plan-changed="yotpoSelectedSellingPlanChanged(selectedSellingPlanGroup, selectedSellingPlan, isBuyOnce, selectedProductPrice)"
+  hooks-widget-ready="yotpoAddToCartIsReady()"
+></div>
+
+<script>
+  let shop_symbol = "{{ shop.money_format }}";
+  shop_symbol = shop_symbol.trim();
+  if (shop_symbol.substring(shop_symbol.length - 1) !== '}' && shop_symbol.substring(shop_symbol.length - 1).length > 0) {
+      shop_symbol = shop_symbol.substring(shop_symbol.length - 1);
+  } else {
+      shop_symbol = shop_symbol.substring(0, 1);
+  }
+
+  function yotpoSelectedSellingPlanChanged(selectedSellingPlanGroup, selectedSellingPlan, isBuyOnce, selectedProductPrice) {
+    const price = (selectedProductPrice / 100).toFixed(2);
+    const addToCartButtonPriceElement = document.querySelector('.plat-price.price-item');
+    addToCartButtonPriceElement.innerHTML = shop_symbol + price;
+  }
+
+  function yotpoUpdatePrice(priceText) {
+      const priceElements = document.querySelectorAll('.plat-price.price-item');
+      for (var i=0;i<priceElements.length;i++) {
+        priceElements[i].textContent = priceText;
+      }
+    }
+  function yotpoAddToCartIsReady() {
+      setTimeout(function() {
+        const selectedPriceEl = document.querySelector('.yotpo-selected .yotpo-subscription-label-price');
+        if (selectedPriceEl) {
+          yotpoUpdatePrice(selectedPriceEl.textContent);
+        } 
+      }, 500);     
+    }
+</script>

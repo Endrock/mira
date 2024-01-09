@@ -1,0 +1,591 @@
+{% assign sub_folder = '' %}
+{% if localization.market.handle == 'au' %}
+{% assign sub_folder = '/en-au' %}
+{% elsif localization.market.handle == 'ca' %}
+{% assign sub_folder = '/en-ca' %}
+{% elsif localization.market.handle == 'eu' %}
+{% assign sub_folder = '/en-eu' %}
+{% elsif localization.market.handle == 'uk' %}
+{% assign sub_folder = '/en-gb' %}
+{% elsif localization.market.handle == 'international' %}
+{% assign sub_folder = '/en-int' %}
+{% else %}
+{% assign sub_folder = '' %}
+{% endif %}
+<section class="bf-bundle-header-banner">
+    <div class="container">
+        <div class="bf-bundle-banner-content">
+            <div class="limited-edition-label"><span>Limited Edition!</span></div>
+            <h5>20x Ovum Wands + 20x Max Fertility Wands</h5>
+            <h1>Wands-Only Bundle</h1>
+            <p>Test 4 key fertility hormones and save.</p>
+            <div class="bf-price-row">
+                <span class="plat-price">{{ all_products['wands-bundle'].price | money }}</span>
+                <div class="old-price">{{ all_products['wands-bundle'].compare_at_price | money }}</div>
+            </div>
+            <div class="bf-bundle-banner-btn">
+                <form method="post" action="{{ sub_folder }}/cart/add" class="add-to-cart">
+                    <input type="hidden" name="quantity" value="1">
+                    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                    <input name="add" value="Add to Cart" type="submit" class="add-to-cart-btn bf-add-cart-btn btn-custom button product-form__submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="inside-bundle-sec">
+    <div class="container">
+        <div class="bf-bundle-page-title text-center">
+            <h2>What’s inside the bundle?</h2>
+        </div>
+        <ul>
+            <li>
+                <div class="inside-bundle-item purple-bg">
+                    <div class="inside-bundle-item-top">
+                        <h3>20X Mira Max Fertility Wands</h3>
+                        <p>Predict and confirm ovulation</p>
+                    </div>
+                    <div class="inside-sec-img">
+                        <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Fertility_Max_Wan.png?v=1699038879" alt="">
+                    </div>
+                    <div class="inside-bundle-item-bottom">
+                        <p>Use the Max Wands to track 3 key fertility hormones (LH, E3G, PdG) at once—using the Mira Hormone Monitor.</p>
+                    </div>
+                    <a href="{{ sub_folder }}/products/mira-max-test-wands" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </li>
+            <li>
+                <div class="inside-bundle-item light-yellow-bg">
+                    <div class="inside-bundle-item-top">
+                        <h3>20X Ovum Wands</h3>
+                        <p>More insight into your ovulation</p>
+                    </div>
+                    <div class="inside-sec-img">
+                        <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Fertility_Max_Wand_2.png?v=1699038879" alt="">
+                    </div>
+                    <div class="inside-bundle-item-bottom">
+                        <p>Understand your fertility health status by tracking FSH. Add one more data point to predict your ovulation and plan for a healthy pregnancy. Works with the Mira Hormone Monitor.</p>
+                    </div>
+                    <a href="{{ sub_folder }}/products/fertility-ovum-wands" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="green-marque-sec">
+    <marquee width="100%" behavior="scroll">
+        <p>Over 80,000 people have chosen the Mira Hormone Monitor | Over 80,000 people have chosen the Mira Hormone Monitor | Over 80,000 people have chosen the Mira Hormone Monitor | </p>
+    </marquee>
+</section>
+<section class="customers-product-sec doctor-success-stories padd-b-30 padd-t-30">
+    <div class="container">
+        <div class="bf-bundle-page-title padd-b-20">
+            <h2>Success Stories</h2>
+            <a href="https://www.miracare.com/success-stories/" target="_blank" class="all-stories-btn">All Stories</a>
+        </div>
+        <div class="row-" id="success-stories-column-4-slider">
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                  <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Success-Story01.png?v=1702383277" alt="img">
+                    <h4>“Mira is the best product on the market right now”</h4>
+                    <p>Jennifer</p>
+                    <a href="https://www.miracare.com/success-stories/jennifer/" target="_blank" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                  <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Success-Story02.png?v=1702383277" alt="img">
+                    <h4>“After 7 Months of Fertility Treatments, I got pregnant in just 1 Month using Mira”</h4>
+                    <p>Patricia P</p>
+                    <a href="https://www.miracare.com/success-stories/patricia-p/" target="_blank" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                  <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Success_Story03.png?v=1702383277" alt="img">
+                    <h4>“Mira is a complete game changer that taught me things about my body”</h4>
+                    <p>Kate B</p>
+                    <a href="https://www.miracare.com/success-stories/kate-b" target="_blank" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                  <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Success-Story04.png?v=1702383276" alt="img">
+                    <h4>“We owe our family to Mira”</h4>
+                    <p>Yvonne B</p>
+                    <a href="https://www.miracare.com/success-stories/yvonne-b/" target="_blank" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                  <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Success-Story05.png?v=1702383277" alt="img">
+                    <h4>“I wish I had discovered Mira right at the beginning”</h4>
+                    <p>Loren</p>
+                    <a href="https://www.miracare.com/success-stories/loren/" target="_blank" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                  <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Success-Story06.png?v=1702383277" alt="img">
+                    <h4>“Mira helped me become my own advocate – in a way I never expected”</h4>
+                    <p>Megan H</p>
+                    <a href="https://www.miracare.com/success-stories/megan-h/" target="_blank" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="experts-mira-sec doctors-say-mira-sec padd-t-b-30">
+    <div class="container">
+        <div class="experts-mira-inner">
+            <div class="heading-1 text-center">
+                <h4>What doctors are saying about Mira</h4>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="doctors-say-mira-img">
+                        <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/doctors_saying_mira.png?v=1701371922" alt="img" />
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div id="doctors-slider">
+                        <div class="experts-col">
+                            <div class="doctor-say-details">
+                                <p>“Mira is a game-changing tool—it seems to be the best of all worlds to improve the fertility experience”</p>
+                                <div class="doctor-say-name">Gary S. Nakhuda</div>
+                                <div class="doctor-say-info">
+                                    <span>
+                                        MD, FACOG OB/GYN, Reproductive Endocrinology
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experts-col">
+                            <div class="doctor-say-details">
+                                <p>“Mira has provided clinical insight I have never had access to before”</p>
+                                <div class="doctor-say-name">Erin Foran Wolff</div>
+                                <div class="doctor-say-info">
+                                    <span>
+                                        MD, FACOG OB/GYN, Reproductive Endocrinology
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experts-col">
+                            <div class="doctor-say-details">
+                                <p>“As a health provider, I find that Mira’s quantitative measures far outweigh qualitative over-the-counter kits”</p>
+                                <div class="doctor-say-name">Meir Olcha</div>
+                                <div class="doctor-say-info">
+                                    <span>
+                                        MD, FACOG, OB/GYN, Reproductive Endocrinology
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experts-col">
+                            <div class="doctor-say-details">
+                                <p>“Mira fills a need that we, as women's health care providers, did not know existed”</p>
+                                <div class="doctor-say-name">Kara McElligott Park</div>
+                                <div class="doctor-say-info">
+                                    <span>
+                                        MD, MPH, MMCI, OB/GYN, NAMS, Certified Menopause Practitioner
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="simple-wand-sec practical-steps-sec padd-b-70 padd-t-70 coaching-img-with-desc-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 order-2 order-md-1">
+                <div class="practical-steps-left">
+                    <div class="panorama-lab-test-heading-1">
+                        <h2>Simple wands, <span class="green-color">big testing power</span></h2>
+                    </div>
+                    <p>Get this Limited Edition Wands Bundle, which includes a full supply of Mira wands.</p>
+                    <ul>
+                        <li>Mira Max Fertility Wands (LH, E3G, PdG)</li>
+                        <li>Mira Ovum Wands (FSH)</li>
+                    </ul>
+                    <p>Disclaimer: You'll need the Mira Hormone Monitor
+                        to use the wands.</p>
+                    <div class="simple-wands-badges">
+                        <div class="simple-wands-badges-item badge-purple-bg">Monitor 4 key hormones during one full cycle</div>
+                        <div class="simple-wands-badges-item badge-light-red-bg">Predict your full 6-day fertile window</div>
+                        <div class="simple-wands-badges-item badge-green-bg">Pinpoint & confirm your ovulation</div>
+                        <div class="simple-wands-badges-item badge-yellow-bg">Check your fertility status & predict menopause</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 order-1 order-md-2">
+                <div class="practical-steps-img">
+                    <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/simple-wands.png?v=1699042505" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mira-plan-sec why-combile-sec testkit-table-sec analyzer-table padd-t-b-80">
+    <div class="container">
+        <div class="bf-bundle-page-title text-center text-center">
+            <h2>Why combine <br>
+                the Mira Max + Mira Ovum Wands?</h2>
+            <p>Gain maximum fertility clarity by tracking LH, E3G, PdG, and FSH together.</p>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>
+                            <div clas="col1"> &nbsp; </div>
+                        </th>
+                        <th style="width:28.5%">
+                            <div class="col2">
+                                <h5><span class="badge-purple-bg">Max Wand</span></h5>
+                            </div>
+                        </th>
+                        <th style="width:28.5%">
+                            <div class="col3">
+                                <h5><span class="badge-yellow-bg">Ovum Wand</span></h5>
+                            </div>
+                        </th>
+                        <th></th>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                            <div class="col1">Hormones</div>
+                        </td>
+                        <td>
+                            <div class="col2">
+                                LH, E3G, PdG
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col3">
+                                FSH
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                            <div class="col1">Predict your 6-days fertile window</div>
+                        </td>
+                        <td>
+                            <div class="col2">
+                                <div class="plan-check-item">
+                                    <img class="plan-check-icon" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Check-Cards.svg?v=1699046356" width="40"> <span>E3G helps you see your most fertile days.</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col3">
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                            <div class="col1">Predict ovulation</div>
+                        </td>
+                        <td>
+                            <div class="col2">
+                                <div class="plan-check-item">
+                                    <img class="plan-check-icon" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Check-Cards.svg?v=1699046356" width="40"> <span>LH &amp; E3G help predict your ovulation day accurately.</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col3">
+                                <div class="plan-check-item">
+                                    <img class="plan-check-icon" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Check-Cards.svg?v=1699046356" width="40"> <span>Monitor FSH to pinpoint ovulation.</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                            <div class="col1">Confirm ovulation</div>
+                        </td>
+                        <td>
+                            <div class="col2">
+                                <div class="plan-check-item">
+                                    <img class="plan-check-icon" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Check-Cards.svg?v=1699046356" width="40"> <span>PdG shows you when ovulation happened.</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col3">
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                            <div class="col1">Fertility health check-up</div>
+                        </td>
+                        <td>
+                            <div class="col2">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col3">
+                                <div class="plan-check-item">
+                                    <img class="plan-check-icon" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Check-Cards.svg?v=1699046356" width="40"> <span>Identify if high FSH levels may impact your baby plans*</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                            <div class="col1">Aging changes 35+</div>
+                        </td>
+                        <td>
+                            <div class="col2">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col3">
+                                <div class="plan-check-item">
+                                    <img class="plan-check-icon" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Check-Cards.svg?v=1699046356" width="40"> <span>Track your FSH to detect perimenopause earlier.</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                            <div class="col1">Irregular cycle &amp; PCOS friendly</div>
+                        </td>
+                        <td>
+                            <div class="col2">
+                                <div class="plan-check-item">
+                                    <img class="plan-check-icon" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Check-Cards.svg?v=1699046356" width="40"> <span>Works for all types of cycles!</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col3">
+                                <div class="plan-check-item">
+                                    <img class="plan-check-icon" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Check-Cards.svg?v=1699046356" width="40"> <span>Works for all types of cycles!</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                            <div class="col1"></div>
+                        </td>
+                        <td>
+                            <div class="price-with-button col2">
+                                <a href="{{ sub_folder }}/products/mira-max-test-wands" class="order_now_button btn-custom btn-pink btn-md" target="_blank">Read More</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="price-with-button col3">
+                                <a href="{{ sub_folder }}/products/fertility-ovum-wands" class="order_now_button btn-custom btn-pink btn-md" target="_blank">Read More</a>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="graph-sec">
+        <div class="container">
+            <p>* Disclaimer: Medications containing hormones (gonadotropins, birth control) or ovulation inductors (Clomiphene Citrate, Letrozole) may alter your fertility evaluation or menopause prediction results.
+                Mira does not diagnose or treat any diseases. You should always consult with your doctor.</p>
+            <div class="graph-inner">
+                <img class="img-col" src="{{ 'chart_1218.png' | file_img_url: '' }}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="simple-wand-sec black-friday-offer-box  exclusive-black-friday-sec practical-steps-sec padd-b-60 padd-t-80 get-powerful-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 order-2 order-md-1">
+                <div class="practical-steps-left">
+                    <div class="panorama-lab-test-heading-1">
+                        <h2>Get this Powerful Wand Combo with the Best Price Ever</h2>
+                    </div>
+                    <p>Testing your hormones has never been easier. Reach your fertility goals faster by combining the Mira Max Fertility and Mira Ovum Wands.</p>
+                    <div class="bf-bundle-banner-btn">
+                        <a href="javascript:void(0)" class="bf-add-cart-btn btn-custom button order_now_button">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 order-1 order-md-2">
+                <div class="practical-steps-img">
+                    <div class="limited-edition-label"><span>Limited Edition!</span></div>
+                    <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/get_powerful_img.png?v=1699049810" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="customers-product-sec padd-b-60 padd-t-60">
+    <div class="container">
+        <div class="bf-bundle-page-title padd-b-20">
+            <h2>Our customers enjoy these products too</h2>
+        </div>
+        <div class="row" id="product-column-4-slider">
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/coaching" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/files/Fertility_Coaching_Session_product_img_b34dc592-9862-4d25-a840-d1116ec1d87c.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/coaching" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/coaching" target="_blank">{{ all_products['coaching'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['coaching'].first_available_variant.price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/academy" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/Cover.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/academy" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/academy" target="_blank">Online Fertility Course</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['academy'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% if localization.market.handle == 'us' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/fertility-tea" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/files/fertility_tea_product_img01_e86fd07e-99d6-4e29-a901-cda8690267e1.jpg" alt=""></a>
+                        <a href="{{ sub_folder }}/products/fertility-tea" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/fertility-tea" target="_blank">{{ all_products['fertility-tea'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['fertility-tea'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% elsif localization.market.handle == 'au' or localization.market.handle == 'uk' or localization.market.handle == 'international' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/fertility-tea-ww" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/mira-tea2.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/fertility-tea-ww" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/fertility-tea-ww" target="_blank">{{ all_products['fertility-tea-ww'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['fertility-tea-ww'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if localization.market.handle == 'international' or localization.market.handle == 'us' or localization.market.handle == 'au' or localization.market.handle == 'ca' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/home-sperm-test" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/yo-test_720.jpg" alt=""></a>
+                        <a href="{{ sub_folder }}/products/home-sperm-test" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/home-sperm-test" target="_blank">{{ all_products['home-sperm-test'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['home-sperm-test'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if localization.market.handle == 'eu' or localization.market.handle == 'uk' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/exseed-home-sperm-test" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/Test-2__1.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/exseed-home-sperm-test" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/exseed-home-sperm-test" target="_blank">{{ all_products['exseed-home-sperm-test'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['exseed-home-sperm-test'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<div class="faq-sec padd-b-60">
+    <div class="container">
+        <div class="heading-1">
+            <h2>FAQ</h2>
+        </div>
+        <div class="question-col">
+            <div id="accordion-2" class="accordion accordion-sec">
+                <div class="card">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#d1">
+                        <a href="javascript:void(0)" class="card-title">
+                            How many Max and Ovum wands do I need per cycle?
+                        </a>
+                    </div>
+                    <div id="d1" class="card-body collapse" data-parent="#accordion">
+                        <div class="accordion-link-col">
+                            <p>You will need 10-20 Max Wands per cycle based on testing day recommendations from the Mira App. For Ovum Wands, if you select the "Only Fertility Status Check" mode on the Mira app, the Ovum Wands testing days will become 3-5 per cycle. However, if you choose the "Cycle Tracking" mode on the app, the Ovum Wands testing days will become 15-20.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#d2">
+                        <a href="javascript:void(0)" class="card-title">
+                            I don’t have the Mira Analyzer yet; what should I do?
+                        </a>
+                    </div>
+                    <div id="d2" class="card-body collapse" data-parent="#accordion">
+                        <div class="accordion-link-col">
+                            <p>If you don't own the Mira Analyzer, you can order it <a target="_blank" href="{{ sub_folder }}/products/fertility-max-starter-kit">here</a> to start testing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#d3">
+                        <a href="javascript:void(0)" class="card-title">
+                            Can I use my current Mira Monitor with these Max and Ovum wands?
+                        </a>
+                    </div>
+                    <div id="d3" class="card-body collapse" data-parent="#accordion">
+                        <div class="accordion-link-col">
+                            <p>Yes! Please make sure your Mira's software version is 01.07.01.17 or higher. Please tap "My Mira Analyzer" on your Profile page while your Analyzer is paired to see if your software version is V01.06.xx.xx or V01.07.xx.xx. Both V01.06.xx.xx and V01.07.xx.xx can be upgraded to 01.07.01.17 or higher.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+"name": "BF Wands Bundle Sections",
+"settings": [],
+"presets": [
+{
+"name": "BF Wands Bundle Sections"
+}
+]
+}
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,465 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+{%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
+  {{ 'component-localization-form.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- style -%}
+  .footer {
+    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .footer {
+      margin-top: {{ section.settings.margin_top }}px;
+    }
+
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% assign sub_folder = '' %}
+{% if localization.market.handle == 'au' %}
+  {% assign sub_folder = '/en-au' %}
+{% elsif localization.market.handle == 'ca' %}
+  {% assign sub_folder = '/en-ca' %}
+{% elsif localization.market.handle == 'eu' %}
+  {% assign sub_folder = '/en-eu' %}
+{% elsif localization.market.handle == 'uk' %}
+  {% assign sub_folder = '/en-gb' %}
+{% elsif localization.market.handle == 'international' %}
+  {% assign sub_folder = '/en-int' %}
+{% else %}
+  {% assign sub_folder = '' %}
+{% endif %}
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-newsletter">
+      <div id="om-tkmjc11cr93bpq0hpyr0-holder"></div>
+      <div id="om-bslfastt5jucwllwtfqs-holder"></div>
+      <div id="om-olqdgmwersownubtgbdg-holder"></div>
+      <div id="om-bipjlroqadl5xii4x78b-holder"></div>
+      <div id="om-i7co7ysqszpmqoaxr13x-holder"></div>
+    </div>
+    <div class="footer-links-outer">
+      <div class="ft-menu">
+        <div class="footer-moble-toggle"><h4>Support</h4></div>
+        <ul>
+          <li><a href="https://help.miracare.com/" target="_blank">FAQs</a></li>
+          <li><a href="https://www.miracare.com/shipping/">Shipping</a></li>
+          <li><a href="https://www.miracare.com/money-back-policy/">Money Back Policy</a></li>
+          <li><a href="mailto:support@miracare.com">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-menu link-titless">
+        <div class="footer-moble-toggle"><h4>Blog</h4></div>
+        <ul>
+          <li><a href="https://www.miracare.com/blog/category/getting-pregnant/">Getting Pregnant</a></li>
+          <li><a href="https://www.miracare.com/blog/category/cycle-tracking/">Cycle Tracking</a></li>
+          <li><a href="https://www.miracare.com/blog/category/hormones/">Hormones</a></li>
+          <li><a href="https://www.miracare.com/blog/category/pregnancy/">Pregnancy</a></li>
+          <li><a href="https://www.miracare.com/blog/category/menopause/">Menopause</a></li>
+          <li><a href="https://www.miracare.com/blog/category/lgbtq/">LGBTQIA Fertility</a></li>
+          <li><a href="https://www.miracare.com/blog/category/mira-solutions/">Mira Solutions</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-menu link-titless">
+       <div class="footer-moble-toggle"> <h4>Partnering with Mira</h4></div>
+        <ul>
+          <li><a href="https://www.miracare.com/for-healthcare-experts/">For Healthcare Experts</a></li>
+          <li><a href="https://www.miracare.com/influencers/">Influencers</a></li>
+          <li><a href="https://www.miracare.com/mira-club/">Affiliates</a></li>
+          <li><a href="https://www.miracare.com/corporate-benefits/">Employers</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-menu">
+        <div class="footer-moble-toggle"><h4>More</h4></div>
+        <ul>
+          <li><a href="https://www.miracare.com/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="https://www.miracare.com/terms-of-use/">Terms of Use</a></li>
+          <!-- <li><a href="https://www.miracare.com/loyalty-program/">Loyalty Program Rules</a></li> -->
+          <li><a href="https://www.miracare.com/reviews/">Reviews</a></li>
+          <li><a href="{{ sub_folder }}/pages/rewards/">Rewards</a></li>
+        </ul>
+      </div>
+      <div class="ft-menu hide_ios">
+        <div class="footer-moble-toggle"><h4>About</h4></div>
+        <ul>
+          <li><a href="https://www.miracare.com/our-story/">Our Story</a></li>
+          <li><a href="https://www.miracare.com/press-coverage/">Media about Mira</a></li>
+          <li><a href="https://www.miracare.com/science-and-research/">Science & Research</a></li>
+          <li><a href="https://www.miracare.com/mira-vs-others/">Mira vs Others</a></li>
+          <li><a href="https://www.miracare.com/careers/">Careers</a></li>
+          <li><a href="https://www.miracare.com/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom-row hide_ios">
+      <div class="row">
+         <div class="col-md-4 order-md-1">
+          <div class="play-store-bts">
+            <a href="https://apps.apple.com/us/app/mira-fertility-tracker/id1434970941" target="_blank"
+              ><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/AppStore.svg?v=1702846937" alt=""
+            ></a>
+            <a
+              href="https://play.google.com/store/apps/details?id=mira.fertilitytracker.android_us&hl=en_US"
+              target="_blank"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/GooglePlay.svg?v=1702846937' | file_url }}" alt=""></a>
+          </div>
+        </div>
+        <div class="col-md-4 order-md-3">
+          <div class="footer-social">
+            <ul>
+              {%- if settings.social_instagram_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_instagram_link }}" target="_blank">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/instagram_5078d2e2-a3da-40d0-bac9-37456bc8e77e.svg?v=1702846938" alt="">
+                  </a>
+                </li>
+              {%- endif -%}
+              {%- if settings.social_facebook_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_facebook_link }}" target="_blank">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/facebook_676cb10e-d4dc-4e02-8234-6fef1a263927.svg?v=1702846936" alt="">
+                  </a>
+                </li>
+              {%- endif -%}
+              {%- if settings.social_youtube_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_youtube_link }}" target="_blank">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/youtube_d892d840-63c1-42fb-882a-196e0b624795.svg?v=1702846937" alt="">
+                  </a>
+                </li>
+              {%- endif -%}
+              {%- if settings.social_twitter_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_twitter_link }}" target="_blank">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/twitter-x.svg?v=1702847366" alt="">
+                  </a>
+                </li>
+              {%- endif -%}
+              {%- if settings.social_pinterest_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_pinterest_link }}" target="_blank">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/pinterest_3574e9bb-5093-4c47-8126-904597882076.svg?v=1702846937" alt="">
+                  </a>
+                </li>
+              {%- endif -%}
+              {%- if settings.social_vimeo_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_vimeo_link }}" target="_blank">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/linkedin_bc6a6a81-baf4-4d43-b5ff-842ba3492e8c.svg?v=1702846937" alt="">
+                  </a>
+                </li>
+              {%- endif -%}
+              {%- if settings.social_tiktok_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_tiktok_link }}" target="_blank">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/tiktok_d43c6fcc-3e21-4427-93c4-fa9b2422031f.svg?v=1702846937" alt="">
+                  </a>
+                </li>
+              {%- endif -%}
+            </ul>
+          </div>
+        </div>
+        
+       
+        <div class="col-md-4 order-md-2">
+           <div class="copyright-sec">
+      <p>© {{ 'now' | date: '%Y' }} Mira, Powered by Quanovate | All Rights Reserved.</p>
+    </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</footer>
+
+{%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
+  <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Quick links",
+          "label": "t:sections.footer.blocks.link_list.settings.heading.label"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label",
+          "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        }
+      ]
+    },
+    {
+      "type": "brand_information",
+      "name": "t:sections.footer.blocks.brand_information.name",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.footer.blocks.brand_information.settings.paragraph.content"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.footer.blocks.brand_information.settings.header__1.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_social",
+          "default": true,
+          "label": "t:sections.footer.blocks.brand_information.settings.show_social.label",
+          "info": "t:sections.footer.blocks.brand_information.settings.show_social.info"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.footer.blocks.text.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Heading",
+          "label": "t:sections.footer.blocks.text.settings.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
+          "label": "t:sections.footer.blocks.text.settings.subtext.label"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 50,
+          "max": 550,
+          "step": 5,
+          "unit": "px",
+          "label": "Image width",
+          "default": 100
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Image alignment on large screen",
+          "options": [
+            {
+              "value": "",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.all.colors.background_1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__1.content",
+      "info": "t:sections.footer.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.newsletter_enable.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "newsletter_heading",
+      "default": "Subscribe to our emails",
+      "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__9.content",
+      "info": "t:sections.footer.settings.header__9.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_follow_on_shop",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_follow_on_shop.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__2.content",
+      "info": "t:sections.footer.settings.header__2.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": true,
+      "label": "t:sections.footer.settings.show_social.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__3.content",
+      "info": "t:sections.footer.settings.header__4.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_country_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__5.content",
+      "info": "t:sections.footer.settings.header__6.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_language_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__7.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.payment_enable.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__8.content",
+      "info": "t:sections.footer.settings.header__8.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_policy",
+      "default": false,
+      "label": "t:sections.footer.settings.show_policy.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.footer.settings.margin_top.label",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "text"
+      }
+    ]
+  }
+}
+{% endschema %}

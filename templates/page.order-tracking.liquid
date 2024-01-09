@@ -1,0 +1,189 @@
+<div class="traking-sec" style="background-image:url(https://cdn.shopify.com/s/files/1/0755/9620/2277/files/order_form_bg.png);">
+  <div class="traking-mobile-banner"><img src="{{ 'order_form_bg.png' | file_img_url: '' }}"></div>
+    <div class="container">
+        <div class="traking-form-box">
+            <div class="section-header text-center">
+                <h1>{{ page.title }}</h1>
+            </div>
+            <div class="rte">
+                {%- section 'malomo-banner' -%}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="product-listing-page checkout-best-seller new-layout-listing padd-t-60">
+    <div class="product-listing-sec">
+        <div class="container">
+            <div class="product-list-row">
+                <div class="heading-1 padd-m-t-0">
+                    <div class="with-arrow-btn">
+                        <h3>Check out our best sellers</h3>
+                        <a target="_blank" href="/products" class="view-all-list-btn">View all <img src="{{ 'arrow-right_2.svg' | file_url }}"></a>
+                    </div>
+                </div> 
+                
+                <div class="row accessories-product-list bundles-product-list"> 
+                    <div class="col-md-4">
+                      <div class="product-col">
+                         <div class="product-img-col"><a href="/products/fertility-plus-test-wands"><img src="{{ '20_Mira_Fertility_Plus_Wands.png' | file_img_url: '' }}" alt="" /></a>
+                         </div>
+                         <h4><a href="/products/fertility-plus-test-wands">{{ all_products['fertility-plus-test-wands'].title }}</a></h4>
+                         <p>({{ all_products['fertility-plus-test-wands'].metafields.product_fields.sub_title }})</p>
+                         <div class="product-price-col">
+                            <div class="price-btn-row">
+                               <span class="plat-price">{{ all_products['fertility-plus-test-wands'].price | money }}</span>
+                               <div class="old-price">{{ all_products['fertility-plus-test-wands'].compare_at_price | money }}</div>
+                            </div>
+                            <a href="/products/fertility-plus-test-wands" class="btn-custom btn-pink">Buy now</a>
+                         </div>
+                      </div>
+                   </div> 
+
+                    <div class="col-md-4">
+                      <div class="product-col">
+                         <div class="product-img-col">
+                            <a href="/products/mira-max-test-wands"><img src="{{ '20_Mira_Fertility_MAX_Wands.png' | file_img_url: '' }}" alt="" /></a>                      
+                         </div>
+                         <h4><a href="/products/mira-max-test-wands">{{ all_products['mira-max-test-wands'].title }}</a></h4>
+                         <p>({{ all_products['mira-max-test-wands'].metafields.product_fields.sub_title }})</p>
+                         <div class="product-price-col">
+                            <div class="price-btn-row">
+                               <span class="plat-price">{{ all_products['mira-max-test-wands'].price | money }}</span>
+                               <div class="old-price">{{ all_products['mira-max-test-wands'].compare_at_price | money }}</div>
+                            </div>
+                            <a href="/products/mira-max-test-wands" class="btn-custom btn-pink">Buy now</a>
+                         </div>
+                      </div>
+                   </div>
+                  <div class="col-md-4">
+                    <div class="product-col">
+                       <div class="product-img-col">
+                          <a href="/products/fertility-ovum-wands"><img src="{{ '20_Mira_Ovum_Wands.png' | file_img_url: '' }}" alt="" /></a>
+                       </div>
+                       <h4><a href="/products/fertility-ovum-wands">{{ all_products['fertility-ovum-wands'].title }}</a></h4>
+                       <p>({{ all_products['fertility-ovum-wands'].metafields.product_fields.sub_title }})</p>
+                       <div class="product-price-col">
+                          <div class="price-btn-row">
+                             <span class="plat-price">{{ all_products['fertility-ovum-wands'].price | money }}</span>
+                             <div class="old-price">{{ all_products['fertility-ovum-wands'].compare_at_price | money }}</div>
+                          </div>
+                          <a href="/products/fertility-ovum-wands" class="btn-custom btn-pink">Buy now</a>
+                       </div>
+                    </div>
+                 </div>
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="/products/prenatal-multivitamin"><img src="{{ 'Prenatal-multi-vitamins.png' | file_img_url: '' }}" alt="" /></a>
+                            </div>
+                            <h4><a href="/products/prenatal-multivitamin">{{ all_products['prenatal-multivitamin'].title }}</a></h4>
+                            <p></p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['prenatal-multivitamin'].price | money }}</span>
+                                </div>
+                                <a href="/products/prenatal-multivitamin" class="btn-custom btn-pink">Buy now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                  <div class="col-md-4">
+                  <div class="product-col">
+                     <div class="product-img-col"><a href="/products/fertility-meditations"><img src="{{ 'Meditation_Playlist2.jpg' | file_img_url: '' }}" alt="" /></a>
+                     </div>
+                     <h4><a href="/products/fertility-meditations">{{ all_products['fertility-meditations'].title }}</a></h4>
+                     <p></p>
+                     <div class="product-price-col">
+                        <div class="price-btn-row">
+                           <span class="plat-price">{{ all_products['fertility-meditations'].price | money }}</span>
+                        </div>
+                        <a href="/products/fertility-meditations" class="btn-custom btn-pink">Buy now</a>
+                     </div>
+                  </div>
+               </div>
+                  
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col"><a href="/products/academy"><img src="{{ 'Online_Fertility_Course2.jpg' | file_img_url: '' }}" alt="" /></a>
+                            </div>
+                            <h4><a href="/products/academy">Online Fertility Course</a></h4>
+                            <p></p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['academy'].price | money }}</span>
+                                </div>
+                                <a href="/products/academy" class="btn-custom btn-pink">Buy now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+              <div class="with-arrow-btn mobile" style="display:none;">
+                    <a target="_blank" href="/products" class="view-all-list-btn">View all <img src="{{ 'arrow-right_2.svg' | file_url }}"></a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="signup-sec padd-b-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="signup-item purple-bg">
+                    <p>Sign up for our SMS and
+                        get $15 off your next order</p>
+                    <a href="https://mira.attn.tv/p/xgS/landing-page" target="_blank" class="btn-custom btn-pink">Sign Up</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="signup-item mat-green-bg">
+                    <p>Join our loyalty program to unlock special offers</p>
+                    <a href="https://usd.miracare.com/account" target="_blank" class="btn-custom btn-pink">Join now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wait-for-package green-bg padd-t-b-80">
+    <div class="container">
+        <div class="heading-1 padd-m-t-0">
+            <h3>While you wait for your package:</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="fertility-guide">
+                    <div class="img-guide-col">
+                        <img src="{{ 'easy_start_guide.jpg' | file_img_url: '' }}" alt="">
+                    </div>
+                    <div class="guide-info">
+                        <h4><a href="https://www.miracare.com/blog/how-to-test-with-mira-fertility-plus/" target="_blank">Check our Easy Start Guide to test with the Mira Analyzer.</a></h4>
+                        <a href="https://www.miracare.com/blog/how-to-test-with-mira-fertility-plus/" class="btn-custom btn-pink">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="fertility-guide">
+                    <div class="img-guide-col">
+                        <img src="{{ 'success-stories-cta.jpg' | file_img_url: '' }}" alt="">
+                    </div>
+                    <div class="guide-info">
+                        <h4><a href="https://www.miracare.com/success-stories/" target="_blank">77% of Mira users conceived during the first 3 cycles of using Mira. Browse through our success stories.</a></h4>
+                        <a href="https://www.miracare.com/success-stories/" class="btn-custom btn-pink">Success Stories</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="fertility-guide">
+                    <div class="img-guide-col">
+                        <img src="{{ 'webinar-cta.jpg' | file_img_url: '' }}" alt="">
+                    </div>
+                    <div class="guide-info">
+                        <h4><a href="https://www.miracare.com/mira-events/" target="_blank">We work with experts from all over the world to give you more insights about fertility. Don’t miss our free webinars!</a></h4>
+                        <a href="https://www.miracare.com/mira-events/" class="btn-custom btn-pink">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,129 @@
+<div class="panorama-sec-comparison ob-add-to-cart-cta2">
+  <div class="mira-plan-sec testkit-table-sec analyzer-table padd-t-b-80">
+    <div class="container">
+      <div class="heading-1 text-center">
+        <h2>Affordable fertility healthcare at your fingertips</h2>
+        <p>Accessibility matters—and with telehealth, patients can conveniently meet with a fertility expert from home.</p>
+      </div>
+      <div class="table-responsive">
+  <table class="table">
+    <tbody>
+      <tr>
+        <th style="width:31%">
+          <div clas="col1"> &nbsp; </div>
+        </th>
+        <th style="width:33%">
+          <div class="col2">
+            <span class="testkit-icon-col"></span>
+            <h5>Mira Online Consultation</h5>
+          </div>
+        </th>
+        <th style="width:33%">
+          <div class="col3">
+            <span class="testkit-icon-col"></span>
+            <h5>Traditional Fertility Clinic</h5>
+          </div>
+        </th>
+        <th style="width:3%"></th>
+      </tr>
+      <tr class="t_row">
+        <td>
+          <div class="col1">Consultation price</div>
+        </td>
+        <td>
+          <div class="col2 align-items-start" style="display: block;">
+            <strong>$159</strong> &nbsp;
+            <span>if you purchase it on Mira website.</span>
+          </div>
+        </td>
+        <td>
+          <div class="col3" style="display: block;">
+            <strong>$200–$750</strong> average consultation price + expensive fertility treatments.
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr class="t_row">
+        <td>
+          <div class="col1">Excessive time & money investment</div>
+        </td>
+        <td>
+          <div class="col2">
+            <img class="plan-check-icon" src="{{ 'check_with_fill.svg' | file_url }}" width="40" />
+            <span class="pl-2">Schedule at a time that works for you—wherever you are.</span>
+          </div>
+        </td>
+        <td>
+          <div class="col3">
+            <img class="plan-check-icon" src="{{ 'cross_with_border.svg' | file_url }}" width="40" />
+            <span class="pl-2">Complex scheduling and expensive.</span>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr class="t_row">
+        <td>
+          <div class="col1">Mira knowledge</div>
+        </td>
+        <td>
+          <div class="col2">
+            <img class="plan-check-icon" src="{{ 'check_with_fill.svg' | file_url }}" width="40" />
+            <span class="pl-2">Trained medical experts.</span>
+          </div>
+        </td>
+        <td>
+          <div class="col3">
+            <img class="plan-check-icon" src="{{ 'cross_with_border.svg' | file_url }}" width="40">
+            <span class="pl-2">Some doctors aren’t familiar with Mira.</span>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr class="t_row">
+        <td>
+          <div class="col1">Early TTC consultations</div>
+        </td>
+        <td>
+          <div class="col2">
+            <img class="plan-check-icon" src="{{ 'check_with_fill.svg' | file_url }}" width="40">
+            <span class="pl-2">Support during any stage of your fertility journey.</span>
+          </div>
+        </td>
+        <td>
+          <div class="col3">
+            <img class="plan-check-icon" src="{{ 'cross_with_border.svg' | file_url }}" width="40">
+            <span class="pl-2">Conceive unsuccessfully for 1 year to get guidance.</span>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    </div>
+    <div class="btn-row-globel text-center padd-t-30">
+        <form method="post" action="/cart/add" class="add-to-cart">
+          <input type="hidden" name="quantity" value="1">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+          <input name="add" value="Add to Cart" type="submit" class="btn-custom btn-pink btn-lg" />
+        </form>
+  </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "OB Add To Cart Cta2",
+    "settings": [],
+    "presets": [
+      {
+        "name": "OB Add To Cart Cta2"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

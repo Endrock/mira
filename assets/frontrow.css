@@ -1,0 +1,268 @@
+/* Quant data widget: START */
+.frontrow-container {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  gap: 8px;
+
+  border-radius: 8px;
+  background: #ecf3ec;
+  background-blend-mode: multiply;
+
+  flex-direction: column;
+  max-width: 100%;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 15px;
+}
+
+.frontrow-container > p {
+  margin: 0;
+}
+
+.fr-num-value {
+  display: inline-flex;
+  height: 22px;
+  padding: 4px 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  font-weight: 700;
+
+  border-radius: 4px;
+  border: 1px solid #DAE8DF;
+  background: var(--white, #FFF);
+  box-shadow: 0 1px 3px 0 rgba(211, 227, 217, 0.40);
+  font-size: 14px;
+}
+
+.fr-text {
+  flex: 1 0 0;
+
+  color: #212121;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.fr-bold {
+  color: #212121;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.fr-link {
+  color: #212121;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration-line: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .frontrow-container {
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+
+  .fr-text {
+    line-height: normal;
+  }
+
+  .fr-bold {
+    line-height: normal;
+  }
+}
+/* Quant data widget: END */
+
+/* Qual data widget: START */
+.frontrow-qual-data {
+  display: flex;
+  padding: 56px 80px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  background: #F1F7F1;
+  margin-top: 70px;
+}
+
+.fr-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.fr-title {
+  color: #0F1834;
+  text-align: center;
+  font-size: 32px;
+  line-height: 36px;
+  margin-bottom: 0;
+}
+
+.fr-header > p {
+  align-self: stretch;
+  color: #414B66;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+
+.quant-data-mobile {
+  display: none;
+}
+
+.fr-pr-bold {
+  font-weight: 800;
+}
+
+.fr-review-container {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 32px 48px;
+  align-items: flex-start;
+  gap: 32px;
+  align-self: stretch;
+  border-radius: 16px;
+  border: 1px solid #F7F7F7;
+  background: #FFF;
+}
+
+.fr-tag-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+}
+
+.fr-tags {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.fr-tag {
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+  gap: 8px;
+
+  border-radius: 8px;
+
+  background: rgba(199, 219, 204, 0.30);
+
+  color: #0F1834;
+  text-align: center;
+  font-size: 14px;
+  line-height: normal;
+}
+
+.doctor-details {
+  color: #414B66;
+  text-align: right;
+  font-size: 14px;
+}
+
+.doctor-details-mobile {
+  display: none;
+}
+
+.fr-review-title {
+  flex: 1 0 0;
+  color: #0F1834;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.fr-review-text {
+  align-self: stretch;
+  color: #0F1834;
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: -8px;
+}
+
+.fr-learn-more {
+  color: #0F1834;
+  text-align: center;
+  line-height: 22px;
+  margin-top: 8px;
+}
+
+a.fr-learn-more {
+  color: #0F1834;
+  font-weight: 800;
+  text-decoration-line: underline;
+
+  display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+  .fr-header > p {
+    display: none;
+  }
+
+  .quant-data-mobile {
+    display: block;
+    text-align: left;
+    line-height: 18px;
+    font-size: 12px;
+  }
+
+  .quant-data-mobile > p:last-child {
+    margin-bottom: 0;
+  }
+
+  .doctor-details {
+    display: none;
+  }
+
+  .doctor-details-mobile {
+    display: block;
+    color: #414B66;
+    text-align: left;
+    font-size: 14px;
+    margin-top: -8px;
+  }
+
+  .fr-learn-more {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  a.fr-learn-more {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .frontrow-qual-data {
+    padding: 40px 20px;
+  }
+
+  .fr-review-container {
+    padding: 16px 16px 24px;
+  }
+
+  .fr-tag-row {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .fr-tag {
+    font-size: 11px;
+  }
+
+  .fr-review-title {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+/* Qual data widget: END */

@@ -1,0 +1,657 @@
+{% assign sub_folder = '' %}
+{% if localization.market.handle == 'au' %}
+{% assign sub_folder = '/en-au' %}
+{% elsif localization.market.handle == 'ca' %}
+{% assign sub_folder = '/en-ca' %}
+{% elsif localization.market.handle == 'eu' %}
+{% assign sub_folder = '/en-eu' %}
+{% elsif localization.market.handle == 'uk' %}
+{% assign sub_folder = '/en-gb' %}
+{% elsif localization.market.handle == 'international' %}
+{% assign sub_folder = '/en-int' %}
+{% else %}
+{% assign sub_folder = '' %}
+{% endif %}
+<section class="bf-bundle-header-banner">
+    <div class="container">
+        <div class="bf-bundle-banner-content">
+            <div class="limited-edition-label"><span>Limited Edition!</span></div>
+            <h5>Special bundle: Science helps you get pregnant faster</h5>
+            <h1>Get 7 Fertility Items for Less</h1>
+            <p>This set includes everything you need to reach your fertility goals from home!</p>
+            <div class="bf-price-row">
+                <span class="plat-price">{{ all_products['get-pregnant-bundle'].price | money }}</span>
+                <div class="old-price">{{ all_products['get-pregnant-bundle'].compare_at_price | money }}</div>
+            </div>
+            <div class="bf-bundle-banner-btn">
+                <form method="post" action="{{ sub_folder }}/cart/add" class="add-to-cart">
+                    <input type="hidden" name="quantity" value="1">
+                    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                    <input name="add" value="Add to Cart" type="submit" class="bf-add-cart-btn btn-custom button add-to-cart-btn" />
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="inside-bundle-sec wands-inside-product-sec">
+    <div class="container">
+        <div class="bf-bundle-page-title text-center">
+            <h2>What’s inside the bundle?</h2>
+        </div>
+        <ul>
+            <li>
+                <div class="inside-bundle-item bf-light-grey-bg">
+                    <div class="inside-bundle-item-top">
+                        <h3>The Mira Hormone Monitor</h3>
+                        <p>Predict & Confirm Ovulation</p>
+                    </div>
+                    <div class="inside-sec-img">
+                        <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/mira_analyzer.png?v=1699216613" alt="">
+                    </div>
+                    <div class="inside-bundle-item-bottom">
+                        <p>The most trusted hormone monitor on the market.</p>
+                    </div>
+                    <a href="{{ sub_folder }}/products/fertility-max-starter-kit" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </li>
+            <li>
+                <div class="inside-bundle-item bf-light-blue-bg">
+                    <div class="inside-bundle-item-top">
+                        <h3>Mira Prenatal Vitamins</h3>
+                        <p>Support a healthy conception*</p>
+                    </div>
+                    <a href="{{ sub_folder }}/products/prenatal-multivitamin" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    <div class="inside-sec-img">
+                        <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/prenatal_vitamins.png?v=1699216613" alt="">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="inside-bundle-item bf-light-green-bg">
+                    <div class="inside-bundle-item-top">
+                        <h3>Mira Fertility Tea</h3>
+                        <p>Balance your Hormones*</p>
+                    </div>
+                    <a href="{{ sub_folder }}/products/fertility-tea" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    <div class="inside-sec-img">
+                        <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/fertility_tea.png?v=1699216612" alt="">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="inside-bundle-item purple-bg">
+                    <div class="inside-bundle-item-top">
+                        <h3>20x Mira Max Fertility Wands</h3>
+                        <p>Predict & Confirm Ovulation</p>
+                    </div>
+                    <div class="inside-sec-img">
+                        <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Fertility_Max_Wan.png?v=1699038879" alt="">
+                    </div>
+                    <div class="inside-bundle-item-bottom">
+                        <p>Use the wands to track key fertility hormones LH, E3G, PdG at once—using the Mira Hormone Monitor.</p>
+                    </div>
+                    <a href="{{ sub_folder }}/products/mira-max-test-wands" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="wands-inside-product-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="inside-bundle-item bf-light-grey-bg">
+                        <div class="inside-bundle-item-top">
+                            <h3>Personalized Fertility Coaching</h3>
+                            <p>1:1 session with a Mira fertility coach to create a personalized action plan.</p>
+                        </div>
+                        <a href="{{ sub_folder }}/products/coaching?variant=46808807932197" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                        <div class="inside-sec-img">
+                            <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/coaching_Frame_3211_img.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="inside-bundle-item bf-light-grey-bg">
+                        <div class="inside-bundle-item-top">
+                            <h3><span class="inside-badge">Free</span> The Mira App</h3>
+                        </div>
+                        <a href="https://www.miracare.com/mira-app/" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                        <div class="inside-sec-img">
+                            <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/mira_app.png?v=1699221439" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="inside-bundle-item bf-light-grey-bg">
+                        <div class="inside-bundle-item-top">
+                            <h3><span class="inside-badge">Free</span> Silicone Urine Cup</h3>
+                        </div>
+                        <div class="inside-sec-img">
+                            <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/silicone_urine_cup.png?v=1699221439" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inside-bundle-caption-text">
+        <div class="container">
+            <p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+        </div>
+    </div>
+</section>
+<section class="green-marque-sec">
+    <marquee width="100%" behavior="scroll">
+        <p>Over 80,000 people have chosen the Mira Hormone Monitor | Over 80,000 people have chosen the Mira Hormone Monitor | Over 80,000 people have chosen the Mira Hormone Monitor | </p>
+    </marquee>
+</section>
+<div class="quality-matters-sec">
+    <div class="container">
+        <div class="section-title">
+            <h2>Quality matters to us</h2>
+        </div>
+        <div class="quality-matters-img-outer">
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="quality-matters-col">
+                        <div class="quality-matters-img">
+                            <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/quality-matters-icon01.svg?v=1698916514" alt="img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="quality-matters-col">
+                        <div class="quality-matters-img">
+                            <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/quality-matters-icon02.svg?v=1698916514" alt="img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="quality-matters-col">
+                        <div class="quality-matters-img">
+                            <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/quality-matters-icon03.svg?v=1698916514" alt="img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="quality-matters-col">
+                        <div class="quality-matters-img">
+                            <img class="img-col" src="https://cdn.shopify.com/s/files/1/0755/9620/2277/files/quality-matters-icon04.svg?v=1702623910" alt="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quality-matters-caption text-center">
+            <p>* Applied to Mira Fertility Tea and Mira Prenatal Vitamins.<br>
+                ** Mira Hormone Monitor is FDA-listed. Mira Prenatal Vitamins is produced by FDA registered facility.<br>
+                *** Applied to Mira Prenatal Vitamins.</p>
+        </div>
+    </div>
+</div>
+<section class="customers-product-sec doctor-success-stories padd-b-30 padd-t-30">
+    <div class="container">
+        <div class="bf-bundle-page-title padd-b-20">
+            <h2>Success Stories</h2>
+            <a href="https://www.miracare.com/success-stories/" target="_blank" class="all-stories-btn">All Stories</a>
+        </div>
+        <div class="row-" id="success-stories-column-4-slider">
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                  <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Success-Story01.png?v=1702383277" alt="img">
+                    <h4>“Mira is the best product on the market right now”</h4>
+                    <p>Jennifer</p>
+                    <a href="https://www.miracare.com/success-stories/jennifer/" target="_blank" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                  <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Success-Story02.png?v=1702383277" alt="img">
+                    <h4>“After 7 Months of Fertility Treatments, I got pregnant in just 1 Month using Mira”</h4>
+                    <p>Patricia P</p>
+                    <a href="https://www.miracare.com/success-stories/patricia-p/" target="_blank" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                  <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Success_Story03.png?v=1702383277" alt="img">
+                    <h4>“Mira is a complete game changer that taught me things about my body”</h4>
+                    <p>Kate B</p>
+                    <a href="https://www.miracare.com/success-stories/kate-b" target="_blank" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                  <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Success-Story04.png?v=1702383276" alt="img">
+                    <h4>“We owe our family to Mira”</h4>
+                    <p>Yvonne B</p>
+                    <a href="https://www.miracare.com/success-stories/yvonne-b/" target="_blank" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                  <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Success-Story05.png?v=1702383277" alt="img">
+                    <h4>“I wish I had discovered Mira right at the beginning”</h4>
+                    <p>Loren</p>
+                    <a href="https://www.miracare.com/success-stories/loren/" target="_blank" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                  <img class="img-col" src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Success-Story06.png?v=1702383277" alt="img">
+                    <h4>“Mira helped me become my own advocate – in a way I never expected”</h4>
+                    <p>Megan H</p>
+                    <a href="https://www.miracare.com/success-stories/megan-h/" target="_blank" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="simple-wand-sec wants-bundle-img-sec practical-steps-sec padd-b-30 padd-t-30 coaching-img-with-desc-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 order-2 order-md-1">
+                <div class="practical-steps-left">
+                    <div class="panorama-lab-test-heading-1">
+                        <h2>The Powerful Mira Hormone Monitor</h2>
+                    </div>
+                    <p>Because it's the only at-home fertility monitor that uses quantitative technology. This means that it gives you real-time numeric results,
+                        predicts & confirms ovulation, and gives you a clear 6-day fertile window — all with 99% lab-grade accuracy</p>
+                    <p>Works for:</p>
+                    <div class="simple-wands-badges badges-inline">
+                        <div class="simple-wands-badges-item badge-purple-bg">Conception after 35</div>
+                        <div class="simple-wands-badges-item badge-light-red-bg">Irregular cycles</div>
+                        <div class="simple-wands-badges-item badge-green-bg">PCOS & Hormonal Imbalances</div>
+                    </div>
+                    <div class="bf-bundle-banner-btn">
+                        <a target="_blank" href="https://www.miracare.com/how-mira-works/" class="bf-add-cart-btn btn-custom button">How Mira Works</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 order-1 order-md-2">
+                <div class="practical-steps-img">
+                    <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/simple-wands.png?v=1699042505" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="experts-mira-sec doctors-say-mira-sec padd-t-b-30">
+    <div class="container">
+        <div class="experts-mira-inner">
+            <div class="heading-1 text-center">
+                <h4>What doctors are saying about Mira</h4>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="doctors-say-mira-img">
+                        <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/doctors_saying_mira.png?v=1701371922" alt="img" />
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div id="doctors-slider">
+                        <div class="experts-col">
+                            <div class="doctor-say-details">
+                                <p>“Mira is a game-changing tool—it seems to be the best of all worlds to improve the fertility experience”</p>
+                                <div class="doctor-say-name">Gary S. Nakhuda</div>
+                                <div class="doctor-say-info">
+                                    <span>
+                                        MD, FACOG OB/GYN, Reproductive Endocrinology
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experts-col">
+                            <div class="doctor-say-details">
+                                <p>“Mira has provided clinical insight I have never had access to before”</p>
+                                <div class="doctor-say-name">Erin Foran Wolff</div>
+                                <div class="doctor-say-info">
+                                    <span>
+                                        MD, FACOG OB/GYN, Reproductive Endocrinology
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experts-col">
+                            <div class="doctor-say-details">
+                                <p>“As a health provider, I find that Mira’s quantitative measures far outweigh qualitative over-the-counter kits”</p>
+                                <div class="doctor-say-name">Meir Olcha</div>
+                                <div class="doctor-say-info">
+                                    <span>
+                                        MD, FACOG, OB/GYN, Reproductive Endocrinology
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experts-col">
+                            <div class="doctor-say-details">
+                                <p>“Mira fills a need that we, as women's health care providers, did not know existed”</p>
+                                <div class="doctor-say-name">Kara McElligott Park</div>
+                                <div class="doctor-say-info">
+                                    <span>
+                                        MD, MPH, MMCI, OB/GYN, NAMS, Certified Menopause Practitioner
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="simple-wand-sec wants-bundle-img-sec practical-steps-sec padd-b-30 padd-t-30 coaching-img-with-desc-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 order-2 order-md-1">
+                <div class="practical-steps-left">
+                    <div class="panorama-lab-test-heading-1">
+                        <h2>Support your conception from start to finish</h2>
+                    </div>
+                    <p>Our experts designed The Mira Prenatal vitamins to give your body premium nutrients during your pre to post-natal journey.
+                        Mira Prenatal boosts your chances of pregnancy, supports your future baby's health, and helps you feel good.</p>
+                    <div class="bf-bundle-banner-btn">
+                        <a href="{{ sub_folder }}/products/prenatal-multivitamin" class="bf-add-cart-btn btn-custom button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 order-1 order-md-2">
+                <div class="practical-steps-img">
+                    <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/support_conception.png?v=1699190857" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="simple-wand-sec wants-bundle-img-sec practical-steps-sec reverse-md padd-b-30 padd-t-30 coaching-img-with-desc-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 order-2 order-md-1">
+                <div class="practical-steps-left">
+                    <div class="panorama-lab-test-heading-1">
+                        <h2>Support your fertility — one sip at a time</h2>
+                    </div>
+                    <p>This natural blend of fertility-boosting herbs help you regulate your cycle, brings balance to your hormones, and supports your reproductive health.</p>
+                    <div class="bf-bundle-banner-btn">
+                        <a href="{{ sub_folder }}/products/fertility-tea" class="bf-add-cart-btn btn-custom button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 order-1 order-md-2">
+                <div class="practical-steps-img">
+                    <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Support_fertility.png?v=1699190858" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="simple-wand-sec wants-bundle-img-sec practical-steps-sec padd-b-30 padd-t-30 coaching-img-with-desc-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 order-2 order-md-1">
+                <div class="practical-steps-left">
+                    <div class="panorama-lab-test-heading-1">
+                        <h2>Create a personalized fertility action plan</h2>
+                    </div>
+                    <p>Meet with a Mira Fertility Coach during a live 20-minute 1:1 session. Bring your questions, and start your journey with comprehensive support.</p>
+                    <div class="bf-bundle-banner-btn">
+                        <a href="{{ sub_folder }}/products/coaching?variant=46808807932197" class="bf-add-cart-btn btn-custom button" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 order-1 order-md-2">
+                <div class="practical-steps-img">
+                    <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/Create_a_personalized_right_img.png?v=1702364555" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="simple-wand-sec black-friday-offer-box practical-steps-sec exclusive-black-friday-sec padd-b-60 padd-t-80 get-powerful-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 order-2 order-md-1">
+                <div class="practical-steps-left">
+                    <div class="panorama-lab-test-heading-1">
+                        <h2>Get this exclusive Bundle and get pregnant faster</h2>
+                    </div>
+                    <p>Only the right tools help you reach your fertility goals with confidence. Buy now and get all 7 items for less!</p>
+                    <div class="bf-bundle-banner-btn">
+                        <div class="bf-price-row">
+                            <span class="plat-price">{{ all_products['get-pregnant-bundle'].price | money }}</span>
+                            <div class="old-price">{{ all_products['get-pregnant-bundle'].compare_at_price | money }}</div>
+                        </div>
+                        <form method="post" action="{{ sub_folder }}/cart/add" class="add-to-cart">
+                            <input type="hidden" name="quantity" value="1">
+                            <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                            <input name="add" value="Add to Cart" type="submit" class="bf-add-cart-btn btn-custom button" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 order-1 order-md-2">
+                <div class="practical-steps-img">
+                    <div class="limited-edition-label"><span>Limited Edition!</span></div>
+                    <img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/xclusive_blackfriday.png?v=1699191833" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="customers-product-sec padd-b-60 padd-t-60">
+    <div class="container">
+        <div class="bf-bundle-page-title padd-b-20">
+            <h2>Our customers enjoy these products too</h2>
+        </div>
+        <div class="row" id="product-column-4-slider">
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/coaching" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/files/Fertility_Coaching_Session_product_img_b34dc592-9862-4d25-a840-d1116ec1d87c.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/coaching" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/coaching" target="_blank">{{ all_products['coaching'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['coaching'].first_available_variant.price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/academy" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/Cover.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/academy" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/academy" target="_blank">Online Fertility Course</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['academy'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% if localization.market.handle == 'us' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/fertility-tea" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/files/fertility_tea_product_img01_e86fd07e-99d6-4e29-a901-cda8690267e1.jpg" alt=""></a>
+                        <a href="{{ sub_folder }}/products/fertility-tea" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/fertility-tea" target="_blank">{{ all_products['fertility-tea'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['fertility-tea'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% elsif localization.market.handle == 'au' or localization.market.handle == 'uk' or localization.market.handle == 'international' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/fertility-tea-ww" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/mira-tea2.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/fertility-tea-ww" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/fertility-tea-ww" target="_blank">{{ all_products['fertility-tea-ww'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['fertility-tea-ww'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if localization.market.handle == 'international' or localization.market.handle == 'us' or localization.market.handle == 'au' or localization.market.handle == 'ca' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/home-sperm-test" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/yo-test_720.jpg" alt=""></a>
+                        <a href="{{ sub_folder }}/products/home-sperm-test" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/home-sperm-test" target="_blank">{{ all_products['home-sperm-test'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['home-sperm-test'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if localization.market.handle == 'eu' or localization.market.handle == 'uk' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/exseed-home-sperm-test" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/Test-2__1.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/exseed-home-sperm-test" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/exseed-home-sperm-test" target="_blank">{{ all_products['exseed-home-sperm-test'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['exseed-home-sperm-test'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<div class="faq-sec padd-b-60">
+    <div class="container">
+        <div class="heading-1">
+            <h2>FAQ</h2>
+        </div>
+        <div class="question-col">
+            <div id="accordion-2" class="accordion accordion-sec">
+                <div class="card">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#d1">
+                        <a href="javascript:void(0)" class="card-title">
+                            Can I use Mira if my cycles are irregular?
+                        </a>
+                    </div>
+                    <div id="d1" class="card-body collapse" data-parent="#accordion">
+                        <div class="accordion-link-col">
+                            <p>Yes! With Mira, you can see your actual hormone concentrations. As long as you ovulate, you will be able to know when you ovulate—even with irregular cycles.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#d2">
+                        <a href="javascript:void(0)" class="card-title">
+                            I'm trying to get pregnant. How can Mira help me?
+                        </a>
+                    </div>
+                    <div id="d2" class="card-body collapse" data-parent="#accordion">
+                        <div class="accordion-link-col">
+                            <p>People trying to conceive don’t always know when their most fertile days are. Researchers found that only 12.7% of people with ovaries know when they ovulate correctly, and only 55% estimated their ovulation within their fertile window. Mira tracks key fertility hormone concentrations to give you personalized insights and maximizes your chances of conceiving.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#d3">
+                        <a href="javascript:void(0)" class="card-title">
+                            I have PCOS, can Mira help me?
+                        </a>
+                    </div>
+                    <div id="d3" class="card-body collapse" data-parent="#accordion">
+                        <div class="accordion-link-col">
+                            <p>Sure! Our pregnancy rate is 2x higher in users with PCOS. The pregnancy rate of people with PCOS is only 26.7% during 3 cycles—even when using regular OPK and OPK technology. According to this study, users with PCOS who used Mira for 3 cycles achieved a 52.7% pregnancy rate.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#d4">
+                        <a href="javascript:void(0)" class="card-title">
+                            How many wands do I need per cycle?
+                        </a>
+                    </div>
+                    <div id="d4" class="card-body collapse" data-parent="#accordion">
+                        <div class="accordion-link-col">
+                            <p>10-20 per cycle are required based on testing day recommendations from the Mira App. With the starter kit you will get 10 wands to understand how they work for you. Then you can easily refill wands here.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#d5">
+                        <a href="javascript:void(0)" class="card-title">
+                            How Mira’s technology is different?
+                        </a>
+                    </div>
+                    <div id="d5" class="card-body collapse" data-parent="#accordion">
+                        <div class="accordion-link-col">
+                            <p>Mira uses lab-grade technology to measure key fertility hormones through urine. Did you know scientists use fluorescence-based tech at the fertility lab? So does Mira. We use immunochromatography with fluorescence labeling. Our approach offers 99% accuracy without pricking, travel time, or spending thousands of dollars.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#d6">
+                        <a href="javascript:void(0)" class="card-title">
+                            What should I expect from the consultation with a coach?
+                        </a>
+                    </div>
+                    <div id="d6" class="card-body collapse" data-parent="#accordion">
+                        <div class="accordion-link-col">
+                            <p>You will work together with your coach on an action plan to improve your fertility, mental and emotional health.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#d7">
+                        <a href="javascript:void(0)" class="card-title">
+                            How long the session with a coach will last?
+                        </a>
+                    </div>
+                    <div id="d7" class="card-body collapse" data-parent="#accordion">
+                        <div class="accordion-link-col">
+                            <p>The bundle includes a 20-minute session with a fertility coach. You’ll receive scheduling instructions right after your purchase. If you want to book another session, book at <a href="/products/coaching" target="_blank">this page</a>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#d8">
+                        <a href="javascript:void(0)" class="card-title">
+                            Can a coach replace a doctor?
+                        </a>
+                    </div>
+                    <div id="d8" class="card-body collapse" data-parent="#accordion">
+                        <div class="accordion-link-col">
+                            <p>We don’t recommend it! Fertility coaches don’t provide diagnoses, treatment, or medication prescriptions. Our services are designed to offer education, promote well-being, and provide emotional support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+"name": "BF Bundle Sections",
+"settings": [],
+"presets": [
+{
+"name": "BF Bundle Sections"
+}
+]
+}
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

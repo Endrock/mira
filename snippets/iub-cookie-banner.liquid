@@ -1,0 +1,67 @@
+<script type="text/javascript">
+var _iub = _iub || [];
+_iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"countryDetection":true,"enableFadp":true,"enableLgpd":true,"enableRemoteConsent":true,"enableTcf":true,"enableUspr":true,"floatingPreferencesButtonDisplay":"anchored-bottom-right","gdprAppliesGlobally":false,"googleConsentMode":true,"googleAdditionalConsentMode":true,"lang":"en","lgpdAppliesGlobally":false,"perPurposeConsent":true,"promptToAcceptOnBlockedElements":true,"siteId":3417732,"showBannerForUS":true,"tcfPurposes":{"2":"consent_only","7":"consent_only","8":"consent_only","9":"consent_only","10":"consent_only","11":"consent_only"},"usprPurposes":"s,sh,adv","cookiePolicyId":60055220, "banner":{ "acceptButtonCaptionColor":"#000000","acceptButtonColor":"#B7D4B5","acceptButtonDisplay":true,"backgroundColor":"#ECEDE6","closeButtonDisplay":false,"customizeButtonCaptionColor":"#000000","customizeButtonColor":"#B7D4B5","customizeButtonDisplay":true,"explicitWithdrawal":true,"fontSizeBody":"12px","listPurposes":true,"linksColor":"#000000","position":"bottom","rejectButtonCaptionColor":"#000000","rejectButtonColor":"#B7D4B5","rejectButtonDisplay":true,"showTitle":false,"textColor":"#000000" }};
+</script>
+
+<!-- code for Shopify (1 of 2) -->
+<script type="text/javascript">
+    var onPreferenceFirstExpressedCallback = function(consent) {
+        var shopifyPurposes = {
+          "analytics": [4, 's'],
+          "marketing": [5, 'adv'],
+          "preferences": [2, 3],
+          "sale_of_data": ['s', 'sh'],
+        }
+        var expressedConsent = {};
+        Object.keys(shopifyPurposes).forEach(function(purposeItem) {
+          var purposeExpressed = null
+          shopifyPurposes[purposeItem].forEach(item => {
+            if (consent.purposes && typeof consent.purposes[item] === 'boolean') {
+              purposeExpressed = consent.purposes[item];
+            }
+            if (consent.uspr && typeof consent.uspr[item] === 'boolean' && purposeExpressed !== false) {
+              purposeExpressed = consent.uspr[item];
+            }
+          })
+ 
+          if (typeof purposeExpressed === 'boolean') {
+            expressedConsent[purposeItem] = purposeExpressed;
+          }
+        })
+        window.Shopify.customerPrivacy.setTrackingConsent(expressedConsent, function() {});
+    }
+    if (typeof _iub.csConfiguration.callback === 'object') {
+        _iub.csConfiguration.callback.onPreferenceFirstExpressed = onPreferenceFirstExpressedCallback;
+    } else {
+        _iub.csConfiguration.callback = {
+            onPreferenceFirstExpressed: onPreferenceFirstExpressedCallback
+        };
+    }
+</script>
+
+
+<script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/stub-v2.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/safe-tcf-v2.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+
+<!-- code for Shopify (2 of 2) - Tracking API -->
+<script type="text/javascript">
+window.Shopify.loadFeatures(
+  [
+    {
+      name: 'consent-tracking-api',
+      version: '0.1',
+    },
+  ],
+  function(error) {
+    if (error) {
+      throw error;
+    }
+  }
+);
+</script>
+
+<!-- Consent DB -->
+<script type="text/javascript">var _iub = _iub || {}; _iub.cons_instructions = _iub.cons_instructions || []; _iub.cons_instructions.push(["init", {api_key: "Idf1tV6ByeBh4x3fZVrvMJha5MUhyTBh"}]);</script>
+<script type="text/javascript" src="https://cdn.iubenda.com/cons/iubenda_cons.js" async></script>

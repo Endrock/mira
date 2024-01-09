@@ -1,0 +1,103 @@
+<div class="panorama-sec-comparison ob-doctors-vs-coach">
+  <div class="mira-plan-sec testkit-table-sec analyzer-table padd-t-b-80">
+    <div class="container">
+      <div class="heading-1 text-center">
+        <h2>Doctor vs. Fertility Coach—which is more suitable for you?</h2>
+        <p>Depending on your needs, see which of our telehealth services is the best fit.</p>
+      </div>
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th><div clas="col1"> &nbsp; </div></th>
+              <th style="width:28.5%">
+                <div class="col2"><span class="testkit-icon-col"></span>
+                <h5>OB/GYN</h5></div>
+              </th>
+              <th style="width:28.5%">
+                <div class="col3"><span class="testkit-icon-col"></span>
+                <h5>Fertility Coach</h5></div>
+              </th>
+              <th></th>
+            </tr>
+            <tr class="t_row">
+              <td><div class="col1">Mira chart review</div></td>
+              <td><div class="col2"><img class="plan-check-icon" src="{{ 'check_with_fill.svg' | file_url }}" width="40"></div></td>
+              <td><div class="col3"><img class="plan-check-icon" src="{{ 'check_with_fill.svg' | file_url }}" width="40"></div></td>
+              <td></td>
+            </tr>
+            <tr class="t_row">
+              <td><div class="col1">Holistic approach and assessment of natural biomarkers</div></td>
+              <td><div class="col2"><img class="plan-check-icon" src="{{ 'cross_with_border.svg' | file_url }}" width="40"></div></td>
+              <td><div class="col3"><img class="plan-check-icon" src="{{ 'check_with_fill.svg' | file_url }}" width="40"></div></td>
+              <td></td>
+            </tr>
+            <tr class="t_row">
+              <td><div class="col1">Lifestyle changes, supplements, and stress management</div></td>
+              <td><div class="col2"><img class="plan-check-icon" src="{{ 'cross_with_border.svg' | file_url }}" width="40"></div></td>
+              <td><div class="col3"><img class="plan-check-icon" src="{{ 'check_with_fill.svg' | file_url }}" width="40"></div></td>
+              <td></td>
+            </tr>
+            <tr class="t_row">
+              <td><div class="col1">Previous medical records analysis</div></td>
+              <td><div class="col2"><img class="plan-check-icon" src="{{ 'check_with_fill.svg' | file_url }}" width="40"></div></td>
+              <td><div class="col3"><img class="plan-check-icon" src="{{ 'cross_with_border.svg' | file_url }}" width="40"></div></td>
+              <td></td>
+            </tr>
+            <tr class="t_row">
+              <td><div class="col1">Diagnosis</div></td>
+              <td><div class="col2"><img class="plan-check-icon" src="{{ 'check_with_fill.svg' | file_url }}" width="40"></div></td>
+              <td><div class="col3"><img class="plan-check-icon" src="{{ 'cross_with_border.svg' | file_url }}" width="40"></div></td>
+              <td></td>
+            </tr>
+            <tr class="t_row">
+              <td><div class="col1">Medical treatment</div></td>
+              <td><div class="col2"><img class="plan-check-icon" src="{{ 'check_with_fill.svg' | file_url }}" width="40"></div></td>
+              <td><div class="col3"><img class="plan-check-icon" src="{{ 'cross_with_border.svg' | file_url }}" width="40"></div></td>
+              <td></td>
+            </tr>
+            
+            <tr class="t_row">
+              <td><div class="col1">Initial consultation</div></td>
+              <td>
+                <div class="price-with-button col2">
+                  <span class="table-price">30 min/$159</span>
+                  <!-- <a href="javascript:void(0)" class="order_now_button btn-custom btn-pink btn-md">Book Now</a> -->
+                  <form method="post" action="/cart/add" class="add-to-cart">
+                    <input type="hidden" name="quantity" value="1">
+                    <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+                    <input name="add" value="Book Now" type="submit" class="btn-custom btn-pink btn-md" />
+                  </form>
+                </div>
+              </td>
+              <td>
+                <div class="price-with-button col3">
+                  <span class="table-price">45 min/$79</span>
+                  <a href="/products/coaching" class="order_now_button btn-custom btn-pink btn-md" target="_blank">Book Now</a>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "OB Doctors Vs Coach",
+    "settings": [],
+    "presets": [
+      {
+        "name": "OB Doctors Vs Coach"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

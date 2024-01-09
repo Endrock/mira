@@ -1,0 +1,635 @@
+{%- style -%}
+  {% assign header_font = section.settings.header_font %}
+
+  {{ header_font | font_face }}
+
+  {% assign header_font_bold = header_font | font_modify: 'weight', 'bolder' %}
+  {% assign header_font_italic = header_font | font_modify: 'style', 'italic' %}
+  {% assign header_font_bold_and_italic = header_font_bold | font_modify: 'style', 'italic' %}
+
+  {{ header_font_bold | font_face }}
+  {{ header_font_italic | font_face }}
+  {{ header_font_bold_and_italic | font_face }}
+
+{%- endstyle -%}
+
+<div class="malomo-banner">
+  {%- if section.settings.header_text != blank -%}
+    <div class="malomo-banner-row malomo-banner-align--{{ section.settings.header_horizontal_alignment }} malomo-banner-header-row">
+      <{{section.settings.header_level}} class="malomo-banner-header">
+        {{section.settings.header_text}}
+      </{{section.settings.header_level}}>
+    </div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+  <div class="malomo-banner-row">
+  {%- endif -%}
+
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'malomo_shipment_tracker' %}
+        
+        <script defer src="https://js.gomalomo.com/v2/" type="application/javascript"></script>
+        <script type="application/javascript">
+          let render = () => {
+            const mountPoint = '#shopify-block-{{ block.id }}';
+        
+            const opts = {};
+            
+            const malomo = new Malomo('{{ block.settings.publishable_api_key }}');
+        
+            const elements = malomo.elements();
+            let element;
+        
+            {% if request.design_mode %}
+              {% if block.settings.element == 'orderLookup' %}
+                element = elements.create('orderLookup');
+              {% elsif block.settings.element == 'shipmentTracker' %}
+                const n = 5;
+        
+                const status = ['unknown', 'pre_transit', 'in_transit', 'out_for_delivery', 'delivered'];
+        
+                const today = new Date();
+        
+                const shipments = [...Array(n).keys()].map((i) => {
+                  let estimatedDeliveryDate;
+        
+                  let scanEvents = [];
+        
+                  if (i > 0) {
+                    estimatedDeliveryDate = new Date(today);
+                    estimatedDeliveryDate.setDate(estimatedDeliveryDate.getDate() + (n - (i + 1)));
+                    estimatedDeliveryDate = estimatedDeliveryDate.toISOString();
+        
+                    scanEvents = [...Array(i + 1).keys()].map((i) => {
+                      const scanEvent = {};
+        
+                      let scannedAt;
+        
+                      scannedAt = new Date(today);
+                      scannedAt.setDate(scannedAt.getDate() + i);
+                      scannedAt = scannedAt.toISOString();
+        
+                      scanEvent['description'] = 'Shipment information sent to FedEx';
+                      scanEvent['message'] = 'Shipment information sent to FedEx';
+                      scanEvent['scanned_at'] = scannedAt;
+        
+                      return scanEvent;
+                    });
+                  }
+        
+                  return {
+                    'carrier': 'usps',
+                    'carrier_name': 'USPS',
+                    'carrier_url': `https://tools.usps.com/go/TrackConfirmAction?qtc_tLabels1=${i + 1}`,
+                    'estimated_delivery_date': estimatedDeliveryDate,
+                    'id': i,
+                    'scan_events': scanEvents,
+                    'status': status[i],
+                    'tracking_code': `M000${i + 1}`
+                  };
+                });
+        
+                opts.order = {};
+        
+                opts.order.body = {}
+                opts.order.body.shipments = shipments;
+        
+                opts.shipmentSelector = {};
+        
+                opts.shipmentSelector.callback = (order, shipment) => {
+                  const url = new URL(window.location);
+        
+                  url.searchParams.set('_m_tracking_code', shipment['tracking_code']);
+        
+                  window.history.replaceState({}, '', url.toString());
+        
+                  element.remount();
+                }
+        
+                element = elements.create('shipmentTracker', opts);
+              {% endif %}
+              if (document.querySelector(mountPoint)) {
+                element.mount(mountPoint);
+              }
+            {% else %}
+              malomo
+                .fetchOrder()
+                .then(
+                  (order) => {
+                    return (
+                      elements.create(
+                        'shipmentTracker',
+                        {
+                          order: order
+                        }
+                      ).mount(mountPoint)
+                    );
+                  }
+                )
+                .catch(() => {
+                  return (
+                    elements.create(
+                      'orderLookup',
+                      {
+                        callback: (resp) => {
+                          let url = new URL(document.URL);
+        
+                          url.searchParams.append('_m_id', resp.body['id']);
+        
+                          window.location.href = url;
+                        }
+                      }
+                    ).mount(mountPoint)
+                  );
+              });
+            {% endif %}
+          };
+          document.addEventListener('DOMContentLoaded', render);
+          document.addEventListener('shopify:section:load', render);
+          document.addEventListener('shopify:section:unload', () => {
+            setTimeout(() => {
+              const block = document.querySelector('#shopify-block-{{ block.id }}');
+              
+              if (!block) {
+                document.removeEventListener('shopify:section:load', render);
+              }
+            }, 1); 
+          });
+          //document.addEventListener('shopify:section:unload', () => { document.removeEventListener('shopify:section:load', render); })
+        </script>
+        <div class="malomo-banner-col" id="shopify-block-{{ block.id }}"></div>
+      {%- when 'image' -%}
+        {%- if block.settings.image != blank -%}
+          {%- if block.settings.image_width != blank -%}
+            {%- assign srcset = block.settings.image | image_url: width: block.settings.image_width -%}
+            {%- capture style -%}max-width: min(100%, {{ block.settings.image_width }}px);{%- endcapture -%}
+ 		      {%- else -%}
+            {%- assign srcset = block.settings.image | image_url -%}
+          {%- endif -%}
+  
+          <div class="malomo-banner-col malomo-banner-col-img malomo-banner-align--{{ block.settings.image_horizontal_alignment }}">
+            {%- if block.settings.image_link_url != blank -%}
+            <a href="{{block.settings.image_link_url}}" target="_blank">
+            {%- endif -%}
+            <img 
+              alt="{{ block.settings.image.alt | escape }}"
+              class="malomo-banner-img"
+              loading="lazy"
+              src="{{ block.settings.image | image_url }}"
+              srcset="{{ srcset }}"
+              {%- if style -%}style="{{ style }}"{%- endif -%}
+            >
+            {%- if block.settings.image_link_url != blank -%}
+            </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- when '@app' -%}
+        <div class="malomo-banner-col">
+          {% render block %}
+        </div>
+    {%- endcase -%}
+  {%- endfor -%}
+
+  {%- if section.blocks.size > 0 -%}
+  </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Malomo banner",
+  "blocks": [
+    {
+      "limit": 1,
+      "name": "Malomo - Shipment Tracker",
+      "settings": [
+        {
+          "default": "pk_",
+          "id": "publishable_api_key",
+          "label": "Publishable API key",
+          "type": "text"
+        },
+        {
+          "content": "Editor Preview",
+          "type": "header"
+        },
+        {
+          "id": "element",
+          "label": "Element",
+          "options": [
+            {
+              "label": "Shipment Tracker",
+              "value": "shipmentTracker"
+            },
+            {
+              "label": "Order Lookup",
+              "value": "orderLookup"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "content": "Block",
+          "type": "header"
+        },
+        {
+          "default": 350,
+          "id": "block_width",
+          "label": "Width",
+          "max": 500,
+          "min": 350,
+          "step": 5,
+          "type": "range",
+          "unit": "px"
+        },
+        {
+          "content": "Buttons",
+          "type": "header"
+        },
+        {
+          "default": "#DEE4E7",
+          "id": "button_background_color",
+          "label": "Background Color",
+          "type": "color"
+        },
+        {
+          "id": "button_border_color",
+          "label": "Border Color",
+          "type": "color"
+        },
+        {
+          "default": 3,
+          "id": "button_border_radius",
+          "label": "Border Radius",
+          "max": 100,
+          "min": 0,
+          "step": 1,
+          "type": "range",
+          "unit": "px"
+        },
+        {
+          "default": 0,
+          "id": "button_border_width",
+          "label": "Border Width",
+          "max": 100,
+          "min": 0,
+          "step": 1,
+          "type": "range",
+          "unit": "px"
+        },
+        {
+          "default": "capitalize",
+          "id": "button_capitalization",
+          "label": "Capitalization",
+          "options": [
+            {
+              "label": "Capitalize",
+              "value": "capitalize"
+            },
+            {
+              "label": "Lowercase",
+              "value": "lowercase"
+            },
+            {
+              "label": "Uppercase",
+              "value": "uppercase"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": 48,
+          "id": "button_height",
+          "label": "Height",
+          "max": 100,
+          "min": 0,
+          "step": 1,
+          "type": "range",
+          "unit": "px"
+        },
+        {
+          "default": "#222222",
+          "id": "button_text_color",
+          "label": "Text Color",
+          "type": "color"
+        },
+        {
+          "content": "Inputs",
+          "type": "header"
+        },
+        {
+          "default": "#FFFFFF",
+          "id": "input_background_color",
+          "label": "Background Color",
+          "type": "color"
+        },
+        {
+          "default": "#DDDDDD",
+          "id": "input_border_color",
+          "label": "Border Color",
+          "type": "color"
+        },
+        {
+          "default": 3,
+          "id": "input_border_radius",
+          "label": "Border Radius",
+          "max": 100,
+          "min": 0,
+          "step": 1,
+          "type": "range",
+          "unit": "px"
+        },
+        {
+          "default": 1,
+          "id": "input_border_width",
+          "label": "Border Width",
+          "max": 100,
+          "min": 0,
+          "step": 1,
+          "type": "range",
+          "unit": "px"
+        },
+        {
+          "default": 42,
+          "id": "input_height",
+          "label": "Height",
+          "max": 100,
+          "min": 0,
+          "step": 1,
+          "type": "range",
+          "unit": "px"
+        }
+      ],
+      "type": "malomo_shipment_tracker"
+    },
+    {
+      "limit": 1,
+      "name": "Image",
+      "settings": [
+        {
+          "id": "image",
+          "label": "Image",
+          "type": "image_picker"
+        },
+        {
+          "default": "center",
+          "id": "image_horizontal_alignment",
+          "label": "Horizontal Alignment",
+          "options": [
+            {
+              "label": "Left",
+              "value": "left"
+            },
+            {
+              "label": "Center",
+              "value": "center"
+            },
+            {
+              "label": "Right",
+              "value": "right"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "id": "image_link_url",
+          "label": "Image link URL",
+          "type": "url"
+        },
+        {
+          "id": "image_width",
+          "label": "Image width",
+          "type": "text"
+        }
+      ],
+      "type": "image"
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Malomo banner"
+    }
+  ],
+  "settings": [
+    {
+      "default": "500",
+      "id": "height",
+      "label": "Height",
+      "type": "text"
+    },
+    {
+      "default": "0",
+      "id": "padding",
+      "label": "Padding",
+      "type": "text"
+    },
+    {
+      "content": "Header",
+      "type": "header"
+    },
+    {
+      "default": "transparent",
+      "id": "header_background_color",
+      "label": "Background Color",
+      "type": "color"
+    },
+    {
+      "default": "sans-serif",
+      "id": "header_font",
+      "label": "Font",
+      "type": "font_picker"
+    },
+    {
+      "default": "40",
+      "id": "header_font_size",
+      "label": "Font Size",
+      "type": "text"
+    },
+    {
+      "default": "center",
+      "id": "header_horizontal_alignment",
+      "label": "Horizontal Alignment",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ],
+      "type": "select"
+    },
+    {
+      "default": "20",
+      "id": "header_padding_top",
+      "label": "Padding - Top",
+      "type": "text"
+    },
+    {
+      "default": "20",
+      "id": "header_padding_bottom",
+      "label": "Padding - Bottom",
+      "type": "text"
+    },
+    {
+      "default": "h2",
+      "id": "header_level",
+      "label": "Level",
+      "options": [
+        {
+          "label": "1",
+          "value": "h1"
+        },
+        {
+          "label": "2",
+          "value": "h2"
+        },
+        {
+          "label": "3",
+          "value": "h3"
+        },
+        {
+          "label": "4",
+          "value": "h4"
+        },
+        {
+          "label": "5",
+          "value": "h5"
+        },
+        {
+          "label": "6",
+          "value": "h6"
+        }
+      ],
+      "type": "select"
+    },
+    {
+      "id": "header_text",
+      "label": "Text",
+      "type": "text"
+    },
+    {
+      "content": "Background Color",
+      "type": "header"
+    },
+    {
+      "default": "transparent",
+      "id": "background_color",
+      "label": "Background color",
+      "type": "color"
+    },
+    {
+      "content": "Background Image",
+      "type": "header"
+    },
+    {
+      "id": "background_image",
+      "label": "Background image",
+      "type": "image_picker"
+    },
+    {
+      "default": "repeat",
+      "id": "background_repeat",
+      "label": "Background repeat",
+      "options": [
+        {
+          "label": "No Repeat",
+          "value": "no-repeat"
+        },
+        {
+          "label": "Repeat",
+          "value": "repeat"
+        },
+        {
+          "label": "Repeat X",
+          "value": "repeat-x"
+        },
+        {
+          "label": "Repeat Y",
+          "value": "repeat-y"
+        },
+        {
+          "label": "Round",
+          "value": "round"
+        },
+        {
+          "label": "Space",
+          "value": "space"
+        }
+      ],
+      "type": "select"
+    },
+    {
+      "default": "auto",
+      "id": "background_size",
+      "label": "Background size",
+      "options": [
+        {
+          "label": "Auto",
+          "value": "auto"
+        },
+        {
+          "label": "Contain",
+          "value": "contain"
+        },
+        {
+          "label": "Cover",
+          "value": "cover"
+        }
+      ],
+      "type": "select"
+    },
+    {
+      "content": "Malomo Tracking Block",
+      "type": "header"
+    },
+    {
+      "default": "transparent",
+      "id": "malomo_background_color",
+      "label": "Background color",
+      "type": "color"
+    },
+    {
+      "id": "malomo_border_color",
+      "label": "Border color",
+      "type": "color"
+    },
+    {
+      "default": "0",
+      "id": "malomo_border_radius",
+      "label": "Border radius",
+      "type": "text"
+    },
+    {
+      "default": "none",
+      "id": "malomo_border_style",
+      "label": "Border style",
+      "type": "text"
+    },
+    {
+      "default": "0",
+      "id": "malomo_border_width",
+      "label": "Border width",
+      "type": "text"
+    },
+    {
+      "default": "0",
+      "id": "malomo_padding",
+      "label": "Padding",
+      "type": "text"
+    }
+  ]
+}
+{% endschema %}

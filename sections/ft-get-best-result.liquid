@@ -1,0 +1,45 @@
+<div class="fertility-confirm-sec white-sec-bg ft-get-best-result">
+  <div class="container">
+    <div class="row ">
+      <div class="col-md-5 order-md-1">
+        <div class="img-fertility">
+          <img src="{{ 'ft_get_best_result_image.png' | file_img_url: '' }}" alt="icon img">
+        </div>
+      </div>
+      <div class="col-md-7 order-md-2">
+        <div class="fertility-info">
+          <div class="heading-1 text-left">
+            <h3>How to get the best results?</h3>
+            <p class="sub-title">Drink Mira’s Fertility Tea to improve your fertility, balance your hormones, and as a natural support for your fertility goals.</p>
+            <p>If you’re trying to conceive, we recommend you drink our fertility tea after your period ends, the week before your ovulation, or while ovulating.</p>
+          </div>
+          <div class="btn-row-globel padd-t-20">
+            <form method="post" action="/cart/add" class="add-to-cart">
+              <input type="hidden" name="quantity" value="1">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+              <input name="add" value="Add to Cart" type="submit" class="btn-custom btn-pink btn-lg" />
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "FT Get Best Result",
+    "settings": [],
+    "presets": [
+      {
+        "name": "FT Get Best Result"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

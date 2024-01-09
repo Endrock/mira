@@ -1,0 +1,240 @@
+<div class="lab-test-update-info-container">
+  <div id="step1" class="register-fertility-code-sec">
+    <div class="container">
+      <div class="img-top">
+        <img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/top_image.svg?v=1695030440" alt="icon img">
+      </div>
+      <div class="lab-test-update-title step-heading-sec">
+        <h2>Schedule your consultation</h2>
+        <p>Select your state and schedule appointment with one of our doctors licensed in that state.</p>
+      </div>
+      <div class="additional-notes-section">
+        <div class="additional-notes-row">
+          <p>
+            <i class="green-alart-icon">
+              <img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715">
+            </i>
+            <strong>Important:</strong> Please add the word MIRA, your order number, and the email associated with your Mira app account to the “Additional Notes” section.
+          </p>
+        </div>
+      </div>
+      <form action="" method="GET" id="stateForm">
+          <div class="dropdown-section">
+            <select id="stateSelector" name="selectedState">
+              <option value="">Select a State</option>
+            </select>
+          </div>
+          <div class="text-center">
+            <input type="submit" class="btn" value="Submit">
+          </div>
+      </form>
+      <div class="register-lab-test-form"></div>
+    </div>
+  </div>
+</div>
+<div class="medical-advisors-sec ob-doctors-team padd-b-60 lab-test-update-info-slider">
+  <div class="container" id="doctorsList"></div>
+</div>
+    <script type="text/javascript" src="{{ 'jquery.min.js' | asset_url }}"></script>
+
+    <script>
+        var stateArray = {
+            'Alabama': ['KEELEY'],
+            'Alaska': [],
+            'Arizona': ['HOWARD', 'KELLY'],
+            'Arkansas': [],
+            'California': ['CONVERY'],
+            'Colorado': ['HOWARD', 'KEELEY'],
+            'Connecticut': [],
+            'Deleaware': ['MCELLIGOTT PARK'],
+            'District of Columbia': [],
+            'Florida': ['CONVERY', 'HOWARD', 'MCELLIGOTT PARK'],
+            'Georgia': ['HOWARD'],
+            'Hawaii': [],
+            'Idaho': ['KEELEY'],
+            'Illinois': ['CONVERY', 'HOWARD', 'KEELEY'],
+            'Indiana': ['KEELEY'],
+            'Iowa': ['KEELEY'],
+            'Kanas': ['HOWARD'],
+            'Kentucky': ['CHAIWECHARKARN'],
+            'Louisiana': [],
+            'Maine': ['KEELEY'],
+            'Maryland': ['HOWARD'],
+            'Massachusetts': [],
+            'Michigan': ['CONVERY', 'KEELEY'],
+            'Minnesota': ['KEELEY'],
+            'Mississippi': [],
+            'Missouri': ['HOWARD'],
+            'Montana': [],
+            'Nebraska': ['KEELEY'],
+            'Nevada': ['HOWARD', 'KELLY', 'R. SHARMA'],
+            'New Hampshire': [],
+            'New Jersey': ['CONVERY', 'HOWARD'],
+            'New Mexico': [],
+            'New York': ['CONVERY', 'HOWARD'],
+            'North Carolina': ['CONVERY', 'MCELLIGOTT PARK'],
+            'North Dakota': ['KEELEY'],
+            'Ohio': ['CONVERY'],
+            'Oklahoma': ['KEELEY'],
+            'Oregon': ['CHAIWECHARKARN'],
+            'Pennsylvania': ['CONVERY', 'CHAIWECHARKARN'],
+            'Puerto Rico': [],
+            'Rhode Island': [],
+            'South Carolina': ['CONVERY'],
+            'South Dakota': [],
+            'Tennessee': ['HOWARD'],
+            'Texas': [],
+            'Utah': ['MCELLIGOTT PARK'],
+            'Vermont': ['KEELEY'],
+            'Virginia': ['CONVERY'],
+            'Washington': ['KEELEY'],
+            'West Virginia': ['MCELLIGOTT PARK', 'KEELEY'],
+            'Wisconsin': ['CHAIWECHARKARN', 'R. SHARMA', 'KEELEY'],
+            'Wyoming': ['KEELEY']
+        };
+
+        var doctors_info = {
+          'CONVERY': {
+            'name': 'Patricia Convery',
+            'email_id': 'drconvery@myvirtualphysician.com',
+            'designation': 'OB/GYN',
+            'img_url': 'https://cdn.shopify.com/s/files/1/0474/0225/4488/files/Patricia_Convery_img.svg?v=1694154718',
+            'schedule_appointment_link': 'https://consumer.scheduling.athena.io?locationId=27998-1&practitionerId=27998-14'
+          },
+          'HOWARD': {
+            'name': 'David Howard',
+            'email_id': 'dlhoward@myvirtualphysician.com',
+            'designation': 'OB/GYN',
+            'img_url': 'https://cdn.shopify.com/s/files/1/0474/0225/4488/files/Howard_David_img.svg?v=1694154717',
+            'schedule_appointment_link': 'https://consumer.scheduling.athena.io?locationId=27998-1&practitionerId=27998-1'
+          },
+          'MCELLIGOTT PARK': {
+            'name': 'Kara McElligott Park',
+            'email_id': 'drkarapark@myvirtualphysician.com',
+            'designation': 'OB/GYN',
+            'img_url': 'https://cdn.shopify.com/s/files/1/0474/0225/4488/files/Kara_McElligott_Park_img.svg?v=1694154717',
+            'schedule_appointment_link': 'https://consumer.scheduling.athena.io?locationId=27998-1&practitionerId=27998-12'
+          },
+          'KELLY': {
+            'name': 'Tammy Kelly',
+            'email_id': 'drkelly@myvirtualphysician.com',
+            'designation': 'OB/GYN',
+            'img_url': 'https://cdn.shopify.com/s/files/1/0474/0225/4488/files/Tammy_Kelly_img.svg?v=1694154717',
+            'schedule_appointment_link': 'https://consumer.scheduling.athena.io?locationId=27998-1&practitionerId=27998-6'
+          },
+          'CHAIWECHARKARN': {
+            'name': 'Suchada Chaiwechakarn',
+            'email_id': 'drchaiwechakarn@myvirtualphysician.com',
+            'designation': 'OB/GYN',
+            'img_url': 'https://cdn.shopify.com/s/files/1/0474/0225/4488/files/Suchada_chaiwechakarn_image.svg?v=1695631541',
+            'schedule_appointment_link': 'https://consumer.scheduling.athena.io?locationId=27998-1&practitionerId=27998-21'
+          },
+          'R. SHARMA': {
+            'name': 'Radhika Sharma',
+            'email_id': 'drsharma.r@myvirtualphysician.com',
+            'designation': 'OB/GYN',
+            'img_url': 'https://cdn.shopify.com/s/files/1/0474/0225/4488/files/Sharma_radhika_image.svg?v=1695631526',
+            'schedule_appointment_link': 'https://form.jotform.com/232596826225160'
+          },
+          'KEELEY': {
+            'name': 'Michelle Keeley',
+            'email_id': 'drkeeley@myvirtualphysician.com',
+            'designation': 'OB/GYN',
+            'img_url': 'https://cdn.shopify.com/s/files/1/0474/0225/4488/files/Michelle_keeley_image.svg?v=1695631527',
+            'schedule_appointment_link': 'https://consumer.scheduling.athena.io/?locationId=27998-1&practitionerId=27998-25'
+          }
+        };
+
+
+        function updateDoctorsList(selectedState) {
+            if (selectedState) {
+                var doctorsList = jQuery('#doctorsList');
+                var doctors = stateArray[selectedState];
+    
+                // Clear the previous list
+                doctorsList.empty();
+                var myhtml = '';
+                myhtml += '<div class="heading-1 text-center">';
+                myhtml += '<h2>'+selectedState+'</h2>';
+                // Display doctors if available
+                if (doctors && doctors.length > 0) {
+                    myhtml += '<p>Our licensed OB/GYNs are ready to help you with expert knowledge about fertility and fertility technologies.</p>';
+                    myhtml += '</div>';
+                    myhtml += '<div id="selected-state-doctors-team" class="arrow-slider-nav">';
+                    jQuery.each(doctors, function (index, doctor) {
+                        var doctor_info = doctors_info[doctor]
+                        myhtml += '<div class="testimonials-col">';
+                        myhtml += '<div class="testimonials-inner-col">';
+                        myhtml += '<div class="testimonials-img">';
+                        myhtml += '<img src="' + doctor_info.img_url + '">';
+                        myhtml += '</div>';
+                        myhtml += '<div class="testimonials-text">';
+                        myhtml += '<h5>' + doctor_info.name + '</h5>';
+                        myhtml += '<p>' + doctor_info.designation + '</p>';
+                        myhtml += '<div class="text-center">';
+                        myhtml += '<a href="' + doctor_info.schedule_appointment_link + '" target="_blank" class="btn-custom btn-pink">Schedule an Appointment</a>';
+                        myhtml += '</div>';
+                        myhtml += '</div>';
+                        myhtml += '</div>';
+                        myhtml += '</div>';
+                    });
+                    
+                } else {
+                    myhtml += '<h4>Sorry, right now, there are no doctors available in your State. We are working on it.</h4>';
+                }
+                myhtml += '</div>';
+              
+                doctorsList.html(myhtml);
+                $('html,body').animate({ scrollTop: $("#doctorsList").offset().top - 150 }, 'slow');
+                
+            }
+        }
+
+        jQuery(document).ready(function () {
+            var select_box = jQuery('#stateSelector');
+            //var form = jQuery('#stateForm');
+            var queryString = window.location.search; // Get the query string from the URL
+            
+
+            // Parse the query string to extract the selectedState parameter
+            var urlParams = new URLSearchParams(queryString);
+            var selectedState = urlParams.get('selectedState');
+            
+
+            // Populate state options when the page loads
+            jQuery.each(stateArray, function (stateName, stateCities) {
+                var option = jQuery('<option></option>').attr('value', stateName).text(stateName);
+                // Select the option if it matches the selectedState from the query string
+                if (selectedState === stateName) {
+                    option.attr('selected', 'selected');
+                }
+                select_box.append(option);
+            });
+            // Initialize the doctors' list based on the selected state from the query string
+            updateDoctorsList(selectedState);
+
+            setTimeout(function () {
+              $('#selected-state-doctors-team').owlCarousel({
+                loop:true,
+                margin:0,
+                nav:false,
+                dots:true,
+                autoplay:true,
+                smartSpeed: 800,
+                responsive:{
+                    0:{
+                        items:1 
+                    },
+                    767:{
+                        items:2
+                    },
+                    1024:{
+                        items:4
+                    }
+                    
+                }
+            })
+          }, 2500);
+          
+        });
+    </script>

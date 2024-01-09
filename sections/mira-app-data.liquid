@@ -1,0 +1,59 @@
+<div class="padd-t-b-100 app-data-sec">
+
+<div class="container">
+  <div class="heading-1 text-center">
+    <h3>Automatically sync your data to the Mira App</h3>
+    <p>See your test results on Mira's smart app. Find the answers you're looking for through easy-to-understand charts and scores.  </p>
+  </div>
+      <div id="mira-app-slider" class="row owl-carousel off">
+    
+        <div class="col-md-4">
+          <div class="app-data-item">
+            <div class="app-data-item-img">
+            <img src="{{ 'mira_app_01.png' | file_img_url: '' }}" alt="icon">
+            </div>
+            <h4>See personalized numeric FSH results.</h4>
+          </div>
+        </div>
+        
+          <div class="col-md-4">
+          <div class="app-data-item">
+            <div class="app-data-item-img">
+            <img src="{{ 'mira_app_02.png' | file_img_url: '' }}" alt="icon">
+            </div>
+            <h4>See how it changes throughout your cycle.</h4>
+          </div>
+        </div>
+        
+          <div class="col-md-4">
+          <div class="app-data-item">
+            <div class="app-data-item-img">
+            <img src="{{ 'mira_app_03.png' | file_img_url: '' }}" alt="icon">
+            </div>
+            <h4>Get fertility insights based on your unique results. </h4>
+          </div>
+        </div>
+        
+        
+      </div>
+   </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Mira App Data",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Mira App Data"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

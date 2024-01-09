@@ -1,0 +1,124 @@
+<div class="module-explore ttc-benefits what-inside-sec pre-inside-sec">
+   <div class="container">
+      <div class="heading-1">
+         <h2>What’s inside</h2>
+         <p>Every ingredient was carefully sourced to ensure quality.</p>
+      </div>
+      <ul>
+         <li>
+            <div class="module-item">
+               <span><img src="{{ 'vitamin_c_check.svg' | file_url }}" alt=""></span>
+               <h5>Vitamin C</h5>
+               <p>Helps your body produce collagen, boosts immunity, and improves your ability to absorb iron. </p>
+            </div>
+         </li>
+         <li>
+            <div class="module-item">
+               <span><img src="{{ 'vitamin_b2_check.svg' | file_url }}" alt=""></span>
+               <h5>Vitamin B2 (riboflavin)</h5>
+               <p> Helps your body produce energy and supports your baby’s vision, growth, and skin.</p>
+            </div>
+         </li>
+         <li>
+            <div class="module-item">
+               <span><img src="{{ 'vitamin_d3_check.svg' | file_url }}" alt=""></span>
+               <h5>Vitamin D3</h5>
+               <p>Vitamin D3 is present in tissue in your body and is involved in every biological process. Helps absorb calcium and phosphate to promote healthy bones.</p>
+            </div>
+         </li>
+         <li>
+            <div class="module-item">
+               <span><img src="{{ 'vitamin_b6_check.svg' | file_url }}" alt=""></span>
+               <h5>Vitamin B6</h5>
+               <p>Helps produce hormones that strengthen the uterine lining and increases progesterone. Plays an important role in the cognitive development of the baby.</p>
+            </div>
+         </li>
+         <li>
+            <div class="module-item">
+               <span><img src="{{ 'vitamin_b1_check.svg' | file_url }}" alt=""></span>
+               <h5>Vitamin B1</h5>
+               <p>Supports brain development and improves your capacity to convert carbohydrates into energy.</p>
+            </div>
+         </li>
+         <li>
+            <div class="module-item">
+               <span><img src="{{ 'vitamin_b12_check.svg' | file_url }}" alt=""></span>
+               <h5>Vitamin B12</h5>
+               <p>Helps develop eggs, balances ovulation, and helps with healthy implantation.</p>
+            </div>
+         </li>
+         <li>
+            <div class="module-item">
+               <span><img src="{{ 'vitamin_k1_check.svg' | file_url }}" alt=""></span>
+               <h5>Vitamin K1</h5>
+               <p>Helps with blood clotting to prevent hemorrhage during labor.</p>
+            </div>
+         </li>
+         <li>
+            <div class="module-item">
+               <span><img src="{{ 'vitamin_fa_check.svg' | file_url }}" alt=""></span>
+               <h5>Folic acid</h5>
+               <p>Improves your chances of conceiving and reduces the risk of birth defects during the first month of pregnancy.</p>
+            </div>
+         </li>
+         <li>
+            <div class="module-item">
+               <span><img src="{{ 'vitamin_e_check.svg' | file_url }}" alt=""></span>
+               <h5>Vitamin E</h5>
+               <p>Supports your immune system and helps your body create and maintain healthy skin, red blood cells, and vessels.</p>
+            </div>
+         </li>
+         <li class="btn-li-box">
+            <div class="btn-row-globel">
+               <a href="#" class="btn-custom btn-pink btn-lg open_mira_popup">View Supplement Facts</a>
+            </div>
+         </li>
+      </ul>
+      <div class="bio-genesis-sec multivitamins-sec white-sec-bg">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-7">
+                  <div class="how-different-col">
+                     <img class="heart-img" src="{{ 'heart_prenatal.svg' | file_url }}" alt="img">
+                     <h2>Multivitamins for the whole ride</h2>
+                     <p>Mira Prenatal was formulated to support your trying to conceive, prenatal, and postnatal journey.</p>
+                     <p>Support your body’s nutritional needs and focus on all the other wonderful aspects of your fertility journey. </p>
+                     <div class="btn-row-globel padd-t-20">
+
+
+
+                       <form method="post" action="/cart/add" class="add-to-cart">
+                          <input type="hidden" name="quantity" value="1">
+                          <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+                          <input name="add" value="Add to Cart" type="submit" class="btn-custom btn-pink btn-lg" />
+                        </form>
+                       
+                        <a href="javascript:void(0)" class="subscription_button btn-custom btn-pink border-btn btn-lg">Subscribe</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-5">
+                  <div class="how-different-img">
+                     <img class="how-different-image" src="{{ 'multivitamins_img.jpg' | file_img_url: '' }}" alt="img">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% schema %}
+{
+    "name": "Pre Whats Inside",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Pre Whats Inside"
+      }
+    ]
+}
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

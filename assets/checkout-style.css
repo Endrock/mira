@@ -1,0 +1,148 @@
+ @font-face {
+   font-family: 'Gibson Regular';
+   src: url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-Regular.woff2') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-Regular.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+a, .link,
+a:hover, .link:hover{
+    color: #8EC68C;
+}
+
+.breadcrumb .breadcrumb__item--current .breadcrumb__text {
+    color: #8EC68C;
+}
+
+.breadcrumb .breadcrumb__link {
+    color: #737373 !important;
+}
+
+.checkbox__label a, .checkbox__label a:hover {
+    color: #668269;
+  text-decoration:underline;
+}
+
+
+span.logo__text.heading-1 {
+    font-family: 'Gibson Regular';
+    font-size: 28px;
+}
+
+.section__header h2 {
+    font-family: 'Gibson Regular';
+    font-size: 24px;
+}
+
+a, p, span, div, label, input, textarea, select, h1, h2, h3, h4, h5, h6
+{
+  font-family: 'Gibson Regular';
+}
+
+.order-summary__section .upsell-form button {
+    background: #8fc68c!important;
+    border-radius: 30px;
+    font-size: 12px;
+    padding: 9px 16px !important;
+}
+
+#rasv-submit {
+    background: #C2DCCB!important;
+    color: #003630!important;
+}
+#rasv-submit:hover {
+    background: #a5c2af!important;
+}
+button.btn--disabled#rasv-submit {
+    background: #cccccc !important;
+}
+
+
+
+.step__footer__continue-btn{
+    background: #F2BFD1;
+    border-radius: 40px;
+    font-size: 20px;
+    color: #003630!important;
+    padding: 0 23px;
+    height: 56px;
+    line-height: 56px;
+    font-family: 'Gibson Regular';
+}
+
+.field__input:focus, .field__input-wrapper--flag-focus .field__input {
+    border-color: #8EC68C;
+    -webkit-box-shadow: 0 0 0 1px #8EC68C;
+    box-shadow: 0 0 0 1px #8EC68C;
+}
+
+.input-checkbox:checked, .input-radio:checked, .input-checkbox:focus, .input-radio:focus {
+    border-color: #8EC68C !important;
+}
+
+
+.step__footer__previous-link, .step__footer__previous-link svg {
+    color: #003630;
+    font-family: 'Gibson Regular';
+    fill: #003630;
+}
+.step__footer__previous-link:hover, .step__footer__previous-link svg:hover {
+    color: #003630;
+}
+
+ul.policy-list a {
+    color: #737373;
+}
+
+.product-thumbnail__quantity{
+	background-color: #8EC68C;
+}
+.product.upsell-product h3 {
+    color: #003630 !important;
+    font-size: 18px;
+    font-weight: normal !important;
+}
+
+.order-summary-toggle__text {
+    color: #668269 !important;
+}
+
+.order-summary-toggle__dropdown, .order-summary-toggle__icon {
+    fill: #668269 !important;
+}
+
+@media (max-width: 767px) {
+  .order-summary__section .upsell-form button {
+    padding: 6px 12px !important;
+}
+}
+
+
+/* Shop Shopify */
+.step__footer__continue-btn:hover{
+    background: #F2BFD1;
+}
+a.btn.order-now-link {
+    background: #F2BFD1;
+    border-radius: 40px;
+    font-size: 20px;
+    color: #003630!important;
+    padding: 0 23px;
+    height: 56px;
+    line-height: 56px;
+    font-family: 'Gibson Regular';
+    font-weight: normal;
+}
+.uac-widget .heading-2 {
+    font-weight: normal !important;
+}
+[data-select-gateway="116546109733"],
+[data-subfields-for-gateway="116546109733"] {
+  display:none !important;
+}
+/* [data-select-gateway="116546208037"],
+[data-subfields-for-gateway="116546208037"] {
+  display:none !important;
+} */

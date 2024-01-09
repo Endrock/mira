@@ -1,0 +1,52 @@
+<div class="can-cup-help-sec why-track-both white-sec-bg pt-second-sec ft-why-fertility-tea">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-6 left-sec">
+            <div class="can-cup-help-col ">
+               <h4>Why Mira’s Fertility Tea?</h4>
+                <p class="description"> Support your fertility journey naturally, with this high-quality organic herbal blend:  
+          </p>
+          <ul>
+            <li>Boost your fertility</li>
+            <li>Balance your hormones</li>
+            <li>Support your reproductive system</li>
+            <li>Reduce your stress</li>
+            <li>Promote follicle growth</li>
+            <li>Reduce PMS symptoms</li>
+  
+          </ul>
+              <div class="btn-row-globel mt-3 mb-3">
+                <form method="post" action="/cart/add" class="add-to-cart">
+                  <input type="hidden" name="quantity" value="1">
+                  <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+                  <input name="add" value="Add to Cart" type="submit" class="btn-custom btn-pink btn-lg" />
+                </form>
+              </div>
+              <p class="bottom-text">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+            </div>
+         </div>
+         <div class="col-lg-6 pt-right-sec">
+            <div class="can-cup-help-img pt-right-img">
+               <img class="discover-image" src="{{ 'why_fertility_tea_img.png' | file_img_url: '' }}" alt="img">
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% schema %}
+  {
+    "name": "FT Why Fertility Tea",
+    "settings": [],
+    "presets": [
+      {
+        "name": "FT Why Fertility Tea"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

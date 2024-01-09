@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+
+    {{ 'checkout-style.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'jquery.min.js' | asset_url }}"></script>  
+
+    <!--  Triple Whale Pixel start  -->
+    <link rel='preconnect dns-prefetch' href='https://triplewhale-pixel.web.app/' crossorigin />
+    <link rel='preconnect dns-prefetch' href='https://api.config-security.com/' crossorigin />
+    <script>
+    /* >> TriplePixel :: start*/
+    ~function(W,H,A,L,E,_,B,N){function O(U,T,H,R){void 0===R&&(R=!1),H=new XMLHttpRequest,H.open("GET",U,!0),H.send(null),H.onreadystatechange=function(){4===H.readyState&&200===H.status?(R=H.responseText,U.includes(".txt")?eval(R):N[B]=R):(299<H.status||H.status<200)&&T&&!R&&(R=!0,O(U,T-1))}}if(N=window,!N[H+"sn"]){N[H+"sn"]=1;try{A.setItem(H,1+(0|A.getItem(H)||0)),(E=JSON.parse(A.getItem(H+"U")||"[]")).push(location.href),A.setItem(H+"U",JSON.stringify(E))}catch(e){}A.getItem('"!nC`')||(A=N,A[H]||(L=function(){return Date.now().toString(36)+"_"+Math.random().toString(36)},E=A[H]=function(t,e){return W=L(),(E._q=E._q||[]).push([W,t,e]),W},E.ch=W,B="configSecurityConfModel",N[B]=1,O("//conf.config-security.com/model",0),O("//triplewhale-pixel.web.app/triplefw.txt?",5)))}}("","TriplePixel",localStorage);
+    /* << TriplePixel :: end*/
+    </script>
+    <!--  Triple Whale Pixel end  -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TDHXZX8');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Universal Tracking Tag (impact) start -->
+    <script type="text/javascript">
+    (function(a,b,c,d,e,f,g){e['ire_o']=c;e[c]=e[c]||function(){(e[c].a=e[c].a||[]).push(arguments)};f=d.createElement(b);g=d.getElementsByTagName(b)[0];f.async=1;f.src=a;g.parentNode.insertBefore(f,g);})('https://d.impactradius-event.com/A2661729-2655-468b-a5fd-447b7db632451.js','script','ire',document,window); 
+    </script>
+    <!-- Universal Tracking Tag (impact) end -->
+
+    <!-- Global site tag (gtag.js) - Google Ads: 819434202 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-819434202"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-819434202', {'allow_enhanced_conversions':true});
+    </script>
+    <!-- End Global site tag (gtag.js) - Google Ads: 819434202 -->
+
+    <!-- MS Heat map tool start -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "cs1vbo2508");
+    </script>
+    <!-- MS Heat map tool end -->
+
+    <script>
+      function checkoutGA4Info(event_name){
+        dataLayer.push({
+            'event': event_name,
+            'ecommerce': {
+                'currency': "{{ shop.currency }}",
+                'value': {{ checkout.total_price | money_without_currency | json }}, 
+                {% for discount_application in checkout.discount_applications %}
+                'coupon': "{{ discount_application.title }}",
+                {% endfor %}
+                'payment_type': "NA",
+                'items': [
+                  {% for item in checkout.line_items %}
+                    {
+                     'item_name': "{{ item.product.title }}",
+                     'item_id': "{{ item.product.id }}",
+                     'price': "{{ item.price | | divided_by: 100.0 }}",
+                     'currency': "{{ shop.currency }}",
+                     {% for discount_allocation in item.line_level_discount_allocations %}
+                      'coupon': "{{ discount_allocation.discount_application.title }}",
+                      'discount': "{{ discount_allocation.amount | money_without_currency }}",
+                      {% endfor %}
+                     'item_category': "{{ item.product.type }}",
+                     'quantity': "{{ item.quantity }}"
+                    },
+                  {% endfor %}
+                 ]
+            }
+          });
+        
+      }
+      jQuery( document ).ready(function($) {
+        // Open order summary by default on mobile
+        $( ".order-summary-toggle" ).trigger( "click" );
+    
+        // Add terms and condition checkbox on checkout page
+        var data_step = $('.step').data('step');
+    
+        if( data_step == 'contact_information'){
+          var error_msg = '<p class="field__message field__message--error" id="checkout_agree_error">You must agree with the terms and conditions of sales to check out.</p>';
+          var checkbox_label = '<label class="checkbox__label" for="checkout_agree"> I accept the <a href="https://www.miracare.com/terms-of-use/" target="_blank">terms and conditions</a> and agree to the <a href="https://www.miracare.com/privacy-policy/" target="_blank">Privacy Policy</a>.</label>';
+          var input_checkbox = '<input class="input-checkbox" type="checkbox" value="1"  name="checkout_agree" id="checkout_agree">';    
+    
+          $( ".section--shipping-address .address-fields, .section--billing-address .address-fields" ).append( '<div class="field field--required checkout_agree_wrapper"><div class="checkbox-wrapper"><div class="checkbox__input">'+ input_checkbox +'</div>'+ checkbox_label +'</div>'+error_msg+'</div>' );
+    
+          $('body').on('click', '#continue_button', function() {
+            
+            if ($('#checkout_agree').is(':checked')) {
+              $(this).submit();
+            } else {
+              
+              $(".checkout_agree_wrapper").remove();
+              $( ".section--shipping-address .address-fields, .section--billing-address .address-fields" ).append( '<div class="field field--required checkout_agree_wrapper"><div class="checkbox-wrapper"><div class="checkbox__input">'+ input_checkbox +'</div>'+ checkbox_label +'</div>'+error_msg+'</div>' );
+              $('#checkout_agree_error').show();
+              return false;
+            }
+          });
+        }
+
+        if( data_step == 'shipping_method'){
+          $('body').on('click', '#continue_button', function() {
+            checkoutGA4Info('ga4_add_shipping_info');
+          });
+        }
+      
+        if( data_step == 'payment_method'){
+          $('body').on('click', '#continue_button', function() {
+            checkoutGA4Info('ga4_add_payment_info');
+          });
+        }  
+  
+        // Order handling time --- start
+        var selected_language = "";
+        var shipping_language = "";
+        var customer_country = "{{ checkout.shipping_address.country.iso_code }}";
+
+
+
+    
+        var category_1_countries = {{ settings.category_1_countries | json }};
+        var category_2_countries = {{ settings.category_2_countries | json }};
+        var category_3_countries = {{ settings.category_3_countries | json }};
+        var category_4_countries = {{ settings.category_4_countries | json }};
+        var category_5_countries = {{ settings.category_5_countries | json }};
+    
+        if($.inArray(customer_country, category_1_countries.split(',')) != -1) {   
+          selected_language = {{ settings.category_1_language | json }};
+        } else if($.inArray(customer_country, category_2_countries.split(',')) != -1) {   
+          selected_language = {{ settings.category_2_language | json }};
+        }  else if($.inArray(customer_country, category_3_countries.split(',')) != -1) {   
+          selected_language = {{ settings.category_3_language | json }};
+        }  else if($.inArray(customer_country, category_4_countries.split(',')) != -1) {   
+          selected_language = {{ settings.category_4_language | json }};
+        }  else if($.inArray(customer_country, category_5_countries.split(',')) != -1) {   
+          selected_language = {{ settings.category_5_language | json }};
+        } else {
+          selected_language = {{ settings.category_6_language | json }};
+        } 
+    
+        if(selected_language == 'language_1'){
+          shipping_language = {{ settings.shipping_language_1 | json }};
+        } else if(selected_language == 'language_2'){
+          shipping_language = {{ settings.shipping_language_2 | json }};
+        } else if(selected_language == 'language_3'){
+          shipping_language = {{ settings.shipping_language_3 | json }};
+        } else if(selected_language == 'language_4'){
+        	shipping_language = {{ settings.shipping_language_4 | json }};
+        } else if(selected_language == 'language_5'){
+        	shipping_language = {{ settings.shipping_language_5 | json }};
+        }
+        $('.section--shipping-method p.section__text').text(shipping_language);
+        
+        // Order handling time --- end
+  
+      });
+    </script>
+    
+  </head>
+  <body>
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    {{ tracking_code }}
+
+    <!-- identify function (impact) start -->
+    <script type="text/javascript">
+        ire('identify', {customerId: '{% if customer %}{{ customer.id }}{% endif %}', customerEmail: '{% if customer %}{{ customer.email | sha1 }}{% endif %}'});
+    </script>
+    <!-- identify function (impact) end -->
+
+    <!-- Loyalty checkout module -->
+    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/zQFQs-yTS0H9q3wJkcElkw" async></script>
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="450469"></div>
+    <!-- End Loyalty checkout module -->
+
+    <!-- Track customer locale with Klaviyo JavaScript -->
+    <script>
+       var _learnq = _learnq || [];
+        _learnq.push(['identify', {
+          {%  if customer.email %}
+          '$email': '{{customer.email}}',
+          {% endif %}
+          'shopify_locale': '{{ request.locale.iso_code }}-{{localization.country.iso_code}}'
+        }]);
+    </script>
+    <script>
+      var customer_country = "{{ checkout.shipping_address.country.iso_code }}";
+
+        if(customer_country == "AU"){
+            
+        }
+
+
+        
+        setTimeout(function(){
+        	//$('[data-gateway-name="offsite_v2"]').hide();
+            if(customer_country == "AU"){
+              //$('[data-gateway-name="offsite_v2"]').show();
+            }
+        }, 1000);
+    </script>
+    {%- if checkout.shipping_address.country.iso_code != "AU" -%}
+      {%- style -%}
+      [data-select-gateway="116546109733"],
+      [data-subfields-for-gateway="116546109733"] {
+        display:none !important;
+      }
+      {%- endstyle -%}
+    {%- endif -%}
+    
+    {%- if checkout.shipping_address.country.iso_code != "CA" -%}
+      {%- style -%}
+      [data-select-gateway="116546208037"],
+      [data-subfields-for-gateway="116546208037"] {
+        display:none !important;
+      }
+      {%- endstyle -%}
+    {%- endif -%}
+    
+  </body>
+</html>
+
+<script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/zQFQs-yTS0H9q3wJkcElkw" async></script>
+<!-- CCCCC {{ localization.market.handle }} -->

@@ -1,0 +1,115 @@
+<section class="template_section_products_columns_4 ft_products_columns_4 prenatal-frequently-buy-together">
+  <div class="template_section_products_columns_4_content site_content_container content-box">
+    <div class="heading-1 ft-heading">
+      <h2>Customers Buy Together</h2>
+      <p>Your journey shouldn’t feel like an obstacle course. Navigate your fertility confidently with OBGYN-approved fertility boosters and health products.</p>
+    </div>
+    <div class="product-col-row row">
+      <div class="col-md-3 product-item">
+        <div class="product-col">
+          <div class="product-img-col">
+            <a href="/products/fertility-max-starter-kit">
+              <img class="image" src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/products_image01.png">
+            </a>
+          </div>
+          <h4>
+            <a href="/products/fertility-max-starter-kit">{{ all_products['fertility-max-starter-kit'].title }}</a>
+          </h4>
+          <p class="sub-title">Includes 10 Max Wands</p>
+          <div class="product-price-coll">
+            <div class="price-btn-row">
+              <span class="plat-price">{{ all_products['fertility-max-starter-kit'].price | money }}</span>
+              <div class="old-price" style="display: none;">{{ all_products['fertility-max-starter-kit'].compare_at_price | money }}</div>
+            </div>
+            <div class="learn-more-btn">
+            <a href="/products/fertility-max-starter-kit" target="" class="btn-custom button"> Learn More </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 product-item">
+        <div class="product-col">
+          <div class="product-img-col">
+            <a href="/products/fertility-tea">
+              <img class="image" src="{{ 'mira_fertility_tea_old_Image.png' | file_img_url: '' }}">
+            </a>
+          </div>
+          <h4>
+            <a href="/products/fertility-tea">{{ all_products['fertility-tea'].title }}</a>
+          </h4>
+          <p class="sub-title">{{ all_products['fertility-tea'].metafields.product_fields.sub_title }}</p>
+          <div class="product-price-coll">
+            <div class="price-btn-row">
+              <span class="plat-price">{{ all_products['fertility-tea'].price | money }}</span>
+              <div class="old-price" style="display: none;">{{ all_products['fertility-tea'].compare_at_price | money }}</div>
+            </div>
+            <div class="learn-more-btn">
+            <a href="/products/fertility-tea" target="" class="btn-custom button"> Learn More </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 product-item">
+        <div class="product-col">
+          <div class="product-img-col">
+            <a href="/products/basal-body-thermometer">
+              <img class="image" src="{{ 'basal_body_thermometer_new_sec_Image.png' | file_img_url: '' }}">
+            </a>
+          </div>
+          <h4>
+            <a href="/products/basal-body-thermometer">{{ all_products['basal-body-thermometer'].title }}</a>
+          </h4>
+          <p class="sub-title">{{ all_products['basal-body-thermometer'].metafields.product_fields.sub_title }}</p>
+          <div class="product-price-coll">
+            <div class="price-btn-row">
+              <span class="plat-price">{{ all_products['basal-body-thermometer'].price | money }}</span>
+              <div class="old-price" style="display: none;">$229</div>
+            </div>
+            <div class="learn-more-btn">
+            <a href="/products/basal-body-thermometer" target="" class="btn-custom button"> Learn More </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 product-item">
+        <div class="product-col">
+          <div class="product-img-col">
+            <a href="/products/fertility-ovum-wands">
+              <img class="image" src="{{ 'fertility_ovum_wands_new_sec_Image.png' | file_img_url: '' }}">
+            </a>
+          </div>
+          <h4>
+            <a href="/products/fertility-ovum-wands">{{ all_products['fertility-ovum-wands'].title }}</a>
+          </h4>
+          <p class="sub-title">{{ all_products['fertility-ovum-wands'].metafields.product_fields.sub_title }}</p>
+          <div class="product-price-coll">
+            <div class="price-btn-row">
+              <span class="plat-price">{{ all_products['fertility-ovum-wands'].price | money }}</span>
+              <div class="old-price" style="display: none;">$229</div>
+            </div>
+            <div class="learn-more-btn">
+            <a href="/products/fertility-ovum-wands" target="" class="btn-custom button"> Learn More </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Prenatal Frequently Buy",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Prenatal Frequently Buy"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

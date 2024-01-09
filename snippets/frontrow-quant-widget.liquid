@@ -1,0 +1,28 @@
+{% comment %}
+Renders quantitative frontrow widget
+
+Usage:
+{% render 'frontrow-widget' %}
+{% endcomment %}
+
+<frontrow-widget>
+  {%- if product.metafields.custom.frontrow_provider_count -%}
+    <div class="frontrow-container">
+      <p>
+        <span class="fr-num-value">{{ product.metafields.custom.frontrow_provider_count }}</span>
+        <span class="fr-bold">medical providers
+        </span>
+        <span class="fr-text">recently shared this with their patients, and were not paid to do so! </span>
+        {%- if product.metafields.custom.frontrow_no_reviews -%}
+          <a href="https://thefrontrowhealth.com/overview/" class="fr-link" target="_blank">
+            Learn more from our partner
+          </a>
+        {% else %}
+          <a href="#frontrow-qual-data" class="fr-link">
+            Hear why they shared this product with patients
+          </a>
+        {% endif %}
+      </p>
+    </div>
+  {% endif %}
+</frontrow-widget>

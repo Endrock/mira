@@ -1,0 +1,60 @@
+<div class="panorama-sec-testing-steps padd-t-70 ob-add-to-cart-cta1">
+    <div class="container">
+        <div class="panorama-lab-test-heading-2 text-center">
+            <h2>Booking a consultation is easy</h2>
+          <P class="padd-t-10">It’s really simple.</P>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testing-steps-col">
+                    <div class="testing-steps-img-col"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/ob_step01_img.png?v=1694089521" alt=""></div>
+                    <h4>Step 1:<br>
+                        Purchase a consultation here</h4>
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testing-steps-col">
+                    <div class="testing-steps-img-col"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/ob_step02_img.png?v=1694089520" alt=""></div>
+                    <h4>Step 2:<br>
+                        Get a personal link via email to schedule your consultation</h4>
+                   
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testing-steps-col">
+                    <div class="testing-steps-img-col"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/ob_step03_img.png?v=1694089521" alt=""></div>
+                    <h4>Step 3:<br>
+                        Meet with your doctor of choice</h4>
+                   
+                </div>
+            </div>
+          
+        </div>
+      <div class="btn-row-globel text-center padd-t-30">
+   <!-- <a href="#" id="order_now_button" class="btn-custom btn-pink btn-lg">Add to Cart</a> -->
+        <form method="post" action="/cart/add" class="add-to-cart">
+          <input type="hidden" name="quantity" value="1">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+          <input name="add" value="Add to Cart" type="submit" class="btn-custom btn-pink btn-lg" />
+        </form>
+  </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "OB Add To Cart Cta1",
+    "settings": [],
+    "presets": [
+      {
+        "name": "OB Add To Cart Cta1"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

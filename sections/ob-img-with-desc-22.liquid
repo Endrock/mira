@@ -1,0 +1,55 @@
+<div class="fertility-confirm-sec white-sec-bg ft-get-best-result ob-img-with-desc-22">
+  <div class="container">
+    <div class="row ">
+      <div class="col-md-5 order-md-1">
+        <div class="img-fertility">
+          <img src="{{ 'ob_img_with_desc22_img.png' | file_img_url: '' }}" alt="icon img">
+        </div>
+      </div>
+      <div class="col-md-7 order-md-2">
+        <div class="fertility-info">
+          <div class="heading-1 text-left">
+            
+          <div class="can-cup-help-col ">
+          <h3>Fertility healthcare for everyone</h3>
+            <p>Our comprehensive care offers guidance for all family types and individuals. </p>
+          <ul>
+          <li>
+          <strong>Inclusivity.</strong> <span>Our specialists are here to help you feel comfortable and seen. It’s a known fact that navigating fertility as a minority has its challenges.</span>
+          </li>
+          <li>
+          <strong>Aging and fertility.</strong> <span>Your body goes through changes that impact your physical and mental health. Our specialists guide you through perimenopause and menopause.</span>
+          </li>
+          </ul>
+          </div>
+          </div>
+          <div class="btn-row-globel padd-t-20">
+            <form method="post" action="/cart/add" class="add-to-cart">
+              <input type="hidden" name="quantity" value="1">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+              <input name="add" value="Book a Consultation" type="submit" class="btn-custom btn-pink btn-lg" />
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "OB Img With Desc22",
+    "settings": [],
+    "presets": [
+      {
+        "name": "OB Img With Desc22"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
