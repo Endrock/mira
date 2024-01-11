@@ -11032,13 +11032,18 @@ ul.date-list-col {
   margin-bottom:20px;
 }
 
-.register-lab-test-form input[type="text"] {
+.register-lab-test-form input[type="text"],
+.register-lab-test-form input[type="date"]{
     height: 48px;
     background: #F2F6F2;
     border-radius: 8px;
     border: 0px;
     width: 350px;
     max-width: 100%;
+}
+.register-lab-test-form input[type="date"]{
+    width: 270px;
+    cursor: pointer;
 }
 
 .checkbox-row {

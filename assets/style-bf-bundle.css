@@ -105,7 +105,7 @@ section.bf-bundle-header-banner {
     top: 0;
     height: 100%;
     width: 425px;
-    background: url(https://cdn.shopify.com/s/files/1/0777/1006/5971/files/header_banner_left_part.png?v=1698777683) center left no-repeat;
+    background: url(https://cdn.shopify.com/s/files/1/0777/1006/5971/files/top-left.png) center left no-repeat;
   background-size:402px !important;
 }
 
@@ -321,7 +321,9 @@ section.bf-bundle-header-banner p {
 .light-yellow-bg {
     background: #FBF0D4;
 }
-
+.bf-dark-yellow-bg {
+    background: #FFF9E6;
+}
 .bf-light-grey-bg {
     background: #F8F8F8;
 }
@@ -454,6 +456,35 @@ section.bf-bundle-header-banner p {
 .quality-matters-sec p {
     font-size: 14px;
 }
+
+/* CSS without tea start */
+
+
+.bundle-without-tea ul li:nth-child(4) {
+    margin-top: -158px;
+}
+.bundle-without-tea .inside-bundle-item.bf-light-grey-bg .inside-sec-img img{
+  padding:unset;
+}
+.bundle-without-tea .inside-bundle-item {
+    text-align: center;
+    position: relative;
+    height: 100%;
+    border-radius: 20px;
+    padding: 30px 30px 20px;
+}
+.bundle-without-tea .inside-sec-img-2{
+  padding: 15px 0 0px;
+    max-width: 100%;
+}
+.bundle-without-tea .inside-sec-img-2.mt-70 {
+    margin-top: 70px !important;
+}
+.bundle-without-tea .inside-bundle-item.last{
+          padding: unset;
+  padding-top:30px
+}
+/* CSS without tea start */
 
 /**************************/
 
