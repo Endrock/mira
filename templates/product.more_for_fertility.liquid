@@ -188,6 +188,25 @@
                             </div>
                         </div>
                     </div>
+
+                    {% if localization.market.handle == 'us' %}
+                      <div class="col-md-4">
+                          <div class="product-col">
+                              <div class="product-img-col">
+                                  <a href="{{ sub_folder }}/products/panorama-fertility-lab-test"><img src="{{ 'panorama-shop-all.png' | file_img_url: '' }}" alt="" /></a>
+                              </div>
+                              <h4><a href="{{ sub_folder }}/products/panorama-fertility-lab-test">{{ all_products['panorama-fertility-lab-test'].title }}</a></h4>
+                              <p></p>
+                              <div class="product-price-col">
+                                  <div class="price-btn-row">
+                                      <span class="plat-price">{{ all_products['panorama-fertility-lab-test'].price | money }}</span>
+                                      <div class="old-price"></div>
+                                  </div>
+                                  <a href="{{ sub_folder }}/products/panorama-fertility-lab-test" class="btn-custom btn-pink">Buy now</a>
+                              </div>
+                          </div>
+                      </div>
+                      {% endif %}
         
                 </div>
             </div>
