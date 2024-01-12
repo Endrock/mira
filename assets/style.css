@@ -10516,6 +10516,7 @@ ul.lab-test-result-outer {
 ul.lab-test-result-outer li {
     width: calc(50% - 5px);
     margin-bottom: 10px;
+    list-style: none;
 }
 
 .test-resuld-col {
@@ -10538,6 +10539,7 @@ ul.lab-test-result-outer li {
     margin-bottom: 0;
     font-family: 'Gibson-Regular';
     color: #003630;
+    font-size: 24px;
 }
 
 .test-resuld-col .top-box {
@@ -10858,6 +10860,7 @@ ul.date-list-col {
     font-size: 16px;
     margin: 3px 3px;
     color: #667789;
+    list-style: none;
 }
 
 .date-list-col li a {
@@ -11246,6 +11249,7 @@ ul.circle-point-list li {
 .panorama-expand-item ul.lab-test-result-outer li {
     width: calc(33.33% - 10px);
     margin: 5px;
+    list-style: none;
 }
 
 
