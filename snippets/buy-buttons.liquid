@@ -85,6 +85,18 @@
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
             </span>
+            {% if product.handle == 'panorama-fertility-lab-test' %}
+            <span class="price-separater">&nbsp; — &nbsp;</span>
+            <div class="no-js-hidden custom-price-section desktop-price" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+              {%- render 'price',
+                product: product,
+                use_variant: true,
+                show_badges: true,
+                price_class: 'price--large'
+              -%}
+              </div>
+              {%- endif -%}
+        
             <div class="loading-overlay__spinner hidden">
               <svg
                 aria-hidden="true"
