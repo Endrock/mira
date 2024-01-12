@@ -18978,7 +18978,7 @@ body.bf-bundle .product-info-sec {
 }
 .shopify-installments__content,
 .shopify-installments__learn-more{
-    font-size: 13px;
+    font-size: 13px !important;
 }
 /************************* Media query start here ********************************** */
 @media screen and (min-width: 750px){
