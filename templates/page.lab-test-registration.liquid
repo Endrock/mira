@@ -1,0 +1,661 @@
+{% if customer %}  
+
+  <style>
+   #loader{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #21242d url('https://cdn.shopify.com/s/files/1/0755/9620/2277/files/Bouncy-Preloader.gif') no-repeat center;
+    z-index: 999;
+  } 
+</style>
+<div style="display:none;" id="loader"></div>
+
+<div class="lab-test-page">
+    <div class="lab-test-top-links">
+        <div class="container">
+            <div class="section-header text-center">
+                <h1>My Account</h1>
+            </div>
+        </div>
+    </div>
+    <div id="step1" class="register-fertility-code-sec padd-b-60">
+        <div class="container">
+            <div class="lab-sec-title step-heading-sec">
+                <h2>Register your Mira Panorama<br> Fertility Lab Test</h2>
+                <p>Enter the registration code found inside of your kit.<br>
+                    Can't find it? <a href="#" class="open_mira_popup">Click here</a>.</p>
+            </div>
+            <div class="register-code-form">
+                <form>
+                    <label>Your Registration Code</label>
+                    <input type="text" name="registration_code" id="registration_code"/>
+                    <label>Your Phone Number</label>
+                    <input type="text" name="phone_number" id="phone_number" value="{{ customer.phone }}" placeholder="(000) 000-0000"/>
+                    <button type="submit" class="btn-custom btn-pink btn-md" id="step1_submit_btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="step2" class="register-fertility-code-sec padd-b-60" style="display: none;">
+        <div class="container">
+            <div class="lab-sec-title step-heading-sec">
+                <h2>Register your Mira Panorama<br> Fertility Lab Test</h2>
+                <p>Are you the patient or legal guardian of the person taking this test?<br> To proceed, please check the box.</p>
+            </div>
+            <div class="register-code-form">
+                <form>
+                    <div class="form-group">
+                        <input type="checkbox" id="patient_or_legal_guardian" name="patient_or_legal_guardian" data-gtm-form-interact-field-id="1" value="1">
+                        <label for="patient_or_legal_guardian"> I am the patient or legal guardian.</label>
+                    </div>
+                    <button type="submit" class="btn-custom btn-pink btn-md" id="step2_submit_btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="step3" class="lab-test-step-form-sec register-fertility-code-sec padd-b-60" style="display: none;">
+        <div class="small-container">
+            <div class="lab-sec-title step-heading-sec">
+                <h2>Register your Mira Panorama<br> Fertility Lab Test</h2>
+                <p>Answer a few questions to help us personalize your results. All required fields are indicated with an *</p>
+            </div>
+            <div class="register-lab-test-form">
+                <form>
+                    <div class="input-item">
+                        <div class="item-label"><span>1.</span> Date of birth (YYYY-MM-DD)*</div>
+                        <input type="date" name="DOB" id="DOB" value="">
+                    </div>
+                    <div class="checkbox-row">
+                        <div class="item-label"><span>2.</span> What's your cycle like?</div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch1" name="whats_your_cycle" value="I have regular periods every 21-35 days" data-gtm-form-interact-field-id="1">
+                            <label for="ch1"> I have regular periods every 21-35 days,</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch2" name="whats_your_cycle" value="irregular cycles" data-gtm-form-interact-field-id="1">
+                            <label for="ch2"> I have irregular periods,</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch3" name="whats_your_cycle" value="absence of period for more than 90 days" data-gtm-form-interact-field-id="1">
+                            <label for="ch3"> I don't have periods (absence of your period for over 90 days),</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch4" name="whats_your_cycle" value="spotting between periods" data-gtm-form-interact-field-id="1">
+                            <label for="ch4"> I don't have periods, but I have spotting throughout the month.</label>
+                        </div>
+                    </div>
+                    <div class="checkbox-row check-two-col">
+                        <div class="item-label"><span>3.</span> Have you experienced any of these symptoms for the last 3 months?</div>
+                        <div class="check-item-left">
+                            <div class="form-group">
+                                <input type="checkbox" id="ch5" name="how_you_feel_during_cycle" value="anxiety">
+                                <label for="ch5"> Anxious.</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="ch26" name="how_you_feel_during_cycle" value="irritability">
+                                <label for="ch26"> Irritable.</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="ch6" name="how_you_feel_during_cycle" value="Tired">
+                                <label for="ch6"> Tired.</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="ch7" name="how_you_feel_during_cycle" value="Depressed">
+                                <label for="ch7"> Depressed.</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="ch8" name="how_you_feel_during_cycle" value="I gain weight">
+                                <label for="ch8"> I gain weight.</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="ch9" name="how_you_feel_during_cycle" value="acne">
+                                <label for="ch9"> I get acne.</label>
+                            </div>
+                            
+                        </div>
+                        <div class="check-item-right">
+                            <div class="form-group">
+                                <input type="checkbox" id="ch10" name="how_you_feel_during_cycle" value="excessive hair growth on face and body">
+                                <label for="ch10"> I get excessive hair growth on my face and body.</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="ch11" name="how_you_feel_during_cycle" value="heavy menstrual bleeding">
+                                <label for="ch11"> I have heavy menstrual bleeding.</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="ch12" name="how_you_feel_during_cycle" value="hot flushes">
+                                <label for="ch12"> I get hot flushes.</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="ch13" name="how_you_feel_during_cycle" value="heart palpitations">
+                                <label for="ch13"> I get heart palpitations</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="ch14" name="how_you_feel_during_cycle" value="extreme exhaustion (feeling tired all the time)">
+                                <label for="ch14"> I feel extremely exhausted.</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="ch_none" name="how_you_feel_during_cycle" value="none">
+                                <label for="ch_none"> None</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-item">
+                        <div class="item-label"><span>4.</span> How tall are you? (in feet & inches)</div>
+                        <input type="text" name="how_tall_are_you" id="how_tall_are_you">
+                    </div>
+                    <div class="input-item">
+                        <div class="item-label"><span>5.</span> What's your weight? (in lb)</div>
+                        <input type="text" name="whats_your_weight" id="whats_your_weight">
+                    </div>
+                    <div class="checkbox-row">
+                        <div class="item-label"><span>6.</span> What's your fertility goal?</div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch15" name="fertility_goal" value="I'm trying to conceive">
+                            <label for="ch15"> I'm trying to conceive,</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch16" name="fertility_goal" value="I want to track my cycles">
+                            <label for="ch16"> I want to track my cycles,</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch17" name="fertility_goal" value="I'm trying to avoid pregnancy">
+                            <label for="ch17"> I'm trying to avoid pregnancy,</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch18" name="fertility_goal" value="I want to track my health in general">
+                            <label for="ch18"> I want to track my health in general,</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch19" name="fertility_goal" value="I'm monitoring my PCOS treatment">
+                            <label for="ch19"> I'm monitoring my PCOS treatment.</label>
+                        </div>
+                    </div>
+                    <div class="checkbox-row">
+                        <div class="item-label"><span>7.</span> If you are trying to conceive; how long have you been trying?</div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch20" name="conceive_duration" value="Less than 6 months">
+                            <label for="ch20"> Less than 6 months</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch21" name="conceive_duration" value="6-12 months">
+                            <label for="ch21"> 6-12 months</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch22" name="conceive_duration" value="More than 12 months">
+                            <label for="ch22"> More than 12 months</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="ch23" name="conceive_duration" value="I'm not trying to conceive">
+                            <label for="ch23"> I'm not trying to conceive</label>
+                        </div>
+                    </div>
+                    <div class="information-text text-center margin-b-30">
+                        <p>Why are we asking? This information is important for us to process your test and give you the most accurate results. No worries,
+                            your data is secured and kept safe. You can read our <a href="https://www.miracare.com/privacy-policy/" target="_blank">Privacy Policy</a> for more information.</p>
+                    </div>
+                    <div class="btn-form text-center">
+                        <button type="submit" class="btn-custom btn-pink btn-md" id="step3_submit_btn">Continue</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="step4" class="lab-test-step-form-sec register-fertility-code-sec padd-b-60" style="display: none;">
+        <div class="small-container">
+            <div class="lab-sec-title step-heading-sec">
+                <h2>Register your Mira Panorama<br> Fertility Lab Test</h2>
+                <p>Patient Consent<br>
+                    1 of 2<br>
+                    You must read and accept it to continue</p>
+            </div>
+            <div class="register-lab-test-form">
+                <form>
+                    <div class="heading-3">
+                        <h3>Informed Consent For Testing</h3>
+                    </div>
+                    <div class="inner-step">
+                        <ul class="number-point-list">
+                            <li>
+                                Description. I have requested that MD Tox Laboratory d/b/a Innovative Health Diagnostics (“Laboratory”) perform the laboratory tests I selected while registering with Laboratory. Laboratory is certified to perform testing under the Clinical Laboratory Improvement Amendments of 1988 (“CLIA”) and applicable state law. Where required by state law, Laboratory will perform the test(s) only upon the order of an authorized practitioner.
+                            </li>
+                            <li>
+                                Explanation of Test Results. The result(s) of the laboratory test(s) that Laboratory performs will indicate as a value and an associated reference range, or inconclusive. If I have questions regarding the purpose, reliability, limitations, and risks and benefits of the test(s) Laboratory performs, I understand that I can contact cs@Innovativelab.com. I understand that while the testing offered by Laboratory may help diagnose certain conditions, the test results provided by Laboratory do not alone constitute medical care or treatment. After reviewing my test results, I should consult my usual healthcare provider or, as applicable, the practitioner who ordered the test.
+                            </li>
+                            <li>Consent to Self-Collection of My Test Sample. I hereby agree to collect my lab sample(s) following the instructions provided by Laboratory.</li>
+                            <li>
+                                Benefits and Risks. I recognize there are certain inherent risks and limitations associated with the tests Laboratory performs, including the risks of false positives and false negatives. The risk of a false positive result or false negative result may cause anxiety or distress resulting from inaccurate information, and accordingly, I understand that I should consult my usual healthcare provider after receiving my test result(s) and should not undertake any treatment measures prior to consulting my usual healthcare provide.
+                            </li>
+                        </ul>
+                        <div class="checkbox-row">
+                            <div class="form-group">
+                                <input type="checkbox" id="signing_informed_consent" name="signing_informed_consent" data-gtm-form-interact-field-id="1" value="1">
+                                <label class="font-20 signing_informed_consent" for="signing_informed_consent"><strong>By checking this box, I am signing this Informed Consent for Testing, acknowledging that:</strong></label>
+                            </div>
+                        </div>
+                        <ul class="number-point-list inner-bulet-pont">
+                            <li>I have received and read or had read to me information about the tests Laboratory performs, including the purposes and possible risks and lack of reliability of the results;</li>
+                            <li>I understand the information provided to me;</li>
+                            <li>I have all the information I want and need in order to agree to the Informed Consent for Testing.</li>
+                        </ul>
+                    </div>
+                    <div class="btn-form text-center">
+                        <button type="submit" class="btn-custom btn-pink btn-md" id="step4_submit_btn">Continue</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="step5" class="lab-test-step-form-sec register-fertility-code-sec padd-b-60" style="display: none;">
+        <div class="small-container">
+            <div class="lab-sec-title step-heading-sec">
+                <h2>Register your Mira Panorama<br> Fertility Lab Test</h2>
+                <p>Patient Consent<br>
+                    2 of 2<br>
+                    You must read and accept it to continue</p>
+            </div>
+            <div class="register-lab-test-form">
+                <form>
+                    <div class="heading-3">
+                        <h3>Informed Consent For Telemedicine</h3>
+                    </div>
+                    <div class="inner-step">
+                        <p>I may choose to receive care from a “Physician” through the use of telemedicine. Telemedicine uses technology to enable health care providers to provide safe, effective and convenient care to patients located at different locations.</p>
+                        <h5>Permitted Activities. Physician may perform the following services via telemedicine:</h5>
+                        <ul class="circle-point-list">
+                            <li>Patient examination and evaluation; </li>
+                            <li>Collection of patient’s medical history; </li>
+                            <li>Evaluating the patient’s need and/or desire for diagnostic and/or screening testing; </li>
+                            <li>Reviewing the results of the patient’s diagnostic and/or screening tests; </li>
+                            <li>Patient education.</li>
+                        </ul>
+                        <p>Physician does not provide emergency care via telemedicine. If you are experiencing a medical emergency, call 9-1-1 immediately. Benefits and Risks. The benefits of telemedicine include improved access to and more efficient medical care. However, as with any health care service, there are risks associated with the use of telemedicine. These risks include, but may not be limited to, insufficient information transmission (e.g., poor resolution of images) preventing appropriate medical decision making by the health care provider, failure of security protocols resulting in a breach of privacy of personal medical information, loss of patient information due to technical failures, a lack of access to complete medical records, and delays in medical evaluation and treatment due to deficiencies or failures of the equipment/technology.</>
+                            <p>Privacy and Security of Your Medical Information. Physician will protect the privacy and security of medical information in accordance with applicable laws. For example, Physician will share medical information with others only as permitted by HIPAA or applicable state law. Depending on the third party to whom the medical information will be disclosed, and the applicable law, Physician may be required to obtain consent before sharing the medical information. More information about the privacy and security of your medical information, as well as the right to access medical information, is contained in our Notice of Privacy Practices.</p>
+                            <p>Additionally, Physician adheres to industry and legal security and privacy standards in the delivery of telemedicine services, which may include encryption. While Physician adheres to industry and legal standards for health care privacy and security, there is still a risk that the medical information will be accessed by an unauthorized third part</p>
+                            <div class="checkbox-row">
+                                <div class="form-group chaking-box">
+                                    <input type="checkbox" id="consent_for_telemedicine" name="consent_for_telemedicine" value="1">
+                                    <label class="font-20 consent_for_telemedicine" for="consent_for_telemedicine"><strong>By checking this box, I am signing this Informed Consent for Telemedicine, and agree that:</strong></label>
+                                </div>
+                            </div>
+                            <ul class="number-point-list inner-bulet-pont">
+                                <li>I understand that Physician is responsible for determining whether or not the medical condition being diagnosed and/or treated is appropriate for a telemedicine encounter;</li>
+                                <li>I understand that there is a risk of technical failures during the telemedicine encounter beyond the control of Physician, and I agree to hold harmless Physician for delays in evaluation or for information lost due to such technical failures;</li>
+                                <li>The use of telemedicine is appropriate for the circumstances;</li>
+                                <li>I understand the risks and benefits of telemedicine as they have been explained to me;</li>
+                                <li>I have had my questions regarding telemedicine answered; and</li>
+                                <li>I consent to the use of telemedicine in my medical care.</li>
+                            </ul>
+                    </div>
+                    <div class="btn-form text-center">
+                        <button type="submit" class="btn-custom btn-pink btn-md"  id="step5_submit_btn">Continue</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="step6" class="lab-test-step-form-sec register-fertility-code-sec padd-b-60" style="display: none;">
+        <div class="small-container">
+            <div class="lab-sec-title step-heading-sec">
+                <h2>Register your Mira Panorama<br> Fertility Lab Test</h2>
+            </div>
+            <div class="register-lab-test-form text-center">
+                <form>
+                    <div class="heading-3 margin-b-20">
+                        <h3>You Completed Your Registration!</h3>
+                    </div>
+                    <div class="font-20">
+                        <p>All you have to do now is collect your sample and mail it to us.</p>
+                    </div>
+                    <div class="btn-form text-center">
+                        <a style="display:none;" href="https://miracare.com/assets/lab_test_instruction.mp4" target="_blank" class="btn-custom btn-pink btn-md" id="step6_submit_btn">See instructions</button>
+                        <a style="display:none;" href="/pages/lab-test-registration" class="btn-custom btn-pink btn-md" id="step6_submit_btn_failed">Try again</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="template_section_video_light_box mira_content_popup pre-popup-sec step-form-popup">
+    <div class="close_light_box closing_area"></div>
+    <div class="template_section_video_light_box_content">
+        <div class="video_holder">
+            <div class="pre-popup-container text-center">
+                <div class="close_light_box"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/x_close_btn.svg?v=1659040151"></div>
+                <div class="container">
+                    <h2>Enter the registration code found inside<br> of your kit</h2>
+                    <div class="registration-form-img-col">
+                        <img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/step_form_example.png?v=1687552728">
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section class="template_section_video_light_box">
+  <div class="close_light_box">CLOSE</div>
+  <div class="close_light_box closing_area"></div>
+  <div class="template_section_video_light_box_content">
+    <div class="video_holder">
+      <div class="mira_popup_video">
+        <iframe></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript" src="//test.miracare.com/cdn/shop/t/29/assets/jquery.min.js"></script>
+<script>
+  /* LAB Test script start */
+  jQuery(document).ready( function() {  
+      function isValidPhoneNumber(inputValue) {
+        var phonePattern = /^\(\d{3}\) \d{3}-\d{4}$/;
+        return phonePattern.test(inputValue);
+      }
+      var user_id = "{{ customer.id }}";
+  
+      jQuery("#step1_submit_btn").click(function(e) {
+          $(".register-code-form input").css("border-color", "#667789");
+          e.preventDefault();
+          var registration_code = jQuery.trim(jQuery('#registration_code').val());
+          var phone_number = jQuery.trim(jQuery('#phone_number').val());
+
+        
+          jQuery('p.error-message').remove();
+          if(registration_code == ''){
+              // console.log('empty');
+              $('#registration_code').focus();
+              $('#registration_code').css("border-color", "#ff0000");
+              $('<p class="error-message" >Please fill the registration code.</p>').insertAfter("#registration_code");
+          } else if(phone_number == ''){
+              $('#phone_number').focus();
+              $('#phone_number').css("border-color", "#ff0000");
+              $('<p class="error-message" >Please fill the phone number</p>').insertAfter("#phone_number");
+          } else if( !isValidPhoneNumber(phone_number) ){
+              $('#phone_number').focus();
+              $('#phone_number').css("border-color", "#ff0000");
+              $('<p class="error-message" >Enter a valid phone number.</p>').insertAfter("#phone_number");
+          }
+          else{
+              //console.log('value');
+              jQuery('.register-fertility-code-sec').hide();
+              jQuery('#step2').show();
+              jQuery('html,body').animate({ scrollTop: 0 }, 'slow');
+              
+              
+          }
+      });
+  
+      jQuery("#step2_submit_btn").click(function(e) {
+          e.preventDefault();
+        jQuery('p.error-message').remove();
+         if (jQuery('#patient_or_legal_guardian').is(':checked')) {
+              // console.log('value');
+              jQuery('.register-fertility-code-sec').hide();
+              jQuery('#step3').show();
+              jQuery('html,body').animate({ scrollTop: 0 }, 'slow');
+          }
+          else{
+              // console.log('empty');
+              $('#patient_or_legal_guardian').focus();
+              $('<p class="error-message" style="text-align: center;">Please checked the checkbox.</p>').insertBefore(this);
+          }
+      });
+
+      function isValidDOB(inputValue) {
+              var dobPattern = /^\d{4}-\d{2}-\d{2}$/;
+              return dobPattern.test(inputValue);            
+      }
+  
+      jQuery("#step3_submit_btn").click(function(e) {
+          e.preventDefault();
+          $(".register-code-form input").css("border", "none");
+            
+          var DOB = jQuery.trim(jQuery('#DOB').val());
+          jQuery('p.error-message').remove();
+          if(DOB == ''){
+              $('#DOB').focus();
+              $('#DOB').css("border", "1px solid #ff0000");
+              $('<p class="error-message">Please insert the DOB.</p>').insertAfter('#DOB');
+          } else {
+                jQuery('.register-fertility-code-sec').hide();
+                jQuery('#step4').show();
+                jQuery('html,body').animate({ scrollTop: 0 }, 'slow');
+            }
+      });
+  
+      jQuery("#step4_submit_btn").click(function(e) {
+          e.preventDefault();
+          jQuery('p.error-message').remove();
+         if (jQuery('#signing_informed_consent').is(':checked')) {
+              // console.log('value');
+              jQuery('.register-fertility-code-sec').hide()
+              jQuery('#step5').show();
+              jQuery('html,body').animate({ scrollTop: 0 }, 'slow');
+          }
+          else{
+              // console.log('empty');');
+              $('.signing_informed_consent').focus();
+              $('<p class="error-message">Please checked the checkbox.</p>').insertAfter('.signing_informed_consent');
+          }
+      });
+  
+      jQuery("#step5_submit_btn").click(function(e) {
+          e.preventDefault();
+          jQuery('p.error-message').remove();
+         if (jQuery('#consent_for_telemedicine').is(':checked')) {
+              // console.log('value');
+              jQuery('.register-fertility-code-sec').hide();
+              jQuery('#step6').show();
+           
+              
+              var registration_code = jQuery('#registration_code').val();
+              var phone_number = jQuery('#phone_number').val();
+              var patient_or_legal_guardian = jQuery('#patient_or_legal_guardian').val();
+              var DOB = jQuery('#DOB').val();
+              var whats_your_cycle = $("input:checkbox[name=whats_your_cycle]:checked").map(function(){
+                            return $(this).val();
+                        }).toArray();
+                  console.log(whats_your_cycle);
+           
+              var how_you_feel_during_cycle = $("input:checkbox[name=how_you_feel_during_cycle]:checked").map(function(){
+                            return $(this).val();
+                        }).toArray();
+                  console.log(how_you_feel_during_cycle);
+           
+              var how_tall_are_you = jQuery('#how_tall_are_you').val();
+              var whats_your_weight = jQuery('#whats_your_weight').val();
+  
+              var fertility_goal = $("input:checkbox[name=fertility_goal]:checked").map(function(){
+                            return $(this).val();
+                        }).toArray();
+                  console.log(fertility_goal);
+  
+              var conceive_duration = $("input:checkbox[name=conceive_duration]:checked").map(function(){
+                            return $(this).val();
+                        }).toArray();
+                  console.log(conceive_duration);
+  
+              var signing_informed_consent = jQuery('#signing_informed_consent').val();
+              var consent_for_telemedicine = jQuery('#consent_for_telemedicine').val();
+              
+               var settings_order_register = {
+                  "url": "https://labflow-staging.ihdlab.com/api/order/register",
+                  "method": "PUT",
+                  "headers": {
+                    "Content-Type": "application/json",
+                    "x-api-key": "RcPK14PDVM0kyWxUry0a"
+                  },
+                  "data": JSON.stringify({
+                    "registrationCode": registration_code,
+                     "patient": {
+                        "firstName": "{{ customer.first_name }}",
+                        "lastName": "{{ customer.last_name }}",
+                        "middleName": " ",
+                        "email": "{{ customer.email }}",
+                        "phone": phone_number,
+                        "dob": DOB,
+                        "gender": "Female",
+                        "address": {
+                          "name": {{ customer.default_address.name | json }},
+                          "street1": {{ customer.default_address.address1 | json }},
+                          "street2": {{ customer.default_address.address2 | json }},
+                          "city": {{ customer.default_address.city | json }},
+                          "state": {{ customer.default_address.province | json }},
+                          "postalCode": {{ customer.default_address.zip | json }},
+                          "country": {{ customer.default_address.country_code | json }}
+                        }
+                      }
+                  }),
+                };
+
+               console.log(settings_order_register);
+                $("#loader").show();
+               $.ajax(settings_order_register).done(function (response) {
+                  
+                  console.log("IHD Order register response---");
+                  console.log(response);
+                  if(response.success){
+                    var settings = {
+                        "url": "https://www.miracare.com/wp-json/api/lab-test-api/registration",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                          "Content-Type": "application/json"
+                        },
+                        "data": JSON.stringify({
+                          "user_id": user_id,
+                          "registration_code": registration_code,
+                          "i_am_patient": patient_or_legal_guardian,
+                          "dob": DOB,
+                          "whats_your_cycle": whats_your_cycle,
+                          "how_you_feel_during_cycle": how_you_feel_during_cycle,
+                          "height": how_tall_are_you,
+                          "weight": whats_your_weight,
+                          "fertility_goal": fertility_goal,
+                          "conceive_duration": conceive_duration,
+                          "consent_for_testing": signing_informed_consent,
+                          "consent_for_telemedicine": consent_for_telemedicine
+                        }),
+                      };
+                      
+                      $.ajax(settings).done(function (response) {
+                        //console.log("Mira Database entry response");
+                        console.log(response);
+                        $("#step6_submit_btn").show();
+                        $("#loader").hide();
+                      });
+                  }
+                }).fail(function(err) {
+                  //alert("Something went wrong. Please try again later!");
+                 $("#step6 .font-20").hide();
+                  $("#step6 h3").text("Invalid registration code. Please check your registration code and try again.");
+                  $("#step6 h3").css({'color':'red', 'font-family':'Gibson-Light'});
+                  $("#step6_submit_btn_failed").show();
+                  console.log(err);
+                  $("#loader").hide();
+                });
+                $('html,body').animate({ scrollTop: 0 }, 'slow');
+  
+          }
+          else{
+              // console.log('empty');');
+              $('.consent_for_telemedicine').focus();
+              $('<p class="error-message">Please checked the checkbox.</p>').insertAfter('.consent_for_telemedicine');
+          }
+      });
+
+      // Used to format DOB
+      function dobFormatter() {
+        jQuery('#DOB').on('input', function() {
+          var input = $(this).val().replace(/[^\d]/g, '');
+      
+          // Restrict the input to 8 digits
+          if (input.length > 8) {
+            input = input.substring(0, 8);
+          }
+          if (input.length >= 4 && input.length < 6) {
+            // Format as YYYY-MM-DD
+            input = input.replace(/(\d{4})(\d{2})?/, "$1-$2");
+          }
+          if (input.length >= 6) {
+            // Format as YYYY-MM-DD
+            input = input.replace(/(\d{4})(\d{2})?(\d{2})?/, "$1-$2-$3");
+          }
+      
+          jQuery(this).val(input);
+        });
+      
+      }
+      jQuery(dobFormatter);
+
+
+      // Used to format phone number
+      function phoneFormatter() {
+        jQuery('#phone_number').on('input', function() {
+          var number = $(this).val().replace(/[^\d]/g, '');
+      
+          // Restrict the input to 10 digits
+          if (number.length > 10) {
+            number = number.substring(0, 10);
+          }
+      
+          if (number.length == 7) {
+            number = number.replace(/(\d{3})(\d{4})/, "$1-$2");
+          } else if (number.length == 10) {
+            number = number.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+          }
+      
+          jQuery(this).val(number);
+        });
+      
+        jQuery('#phone_number').on('keydown', function(e) {
+          if (e.keyCode === 8 && jQuery(this).val().length === 10) {
+            e.preventDefault();
+          }
+        });
+      }
+    
+      jQuery(phoneFormatter);
+
+      function formatPhoneNumber(inputNumber) {
+          // Remove all non-digit characters from the input number
+          var cleanedNumber = inputNumber.replace(/\D/g, '');
+      
+          // Check if the number starts with "+1", and remove it
+          if (cleanedNumber.length > 10 && cleanedNumber.startsWith('1')) {
+              cleanedNumber = cleanedNumber.slice(1);
+          }
+      
+          // Apply a regular expression to format the cleaned number
+          var formattedNumber = cleanedNumber.replace(/^(\d{3})(\d{3})(\d{4})$/, "($1) $2-$3");
+      
+          return formattedNumber;
+      }
+    
+      var phone_number = jQuery('#phone_number').val();
+      console.log('customer.phone ', phone_number);
+      jQuery('#phone_number').val(formatPhoneNumber(phone_number));
+
+      jQuery('input[name="whats_your_cycle"]').on('change', function() {
+        jQuery('input[name="whats_your_cycle"]').not(this).prop('checked', false);
+      });
+
+      jQuery('input[name="fertility_goal"]').on('change', function() {
+        jQuery('input[name="fertility_goal"]').not(this).prop('checked', false);
+      });
+
+      jQuery('input[name="conceive_duration"]').on('change', function() {
+        jQuery('input[name="conceive_duration"]').not(this).prop('checked', false);
+      });
+  });
+  /* LAB Test script ended */
+</script>
+
+{% else %}
+
+<script>
+  window.location.href = "/account/login?return_url=/pages/lab-test";
+</script>
+
+{% endif %}
