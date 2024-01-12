@@ -56,170 +56,391 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-    
     <div class="container">
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
-        {% render 'product-media-gallery', variant_images: variant_images %}
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
+            {% render 'product-media-gallery', variant_images: variant_images %}
+          </div>
+        </div>
+
+        <!--
+          <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
+        -->
+        {% if product.handle == 'panorama-fertility-lab-test' %}
+          <div class="col-lg-6 new-custom-product-detail">
+              <product-info
+                id="ProductInfo-{{ section.id }}"
+                data-section="{{ section.id }}"
+                data-url="{{ product.url }}"
+                class="product-info-box product__info-containerx{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
+              >
+                {%- assign product_form_id = 'product-form-' | append: section.id -%}
+        
+                {%- for block in section.blocks -%}
+                  {%- case block.type -%}
+                    {%- when '@app' -%}
+                      {% render block %}
+                    {%- when 'text' -%}
+                      
+                    {%- when 'title' -%}
+                        <div class="custom-pro-title-section">
+                        <h1>{{ product.title | escape }}</h1>
+                        <div class="include-wat">{{product.metafields.product_fields.sub_title}}</div>
+                        {% include 'frontrow-quant-widget' %}
+                        {% if product.handle == 'panorama-fertility-lab-test' %}
+                          <p class="panorama-disclaimer">*Mira Panorama Lab Test is not available in the state of New York (NY)</p>
+                        {%- endif -%} 
+                        </div>
+                    
+                    
+              
+                      {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+                        <div class="product__tax caption rte">
+                          {%- if shop.taxes_included -%}
+                            {{ 'products.product.include_taxes' | t }}
+                          {%- endif -%}
+                          {%- if shop.shipping_policy.body != blank -%}
+                            {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                      
+                    {%- when 'inventory' -%}
+                      <p
+                        class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
+                        {{ block.shopify_attributes }}
+                        id="Inventory-{{ section.id }}"
+                        role="status"
+                      >
+                        {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
+                          {%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}
+                            {%- if product.selected_or_first_available_variant.inventory_quantity <= block.settings.inventory_threshold -%}
+                              <svg width="15" height="15" aria-hidden="true">
+                                <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(238,148,65, 0.3)"/>
+                                <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(238,148,65)"/>
+                              </svg>
+                              {%- if block.settings.show_inventory_quantity -%}
+                                {{- 'products.product.inventory_low_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
+                              {%- else -%}
+                                {{- 'products.product.inventory_low_stock' | t -}}
+                              {%- endif -%}
+                            {%- else -%}
+                              <svg width="15" height="15" aria-hidden="true">
+                                <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)"/>
+                                <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
+                              </svg>
+                              {%- if block.settings.show_inventory_quantity -%}
+                                {{- 'products.product.inventory_in_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
+                              {%- else -%}
+                                  {{- 'products.product.inventory_in_stock' | t -}}
+                              {%- endif -%}
+                            {%- endif -%}
+                          {%- else -%}
+                            {%- if product.selected_or_first_available_variant.inventory_policy == 'continue' -%}
+                              <svg width="15" height="15" aria-hidden="true">
+                                <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)"/>
+                                <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
+                              </svg>
+                              {{- 'products.product.inventory_out_of_stock_continue_selling' | t -}}
+                            {%- else -%}
+                              <svg width="15" height="15" aria-hidden="true">
+                                <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(200,200,200, 0.3)"/>
+                                <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(200,200,200)"/>
+                              </svg>
+                              {{- 'products.product.inventory_out_of_stock' | t -}}
+                            {%- endif -%}
+                          {%- endif -%}
+                        {%- endif -%}
+                      </p>
+                    
+                    {%- when 'variant_picker' -%}
+                    <div class="custom_pro_variant">
+                      {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+                    </div>
+                   
+                    {%- when 'price' -%}
+                     <div class="custom_pro_yotpo">
+                       {% render 'yotpo-subs-product-page-widget' %}
+                     </div>
+                    <div class="price-and-button custom_pro_price-btn">
+                      
+                      <div class="custom-buy-button">
+        
+                      {% if product.handle == 'xyz' %}
+                        <a href="https://app.monstercampaigns.com/c/lc6objz5jjg4mbkugvkf/" target="_blank" rel="noopener noreferrer" class="btn-custom btn-pink">Join the waiting list</a>
+                      {% else %}
+                        {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+                      {% endif %}
+                    
+                      
+                      
+                      </div> 
+                    </div>
+                    <div data-rebuy-id="128212" data-rebuy-shopify-product-ids="{{ product.id }}"></div>
+        
+                                  
+                    <!-- <div style="" class="low-price-sec sezzle-widget">
+                    </div> -->
+        
+                      <div {{ block.shopify_attributes }}>
+                        {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
+                        {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
+                          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                          {{ form | payment_terms }}
+                        {%- endform -%}
+                      </div>
+        
+                      {%- when 'description' -%}
+                      {%- if product.description != blank -%}
+                        
+        
+                        <div id="accordion-2" class="accordion accordion-sec">
+                          <div class="card ">
+                             <div class="card-header collapsed" data-toggle="collapse" href="#p1">
+                                <a href="javascript:void(0)" class="card-title">Description</a>
+                             </div>
+                             <div id="p1" class="card-body collapse" data-parent="#accordion" >
+                                <div class="accordion-link-col description">
+                                   {{ product.description }}
+                                </div>
+                             </div>
+                          </div>
+                          <div class="card" style="display:none;">
+                             <div class="card-header collapsed" data-toggle="collapse" href="#p2">
+                                <a href="javascript:void(0)" class="card-title">Product Features</a>
+                             </div>
+                             <div id="p2" class="card-body collapse" data-parent="#accordion" >
+                                <div class="accordion-link-col">
+                                    <ul>
+                                    <li>Predict & confirm ovulation</li>
+                                    <li>See your 6-day fertile window</li>
+                                    <li>Get real-time numeric hormone scores daily</li>
+                                    <li>99% lab-grade accuracy—without going to the lab</li>
+                                    <li>24/7 customer support</li>
+                                    </ul>
+                                </div>
+                             </div>
+                          </div>
+                          <div class="card" style="display:none;">
+                             <div class="card-header collapsed" data-toggle="collapse" href="#p3">
+                                <a href="javascript:void(0)" class="card-title">What’s Inside</a>
+                             </div>
+                             <div id="p3" class="card-body collapse" data-parent="#accordion" >
+                                <div class="accordion-link-col">
+                                   <p class="description">Hi, you’re looking at the world’s“mini hormone lab. Powered by AI, The Mira Fertility Monitor is designed to track your hormones and give you real-time, lab-grade results — so you can reach your goals with confidence.</p>
+                                </div>
+                             </div>
+                          </div>
+                          <div class="card" style="display:none;">
+                             <div class="card-header collapsed" data-toggle="collapse" href="#p4">
+                                <a href="javascript:void(0)" class="card-title">Delivery, returns & contact</a>
+                             </div>
+                             <div id="p4" class="card-body collapse" data-parent="#accordion" >
+                                <div class="accordion-link-col">
+                                   <p class="description">Hi, you’re looking at the world’s“mini hormone lab. Powered by AI, The Mira Fertility Monitor is designed to track your hormones and give you real-time, lab-grade results — so you can reach your goals with confidence.</p>
+                                </div>
+                             </div>
+                          </div>
+                        </div>
+        
+                        <div class="free-Shipping-text">Free Shipping • FSA / HSA accepted</div>
+        
+                                  
+        
+                      {%- endif -%}
+        
+                                  
+                  {%- endcase -%}
+                  
+                {%- endfor -%}
+                <a href="{{ product.url }}" class="link product__view-details animate-arrow">
+                  {{ 'products.product.view_full_details' | t }}
+                  {% render 'icon-arrow' %}
+                </a>
+              </product-info>
+            </div>
+          {% else %}
+
+            <div class="col-lg-6">
+                <product-info
+                  id="ProductInfo-{{ section.id }}"
+                  data-section="{{ section.id }}"
+                  data-url="{{ product.url }}"
+                  class="product-info-box product__info-containerx{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
+                >
+                  {%- assign product_form_id = 'product-form-' | append: section.id -%}
+      
+                  {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                      {%- when '@app' -%}
+                        {% render block %}
+                      {%- when 'text' -%}
+                      {%- when 'title' -%}
+                        <div class="custom-pro-title-section">
+                          <h1>{{ product.title | escape }}</h1>
+                          <div class="include-wat">{{ product.metafields.product_fields.sub_title }}</div>
+                          <div class="review-box yotpo bottomLine" data-product-id="{{ product.id }}"></div>
+                          {% include 'frontrow-quant-widget' %}
+                          {%- if product.price != blank -%}
+                            <div
+                              class="custom-mobile-price pb-3 mobile-price"
+                              id="price-{{ section.id }}"
+                              role="status"
+                              {{ block.shopify_attributes }}
+                            >
+                              {%- render 'price',
+                                product: product,
+                                use_variant: true,
+                                show_badges: true,
+                                price_class: 'price--large'
+                              -%}
+                            </div>
+                          {%- endif -%}
+                        </div>
+      
+                      {%- when 'description' -%}
+                        {%- if product.description != blank -%}
+                          <div class="pro-description custom-pro-des">
+                            <div class="full-text show-hide-desc">{{ product.description }}</div>
+                          </div>
+                        {%- endif -%}
+      
+                        {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+                          <div class="product__tax caption rte">
+                            {%- if shop.taxes_included -%}
+                              {{ 'products.product.include_taxes' | t }}
+                            {%- endif -%}
+                            {%- if shop.shipping_policy.body != blank -%}
+                              {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                            {%- endif -%}
+                          </div>
+                        {%- endif -%}
+      
+                      {%- when 'inventory' -%}
+                        <p
+                          class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
+                          {{ block.shopify_attributes }}
+                          id="Inventory-{{ section.id }}"
+                          role="status"
+                        >
+                          {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
+                            {%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}
+                              {%- if product.selected_or_first_available_variant.inventory_quantity
+                                  <= block.settings.inventory_threshold
+                              -%}
+                                <svg width="15" height="15" aria-hidden="true">
+                                  <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(238,148,65, 0.3)"/>
+                                  <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(238,148,65)"/>
+                                </svg>
+                                {%- if block.settings.show_inventory_quantity -%}
+                                  {{-
+                                    'products.product.inventory_low_stock_show_count'
+                                    | t: quantity: product.selected_or_first_available_variant.inventory_quantity
+                                  -}}
+                                {%- else -%}
+                                  {{- 'products.product.inventory_low_stock' | t -}}
+                                {%- endif -%}
+                              {%- else -%}
+                                <svg width="15" height="15" aria-hidden="true">
+                                  <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)"/>
+                                  <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
+                                </svg>
+                                {%- if block.settings.show_inventory_quantity -%}
+                                  {{-
+                                    'products.product.inventory_in_stock_show_count'
+                                    | t: quantity: product.selected_or_first_available_variant.inventory_quantity
+                                  -}}
+                                {%- else -%}
+                                  {{- 'products.product.inventory_in_stock' | t -}}
+                                {%- endif -%}
+                              {%- endif -%}
+                            {%- else -%}
+                              {%- if product.selected_or_first_available_variant.inventory_policy == 'continue' -%}
+                                <svg width="15" height="15" aria-hidden="true">
+                                  <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)"/>
+                                  <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
+                                </svg>
+                                {{- 'products.product.inventory_out_of_stock_continue_selling' | t -}}
+                              {%- else -%}
+                                <svg width="15" height="15" aria-hidden="true">
+                                  <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(200,200,200, 0.3)"/>
+                                  <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(200,200,200)"/>
+                                </svg>
+                                {{- 'products.product.inventory_out_of_stock' | t -}}
+                              {%- endif -%}
+                            {%- endif -%}
+                          {%- endif -%}
+                        </p>
+      
+                      {%- when 'variant_picker' -%}
+                        <div class="custom_pro_variant">
+                          {% render 'product-variant-picker',
+                            product: product,
+                            block: block,
+                            product_form_id: product_form_id
+                          %}
+                        </div>
+      
+                      {%- when 'price' -%}
+                        <div class="custom_pro_yotpo">
+                          {% render 'yotpo-subs-product-page-widget' %}
+                        </div>
+                        <div class="price-and-button custom_pro_price-btn">
+                          <div
+                            class="no-js-hidden custom-price-section desktop-price"
+                            id="price-{{ section.id }}"
+                            role="status"
+                            {{ block.shopify_attributes }}
+                          >
+                            {%- render 'price',
+                              product: product,
+                              use_variant: true,
+                              show_badges: true,
+                              price_class: 'price--large'
+                            -%}
+                          </div>
+                          <div class="custom-buy-button">
+                            {% if product.handle == 'xyz' %}
+                              <a
+                                href="https://app.monstercampaigns.com/c/lc6objz5jjg4mbkugvkf/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn-custom btn-pink"
+                                >Join the waiting list</a
+                              >
+                            {% else %}
+                              {%- render 'buy-buttons',
+                                block: block,
+                                product: product,
+                                product_form_id: product_form_id,
+                                section_id: section.id,
+                                show_pickup_availability: true
+                              -%}
+                            {% endif %}
+                          </div>
+                        </div>
+                        <div {{ block.shopify_attributes }}>
+                          {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
+                          {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
+                            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                            {{ form | payment_terms }}
+                          {%- endform -%}
+                        </div>
+                    {%- endcase -%}
+                  {%- endfor -%}
+                  <a href="{{ product.url }}" class="link product__view-details animate-arrow">
+                    {{ 'products.product.view_full_details' | t }}
+                    {% render 'icon-arrow' %}
+                  </a>
+                </product-info>
+              </div>                  
+          
+          {% endif %}
       </div>
     </div>
-    
-<!--     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}"> -->
-    <div class="col-lg-6">
-      <product-info
-        id="ProductInfo-{{ section.id }}"
-        data-section="{{ section.id }}"
-        data-url="{{ product.url }}"
-        class="product-info-box product__info-containerx{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
-      >
-        {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
-        {%- for block in section.blocks -%}
-          {%- case block.type -%}
-            {%- when '@app' -%}
-              {% render block %}
-            {%- when 'text' -%}
-              
-            {%- when 'title' -%}
-                <div class="custom-pro-title-section">
-                <h1>{{ product.title | escape }}</h1>
-                <div class="include-wat">{{product.metafields.product_fields.sub_title}}</div>
-                <div class="review-box yotpo bottomLine" data-product-id="{{ product.id }}"></div>
-                {% include 'frontrow-quant-widget' %}
-                {%- if product.price != blank -%}
-                  <div class="custom-mobile-price pb-3 mobile-price" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                      {%- render 'price',
-                        product: product,
-                        use_variant: true,
-                        show_badges: true,
-                        price_class: 'price--large'
-                      -%}
-                    </div>
-                  {%- endif -%}
-                </div>
-            
-            {%- when 'description' -%}
-              {%- if product.description != blank -%}
-                <div class="pro-description custom-pro-des">
-                  <div class="full-text show-hide-desc">{{ product.description }}</div>
-                </div>
-              {%- endif -%}
-      
-              {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
-                <div class="product__tax caption rte">
-                  {%- if shop.taxes_included -%}
-                    {{ 'products.product.include_taxes' | t }}
-                  {%- endif -%}
-                  {%- if shop.shipping_policy.body != blank -%}
-                    {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                  {%- endif -%}
-                </div>
-              {%- endif -%}
-              
-            {%- when 'inventory' -%}
-              <p
-                class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
-                {{ block.shopify_attributes }}
-                id="Inventory-{{ section.id }}"
-                role="status"
-              >
-                {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
-                  {%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}
-                    {%- if product.selected_or_first_available_variant.inventory_quantity <= block.settings.inventory_threshold -%}
-                      <svg width="15" height="15" aria-hidden="true">
-                        <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(238,148,65, 0.3)"/>
-                        <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(238,148,65)"/>
-                      </svg>
-                      {%- if block.settings.show_inventory_quantity -%}
-                        {{- 'products.product.inventory_low_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
-                      {%- else -%}
-                        {{- 'products.product.inventory_low_stock' | t -}}
-                      {%- endif -%}
-                    {%- else -%}
-                      <svg width="15" height="15" aria-hidden="true">
-                        <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)"/>
-                        <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
-                      </svg>
-                      {%- if block.settings.show_inventory_quantity -%}
-                        {{- 'products.product.inventory_in_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
-                      {%- else -%}
-                          {{- 'products.product.inventory_in_stock' | t -}}
-                      {%- endif -%}
-                    {%- endif -%}
-                  {%- else -%}
-                    {%- if product.selected_or_first_available_variant.inventory_policy == 'continue' -%}
-                      <svg width="15" height="15" aria-hidden="true">
-                        <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)"/>
-                        <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
-                      </svg>
-                      {{- 'products.product.inventory_out_of_stock_continue_selling' | t -}}
-                    {%- else -%}
-                      <svg width="15" height="15" aria-hidden="true">
-                        <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(200,200,200, 0.3)"/>
-                        <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(200,200,200)"/>
-                      </svg>
-                      {{- 'products.product.inventory_out_of_stock' | t -}}
-                    {%- endif -%}
-                  {%- endif -%}
-                {%- endif -%}
-              </p>
-            
-            {%- when 'variant_picker' -%}
-            <div class="custom_pro_variant">
-              {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-            </div>
-           
-            {%- when 'price' -%}
-             <div class="custom_pro_yotpo">
-               {% render 'yotpo-subs-product-page-widget' %}
-             </div>
-            <div class="price-and-button custom_pro_price-btn">
-              <div class="no-js-hidden custom-price-section desktop-price" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                {%- render 'price',
-                  product: product,
-                  use_variant: true,
-                  show_badges: true,
-                  price_class: 'price--large'
-                -%}
-                </div>
-              <div class="custom-buy-button">
-
-              {% if product.handle == 'xyz' %}
-                <a href="https://app.monstercampaigns.com/c/lc6objz5jjg4mbkugvkf/" target="_blank" rel="noopener noreferrer" class="btn-custom btn-pink">Join the waiting list</a>
-              {% else %}
-                {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
-              {% endif %}
-            
-              
-              
-              </div> 
-            </div>
-            <!-- <div style="" class="low-price-sec sezzle-widget">
-            </div> -->
-
-              <div {{ block.shopify_attributes }}>
-                {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
-                {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
-                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                  {{ form | payment_terms }}
-                {%- endform -%}
-              </div>
-
-                          
-          {%- endcase -%}
-          
-        {%- endfor -%}
-        <a href="{{ product.url }}" class="link product__view-details animate-arrow">
-          {{ 'products.product.view_full_details' | t }}
-          {% render 'icon-arrow' %}
-        </a>
-      </product-info>
-    </div> 
-    </div> 
-    </div>
-
-<!-- closed product__info-wrapper -->
+    <!-- closed product__info-wrapper -->
     {%- if section.settings.media_position == 'right' -%}
       {% comment %} Duplicate gallery to display after product content on tablet/desktop breakpoint {% endcomment %}
       <div class="grid__item product__media-wrapper small-hide">
@@ -228,7 +449,7 @@
     {%- endif -%}
   </div>
 
-  {% render 'product-media-modal' variant_images: variant_images %}
+  {% render 'product-media-modal', variant_images: variant_images %}
 
   {% assign popups = section.blocks | where: 'type', 'popup' %}
   {%- for block in popups -%}
@@ -297,32 +518,32 @@
 
   <!-- Klaviyo code to track visitors and their activity START -->
   <script type="text/javascript">
-  var _learnq = _learnq || [];
-  
-  var item = {
-    Name: {{ product.title|json }},
-    ProductID: {{ product.id|json }},
-    Categories: {{ product.collections|map:'title'|json }},
-    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
-    URL: "{{ shop.secure_url }}{{ product.url }}",
-    Brand: {{ product.vendor|json }},
-    Price: {{ product.price|money|json }},
-    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
-  };
-  
-  _learnq.push(['track', 'Viewed Product', item]);
-  _learnq.push(['trackViewedItem', {
-    Title: [item.Name],
-    ItemId: item.ProductID,
-    Categories: item.Categories,
-    ImageUrl: item.ImageURL,
-    Url: item.URL,
-    Metadata: {
-      Brand: item.Brand,
-      Price: item.Price,
-      CompareAtPrice: item.CompareAtPrice
-    }
-  }]);
+    var _learnq = _learnq || [];
+
+    var item = {
+      Name: {{ product.title|json }},
+      ProductID: {{ product.id|json }},
+      Categories: {{ product.collections|map:'title'|json }},
+      ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+      URL: "{{ shop.secure_url }}{{ product.url }}",
+      Brand: {{ product.vendor|json }},
+      Price: {{ product.price|money|json }},
+      CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+    };
+
+    _learnq.push(['track', 'Viewed Product', item]);
+    _learnq.push(['trackViewedItem', {
+      Title: [item.Name],
+      ItemId: item.ProductID,
+      Categories: item.Categories,
+      ImageUrl: item.ImageURL,
+      Url: item.URL,
+      Metadata: {
+        Brand: item.Brand,
+        Price: item.Price,
+        CompareAtPrice: item.CompareAtPrice
+      }
+    }]);
   </script>
   <script type="text/javascript">
     var _learnq = _learnq || [];
@@ -336,12 +557,37 @@
   </script>
   <!-- Klaviyo code to track visitors and their activity END -->
 
-  <!-- GA4 product view Datalayer START --> 
+  <!-- GA4 product view Datalayer START -->
   <script type="text/javascript">
-  dataLayer.push({
-    'event': 'ga4_view_item',
-    'ecommerce': {
-        'items': [
+    dataLayer.push({
+      'event': 'ga4_view_item',
+      'ecommerce': {
+          'items': [
+                      {
+                       'item_name': {{ product.title|json }},
+                       'item_id': "{{ product.id|json }}",
+                       'price': "{{ product.price | money_without_currency | replace:',','.'}}",
+                       'currency': "{{ shop.currency }}",
+                       'discount': "",
+                       'item_category': {{ product.type|json }},
+                       'quantity': "1"
+                      }
+                     ]
+      }
+    });
+  </script>
+  <!-- GA4 product view Datalayer END -->
+
+  <script>
+    jQuery(document).ready(function($){
+        $(".add-to-cart-btn").click(function(){
+          pintrk('track', 'addtocart');
+
+          // GA4 product Add-to-cart Datalayer
+          dataLayer.push({
+            'event': 'ga4_add_to_cart',
+            'ecommerce': {
+                'items': [
                     {
                      'item_name': {{ product.title|json }},
                      'item_id': "{{ product.id|json }}",
@@ -351,46 +597,17 @@
                      'item_category': {{ product.type|json }},
                      'quantity': "1"
                     }
-                   ]
-    }
-  });
-  </script>
-  <!-- GA4 product view Datalayer END -->
-
-  <script>
-  jQuery(document).ready(function($){
-      $(".add-to-cart-btn").click(function(){
-        pintrk('track', 'addtocart');
-        
-        // GA4 product Add-to-cart Datalayer
-        dataLayer.push({
-          'event': 'ga4_add_to_cart',
-          'ecommerce': {
-              'items': [
-                  {
-                   'item_name': {{ product.title|json }},
-                   'item_id': "{{ product.id|json }}",
-                   'price': "{{ product.price | money_without_currency | replace:',','.'}}",
-                   'currency': "{{ shop.currency }}",
-                   'discount': "",
-                   'item_category': {{ product.type|json }},
-                   'quantity': "1"
-                  }
-               ]
-            }
-        });
+                 ]
+              }
+          });
+      });
     });
-  });
   </script>
 
   {% comment %}
-  <!-- Sezzle widget script -->
-  <script type="text/javascript" src="{{ 'sezzle-price-widget.js' | asset_url }}"></script>
+    <!-- Sezzle widget script -->
+    <script type="text/javascript" src="{{ 'sezzle-price-widget.js' | asset_url }}"></script>
   {% endcomment %}
-
-                          
-
-  
 
   {%- liquid
     if product.selected_or_first_available_variant.featured_media
