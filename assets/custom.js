@@ -390,6 +390,27 @@ function startMobileCarousel($){
 
     }
   });
+  $('#panorama-test-steps-slider').owlCarousel({
+    loop:true,
+    margin:0,
+    nav:false,
+    dots:true,
+    autoplay:false,
+    autoplaySpeed:1000,
+    responsive:{
+      0:{
+        items:1, 
+        autoHeight:true
+      },
+      767:{
+        items:1
+      },
+      1024:{
+        items:3
+      }
+
+    }
+  });
 }
 function stopCarousel() {
   var owl = $('.owl-carousel');
