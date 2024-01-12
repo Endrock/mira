@@ -1,3 +1,129 @@
+/*****************Font**Sec******************/
+/* .mira-max-kit p, .mira-max-kit h1, .mira-max-kit h2, .mira-max-kit h3, .mira-max-kit h4, .mira-max-kit h5, .mira-max-kit h6, .mira-max-kit span, .mira-max-kit strong, .mira-max-kit a, .mira-max-kit li, .mira-max-kit div, .mira-max-kit select, .mira-max-kit input, .mira-max-kit textarea, .mira-max-kit button, .mira-max-kit fieldset, .mira-max-kit legend, */
+.bf-bundle p, .bf-bundle h1, .bf-bundle h2, .bf-bundle h3, .bf-bundle h4, .bf-bundle h5, .bf-bundle h6, .bf-bundle span, .bf-bundle strong, .bf-bundle a, .bf-bundle li, .bf-bundle div, .bf-bundle select, .bf-bundle input, .bf-bundle textarea, .bf-bundle button, .bf-bundle  fieldset, .bf-bundle legend,
+.product-panorama p, .product-panorama h1, .product-panorama h2, .product-panorama h3, .product-panorama h4, .product-panorama h5, .product-panorama h6, .product-panorama span, .product-panorama strong, .product-panorama a, .product-panorama li, .product-panorama div, .product-panorama select, .product-panorama input, .product-panorama textarea, .product-panorama button, .product-panorama fieldset, .product-panorama legend
+{
+  font-family: AeonikPro-Regular !important;
+}
+
+
+/************Font***Sec*****************/
+input:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+button:focus { outline: none; }
+input, textarea {
+    padding: 10px 18px;
+}
+
+.product-panorama .product-info-sec {
+	padding: 70px 0;
+	background: #FFF;
+}
+
+.product-panorama .product-info-sec p, .product-panorama .product-info-sec h1, .product-panorama .product-info-sec h2, .product-panorama .product-info-sec h3, .product-panorama .product-info-sec h4, .product-panorama .product-info-sec h5, .product-panorama .product-info-sec h6, 
+.product-panorama .product-info-sec span, .product-panorama .product-info-sec strong, .product-panorama .product-info-sec a, .product-panorama .product-info-sec li, 
+.product-panorama .product-info-sec div, .product-panorama .product-info-sec select, .product-panorama .product-info-sec input, .product-panorama .product-info-sec textarea, .product-panorama .product-info-sec button, .product-panorama .product-info-sec fieldset, .product-panorama .product-info-sec legend
+{
+  font-family: AeonikPro-Regular !important;
+}
+
+body .product-info-sec .custom_pro_variant .product-form__input input[type="radio"]:checked + label {
+	border: 2px solid #3FC15F !important;
+}
+
+.new-custom-product-detail h1 {
+	font-size: 40px;
+}
+
+.new-custom-product-detail .product-form__input {
+	max-width: 100% !important;
+}
+
+.new-custom-product-detail .product-form__input select {
+	width: 100% !important;
+	max-width: 100% !important;
+	border-radius: 8px;
+	box-shadow: none !important;
+	border: 1px solid rgba(102, 119, 137, 0.30);
+	text-align: left;
+	padding-left: 15px;
+  background-position: 96% 23px;
+}
+
+
+
+.new-custom-product-detail .variant-label {
+	text-transform: uppercase;
+}
+
+
+.new-custom-product-detail .accordion-sec
+{
+  border-top-color:#D1D6DC;
+  margin-bottom:15px;
+}
+
+.new-custom-product-detail .accordion-sec .card-header.collapsed {
+	border-bottom-color: #D1D6DC;
+}
+
+.new-custom-product-detail .accordion-sec .card-header::before
+{
+  opacity:0.6;
+  background-size: 15px;
+}
+.new-custom-product-detail .accordion-sec .card-header {
+	padding: 10px 40px 10px 0;
+	font-size: 16px;
+}
+.new-custom-product-detail .accordion-sec .card-header a {
+	font-size: 16px;
+}
+
+
+.new-custom-product-detail .accordion-sec .description {
+	font-size: 19px;
+}
+
+.new-custom-product-detail .accordion-sec .accordion-link-col ul li {
+  margin-left:15px;
+}
+
+.free-Shipping-text {
+  font-size: 14px;
+}
+
+.new-custom-product-detail .product-info-box .price-and-button {
+	border-bottom: 0px solid #B6C2CD;
+	padding-bottom: 0;
+	margin-bottom: 0 !important;
+}
+
+.new-custom-product-detail .custom-buy-button .product-form__buttons
+{
+  max-width: 100%;
+}
+
+.new-custom-product-detail .custom-buy-button .btn-custom {
+	width: 100% !important;
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  background:#3FC15F !important;
+}
+.new-custom-product-detail .custom-buy-button .btn-custom * {
+  margin:0px !important;
+  font-size:19px;
+  flex:inherit;
+  width:auto;
+  color:#fff !important;
+  
+}
+
+
 .top-head-left .logo img {
     filter: brightness(0);
 }
@@ -105,7 +231,7 @@ section.bf-bundle-header-banner {
     top: 0;
     height: 100%;
     width: 425px;
-    background: url(https://cdn.shopify.com/s/files/1/0777/1006/5971/files/top-left.png) center left no-repeat;
+    background: url(https://cdn.shopify.com/s/files/1/0777/1006/5971/files/top-left.png?v=1704877832) center left no-repeat;
   background-size:402px !important;
 }
 
@@ -324,6 +450,7 @@ section.bf-bundle-header-banner p {
 .bf-dark-yellow-bg {
     background: #FFF9E6;
 }
+
 .bf-light-grey-bg {
     background: #F8F8F8;
 }
@@ -712,12 +839,12 @@ section.bf-bundle-header-banner p {
 	bottom: -73px;
 }
 
-.customers-product-sec .owl-controls .owl-dots, .doctors-say-mira-sec .owl-controls .owl-dots {
+.customers-product-sec .owl-controls .owl-dots, .doctors-say-mira-sec .owl-controls .owl-dots, .customer-storie .owl-controls .owl-dots, .doctors-about-mira .owl-controls .owl-dots {
     display: none !important;
 }
 
 
-.customers-product-sec .owl-nav .owl-prev, .doctors-say-mira-sec .owl-nav .owl-prev {
+.customers-product-sec .owl-nav .owl-prev, .doctors-say-mira-sec .owl-nav .owl-prev{
     left: 0px;
 
 }
@@ -896,11 +1023,658 @@ line-height: 24px;
   color: #183B3F;
 }
 
+
+
+
+
+/***********************************/
+
+
+
+.inside-bundle-item.purple-bg .inside-sec-img img,
+.inside-bundle-item.light-yellow-bg .inside-sec-img img{
+    max-width: 304px;
+}
+.inside-bundle-item.bf-light-grey-bg .inside-sec-img img {
+    padding: 0px 8px;
+}
+#success-stories-column-4-slider .customers-product-col img.img-col {
+  margin-bottom: 16px;
+  border-radius: 50px;
+  width: 140px;
+  height: 93px;
+}
+
+
+
+/*************************************/
+.installments {
+  margin-top:50px;
+}
+
+.installments h2 {
+  font-size:24px;
+  color:#183B3F;
+}
+
+.installments .btn-custom {
+  margin-left:24px;
+}
+
+.installments-inner {
+	display: flex;
+	align-items: center;
+	padding: 40px 20px;
+  justify-content:center;
+  border-radius: 20px;
+background: #F3F4FF;
+}
+
+.quality-3-icons .row {
+  justify-content: center;
+}
+
+.quality-3-icons .quality-matters-caption a  {
+  color:#3FC15F;
+}
+
+
+
+
+
+
+.track-hormones .inside-bundle-item {
+  padding: 0;
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  text-align: left;
+}
+.inside-bundle-item {
+}
+.track-hormones .inside-bundle-item .inside-sec-img {
+  padding: 0;
+  margin: 0;
+}
+.track-hormones .inside-bundle-item .inside-sec-img .track-badge {
+  height: 100px;
+  display: block;
+  line-height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  text-align: center;
+  font-size:31px;
+}
+
+.bg-purple1 {
+  background:#CAC3E3;
+}
+
+.bg-light-green1 {
+  background:#C2E8E8;
+}
+
+.bg-dark-green1 {
+  background:#B9DBCB;
+}
+
+.bg-light-purple1 {
+  background: #E2E2F3;
+}
+
+.bg-light-pink1 {
+  background: #F3E2E2;
+}
+
+
+.siscover-your-hormones .wands-inside-product-row .col-md-8 .inside-bundle-item {
+	padding: 30px;
+}
+.siscover-your-hormones .wands-inside-product-row .inside-bundle-item .inside-sec-img {
+	padding: 0px 0 0;
+	margin-top: 0;
+}
+
+.siscover-your-hormones .inside-bundle-item-top h2 {
+	font-size: 52px;
+	max-width: inherit;
+	margin-bottom: 90px;
+}
+.siscover-your-hormones .inside-bundle-item-top {
+	max-width: 100%;
+	text-align: left;
+	padding: 0 30px;
+}
+
+.discover-chart-col {
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  height:100%;
+}
+
+
+.siscover-your-hormones .col-helf {
+	height: calc(50% - 12px);
+}
+
+.siscover-your-hormones .col-helf:last-child {
+	margin-top: auto;
+}
+
+
+
+
+
+.consultation-cta
+{
+  margin-bottom:60px;
+}
+
+.consultation-cta .panorama-lab-test-heading-1 h2 {
+	font-size: 52px;
+	margin-bottom: 0px;
+}
+.consultation-img {
+	margin-bottom: 20px;
+}
+.consultation-inner {
+  border-radius: 32px;
+background: #ECF9EF;
+  padding:80px;
+  text-align:center;
+}
+
+
+
+
+
+
+.cards-3-columns .inside-bundle-item {
+  padding: 8px;
+  text-align: left;
+}
+
+.cards-3-columns .inside-bundle-item-top {
+	margin: 0;
+	max-width: 100% !important;
+	padding: 10px;
+	width: 100%;
+}
+
+.cards-3-columns .inside-bundle-item h3 {
+  color:#3FC15F;
+  margin-bottom:10px;
+}
+
+.cards-3-columns .inside-sec-img {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.cards-3-columns .inside-sec-img img {
+	border-radius: 20px;
+	padding: 0 !important;
+	vertical-align: top;
+}
+
+
+.full-width-cta .consultation-inner{
+  background:#F8F8F8;
+}
+
+.max-kit-faq {
+	background: #fff;
+}
+
+.max-kit-faq .heading-1 h2 {
+	font-size: 40px;
+	margin-bottom: 20px;
+	color: #003630;
+}
+
+.full-width-cta .panorama-lab-test-heading-1 h2 {
+	font-size: 52px;
+}
+
+
+
+
+/********************************/
+
+.hormones-section {
+  padding:70px 0px 15px;
+}
+
+.hormones-section .row {
+  margin-left:-10px;
+  margin-right:-10px;
+}
+
+.hormones-section .container {
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.hormones-section [class*=col-] {
+ padding-left:10px;
+  padding-right:10px;
+}
+
+.harmones-left-col {
+	height: calc(100% - 20px);
+	padding: 30px 30px 50px 30px;
+	border-radius: 20px;
+}
+
+.harmones-left-col img {
+	max-width: 345px;
+}
+
+.harmones-left-col h2 {
+  font-size:40px;
+  margin-bottom:15px;
+}
+.harmones-left-col p {
+  font-size:19px;
+  margin-bottom:50px;
+}
+ 
+.hormones-section .col-lg-6 .row {
+  height:100%;
+}
+.harmones-tooltop-col {
+  border-radius: 20px;
+  padding: 12px;
+ height: calc(100% - 20px);
+  position:relative;
+  
+}
+.harmones-bubble-col {
+	border-radius: 60px;
+	background: #FFF;
+	padding: 20px 30px;
+	width: auto;
+	display: table;
+	font-size: 31px;
+	line-height: 30px;
+}
+.harmones-bubble-col a{
+    width: 100%;
+    display: block;
+    color: #003630;
+}
+
+.harmones-bubble-small {
+  width:100px;
+  height:100px;
+  line-height:100px;
+  padding:0px;
+  text-align:center;
+}
+
+.harmones-tooltip-item {
+	display: table;
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+}
+
+.tooltip-btn {
+	width: 32px;
+	height: 32px;
+	display: table;
+	background: #fff;
+	text-align: center;
+	border-radius: 50%;
+	line-height: 32px;
+	position: static;
+	bottom: 15px;
+	right: 15px;
+	cursor: pointer;
+}
+
+.harmones-tooltip-item {
+  display:table;
+}
+
+
+.tooltip-popup {
+	position: absolute;
+	bottom: 47px;
+	left: -114px;
+	border-radius: 8px;
+	background: #FFF;
+	box-shadow: 0px 2px 4px 0px rgba(15, 56, 113, 0.08), 0px 1px 2px 0px rgba(15, 56, 113, 0.12), 0px 0px 1px 0px rgba(15, 56, 113, 0.32);
+	padding: 15px;
+	width: 262px;
+	z-index: 1;
+  visibility:hidden;
+  opacity:0;
+  transition:all ease 0.3s;
+}
+
+.tooltip-popup::after {
+	content: "";
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	position: absolute;
+	bottom: -6px;
+	left: 50%;
+	transform: translateX(-50%) rotate(137deg);
+}
+.tooltip-popup p {
+	font-size: 16px;
+}
+.harmones-tooltip-item:hover .tooltip-popup {
+  visibility:visible;
+  opacity:1;
+  transition:all ease 0.3s;
+}
+
+
+
+.practical-steps {
+  
+}
+
+.practical-steps .track-key-col ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.practical-steps .track-key-col ul li {
+	border: 0px solid #D3C9E0;
+	font-size: 19px;
+	color: #183B3F;
+	padding: 10px 20px 10px 50px;
+	margin-bottom: 12px;
+	background: #F8F8F8;
+	margin-right: 12px;
+}
+
+.practical-steps .track-key-col ul li img {
+	width: 32px;
+}
+
+.practical-steps-col h2 {
+  font-size: 40px;
+}
+.practical-steps .container {
+  padding-top: 35px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #E6E6E6;
+}
+.practical-steps-col h3 {
+  font-size: 24px;
+}
+.practical-steps-col p {
+  font-size: 19px;
+}
+
+.report-sec h2 {
+  font-size: 24px;
+  margin-bottom:25px;
+}
+
+.report-sec .container
+{
+  border:0px;
+}
+.report-sec ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+.report-sec ul li {
+  width:20%;
+  list-style: none;
+  margin-bottom: 20px;
+  padding:0 10px;
+}
+.report-sec ul li h3 {
+  font-size: 24px;
+}
+.report-col {
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  padding: 20px;
+  height: 100%;
+}
+
+.report-file-icon {
+	margin-bottom: 10px;
+	display: block;
+}
+.report-col p {
+  color: #667789;
+  font-size: 16px;
+}
+
+
+
+.understand-reason .doctor-success-stories .customers-product-col h4 {
+	margin-bottom: 20px;
+}
+
+
+.understand-reason .doctor-success-stories .customers-product-col p {
+	font-size: 16px;
+	line-height: 24px;
+	color: #667789;
+	margin-bottom: 0;
+}
+
+
+.result-help-you-discover {
+  padding-top: 25px;
+}
+
+.result-help-you-discover h2 {
+	font-size: 40px;
+	color: #183b3f;
+	padding-bottom: 10px;
+}
+
+.result-help-you-discover h4 {
+  font-size: 24px;
+  color: #183B3F;
+}
+.result-help-you-discover p {
+  font-size: 19px;
+  line-height: normal;
+  color: #667789;
+  padding-bottom: 10px;
+}
+
+
+.panorama-test-steps .inside-bundle-item {
+  background:#F8F6EE;
+} 
+.panorama-test-steps .inside-bundle-item h3 {
+	color: #183B3F;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.step-number {
+	background: #fff;
+	display: table;
+	padding: 5px 10px;
+	border-radius: 30px;
+	font-size: 16px;
+	line-height: normal;
+	color: #183B3F;
+}
+
+
+.panorama-max-kit-comparison {
+	padding-bottom: 60px;
+}
+
+.panorama-max-kit-comparison h2 {
+  font-size:40px;
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.goals-plan-row {
+	display: flex;
+	justify-content: center;
+	padding: 0 50px;
+}
+.goals-plan-row > li:first-child {
+	width: calc(22% - 20px);
+}
+
+.goals-plan-row > li {
+	width: calc(38% - 20px);
+	list-style: none;
+	margin: 0 10px;
+}
+
+.goals-plan-col {
+  border: 1px solid #E6E6E6;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.goals-plan-row > li:nth-child(2) .goals-plan-col {
+	border-color: #3FC15F;
+}
+
+.goals-plan-col h3 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	min-height: 57px;
+}
+
+.goals-plan-col ul li:first-child {
+	border-top: 1px solid #E6E6E6;
+}
+
+.goals-plan-col ul li {
+  list-style: none;
+  border-bottom: 1px solid #E6E6E6;
+  padding: 15px 0;
+  color: #183B3F;
+  font-size: 16px;
+}
+
+.goals-plan-col ul li label
+{
+  display:none;
+}
+
+.goals-plan-col ul {
+  margin-bottom: 20px;
+}
+.goals-price-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.goals-price-bar .btn-custom {
+  line-height: 48px !important;
+  height: 48px !important;
+}
+.goals-price-bar .price-goal {
+  font-size: 31px;
+}
+
+.goals-plan-row > li:first-child .goals-plan-col {
+  border-color: transparent;
+}
+.goals-plan-row > li:first-child .goals-plan-col ul li {
+  color: #9FADBB;
+}
+
+
+.take-control-sec p {
+  color:#183B3F;
+}
+
+
+
+.hormonal-report-sec  h2 {
+	font-size: 31px;
+	margin-bottom: 25px;
+  text-align:center;
+}
+
+
+
+.hormonal-report-sec .container
+{
+  border:0px;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+
+.hormonal-report-inner {
+  border-radius: 20px;
+  background: #F8F6EE;
+  padding: 32px 15px;
+  margin-bottom: 40px
+}
+.hormonal-report-form-row {
+  display: flex;
+  justify-content: center;
+  max-width: 610px;
+  margin: 0 auto;
+}
+.hormonal-report-form input[type="email"] {
+  height: 56px;
+  border-radius: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  padding: 0 20px;
+  width: 100%;
+}
+.email-input {
+  width: 100%;
+}
+.hormonal-report-form input[type="submit"] {
+  background: #3FC15F;
+  line-height: 56px !important;
+  padding: 0 25px;
+  height: 56px !important;
+  width: 230px;
+  font-size: 19px;
+  color: #fff;
+  border: 0;
+  border-radius: 32px;
+  text-align: center;
+  margin-left: 16px;
+}
+.disclaimer-col p {
+  font-size: 14px;
+}
+.custom-pro-title-section .panorama-disclaimer {
+    font-size: 15px;
+}
 /*******************Responsive**Start*********{}******************************/
 
+@media (max-width:1400px) and (min-width:1200px) {
+.goals-plan-col ul li {
+	font-size: 15px;
+}
+}
+
+
+@media screen and (min-width: 768px) {
+  .product-info-box {
+    padding-left: 80px;
+  }
+}
 
 @media (max-width:1199px) and (min-width:768px) {
-
+.goals-plan-col ul li {
+	font-size: 11px;
+}
     .simple-wand-sec .practical-steps-left {
         padding-right: 60px;
     }
@@ -931,6 +1705,41 @@ line-height: 24px;
     }
 
 }
+
+@media (max-width:1199px) {
+
+.harmones-bubble-col {
+	font-size: 24px;
+	line-height: normal;
+}  
+  
+.harmones-bubble-small {
+	width: 72px;
+	height: 72px;
+	line-height: 72px;
+	padding: 0;
+	text-align: center;
+}
+
+
+.understand-reason .bf-bundle-page-title {
+	padding-right: 150px;
+}  
+
+.goals-price-bar .price-goal {
+	font-size: 23px;
+}
+  
+
+.goals-price-bar .btn-custom {
+	font-size: 16px;
+	padding: 0 20px !important;
+	min-width: inherit;
+}  
+}
+
+
+
 
 @media (min-width:768px) {
     .reverse-md .row {
@@ -994,7 +1803,24 @@ line-height: 24px;
     }
 }
 
+
+@media (max-width:991px) {
+.harmones-tooltop-col {
+	padding: 12px;
+	height: auto;
+	min-height: 165px;
+	margin-bottom: 20px;
+}
+  .report-sec ul li {
+	width: 33.33%;
+} 
+
+
+
+}  
+
 @media (max-width:767px) {
+
 
     a#dropdownMenuButton1 {
         min-width: 100px;
@@ -1302,7 +2128,7 @@ line-height: 24px;
 	display: none;
 }  
 
-.customers-product-sec .owl-controls .owl-dots, .doctors-say-mira-sec .owl-controls .owl-dots {
+.customers-product-sec .owl-controls .owl-dots, .doctors-say-mira-sec .owl-controls .owl-dots, .customer-storie .owl-controls .owl-dots, .doctors-about-mira .owl-controls .owl-dots {
 	display: block !important;
 }
 
@@ -1310,7 +2136,7 @@ line-height: 24px;
 	padding-top: 0px !important;
 }  
 
-.bf-bundle .owl-dots{
+.bf-bundle .owl-dots, .customer-storie .owl-dots, .doctors-about-mira .owl-dots, .upsell-4-columns-slider .owl-dots, .panorama-test-steps .owl-dots {
         position: static !important;
         width: 100% !important;
         margin-top: 30px !important;
@@ -1318,9 +2144,23 @@ line-height: 24px;
     }
 
 
+  
+.panorama-test-steps .owl-dots {
+        margin-top: 0px !important;
+    }
+
 
     .bf-bundle .owl-dots .owl-dot span,
-    .bf-bundle .owl-theme .owl-dots .owl-dot span {
+    .bf-bundle .owl-theme .owl-dots .owl-dot span,
+  .customer-storie .owl-dots .owl-dot span,
+    .customer-storie .owl-theme .owl-dots .owl-dot span,
+  .doctors-about-mira .owl-dots .owl-dot span,
+    .doctors-about-mira .owl-theme .owl-dots .owl-dot span,
+  .upsell-4-columns-slider .owl-dots .owl-dot span,
+    .upsell-4-columns-slider .owl-theme .owl-dots .owl-dot span,
+  .panorama-test-steps .owl-dots .owl-dot span,
+    .panorama-test-steps .owl-theme .owl-dots .owl-dot span 
+  {
         width: 6px;
         height: 6px;
         border-radius: 30px;
@@ -1328,213 +2168,377 @@ line-height: 24px;
         opacity: 0.3;
     }
 
-.bf-bundle .owl-theme .owl-dots .owl-dot.active span, .bf-bundle .owl-theme .owl-dots .owl-dot:hover span
+.bf-bundle .owl-theme .owl-dots .owl-dot.active span, .bf-bundle .owl-theme .owl-dots .owl-dot:hover span,
+  .customer-storie .owl-theme .owl-dots .owl-dot.active span, .customer-storie .owl-theme .owl-dots .owl-dot:hover span,
+  .doctors-about-mira .owl-theme .owl-dots .owl-dot.active span, .doctors-about-mira .owl-theme .owl-dots .owl-dot:hover span,
+  .upsell-4-columns-slider .owl-theme .owl-dots .owl-dot.active span, .upsell-4-columns-slider .owl-theme .owl-dots .owl-dot:hover span,
+  .panorama-test-steps .owl-theme .owl-dots .owl-dot.active span, .upsell-4-columns-slider .owl-theme .owl-dots .owl-dot:hover span
 {
    background: #3FC15F;
         opacity: 1;
 }  
 
 
-}
-
-.inside-bundle-item.purple-bg .inside-sec-img img,
-.inside-bundle-item.light-yellow-bg .inside-sec-img img{
-    max-width: 304px;
-}
-.inside-bundle-item.bf-light-grey-bg .inside-sec-img img {
-    padding: 0px 8px;
-}
-#success-stories-column-4-slider .customers-product-col img.img-col {
-  margin-bottom: 16px;
-  border-radius: 50px;
-  width: 140px;
-  height: 93px;
-}
-
-
-
-/*************************************/
-.installments {
-  margin-top:50px;
-}
 
 .installments h2 {
-  font-size:24px;
-  color:#183B3F;
-}
-
-.installments .btn-custom {
-  margin-left:24px;
-}
-
+	font-size: 19px;
+	margin-bottom: 20px;
+} 
 .installments-inner {
-	display: flex;
-	align-items: center;
-	padding: 40px 0;
-  justify-content:center;
-  border-radius: 20px;
-background: #F3F4FF;
-}
-
-.quality-3-icons .row {
-  justify-content: center;
-}
-
-.quality-3-icons .quality-matters-caption a  {
-  color:#3FC15F;
-}
-
-
-
-
-
-
-.track-hormones .inside-bundle-item {
-  padding: 0;
-  display: flex;
-  flex-wrap: inherit;
-  align-items: center;
-  text-align: left;
-}
-.inside-bundle-item {
-}
-.track-hormones .inside-bundle-item .inside-sec-img {
-  padding: 0;
-  margin: 0;
-}
-.track-hormones .inside-bundle-item .inside-sec-img .track-badge {
-  height: 100px;
-  display: block;
-  line-height: 100px;
-  width: 100px;
-  border-radius: 50%;
+  flex-wrap:wrap;
   text-align: center;
-  font-size:31px;
+} 
+
+.cards-3-columns {
+	padding-top: 50px !important;
+	padding-bottom: 10px !important;
+} 
+
+.cards-3-columns .inside-bundle-item-top {
+	margin: 10px 0 0;
+}  
+
+.customer-storie .all-stories-btn {
+  display:none;
 }
 
-.bg-purple1 {
-  background:#CAC3E3;
+.customer-storie {
+	padding-bottom: 40px !important;
 }
 
-.bg-light-green1 {
-  background:#C2E8E8;
+.doctors-about-mira .experts-mira-inner .heading-1 h4 {
+	font-size: 23px;
+} 
+  
+.doctors-about-mira .experts-mira-inner {
+	padding: 25px 20px 40px 20px;
+}
+.doctors-about-mira .doctor-say-details p {
+	font-size: 23px;
+	line-height: 24px;
 }
 
-.bg-dark-green1 {
-  background:#B9DBCB;
-}
+.doctors-about-mira .doctor-say-name {
+	font-size: 19px;
+	line-height: 24px;
+	margin-bottom: 5px;
+} 
 
-.bg-light-purple1 {
-  background: #E2E2F3;
-}
+.track-hormones  {
+	padding-top: 20px !important;
+  padding-bottom: 0px !important;
+} 
 
-.bg-light-pink1 {
-  background: #F3E2E2;
+.track-hormones .bf-bundle-page-title h2 {
+  margin-bottom:30px;
 }
+  
+.track-hormones .bf-bundle-page-title h2 br {
+	display:none;
+}  
 
 
-.siscover-your-hormones .wands-inside-product-row .col-md-8 .inside-bundle-item {
-	padding: 30px;
-}
-.siscover-your-hormones .wands-inside-product-row .inside-bundle-item .inside-sec-img {
-	padding: 0px 0 0;
-	margin-top: 0;
-}
+.track-hormones .inside-bundle-item .inside-sec-img .track-badge {
+	height: 60px;
+	display: block;
+	line-height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 23px;
+} 
 
-.siscover-your-hormones .inside-bundle-item-top h2 {
-	font-size: 52px;
-	max-width: inherit;
-	margin-bottom: 90px;
-}
-.siscover-your-hormones .inside-bundle-item-top {
-	max-width: 100%;
+
+.track-hormones .wands-inside-product-row .inside-bundle-item {
+	margin-bottom: 20px;
+	display: flex;
+	height: auto;
 	text-align: left;
-	padding: 0 30px;
+	justify-content: flex-start;
+}  
+  
+.track-hormones .wands-inside-product-row .inside-bundle-item-top {
+	padding: 0 0px 0 10px;
+} 
+
+.siscover-your-hormones {
+	padding-top: 40px !important;
 }
 
-.discover-chart-col {
-  justify-content: space-between;
-  display: flex;
-  flex-wrap: wrap;
-  height:100%;
+.siscover-your-hormones .bf-bundle-page-title h2 {
+	font-size: 23px;
+	margin-bottom: 24px;
 }
 
-
-.siscover-your-hormones .col-helf {
-	height: calc(50% - 12px);
+.siscover-your-hormones .wands-inside-product-row .col-md-8 .inside-bundle-item-top {
+	padding: 0 0px;
+}
+.siscover-your-hormones .inside-bundle-item-top h2 {
+	font-size: 34px;
+	margin-bottom: 35px;
 }
 
-.siscover-your-hormones .col-helf:last-child {
-	margin-top: auto;
-}
-
-
-
-
-
-.consultation-cta
-{
-  margin-bottom:60px;
+.siscover-your-hormones .wands-inside-product-row .inside-bundle-item h3 {
+	padding: 15px 50px 10px 10px;
 }
 
 .consultation-cta .panorama-lab-test-heading-1 h2 {
-	font-size: 52px;
-	margin-bottom: 0px;
+	font-size: 34px;
+	margin-bottom: 0;
+}  
+  
+.consultation-cta .consultation-inner {
+	padding: 50px 25px;
 }
-.consultation-img {
+.full-width-cta .panorama-lab-test-heading-1 h2 {
+	font-size: 34px;
+}
+.full-width-cta p br{
+  display:none;
+}
+.full-width-cta .consultation-inner {
+	padding: 50px 25px;
+}
+
+.new-custom-product-detail h1 {
+	font-size: 28px;
+}
+
+.include-wat {
+	font-size: 19px;
+}
+
+
+ 
+.mira-max-kit .product-info-sec {
+	padding: 20px 0 20px;
+} 
+
+.new-custom-product-detail .custom-pro-title-section {
+	padding: 20px 0 0;
+}   
+
+.new-custom-product-detail .product-form__input--dropdown {
+	margin-top: 5px !important;
+	margin-bottom: 0 !important;
+}
+.new-custom-product-detail .product-form__input select {
+  font-size:16px;
+  background-position: 96% 23px;
+  background-size: 15px;
+}
+
+.new-custom-product-detail .custom-buy-button .btn-custom * {
+	font-size: 16px;
+}  
+.new-custom-product-detail .product-info-box .btn-custom {
+	font-size: 16px !important;
+	height: 45px !important;
+	line-height: 45px !important;
+}  
+
+.new-custom-product-detail .accordion-sec {
+	margin-top: 5px;
+}
+
+.new-custom-product-detail .accordion-sec .description {
+	font-size: 16px;
+} 
+
+
+ .hormones-section {
+	padding: 60px 5px 0;
+} 
+  
+.harmones-left-col h2 {
+	font-size: 28px;
+}
+ .harmones-left-col p {
+	font-size: 16px;
+	margin-bottom: 40px;
+}
+
+.harmones-left-col {
+	padding: 15px 15px 40px;
+}  
+  .harmones-left-col img {
+	max-width: 100%;
+}
+
+  .harmones-bubble-col {
+	padding: 20px 25px;
+}
+
+.practical-steps .container {
+	padding-top: 20px;
+	padding-bottom: 15px;
+}   
+
+.practical-steps-col h2 {
+	font-size: 28px;
 	margin-bottom: 20px;
 }
-.consultation-inner {
-  border-radius: 32px;
-background: #ECF9EF;
-  padding:80px;
+
+.practical-steps-col p {
+	font-size: 16px;
+}
+.practical-steps-col h3 {
+	font-size: 19px;
+	margin-bottom: 20px;
+}
+
+.practical-steps .track-key-col ul li {
+	font-size: 16px;
+}
+  
+
+
+.report-sec h2 {
+	font-size: 19px;
+} 
+
+  .report-sec ul li {
+	width: 50%;
+	margin: 0 0px 20px 0;
+} 
+
+.report-sec ul li h3 {
+	font-size: 19px;
+}  
+.hormonal-report-sec h2 {
+	font-size: 23px;
+	margin-bottom: 25px;
+}  
+
+.hormonal-report-form-row {
+	flex-wrap: wrap;
+}  
+
+.email-input {
+	margin-bottom: 16px;
+} 
+
+.hormonal-report-form input[type="email"] {
+	height: 45px;
   text-align:center;
-}
+}  
 
-
-
-
-
-
-.cards-3-columns .inside-bundle-item {
-  padding: 8px;
-  text-align: left;
-}
-
-.cards-3-columns .inside-bundle-item-top {
-	margin: 0;
-	max-width: 100% !important;
-	padding: 10px;
+.hormonal-report-form input[type="submit"] {
+	line-height: 45px !important;
+	padding: 0 25px;
+	height: 45px !important;
 	width: 100%;
+	font-size: 16px;
+	margin-left: 0;
 }
 
-.cards-3-columns .inside-bundle-item h3 {
-  color:#3FC15F;
-  margin-bottom:10px;
+.result-help-you-discover h2 {
+	font-size: 28px;
+	padding-bottom: 0px;
+}
+.result-help-left {
+	margin-bottom: 25px;
 }
 
-.cards-3-columns .inside-sec-img {
-  margin: 0 !important;
-  padding: 0 !important;
+.result-help-you-discover h4 {
+	font-size: 19px;
 }
 
-.cards-3-columns .inside-sec-img img {
-	border-radius: 20px;
-	padding: 0 !important;
-	vertical-align: top;
+ .result-help-you-discover p {
+	font-size: 16px;
+} 
+  
+ .panorama-test-steps {
+	padding-top: 30px !important;
+} 
+
+.panorama-test-steps h2 {
+	font-size: 23px;
+	padding-bottom: 15px;
+}
+  
+ .report-col {
+	padding: 12px;
+} 
+
+.report-sec .container {
+	padding-bottom: 0;
 }
 
-
-.full-width-cta .consultation-inner{
-  background:#F8F8F8;
+.understand-reason .bf-bundle-page-title {
+	padding-right: 0;
+} 
+.understand-reason .doctor-success-stories .customers-product-col {
+	min-height: 320px;
 }
 
-.max-kit-faq {
-	background: #fff;
+.understand-reason .customer-storie {
+	padding-bottom: 0px !important;
+}  
+
+.panorama-max-kit-comparison h2 {
+	font-size: 28px;
+	text-align: left;
 }
 
-.max-kit-faq .heading-1 h2 {
-	font-size: 40px;
+.goals-plan-row {
+	padding: 0 0px;
+	flex-wrap: wrap;
+}  
+
+.goals-plan-row > li:first-child {
+	width: calc(22% - 20px);
+	display: none;
+}
+
+.goals-plan-row > li {
+	width: 100%;
+	list-style: none;
+	margin: 0 0 20px;
+} 
+
+.goals-plan-col ul li {
+	list-style: none;
+	border-bottom: 1px solid #E6E6E6;
+	padding: 15px 0;
+
+	font-size: 14px;
+}  
+
+.goals-plan-col ul li label {
+  font-size:14px;
+  display:block;
+  color: #9fadbb;
+  margin-bottom:2px;
+}  
+  
+.panorama-max-kit-comparison {
+	padding-bottom: 30px;
+}
+
+.take-control-sec {
+	padding-bottom: 45px;
+}
+
+.take-control-sec .panorama-lab-test-heading-1 {
 	margin-bottom: 20px;
-	color: #003630;
+} 
+
+.tooltip-popup {
+	padding: 8px;
+	width: 150px;
+	left: inherit;
+	right: 0;
 }
+  
+
+.tooltip-popup::after {
+	left: 89%;
+}
+
+.tooltip-popup p {
+	font-size: 12px;
+}  
+  
+}
+
