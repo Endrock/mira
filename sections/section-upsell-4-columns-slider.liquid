@@ -1,0 +1,126 @@
+{% assign sub_folder = '' %}
+{% if localization.market.handle == 'au' %}
+{% assign sub_folder = '/en-au' %}
+{% elsif localization.market.handle == 'ca' %}
+{% assign sub_folder = '/en-ca' %}
+{% elsif localization.market.handle == 'eu' %}
+{% assign sub_folder = '/en-eu' %}
+{% elsif localization.market.handle == 'uk' %}
+{% assign sub_folder = '/en-gb' %}
+{% elsif localization.market.handle == 'international' %}
+{% assign sub_folder = '/en-int' %}
+{% else %}
+{% assign sub_folder = '' %}
+{% endif %}
+<div class="upsell-4-columns-slider customers-product-sec padd-b-60 padd-t-60">
+    <div class="container">
+        <div class="bf-bundle-page-title padd-b-20">
+            <h2>Our customers enjoy these products too</h2>
+        </div>
+        <div class="row" id="product-column-4-slider">
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/coaching" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/files/Fertility_Coaching_Session_product_img_b34dc592-9862-4d25-a840-d1116ec1d87c.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/coaching" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/coaching" target="_blank">{{ all_products['coaching'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['coaching'].first_available_variant.price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/academy" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/Cover.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/academy" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/academy" target="_blank">Online Fertility Course</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['academy'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% if localization.market.handle == 'us' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/fertility-tea" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/files/fertility_tea_product_img01_e86fd07e-99d6-4e29-a901-cda8690267e1.jpg" alt=""></a>
+                        <a href="{{ sub_folder }}/products/fertility-tea" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/fertility-tea" target="_blank">{{ all_products['fertility-tea'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['fertility-tea'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% elsif localization.market.handle == 'au' or localization.market.handle == 'uk' or localization.market.handle == 'international' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/fertility-tea-ww" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/mira-tea2.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/fertility-tea-ww" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/fertility-tea-ww" target="_blank">{{ all_products['fertility-tea-ww'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['fertility-tea-ww'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if localization.market.handle == 'international' or localization.market.handle == 'us' or localization.market.handle == 'au' or localization.market.handle == 'ca' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/home-sperm-test" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/yo-test_720.jpg" alt=""></a>
+                        <a href="{{ sub_folder }}/products/home-sperm-test" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/home-sperm-test" target="_blank">{{ all_products['home-sperm-test'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['home-sperm-test'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if localization.market.handle == 'eu' or localization.market.handle == 'uk' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/exseed-home-sperm-test" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/Test-2__1.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/exseed-home-sperm-test" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/exseed-home-sperm-test" target="_blank">{{ all_products['exseed-home-sperm-test'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['exseed-home-sperm-test'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Upsell 4 Columns Slider",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Upsell 4 Columns Slider"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
