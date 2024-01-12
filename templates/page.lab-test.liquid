@@ -1,0 +1,1380 @@
+{% if customer %}
+
+{{ 'multibar.css' | asset_url | stylesheet_tag }}
+<script type="text/javascript" src="//test.miracare.com/cdn/shop/t/29/assets/jquery.min.js"></script>
+<script type="text/javascript" src="{{ 'multibar.js' | asset_url }}" ></script>
+<style>
+   #loader{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #21242d url('https://cdn.shopify.com/s/files/1/0755/9620/2277/files/Bouncy-Preloader.gif') no-repeat center;
+    z-index: 999;
+  } 
+</style>
+<div id="loader"></div>
+
+<div class="lab-test-page" id="no_data_found" style="display:none; padding-top:0;">
+  <div class="lab-test-result-sec">
+        <div class="container">
+            <div class="lab-sec-title">
+                <h2>There is no data found.</h2>
+            </div>
+            <div class="btn-row-globel text-center">
+                <a href="/pages/lab-test-registration" class="btn-custom btn-pink btn-md">Start a new test</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="lab-test-page" id="test_status_cancelled" style="display:none; padding-top:0;">
+  <div class="lab-test-result-sec">
+        <div class="container">
+            <div class="lab-sec-title">
+                <h2>Unfortunately, our lab encountered an error when processing your kit.</h2>
+                <p>Please contact our support team at <a target="_blank" href="mailto:support@miracare.com">support@miracare.com</a> to learn more.</p>
+            </div>
+            <div class="btn-row-globel text-center">
+                <a href="/account" class="btn-custom btn-pink btn-md">My Account</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="lab-test-page" id="data_found" style="padding-top:0;">
+    <div class="lab-test-result-sec">
+        <div class="container">
+            <div class="lab-sec-title">
+                <h2>Here are your lab test results</h2>
+                <p>You can book a consultation with a doctor to discuss your results or start a new lab test below.</p>
+            </div>
+            <ul class="lab-test-result-outer">
+                <li>
+                    <div class="test-resuld-col">
+                        <div class="top-box">
+                            <h4>AMH</h4> <i class="tooltip-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_icon_57e3804a-bcbe-424b-9e34-19fbd1b853ea.svg?v=1686942707" alt=""></i>
+                       <div class="lab-test-tooltip">
+                         <p>The AMH (anti-mullerian hormone) is made up of small follicles in the ovaries that show how many eggs a person has left. </p>
+                          <a target="_blank" href="https://www.miracare.com/blog/what-does-amh-mean/">Learn More </a>
+                       </div>
+                        </div>
+                        <div class="bottom-box">
+                            <div class="bottom-left"><span id="AMH_badge" class="low-bg">Low</span>
+                                <h4 id="AMH_result">1.49</h4><sub>ng/mL</sub>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="test-resuld-col">
+                        <div class="top-box">
+                            <h4>TSH</h4> <i><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_icon_57e3804a-bcbe-424b-9e34-19fbd1b853ea.svg?v=1686942707" alt=""></i>
+                            <div class="lab-test-tooltip">
+                               <p>TSH is a hormone produced by the pituitary gland, which impacts your body's metabolism and, indirectly, your menstrual cycle and fertility health.</p>
+                                <a target="_blank" href="https://www.miracare.com/blog/what-is-tsh/">Learn More </a>
+                           </div>
+                        </div>
+                        <div class="bottom-box">
+                            <div class="bottom-left"><span id="TSH_badge" class="heigh-bg">High</span>
+                                <h4 id="TSH_result">5.36</h4><sub>µIU/m</sub>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="test-resuld-col">
+                        <div class="top-box">
+                            <h4>fT4</h4> <i><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_icon_57e3804a-bcbe-424b-9e34-19fbd1b853ea.svg?v=1686942707" alt=""></i>
+                            <div class="lab-test-tooltip">
+                               <p>fT4 is the primary hormone that your thyroid gland makes. Measuring your fT4 can help identify symptoms of thyroid problems like weight changes, menstrual irregularities, infertility, etc.</p>
+                                <a target="_blank" href="https://www.miracare.com/blog/what-is-ft4/">Learn More </a>
+                            </div>
+                        </div>
+                        <div class="bottom-box">
+                            <div class="bottom-left"><span id="FT4_badge" class="narmal-bg">Normal</span>
+                                <h4 id="FT4_result">1.09</h4><sub>ng/dL</sub>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="test-resuld-col">
+                        <div class="top-box">
+                            <h4>Free testosterone </h4> <i><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_icon_57e3804a-bcbe-424b-9e34-19fbd1b853ea.svg?v=1686942707" alt=""></i>
+                            <div class="lab-test-tooltip">
+                               <p>Free Testosterone is produced in small amounts in people’s ovaries. It plays an essential role in your health, helping to maintain a healthy sex drive and strengthening your bones.</p>
+                                <a target="_blank" href="https://www.miracare.com/blog/free-testosterone-test/">Learn More </a>
+                            </div>
+                        </div>
+                        <div class="bottom-box">
+                            <div class="bottom-left"><span id="testo_badge" class="heigh-bg">High</span>
+                                <h4 id="testosterone_result">111.20</h4><sub>%</sub>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="test-resuld-col">
+                        <div class="top-box">
+                            <h4>Prolactin</h4> <i><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_icon_57e3804a-bcbe-424b-9e34-19fbd1b853ea.svg?v=1686942707" alt=""></i>
+                            <div class="lab-test-tooltip">
+                               <p>Prolactin stimulates milk production after you give birth. It also affects various body systems—including reproductive, behavioral, nervous, and immune systems.</p>
+                                <a target="_blank" href="https://www.miracare.com/blog/what-does-prolactin-test-mean/">Learn More </a>
+                            </div>
+                        </div>
+                        <div class="bottom-box">
+                            <div class="bottom-left"><span id="prolactin_badge" class="low-bg">Low</span>
+                                <h4 id="prolactin_result">1.49</h4><sub>ng/dL</sub>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="btn-row-globel text-center padd-t-40">
+                <a href="/products/coaching" class="btn-custom btn-border btn-md" target="_blank">Book consultation</a>
+                <a href="/pages/lab-test-registration" class="btn-custom btn-pink btn-md">Start a new test</a>
+            </div>
+        </div>
+    </div>
+    <div class="report-lab-test-sec padd-t-b-40">
+        <div class="container">
+            <div class="lab-sec-title">
+                <h2>Your reports</h2>
+            </div>
+            <div class="your-report-sec">
+                <div class="ingredient-col">
+                    <ul id="my_reports">
+                        <li><a href="javascript:void(0)" data-id="ovarian_report">Ovarian Reserve</a></li>
+                        <li><a href="javascript:void(0)" data-id="thyroid_report">Thyroid Function</a></li>
+                        <li><a href="javascript:void(0)" data-id="menstrual_report">Menstrual Cycle Rhythm</a></li>
+                        <li><a href="javascript:void(0)" data-id="hormonal_report">Hormonal Balance</a></li>
+                        <li><a href="javascript:void(0)" data-id="fertility_report">Fertility Health</a></li>
+                    </ul>
+                </div>
+                <div class="disclaimer-text small-container">
+                  <div class="disclaimer-title"><p><strong>DISCLAIMER:</strong> THIS TEST DOES NOT PROVIDE MEDICAL ADVICE.</p></div>
+                    <p>                      
+                        The information, including but not limited to, text, graphics, images and other material contained in these reports are for informational purposes only and are based on the test results and symptoms provided by the user. No material in this report is intended to be a substitute for professional medical advice, diagnosis or treatment. Always seek the advice of your physician or other qualified health care provider with any questions you may have regarding a medical condition or treatment and before undertaking a new health care regimen, and never disregard professional medical advice or delay in seeking it because of something you have read in these reports.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ovarian_report" class="sub-report-sec">
+        <div class="small-container">
+            <div class="lab-sec-title">
+                <h3>Ovarian Reserve Report</h3>
+                <p>Based on your AMH results</p>
+            </div>
+            <div id="before_graph_ovarian_reserve"></div>
+            <div class="test-result-graph">
+
+              <div class="left"> 
+                  <strong>Your AMH level</strong>  
+                <div class="bottom-cel">
+                  <span id="AMH_badge"></span>
+                  <h4 id="AMH_result_chart"></h4>
+                </div>
+              </div>
+              <div class="right">
+                <div class="graph-title"><strong>AMH</strong><span>ng/mL</span></div>
+              <div id="AMH" class="multibar_small" data-min="1.5" data-max="4" data-result="1.49"></div>
+              </div>
+  
+                
+            </div>
+            <div id="after_graph_ovarian_reserve"></div>
+        </div>
+    </div>
+    <div id="thyroid_report" class="sub-report-sec">
+        <div class="small-container">
+            <div class="lab-sec-title">
+                <h3>Thyroid Function Report</h3>
+                <p>Based on your TSH and fT4 results</p>
+            </div>
+            <div id="TSH_thyroid_report_before_graph"></div>
+
+            <div class="test-result-graph">
+                  <div class="left">
+                    <strong>Your TSH level</strong>
+                    <div class="bottom-cel">
+                    <span id="TSH_badge" class="">High</span>
+                    <h4 id="TSH_result_chart">5.36</h4>
+                    </div>
+                  </div>
+                  <div class="right">
+                     <div class="graph-title"><strong>TSH</strong><span>µIU/mL</span></div>
+                    <div id="TSH" class="multibar_small" data-min="0.45" data-max="5.33" data-result="5.3"></div>
+                  </div>
+               
+            </div>
+
+            <div id="TSH_thyroid_report_after_graph"></div>
+            
+            <div class="test-result-graph">
+                <div class="left">
+                    <strong>Your fT4 level</strong>
+                  <div class="bottom-cel">
+                    <span id="FT4_badge" class="">Normal</span>
+                    <h4 id="FT4_result_chart">1.09</h4>
+                  </div>
+                  </div>
+                  <div class="right">
+                    <div class="graph-title"><strong>fT4</strong><span>ng/dL</span></div>
+                    <div id="fT4" class="multibar_small" data-min="0.61" data-max="1.12" data-result="1.09"></div>
+                  </div>
+                
+            </div>
+
+            <div id="FT4_thyroid_report_after_graph"></div>
+            
+        </div>
+    </div>
+    <div id="menstrual_report" class="sub-report-sec">
+        <div class="small-container">
+            <div class="lab-sec-title">
+                <h3>Menstrual Cycle Rhythm Report</h3>
+                <p>Based on your Prolactin and Free Testosterone results</p>
+            </div>
+            <div class="test-result-graph">
+                <div class="left">
+                  <strong>Your Free testosterone level</strong>
+                  <div class="bottom-cel">
+                  <span id="testo_badge" class="">High</span>
+                  <h4 id="testosterone_result_chart">111.20</h4>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="graph-title"><strong>Free testosterone </strong><span>%</span></div>
+                  <div id="Free_Testosterone" class="multibar_small" data-min="24.30" data-max="110.20" data-result="111.20"></div>
+                </div>
+                
+            </div>
+            <div id="testosterone_menstrual_report_after_graph"></div>
+
+            <div id="prolactin_menstrual_report_before_graph"></div>
+
+            <div class="test-result-graph">
+                <div class="left">
+                  <strong>Your Prolactin level</strong>
+                  <div class="bottom-cel">
+                  <span id="prolactin_badge" class="">Low</span>
+                  <h4 id="prolactin_result_chart">1.49</h4>
+                  </div>
+                </div>
+                <div class="right">
+                   <div class="graph-title"><strong>Prolactin </strong><span>ng/mL</span></div>
+                  <div id="Prolactine" class="multibar_small" data-min="2.64" data-max="26.72" data-result="1.49"></div>
+                </div>
+            
+            </div>
+            <div id="prolactin_menstrual_report_after_graph"></div>
+
+        </div>
+    </div>
+    <div id="hormonal_report" class="sub-report-sec">
+        <div class="small-container">
+            <div class="lab-sec-title">
+                <h3>Hormonal Balance Report</h3>
+                <p>Based on your prolactin and free testosterone results.</p>
+            </div>
+            <div id="hormonal_balance_report_text"></div>
+        </div>
+    </div>
+    <div id="fertility_report" class="sub-report-sec">
+        <div class="small-container">
+            <div class="lab-sec-title">
+                <h3>Fertility Health Report</h3>
+                <p>Based on your Free Testosterone, Prolactin, TSH, and fT4 Results</p>
+            </div>
+            <div id="fertility_report_ovulation_text"></div>
+            <div id="fertility_report_ability_to_conceive_text"></div>
+        </div>
+    </div>
+    <div class="sub-report-sec previous-test-result">
+        <div class="small-container">
+            <div class="lab-sec-title">
+                <h3>Your previous test results</h3>
+            </div>
+            <ul class="date-list-col" id="previous_test_dates">
+                <li><a href="#">12/12/2022</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    jQuery( document ).ready(function($) {
+
+        var AMH_unit = "ng/mL";
+        var TSH_unit = "uIU/mL";
+        var FT4_unit = "ng/dL";
+        var TESTE_unit = "%";
+        var PROL_unit = "ng/mL";
+
+        $('.lab-test-result-outer i, .lab-test-result-outer .lab-test-tooltip').hover(function() {
+          $(this).parent('.top-box').addClass('open-tooltip');
+        }, function() {
+            $(this).parent('.top-box').removeClass('open-tooltip');
+        }); 
+        $("#my_reports a").click(function() {
+          var report_id = $(this).data('id');
+          $('html,body').animate({
+            scrollTop: $('#'+report_id).offset().top - 130 }, 'slow');
+        });
+                              
+         var user_id = "{{ customer.id }}";
+        // var user_id = "6555428618392";
+
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var date = urlParams.get('date');
+        console.log(date);
+
+        var settings = { 
+            "url": "https://www.miracare.com/wp-json/api/lab-test-api/get_report_data",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": JSON.stringify({
+                "user_id": user_id,
+                "date": date
+            }),
+        };
+        
+        $.ajax(settings).done(function (report_response) {
+            $("#loader").hide();
+            $(".lab-test-result-outer .bottom-box span").removeAttr('class');
+
+            if (report_response.status == false) {
+                console.log('no_data_found');
+                $("#no_data_found").show();
+                $("#data_found").hide();
+            }
+            else if(report_response.status == 'CANCELLED'){
+
+                console.log('CANCELLED');
+                $("#test_status_cancelled").show();
+                $("#data_found").hide();
+            }
+            else{
+                var report_data = report_response.report_data;
+                console.log(report_data);
+
+                var AMH = report_data.AMH;
+                console.log(AMH);
+                var TSH = report_data.TSH;
+                console.log(TSH);
+                var FT4 = report_data.FT4;
+                console.log(FT4);
+                var testosterone = report_data.testosterone;
+                console.log(testosterone);
+                var prolactin = report_data.prolactin;
+                console.log(prolactin);
+                var DOB = report_data.dob;
+                console.log(DOB);
+
+                $('#AMH_result').text(AMH);
+                $('#AMH_result_chart').text(AMH + " " + AMH_unit);
+                $('#TSH_result').text(TSH);
+                $('#TSH_result_chart').text(TSH + " " + TSH_unit);
+                $('#FT4_result').text(FT4);
+                $('#FT4_result_chart').text(FT4 + " " + FT4_unit);
+                $('#testosterone_result').text(testosterone);
+                $('#testosterone_result_chart').text(testosterone + " " + TESTE_unit);
+                $('#prolactin_result').text(prolactin);
+                $('#prolactin_result_chart').text(prolactin + " " + PROL_unit);
+
+                $('#AMH').data('result',AMH);
+                $('#TSH').data('result',TSH);
+                $('#fT4').data('result',FT4);
+                $('#Free_Testosterone').data('result',testosterone);
+                $('#Prolactine').data('result',prolactin);
+
+                $('#previous_test_dates').html(report_response.all_reports_dates);
+              
+                var dob = new Date(DOB);
+                var currentDate = new Date();
+                var age = currentDate.getFullYear() - dob.getFullYear();
+
+                // Adjust age based on the month and day
+                var currentMonth = currentDate.getMonth() + 1;
+                var birthMonth = dob.getMonth() + 1;
+                var currentDay = currentDate.getDate();
+                var birthDay = dob.getDate();
+
+                if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDay < birthDay)) {
+                    age--;
+                }
+                console.log( age + " years");
+
+                // Special case - min and max for AMH
+
+                  if ( (age >= 36) && (age<=40) ){
+                      $('#AMH').data('min',0.5);
+                      $('#AMH').data('max',1.5);
+                  } else if ( (age >= 41) && (age<=45) ){
+                      $('#AMH').data('min',0.5);
+                      $('#AMH').data('max',1.0);
+                  }
+    
+                // End Special case - min and max for AMH
+
+                var AMH_range = TSH_range = FT4_range = testosterone_range = Prolactin_range = "";
+
+                // ==================== Range Start ==================== //
+                // ===================================================== //
+
+                // =============== AMH Range =============== //
+
+                if ( (AMH > 0.5) && (AMH < 1.0) && (age<=35) ) {
+                    AMH_range = "low_AMH_under_35";
+                    $("span#AMH_badge,#AMH").addClass('low-bg');
+                    $("span#AMH_badge").text('Low');
+                }
+                else if ( (AMH < 0.5) && (age >= 36) && (age<=40) ){
+                    AMH_range = "low_AMH_36_to_40";
+                    $("span#AMH_badge,#AMH").addClass('low-bg');
+                    $("span#AMH_badge").text('Low');
+                }
+                else if ( (AMH < 0.5) && (age >= 41) && (age<=45) ){
+                    AMH_range = "low_AMH_41_to_45";
+                    $("span#AMH_badge,#AMH").addClass('low-bg');
+                    $("span#AMH_badge").text('Low');
+                }
+                else if ( (AMH > 1.0) && (AMH <= 1.5) && (age<=35) ){
+                    AMH_range = "low_normal_AMH_35";
+                    $("span#AMH_badge,#AMH").addClass('low-bg');
+                    $("span#AMH_badge").text('Low Normal');
+                    $("span#AMH_badge").closest('.left').css('padding-left', '14px').css('padding-right', '14px');
+                    
+                }
+                else if ( (AMH > 1.5) && (AMH <= 4) && (age<=35) ){
+                    AMH_range = "normal_AMH_35";
+                    $("span#AMH_badge,#AMH").addClass('narmal-bg');
+                    $("span#AMH_badge").text('Normal');
+                }
+                else if ( (AMH > 0.5) && (AMH <= 1.5) && (age>=36) && (age<=40) ){
+                    AMH_range = "normal_AMH_36_to_40";
+                    $("span#AMH_badge,#AMH").addClass('narmal-bg');
+                    $("span#AMH_badge").text('Normal');
+                }
+                else if ( (AMH > 0.5) && (AMH <= 1) && (age>=41) && (age<=45) ){
+                    AMH_range = "normal_AMH_41_to_45";
+                    $("span#AMH_badge,#AMH").addClass('narmal-bg');
+                    $("span#AMH_badge").text('Normal');
+                }
+                else if ( (AMH > 4.0) && (age<=35) ){
+                    AMH_range = "high_AMH_35";
+                    $("span#AMH_badge,#AMH").addClass('heigh-bg');
+                    $("span#AMH_badge").text('High');
+                }
+                else if ( (AMH >= 1.5) && (age>=36) && (age<=40) ){
+                    AMH_range = "high_AMH__36_to_40";
+                    $("span#AMH_badge,#AMH").addClass('heigh-bg');
+                    $("span#AMH_badge").text('High');
+                }
+                else if ( (AMH > 1.0) && (age>=41) && (age<=45) ){
+                    AMH_range = "high_AMH__41_to_45";
+                    $("span#AMH_badge,#AMH").addClass('heigh-bg');
+                    $("span#AMH_badge").text('High');
+                }
+                else{
+                    AMH_range = "AMH Not Range";
+                }
+                console.log(AMH_range);
+
+                // =============== TSH Range =============== //
+                if ( TSH < 0.45) {
+                    TSH_range = "low_TSH";
+                    $("span#TSH_badge,#TSH").addClass('low-bg');
+                    $("span#TSH_badge").text('Low');
+                    //$("#AMH").addClass('low');
+                }
+                else if ( (TSH >= 0.45) && (TSH <= 5.33) ){
+                    TSH_range = "normal_TSH";
+                    $("span#TSH_badge,#TSH").addClass('narmal-bg');
+                    $("span#TSH_badge").text('Normal');
+                    //$("#AMH").addClass('normal');
+                }
+                else if ( TSH > 5.33 ){
+                    TSH_range = "high_TSH";
+                    $("span#TSH_badge,#TSH").addClass('heigh-bg');
+                    $("span#TSH_badge").text('High');
+                    //$("#AMH").addClass('high');
+                }
+                else{
+                    TSH_range = "TSH Not Range";
+                }
+                console.log(TSH_range);
+
+                // =============== FT4 Range =============== //
+                if ( FT4 < 0.61) {
+                    FT4_range = "low_FT4";
+                    $("span#FT4_badge,#fT4").addClass('low-bg');
+                    $("span#FT4_badge").text('Low');
+                }
+                else if ( (FT4 >= 0.61) && (FT4 <= 1.12) ){
+                    FT4_range = "normal_FT4";
+                    $("span#FT4_badge,#fT4").addClass('narmal-bg');
+                    $("span#FT4_badge").text('Normal');
+                }
+                else if ( FT4 > 1.12 ){
+                    FT4_range = "high_FT4";
+                    $("span#FT4_badge,#fT4").addClass('heigh-bg');
+                    $("span#FT4_badge").text('High');
+                }
+                else{
+                    FT4_range = "FT4 Not Range";
+                }
+                console.log(FT4_range);
+
+                // =============== Testosterone Range =============== //
+                if ( testosterone < 24.30) {
+                    testosterone_range = "low_testosterone";
+                    $("span#testo_badge,#Free_Testosterone").addClass('low-bg');
+                    $("span#testo_badge").text('Low');
+                }
+                else if ( (testosterone >= 24.30) && (testosterone <= 110.20) ){
+                    testosterone_range = "normal_testosterone";
+                    $("span#testo_badge,#Free_Testosterone").addClass('narmal-bg');
+                  $("span#testo_badge").text('Normal');
+                }
+                else if ( testosterone > 110.20 ){
+                    testosterone_range = "high_testosterone";
+                    $("span#testo_badge,#Free_Testosterone").addClass('heigh-bg');
+                    $("span#testo_badge").text('High');
+                }
+                else{
+                    testosterone_range = "Testosterone Not Range";
+                }
+                console.log(testosterone_range);
+
+                // =============== Prolactin Range =============== //
+
+                if(age < 50){
+                  $(".multibar_small#Prolactine").data("min", 3.34);
+                  $(".multibar_small#Prolactine").data("max", 26.72);
+                  if ( prolactin < 3.34) {
+                      prolactin_range = "low_prolactin";
+                      $("span#prolactin_badge,#Prolactine").addClass('low-bg');
+                      $("span#prolactin_badge").text('Low');
+                  }
+                  else if ( (prolactin >= 3.34) && (prolactin <= 26.72) ){
+                      prolactin_range = "normal_prolactin";
+                      $("span#prolactin_badge,#Prolactine").addClass('narmal-bg');
+                      $("span#prolactin_badge").text('Normal');
+                  }
+                  else if ( prolactin > 26.72 ){
+                      prolactin_range = "high_prolactin";
+                      $("span#prolactin_badge,#Prolactine").addClass('heigh-bg');
+                      $("span#prolactin_badge").text('High');
+                  }
+                  else{
+                      prolactin_range = "Prolactin Not Range";
+                  }
+  
+                } else {
+                    $(".multibar_small#Prolactine").data("min", 2.74);
+                    $(".multibar_small#Prolactine").data("max", 19.64);
+                    if ( prolactin < 2.74) {
+                          prolactin_range = "low_prolactin";
+                          $("span#prolactin_badge,#Prolactine").addClass('low-bg');
+                          $("span#prolactin_badge").text('Low');
+                      }
+                      else if ( (prolactin >= 2.74) && (prolactin <= 19.64) ){
+                          prolactin_range = "normal_prolactin";
+                          $("span#prolactin_badge,#Prolactine").addClass('narmal-bg');
+                          $("span#prolactin_badge").text('Normal');
+                      }
+                      else if ( prolactin > 19.64 ){
+                          prolactin_range = "high_prolactin";
+                          $("span#prolactin_badge,#Prolactine").addClass('heigh-bg');
+                          $("span#prolactin_badge").text('High');
+                      }
+                      else{
+                          prolactin_range = "Prolactin Not Range";
+                      }
+
+                  }
+                
+
+
+
+  
+                console.log(prolactin_range);
+
+                // ==================== Range End ==================== //
+                // =================================================== //
+
+                // ==================== Ovarian reserve report start ==================== //
+                // ====================================================================== //
+
+                if ( AMH_range == "low_AMH_under_35" ) {
+
+                    var before_graph_OR = "<p>AMH, or the anti-mullerian hormone, estimates your ovarian reserve or egg count. Knowing your AMH levels is beneficial if you're trying to get pregnant because it helps determine your chances of conceiving at a certain age.</p>";
+
+                    var after_graph_OR = '<div class="small-heading"><p><strong>Your AMH level is '+AMH+' ng/mL, which is in a low range based on your age.</strong></p></div>';
+                    after_graph_OR += "<p>When your AMH levels are low, it may suggest that you may have some difficulty getting pregnant or that perimenopause/menopause may be on the horizon. It's best to consult your doctor to discuss an ideal fertility plan.</p>";
+                    after_graph_OR += '<div class="green-item-box">';
+                        after_graph_OR += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_OR += '<p><strong>Tip: What are other ways to check your ovarian reserve?</strong></p>';
+                        after_graph_OR += '<p>The anti-mullerian hormone test is one way to check how many eggs you have left in your ovaries. But other tests are used to check your ovarian reserve, such as:</p>';
+                        after_graph_OR += '<ul class="bullet-points">';
+                            after_graph_OR += '<li>An ultrasound, done by counting and measuring follicles in the ovaries, helps estimate the remaining number of eggs.</li>';
+                            after_graph_OR += "<li>An FSH test measures the follicle-stimulating hormone (FSH) levels in a woman's blood on the third day of her menstrual cycle.</li>";
+                            after_graph_OR += "<li>Estradiol testing measures blood estrogen levels on the third day of a woman's menstrual cycle.</li>";
+                        after_graph_OR += '</ul>';
+                        after_graph_OR += '<div class="note-text-info"><p><span class="font-ragular">Note:</span> A fertility doctor may use a combination of these tests to get a more accurate estimate of your egg supply.</p></div>';
+                    after_graph_OR += "</div>";
+
+                    if (report_data.if_the_symptoms != '') {
+                       //after_graph_OR += '<p>The symptoms you indicated in the questionnaire like ['+report_data.if_the_symptoms+'] are often associated with decreased AMH levels.</p>';
+                    }
+
+                    $('#before_graph_ovarian_reserve').append(before_graph_OR);
+                    $('#after_graph_ovarian_reserve').append(after_graph_OR);
+                    //alert('test');
+                }
+                else if(AMH_range == "low_AMH_36_to_40"){
+
+                    var before_graph_OR = "<p>AMH, or the anti-mullerian hormone, estimates your ovarian reserve or egg count. Knowing your AMH levels is beneficial if you're trying to get pregnant because it helps determine your chances of conceiving at a certain age.</p>";
+
+                    var after_graph_OR = '<div class="small-heading"><p><strong>Your AMH level is '+AMH+' ng/mL, which is in a low range based on your age.</strong></p></div>';
+                    after_graph_OR += "<p>When your AMH levels are low, it may suggest that you may have some difficulty getting pregnant or that perimenopause/menopause may be on the horizon. It's best to consult your doctor to discuss an ideal fertility plan.</p>";
+                    after_graph_OR += '<div class="green-item-box">';
+                        after_graph_OR += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_OR += '<p><strong>Tip: What are other ways to check your ovarian reserve?</strong></p>';
+                        after_graph_OR += '<p>The anti-mullerian hormone test is one way to check how many eggs you have left in your ovaries. But other tests are used to check your ovarian reserve, such as:</p>';
+                        after_graph_OR += '<ul class="bullet-points">';
+                            after_graph_OR += '<li>An ultrasound, done by counting and measuring follicles in the ovaries, helps estimate the remaining number of eggs.</li>';
+                            after_graph_OR += "<li>An FSH test measures the follicle-stimulating hormone (FSH) levels in a woman's blood on the third day of her menstrual cycle.</li>";
+                            after_graph_OR += "<li>Estradiol testing measures blood estrogen levels on the third day of a woman's menstrual cycle.</li>";
+                        after_graph_OR += '</ul>';
+                        after_graph_OR += '<div class="note-text-info"><p><span class="font-ragular">Note:</span> A fertility doctor may use a combination of these tests to get a more accurate estimate of your egg supply.</p></div>';
+                    after_graph_OR += "</div>";
+
+                    if (report_data.if_the_symptoms != '') {
+                       //after_graph_OR += '<p>The symptoms you indicated in the questionnaire like ['+report_data.if_the_symptoms+'] are often associated with decreased AMH levels.</p>';
+                    }
+
+                    $('#before_graph_ovarian_reserve').append(before_graph_OR);
+                    $('#after_graph_ovarian_reserve').append(after_graph_OR);
+                }
+                else if(AMH_range == "low_AMH_41_to_45"){
+
+                    var before_graph_OR = "<p>AMH, or the anti-mullerian hormone, estimates your ovarian reserve or egg count. Knowing your AMH levels is beneficial if you're trying to get pregnant because it helps determine your chances of conceiving at a certain age.</p>";
+
+                    var after_graph_OR = '<div class="small-heading"><p><strong>Your AMH level is '+AMH+' ng/mL, which is in a low range based on your age.</strong></p></div>';
+                    after_graph_OR += "<p>When your AMH levels are low, it may suggest that you may have some difficulty getting pregnant or that perimenopause/menopause may be on the horizon. It's best to consult your doctor to discuss an ideal fertility plan. </p>";
+                    after_graph_OR += '<div class="green-item-box">';
+                        after_graph_OR += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_OR += '<p><strong>Tip: What are other ways to check your ovarian reserve?</strong></p>';
+                        after_graph_OR += '<p>The anti-mullerian hormone test is one way to check how many eggs you have left in your ovaries. But other tests are used to check your ovarian reserve, such as:</p>';
+                        after_graph_OR += '<ul class="bullet-points">';
+                            after_graph_OR += '<li>An ultrasound, done by counting and measuring follicles in the ovaries, helps estimate the remaining number of eggs.</li>';
+                            after_graph_OR += "<li>An FSH test measures the follicle-stimulating hormone (FSH) levels in a woman's blood on the third day of her menstrual cycle.</li>";
+                            after_graph_OR += "<li>Estradiol testing measures blood estrogen levels on the third day of a woman's menstrual cycle.</li>";
+                        after_graph_OR += '</ul>';
+                        after_graph_OR += '<div class="note-text-info"><p><span class="font-ragular">Note:</span> A fertility doctor may use a combination of these tests to get a more accurate estimate of your egg supply.</p></div>';
+                    after_graph_OR += "</div>";
+
+                    if (report_data.if_the_symptoms != '') {
+                       //after_graph_OR += '<p>The symptoms you indicated in the questionnaire like ['+report_data.if_the_symptoms+'] are often associated with decreased AMH levels.</p>';
+                    }
+
+                    $('#before_graph_ovarian_reserve').append(before_graph_OR);
+                    $('#after_graph_ovarian_reserve').append(after_graph_OR);
+                }
+                else if(AMH_range == "low_normal_AMH_35"){
+
+                    var before_graph_OR = "<p>AMH, or the anti-mullerian hormone, estimates your ovarian reserve or egg count. Knowing your AMH levels is beneficial if you're trying to get pregnant because it helps determine your chances of conceiving at a certain age.</p>";
+
+                    var after_graph_OR = '<div class="small-heading"><p><strong>Your AMH level is '+AMH+', which is in a low normal range based on your age.</strong></p></div>';
+                    after_graph_OR += "<p>This suggests you may have a pretty good chance of conceiving through intercourse or using at-home IUI. You may also respond well to medications stimulating your cycles to prepare for IVF or IUI.</p>";
+                    after_graph_OR += '<div class="green-item-box">';
+                        after_graph_OR += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_OR += '<p><strong>Tip: What are other ways to check your ovarian reserve?</strong></p>';
+                        after_graph_OR += '<p>The anti-mullerian hormone test is one way to check how many eggs you have left in your ovaries. But other tests are used to check your ovarian reserve, such as:</p>';
+                        after_graph_OR += '<ul class="bullet-points">';
+                            after_graph_OR += '<li>An ultrasound, done by counting and measuring follicles in the ovaries, helps estimate the remaining number of eggs.</li>';
+                            after_graph_OR += "<li>An FSH test measures the follicle-stimulating hormone (FSH) levels in a woman's blood on the third day of her menstrual cycle.</li>";
+                            after_graph_OR += "<li>Estradiol testing measures blood estrogen levels on the third day of a woman's menstrual cycle.</li>";
+                        after_graph_OR += '</ul>';
+                        after_graph_OR += '<div class="note-text-info"><p><span class="font-ragular">Note:</span> A fertility doctor may use a combination of these tests to get a more accurate estimate of your egg supply.</p></div>';
+                    after_graph_OR += "</div>";
+
+                    $('#before_graph_ovarian_reserve').append(before_graph_OR);
+                    $('#after_graph_ovarian_reserve').append(after_graph_OR);
+                }
+                else if(AMH_range == "normal_AMH_35"){
+
+                    var before_graph_OR = "<p>AMH, or the anti-mullerian hormone, estimates your ovarian reserve or egg count. Knowing your AMH levels is beneficial if you're trying to get pregnant because it helps determine your chances of conceiving at a certain age.</p>";
+
+                    var after_graph_OR = '<div class="small-heading"><p><strong>Your AMH level is '+AMH+', which is in a normal range based on your age.</strong></p></div>';
+                    after_graph_OR += "<p>This suggests you may have a good chance of conceiving through intercourse or using at-home IUI. You may also respond well to medications stimulating your cycles to prepare for IVF or IUI.</p>";
+                    after_graph_OR += '<div class="green-item-box">';
+                        after_graph_OR += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_OR += '<p><strong>Tip: What are other ways to check your ovarian reserve?</strong></p>';
+                        after_graph_OR += '<p>The anti-mullerian hormone test is one way to check how many eggs you have left in your ovaries. But other tests are used to check your ovarian reserve, such as:</p>';
+                        after_graph_OR += '<ul class="bullet-points">';
+                            after_graph_OR += '<li>An ultrasound, done by counting and measuring follicles in the ovaries, helps estimate the remaining number of eggs.</li>';
+                            after_graph_OR += "<li>An FSH test measures the follicle-stimulating hormone (FSH) levels in a woman's blood on the third day of her menstrual cycle.</li>";
+                            after_graph_OR += "<li>Estradiol testing measures blood estrogen levels on the third day of a woman's menstrual cycle.</li>";
+                        after_graph_OR += '</ul>';
+                        after_graph_OR += '<div class="note-text-info"><p><span class="font-ragular">Note:</span> A fertility doctor may use a combination of these tests to get a more accurate estimate of your egg supply.</p></div>';
+                    after_graph_OR += "</div>";
+
+                    $('#before_graph_ovarian_reserve').append(before_graph_OR);
+                    $('#after_graph_ovarian_reserve').append(after_graph_OR);
+                }
+                else if(AMH_range == "normal_AMH_36_to_40"){
+
+                    var before_graph_OR = "<p>AMH, or the anti-mullerian hormone, estimates your ovarian reserve or egg count. Knowing your AMH levels is beneficial if you're trying to get pregnant because it helps determine your chances of conceiving at a certain age.</p>";
+
+                    var after_graph_OR = '<div class="small-heading"><p><strong>Your AMH level is '+AMH+', which is in a normal range based on your age.</strong></p></div>';
+                    after_graph_OR += "<p>This suggests you may have a good chance of conceiving through intercourse or using at-home IUI. You may also respond well to medications stimulating your cycles to prepare for IVF or IUI.</p>";
+                    after_graph_OR += '<div class="green-item-box">';
+                        after_graph_OR += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_OR += '<p><strong>Tip: What are other ways to check your ovarian reserve?</strong></p>';
+                        after_graph_OR += '<p>The anti-mullerian hormone test is one way to check how many eggs you have left in your ovaries. But other tests are used to check your ovarian reserve, such as:</p>';
+                        after_graph_OR += '<ul class="bullet-points">';
+                            after_graph_OR += '<li>An ultrasound, done by counting and measuring follicles in the ovaries, helps estimate the remaining number of eggs.</li>';
+                            after_graph_OR += "<li>An FSH test measures the follicle-stimulating hormone (FSH) levels in a woman's blood on the third day of her menstrual cycle.</li>";
+                            after_graph_OR += "<li>Estradiol testing measures blood estrogen levels on the third day of a woman's menstrual cycle.</li>";
+                        after_graph_OR += '</ul>';
+                        after_graph_OR += '<div class="note-text-info"><p><span class="font-ragular">Note:</span> A fertility doctor may use a combination of these tests to get a more accurate estimate of your egg supply.</p></div>';
+                    after_graph_OR += "</div>";
+
+                    $('#before_graph_ovarian_reserve').append(before_graph_OR);
+                    $('#after_graph_ovarian_reserve').append(after_graph_OR);
+                }
+                else if(AMH_range == "normal_AMH_41_to_45"){
+
+                    var before_graph_OR = "<p>AMH, or the anti-mullerian hormone, estimates your ovarian reserve or egg count. Knowing your AMH levels is beneficial if you're trying to get pregnant because it helps determine your chances of conceiving at a certain age.</p>";
+
+                    var after_graph_OR = '<div class="small-heading"><p><strong>Your AMH level is '+AMH+', which is in a normal range based on your age.</strong></p></div>';
+                    after_graph_OR += "<p>This suggests you may have a good chance of conceiving through intercourse or using at-home IUI. You may also respond well to medications stimulating your cycles to prepare for IVF or IUI.</p>";
+                    after_graph_OR += '<div class="green-item-box">';
+                        after_graph_OR += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_OR += '<p><strong>Tip: What are other ways to check your ovarian reserve?</strong></p>';
+                        after_graph_OR += '<p>The anti-mullerian hormone test is one way to check how many eggs you have left in your ovaries. But other tests are used to check your ovarian reserve, such as:</p>';
+                        after_graph_OR += '<ul class="bullet-points">';
+                            after_graph_OR += '<li>An ultrasound, done by counting and measuring follicles in the ovaries, helps estimate the remaining number of eggs.</li>';
+                            after_graph_OR += "<li>An FSH test measures the follicle-stimulating hormone (FSH) levels in a woman's blood on the third day of her menstrual cycle.</li>";
+                            after_graph_OR += "<li>Estradiol testing measures blood estrogen levels on the third day of a woman's menstrual cycle.</li>";
+                        after_graph_OR += '</ul>';
+                        after_graph_OR += '<div class="note-text-info"><p><span class="font-ragular">Note:</span> A fertility doctor may use a combination of these tests to get a more accurate estimate of your egg supply.</p></div>';
+                    after_graph_OR += "</div>";
+
+                    $('#before_graph_ovarian_reserve').append(before_graph_OR);
+                    $('#after_graph_ovarian_reserve').append(after_graph_OR);
+                }
+                else if(AMH_range == "high_AMH_35"){
+
+                    var before_graph_OR = "<p>AMH, or the anti-mullerian hormone, estimates your ovarian reserve or egg count. Knowing your AMH levels is beneficial if you're trying to get pregnant because it helps determine your chances of conceiving at a certain age.</p>";
+
+                    var after_graph_OR = '<div class="small-heading"><p><strong>Your AMH level is '+AMH+', which is in a high range based on your age.</strong></p></div>';
+                    after_graph_OR += "<p>If your AMH levels are higher, you may have a greater chance of conceiving and time to create an effective fertility plan. Although high AMH levels are not a direct sign of PCOS, they could indicate this condition. It's best to consult with your doctor for further testing.</p>";
+                    after_graph_OR += '<div class="green-item-box">';
+                        after_graph_OR += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_OR += '<p><strong>Tip: What are other ways to check your ovarian reserve?</strong></p>';
+                        after_graph_OR += '<p>The anti-mullerian hormone test is one way to check how many eggs you have left in your ovaries. But other tests are used to check your ovarian reserve, such as:</p>';
+                        after_graph_OR += '<ul class="bullet-points">';
+                            after_graph_OR += '<li>An ultrasound, done by counting and measuring follicles in the ovaries, helps estimate the remaining number of eggs.</li>';
+                            after_graph_OR += "<li>An FSH test measures the follicle-stimulating hormone (FSH) levels in a woman's blood on the third day of her menstrual cycle.</li>";
+                            after_graph_OR += "<li>Estradiol testing measures blood estrogen levels on the third day of a woman's menstrual cycle.</li>";
+                        after_graph_OR += '</ul>';
+                        after_graph_OR += '<div class="note-text-info"><p><span class="font-ragular">Note:</span> A fertility doctor may use a combination of these tests to get a more accurate estimate of your egg supply.</p></div>';
+                    after_graph_OR += "</div>";
+
+                    if (report_data.if_the_symptoms != '') {
+                       //after_graph_OR += '<p>The symptoms you indicated in the questionnaire, like '+report_data.if_the_symptoms+' may be associated with high AMH.</p>';
+                    }
+
+                    $('#before_graph_ovarian_reserve').append(before_graph_OR);
+                    $('#after_graph_ovarian_reserve').append(after_graph_OR);
+                }
+                else if(AMH_range == "high_AMH__36_to_40"){
+
+                    var before_graph_OR = "<p>AMH, or the anti-mullerian hormone, estimates your ovarian reserve or egg count. Knowing your AMH levels is beneficial if you're trying to get pregnant because it helps determine your chances of conceiving at a certain age.</p>";
+
+                    var after_graph_OR = '<div class="small-heading"><p><strong>Your AMH level is '+AMH+', which is in a high range based on your age.</strong></p></div>';
+                    after_graph_OR += "<p>If your AMH levels are higher, you may have a greater chance of conceiving and time to create an effective fertility plan. Although high AMH levels are not a direct sign of PCOS, they could indicate this condition. It's best to consult with your doctor for further testing.</p>";
+                    after_graph_OR += '<div class="green-item-box">';
+                        after_graph_OR += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_OR += '<p><strong>Tip: What are other ways to check your ovarian reserve?</strong></p>';
+                        after_graph_OR += '<p>The anti-mullerian hormone test is one way to check how many eggs you have left in your ovaries. But other tests are used to check your ovarian reserve, such as:</p>';
+                        after_graph_OR += '<ul class="bullet-points">';
+                            after_graph_OR += '<li>An ultrasound, done by counting and measuring follicles in the ovaries, helps estimate the remaining number of eggs.</li>';
+                            after_graph_OR += "<li>An FSH test measures the follicle-stimulating hormone (FSH) levels in a woman's blood on the third day of her menstrual cycle.</li>";
+                            after_graph_OR += "<li>Estradiol testing measures blood estrogen levels on the third day of a woman's menstrual cycle.</li>";
+                        after_graph_OR += '</ul>';
+                        after_graph_OR += '<div class="note-text-info"><p><span class="font-ragular">Note:</span> A fertility doctor may use a combination of these tests to get a more accurate estimate of your egg supply.</p></div>';
+                    after_graph_OR += "</div>";
+
+                    if (report_data.if_the_symptoms != '') {
+                       //after_graph_OR += '<p>The symptoms you indicated in the questionnaire, like '+report_data.if_the_symptoms+' may be associated with high AMH.</p>';
+                    }
+
+                    $('#before_graph_ovarian_reserve').append(before_graph_OR);
+                    $('#after_graph_ovarian_reserve').append(after_graph_OR);
+                }
+                else if(AMH_range == "high_AMH__41_to_45"){
+
+                    var before_graph_OR = "<p>AMH, or the anti-mullerian hormone, estimates your ovarian reserve or egg count. Knowing your AMH levels is beneficial if you're trying to get pregnant because it helps determine your chances of conceiving at a certain age.</p>";
+
+                    var after_graph_OR = '<div class="small-heading"><p><strong>Your AMH level is '+AMH+', which is in a high range based on your age.</strong></p></div>';
+                    after_graph_OR += "<p>If your AMH levels are higher, you may have a greater chance of conceiving and time to create an effective fertility plan. Although high AMH levels are not a direct sign of PCOS, they could indicate this condition. It's best to consult with your doctor for further testing.</p>";
+                    after_graph_OR += '<div class="green-item-box">';
+                        after_graph_OR += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_OR += '<p><strong>Tip: What are other ways to check your ovarian reserve?</strong></p>';
+                        after_graph_OR += '<p>The anti-mullerian hormone test is one way to check how many eggs you have left in your ovaries. But other tests are used to check your ovarian reserve, such as:</p>';
+                        after_graph_OR += '<ul class="bullet-points">';
+                            after_graph_OR += '<li>An ultrasound, done by counting and measuring follicles in the ovaries, helps estimate the remaining number of eggs.</li>';
+                            after_graph_OR += "<li>An FSH test measures the follicle-stimulating hormone (FSH) levels in a woman's blood on the third day of her menstrual cycle.</li>";
+                            after_graph_OR += "<li>Estradiol testing measures blood estrogen levels on the third day of a woman's menstrual cycle.</li>";
+                        after_graph_OR += '</ul>';
+                        after_graph_OR += '<div class="note-text-info"><p><span class="font-ragular">Note:</span> A fertility doctor may use a combination of these tests to get a more accurate estimate of your egg supply.</p></div>';
+                    after_graph_OR += "</div>";
+
+                    if (report_data.if_the_symptoms != '') {
+                       //after_graph_OR += '<p>The symptoms you indicated in the questionnaire, like '+report_data.if_the_symptoms+' may be associated with high AMH.</p>';
+                    }
+
+                    $('#before_graph_ovarian_reserve').append(before_graph_OR);
+                    $('#after_graph_ovarian_reserve').append(after_graph_OR);
+                }
+                else{}
+                // ===================== Ovarian reserve(OR) report end ===================== //
+                // ====================================================================== //
+
+                // ==================== Thyroid function(TF) report start ==================== //
+                // ======================================================================= //
+                if ( TSH_range == "low_TSH" ) {
+                    var before_graph_TF_TSH = "<p>TSH (thyroid stimulating hormone) and fT4 (free thyroxine) tests assess thyroid gland function and determine whether it works properly.</p>";
+
+                    var after_graph_TF_TSH = '<div class="small-heading"><p><strong>Your TSH level is '+TSH+' µIU/mL, which is lower than the normal range.</strong></p></div>';
+                        after_graph_TF_TSH += '<p>This suggests that your thyroid gland may not function properly or may be incorrectly regulated by the pituitary gland.</p>';
+
+                    if (report_data.if_the_symptoms != '') {
+                       //after_graph_OR += '<p>The symptoms you indicated in the questionnaire, like '+report_data.if_the_symptoms+' are often associated with thyroid dysfunction.</p>';
+                    }
+
+                    $('#TSH_thyroid_report_before_graph').append(before_graph_TF_TSH);
+                    $('#TSH_thyroid_report_after_graph').append(after_graph_TF_TSH);
+                    //alert('test');
+                }
+                else if ( TSH_range == "normal_TSH" ){
+                    var before_graph_TF_TSH = "<p>TSH (thyroid stimulating hormone) and fT4 (free thyroxine) tests assess thyroid gland function and determine whether it works properly.</p>";
+
+                    var after_graph_TF_TSH = '<div class="small-heading"><p><strong>Your TSH level is '+TSH+' µIU/mL, which is within the normal range.</strong></p></div>';
+                        after_graph_TF_TSH += '<p>This indicates that your thyroid gland is functioning properly and being regulated correctly by the pituitary gland.</p>';
+
+                    $('#TSH_thyroid_report_before_graph').append(before_graph_TF_TSH);
+                    $('#TSH_thyroid_report_after_graph').append(after_graph_TF_TSH);
+                    //alert('test');
+                }
+                else if ( TSH_range == "high_TSH" ){
+                    var before_graph_TF_TSH = "<p>TSH (thyroid stimulating hormone) and fT4 (free thyroxine) tests assess thyroid gland function and determine whether it works properly.</p>";
+
+                    var after_graph_TF_TSH = '<div class="small-heading"><p><strong>Your TSH level is '+TSH+' µIU/mL, which is higher than normal range.</strong></p></div>';
+                        after_graph_TF_TSH += '<p>This suggests that your thyroid gland may not function properly or may be incorrectly regulated by the pituitary gland.</p>';
+
+                    if (report_data.if_the_symptoms != '') {
+                       //after_graph_OR += '<p>The symptoms you indicated in the questionnaire, like '+report_data.if_the_symptoms+' are often associated with extra thyroid hormones.</p>';
+                    }
+
+                    $('#TSH_thyroid_report_before_graph').append(before_graph_TF_TSH);
+                    $('#TSH_thyroid_report_after_graph').append(after_graph_TF_TSH);
+                    //alert('test');
+                }
+                else{
+                }
+
+                if ( FT4_range == "low_FT4" ) {
+                    var after_graph_TF_FT4 = '<div class="small-heading"><p><strong>Your fT4 level is '+FT4+' ng/dL. It is lower than the normal range.</strong></p></div>';
+                    after_graph_TF_FT4 += '<p>This indicates that your thyroid gland is not producing enough hormones, which may disrupt the regulation of essential bodily functions, such as:</p>';
+                    after_graph_TF_FT4 += '<ul class="bullet-points">';
+                    after_graph_TF_FT4 += "<li><strong>Metabolism</strong> (your body's ability to turn food into energy).</li>";
+                    after_graph_TF_FT4 += '<li><strong>Cardiovascular function</strong> (your heart health and blood vessels).</li>';
+                    after_graph_TF_FT4 += '<li><strong>Sexual function</strong> (your sexual health and ability to perform).</li>';
+                    after_graph_TF_FT4 += '<li><strong>Reproductive health</strong> (your ovulation, menstrual cycles, and fertility).</li>';
+                    after_graph_TF_FT4 += '<li><strong>Brain health</strong> (your memory and concentration).</li>';
+                    after_graph_TF_FT4 += '</ul>';
+                    after_graph_TF_FT4 += '<div class="green-item-box">';
+                    after_graph_TF_FT4 += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                    after_graph_TF_FT4 += '<p><strong>Tip: What can I do to check further into my thyroid function?</strong></p>';
+                    after_graph_TF_FT4 += '<p>To get a deeper look into your thyroid function, it may be necessary to seek advice from a healthcare professional and test additional biomarkers (measurable indicators in the body that can provide more information about health status or response to treatments), such as:</p>';
+                    after_graph_TF_FT4 += '<ul class="bullet-points">';
+                        after_graph_TF_FT4 += '<li>T3 (triiodothyronine): Plays a critical role in regulating metabolism, body temperature, and heart rate.</li>';
+                        after_graph_TF_FT4 += '<li>Thyroid peroxidase antibody: An antibody produced by the immune system.</li>';
+                        after_graph_TF_FT4 += '<li>Thyroglobulin antibody: An antibody that can disturb the functions of the thyroid gland.</li>';
+                    after_graph_TF_FT4 += '</ul>';
+                    after_graph_TF_FT4 += '</div>';
+
+                    if (report_data.if_the_symptoms != '') {
+                       //after_graph_TF_FT4 += '<p>The symptoms you indicated in the questionnaire, like '+report_data.if_the_symptoms+' are often associated with thyroid dysfunction.</p>';
+                    }
+                    
+                    $('#FT4_thyroid_report_after_graph').append(after_graph_TF_FT4);
+                }
+                else if ( FT4_range == "normal_FT4" ){
+                    var after_graph_TF_FT4 = '<div class="small-heading"><p><strong>Your fT4 level is '+FT4+' ng/dL. Therefore, it is within the normal range.</strong></p></div>';
+                    after_graph_TF_FT4 += '<p>This indicates that your thyroid gland is producing enough hormones to regulate essential bodily functions, such as:</p>';
+                    after_graph_TF_FT4 += '<ul class="bullet-points">';
+                    after_graph_TF_FT4 += "<li><strong>Metabolism</strong> (your body's ability to turn food into energy).</li>";
+                    after_graph_TF_FT4 += '<li><strong>Cardiovascular function</strong> (your heart health and blood vessels).</li>';
+                    after_graph_TF_FT4 += '<li><strong>Sexual function</strong> (your sexual health and ability to perform).</li>';
+                    after_graph_TF_FT4 += '<li><strong>Reproductive health</strong> (your ovulation, menstrual cycles, and fertility).</li>';
+                    after_graph_TF_FT4 += '<li><strong>Brain health</strong> (your memory and concentration).</li>';
+                    after_graph_TF_FT4 += '</ul>';
+                    after_graph_TF_FT4 += '<div class="green-item-box">';
+                    after_graph_TF_FT4 += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                    after_graph_TF_FT4 += '<p><strong>Tip: What can I do to check further into my thyroid function?</strong></p>';
+                    after_graph_TF_FT4 += '<p>To get a deeper look into your thyroid function, it may be necessary to seek advice from a healthcare professional and test additional biomarkers (measurable indicators in the body that can provide more information about health status or response to treatments), such as:</p>';
+                    after_graph_TF_FT4 += '<ul class="bullet-points">';
+                        after_graph_TF_FT4 += '<li>T3 (triiodothyronine): Plays a critical role in regulating metabolism, body temperature, and heart rate.</li>';
+                        after_graph_TF_FT4 += '<li>Thyroid peroxidase antibody: An antibody produced by the immune system.</li>';
+                        after_graph_TF_FT4 += '<li>Thyroglobulin antibody: An antibody that can disturb the functions of the thyroid gland.</li>';
+                    after_graph_TF_FT4 += '</ul>';
+                    after_graph_TF_FT4 += '</div>';
+                    
+                    $('#FT4_thyroid_report_after_graph').append(after_graph_TF_FT4);
+                }
+                else if ( FT4_range == "high_FT4" ){
+                    var after_graph_TF_FT4 = '<div class="small-heading"><p><strong>Your fT4 level is '+FT4+' ng/dL. It is higher than the normal range.</strong></p></div>';
+                    after_graph_TF_FT4 += '<p>This indicates that your thyroid gland is producing extra hormones, which may disrupt the regulation of essential bodily functions, such as:</p>';
+                    after_graph_TF_FT4 += '<ul class="bullet-points">';
+                    after_graph_TF_FT4 += "<li><strong>Metabolism</strong> (your body's ability to turn food into energy).</li>";
+                    after_graph_TF_FT4 += '<li><strong>Cardiovascular function</strong> (your heart health and blood vessels).</li>';
+                    after_graph_TF_FT4 += '<li><strong>Sexual function</strong> (your sexual health and ability to perform).</li>';
+                    after_graph_TF_FT4 += '<li><strong>Reproductive health</strong> (your ovulation, menstrual cycles, and fertility).</li>';
+                    after_graph_TF_FT4 += '<li><strong>Brain health</strong> (your memory and concentration).</li>';
+                    after_graph_TF_FT4 += '</ul>';
+                    after_graph_TF_FT4 += '<div class="green-item-box">';
+                    after_graph_TF_FT4 += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                    after_graph_TF_FT4 += '<p><strong>Tip: What can I do to check further into my thyroid function?</strong></p>';
+                    after_graph_TF_FT4 += '<p>To get a deeper look into your thyroid function, it may be necessary to seek advice from a healthcare professional and test additional biomarkers (measurable indicators in the body that can provide more information about health status or response to treatments), such as:</p>';
+                    after_graph_TF_FT4 += '<ul class="bullet-points">';
+                        after_graph_TF_FT4 += '<li>T3 (triiodothyronine): Plays a critical role in regulating metabolism, body temperature, and heart rate.</li>';
+                        after_graph_TF_FT4 += '<li>Thyroid peroxidase antibody: An antibody produced by the immune system.</li>';
+                        after_graph_TF_FT4 += '<li>Thyroglobulin antibody: An antibody that can disturb the functions of the thyroid gland.</li>';
+                    after_graph_TF_FT4 += '</ul>';
+                    after_graph_TF_FT4 += '</div>';
+
+                    if (report_data.if_the_symptoms != '') {
+                       //after_graph_TF_FT4 += '<p>The symptoms you indicated in the questionnaire, like '+report_data.if_the_symptoms+' are often associated with extra thyroid hormones.</p>';
+                    }
+                    
+                    $('#FT4_thyroid_report_after_graph').append(after_graph_TF_FT4);
+                }
+                else{
+                }
+            
+                // ===================== Thyroid function(TF) report end ===================== //
+                // =========================================================================== //
+
+                // ==================== Menstrual Cycle Rhythm(MCR) report start ==================== //
+                // ================================================================================== //
+                if ( testosterone_range == "low_testosterone" ) {
+                    var after_graph_MCR_testosterone = '<div class="small-heading"><p><strong>Your free testosterone level is '+testosterone+' %, which is lower than the normal range.</strong></p></div>';
+                    after_graph_MCR_testosterone += '<p>Your cycle regularity may be affected.</p>';
+                    after_graph_MCR_testosterone += '<div class="green-item-box">';
+                        after_graph_MCR_testosterone += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_MCR_testosterone += '<p><strong>Tip: How does testosterone help to balance your other hormones?</strong></p>';
+                        after_graph_MCR_testosterone += '<p>Testosterone, estrogen, and progesterone help balance hormones during the menstrual cycle. Once it\'s produced, some testosterone is transformed into estrogen.</p>';
+                        after_graph_MCR_testosterone += '<p>Normal testosterone levels are essential for maintaining the hormone balance between estrogen and progesterone. If one hormone is out of balance, it can affect the others and disrupt your menstrual cycle patterns and reproductive health.</p>';
+                        /* after_graph_MCR_testosterone += '<ul class="bullet-points">';
+                            after_graph_MCR_testosterone += "<li><strong>Testosterone</strong>, estrogen, and progesterone help balance hormones during the menstrual cycle. Once it\'s produced, some testosterone is transformed into estrogen.</li>"
+                            after_graph_MCR_testosterone += '<li><strong>Normal testosterone</strong> levels are essential for maintaining the hormone balance between estrogen and progesterone. If one hormone is out of balance, it can affect the others and disrupt your menstrual cycle patterns and reproductive health.</li>';
+                        after_graph_MCR_testosterone += '</ul>'; */
+                    after_graph_MCR_testosterone += '</div>';
+
+                    $('#testosterone_menstrual_report_after_graph').append(after_graph_MCR_testosterone);
+                }
+                else if ( testosterone_range == "normal_testosterone" ){
+                    var after_graph_MCR_testosterone = '<div class="small-heading"><p><strong>Your free testosterone level is '+testosterone+' %, which is within the normal range.</strong></p></div>';
+                    after_graph_MCR_testosterone += '<p>It will unlikely affect your cycle regularity.</p>';
+                    after_graph_MCR_testosterone += '<div class="green-item-box">';
+                        after_graph_MCR_testosterone += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_MCR_testosterone += '<p><strong>Tip: How does testosterone help to balance your other hormones?</strong></p>';
+                        after_graph_MCR_testosterone += '<p>Testosterone, estrogen, and progesterone help balance hormones during the menstrual cycle. Once it\'s produced, some testosterone is transformed into estrogen.</p>';
+                        after_graph_MCR_testosterone += '<p>Normal testosterone levels are essential for maintaining the hormone balance between estrogen and progesterone. If one hormone is out of balance, it can affect the others and disrupt your menstrual cycle patterns and reproductive health.</p>';
+                    after_graph_MCR_testosterone += '</div>';
+
+                    $('#testosterone_menstrual_report_after_graph').append(after_graph_MCR_testosterone);
+                }
+                else if ( testosterone_range == "high_testosterone" ){
+                    var after_graph_MCR_testosterone = '<div class="small-heading"><p><strong>Your free testosterone level is '+testosterone+' %, which is higher than the normal range.</strong></p></div>';
+                    after_graph_MCR_testosterone += '<p>Your cycle regularity may be affected.</p>';
+                    after_graph_MCR_testosterone += '<div class="green-item-box">';
+                        after_graph_MCR_testosterone += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_MCR_testosterone += '<p><strong>Tip: How does testosterone help to balance your other hormones?</strong></p>';
+                        after_graph_MCR_testosterone += '<p>Testosterone, estrogen, and progesterone help balance hormones during the menstrual cycle. Once it\'s produced, some testosterone is transformed into estrogen.</p>';
+                        after_graph_MCR_testosterone += '<p>Normal testosterone levels are essential for maintaining the hormone balance between estrogen and progesterone. If one hormone is out of balance, it can affect the others and disrupt your menstrual cycle patterns and reproductive health.</p>';
+                    after_graph_MCR_testosterone += '</div>';
+
+                    $('#testosterone_menstrual_report_after_graph').append(after_graph_MCR_testosterone);
+                }
+                else{
+                }
+
+                if ( prolactin_range == "low_prolactin" ) {
+                    var before_graph_MCR_prolactin = '<p>Prolactin is another hormone that regulates the menstrual cycle, ovulation, and fertility. Its most well-known function is stimulating breast milk production.</p>';
+                  
+                    var after_graph_MCR_prolactin = '<div class="small-heading"><p><strong>Your prolactin level is '+prolactin+' ng/mL, which is lower than the normal range.</strong></p></div>';
+                    after_graph_MCR_prolactin += '<p>Lower prolactin levels may affect your menstrual cycle’s regularity.</p>';
+           
+                    after_graph_MCR_prolactin += '<div class="green-item-box">';
+                        after_graph_MCR_prolactin += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_MCR_prolactin += '<p><strong>Tip: How does prolactin affect your cycle regularity?</strong></p>';
+                        after_graph_MCR_prolactin += '<p>Prolactin suppresses two hormones—luteinizing hormone (LH) and follicle-stimulating hormone (FSH). Both hormones cause and regulate ovulation. Prolactin levels also tend to affect your cycle’s regularity. When prolactin levels are abnormal, it can disrupt the regulation of these hormones, leading to irregular menstrual cycles and, in some cases, difficulty getting pregnant.</p>';
+                    after_graph_MCR_prolactin += '</div>';
+
+                    $('#prolactin_menstrual_report_before_graph').append(before_graph_MCR_prolactin);
+                    $('#prolactin_menstrual_report_after_graph').append(after_graph_MCR_prolactin);
+                }
+                else if ( prolactin_range == "normal_prolactin" ){
+                    var before_graph_MCR_prolactin = '<p>Prolactin is another hormone that regulates the menstrual cycle, ovulation, and fertility. Its most well-known function is stimulating breast milk production.</p>';
+                  
+                    var after_graph_MCR_prolactin = '<div class="small-heading"><p><strong>Your prolactin level is '+prolactin+' ng/mL, which is within the normal range.</strong></p></div>';
+                    after_graph_MCR_prolactin += '<p>Normal prolactin levels are unlikely to affect your menstrual cycle’s regularity.</p>';
+           
+                    after_graph_MCR_prolactin += '<div class="green-item-box">';
+                        after_graph_MCR_prolactin += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_MCR_prolactin += '<p><strong>Tip: How does prolactin affect your cycle regularity?</strong></p>';
+                        after_graph_MCR_prolactin += '<p>Prolactin suppresses two hormones—luteinizing hormone (LH) and follicle-stimulating hormone (FSH). Both hormones cause and regulate ovulation. Prolactin levels also tend to affect your cycle’s regularity. When prolactin levels are abnormal, it can disrupt the regulation of these hormones, leading to irregular menstrual cycles and, in some cases, difficulty getting pregnant.</p>';
+                    after_graph_MCR_prolactin += '</div>';
+
+                    $('#prolactin_menstrual_report_before_graph').append(before_graph_MCR_prolactin);
+                    $('#prolactin_menstrual_report_after_graph').append(after_graph_MCR_prolactin);
+                }
+                else if ( prolactin_range == "high_prolactin" ){
+                    var before_graph_MCR_prolactin = '<p>Prolactin is another hormone that regulates the menstrual cycle, ovulation, and fertility. Its most well-known function is stimulating breast milk production.</p>';
+                  
+                    var after_graph_MCR_prolactin = '<div class="small-heading"><p><strong>Your prolactin level is '+prolactin+' ng/mL, which is higher than the normal range.</strong></p></div>';
+                    after_graph_MCR_prolactin += '<p>Higher prolactin levels may affect your menstrual cycle’s regularity.</p>';
+                    after_graph_MCR_prolactin += '<div class="small-heading"><p><strong>Higher prolactin levels may also be associated with:</strong></p></div>';
+                    after_graph_MCR_prolactin += '<ul class="bullet-points">';
+                        after_graph_MCR_prolactin += '<li>Excessive exercise</li>';
+                        after_graph_MCR_prolactin += '<li>Stress</li>';
+                        after_graph_MCR_prolactin += '<li>Antidepressants, antipsychotics, and high-blood pressure medicines</li>';
+                        after_graph_MCR_prolactin += '<li>Nipple stimulation</li>';
+                        after_graph_MCR_prolactin += '<li>Herbs, including fenugreek, fennel seeds, and red clover</li>';
+                    after_graph_MCR_prolactin += '</ul>';
+                    //after_graph_MCR_prolactin += '<p>Higher prolactin levels may also be why your conception journey has prolonged over a 12-month period.</p>';
+                    after_graph_MCR_prolactin += '<div class="green-item-box">';
+                        after_graph_MCR_prolactin += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        after_graph_MCR_prolactin += '<p><strong>Tip: How does prolactin affect your cycle regularity?</strong></p>';
+                        after_graph_MCR_prolactin += '<p>Prolactin suppresses two hormones—luteinizing hormone (LH) and follicle-stimulating hormone (FSH). Both hormones cause and regulate ovulation. Prolactin levels also tend to affect your cycle’s regularity. When prolactin levels are abnormal, it can disrupt the regulation of these hormones, leading to irregular menstrual cycles and, in some cases, difficulty getting pregnant.</p>';
+                    after_graph_MCR_prolactin += '</div>';
+
+                    if (report_data.if_the_symptoms != '') {
+                       //after_graph_OR += '<p>The symptoms you indicated in the questionnaire, like '+report_data.if_the_symptoms+' are often associated with high levels of prolactin.</p>';
+                    }
+
+                    $('#prolactin_menstrual_report_before_graph').append(before_graph_MCR_prolactin);
+                    $('#prolactin_menstrual_report_after_graph').append(after_graph_MCR_prolactin);
+                }
+                else{
+                }
+                // ===================== Menstrual Cycle Rhythm(MCR) report end ===================== //
+                // ================================================================================== //
+
+                // ==================== Hormonal Balance(HB) report start ==================== //
+                // =========================================================================== //
+                if ( testosterone_range == "low_testosterone" ) {
+                    var hormonal_balance_report = '<p>Having balanced hormones is essential for the body to work properly. When hormones become unbalanced, it can cause different health problems and symptoms.</p>';
+                    hormonal_balance_report += '<p><strong>Skin Condition</strong></p>';
+                    hormonal_balance_report += '<p>When people assigned female at birth have too many male hormones, it can cause skin problems. Testosterone overproduction may lead to excessive oil production, which may increase the risk of inflamed sebaceous glands (small, oil-producing glands)—and can trigger an acne outbreak.</p>';
+                    hormonal_balance_report += "<p><strong>Your testosterone levels are lower than the normal range, but likely should not cause issues for your skin health.</strong></p>";
+                    hormonal_balance_report += '<p><strong>Sexual Health </strong></p>';
+                    hormonal_balance_report += '<p>Testosterone affects your libido and rises around ovulation to stimulate your sexual desire.</p>';
+                    hormonal_balance_report += "<p><strong>Your low testosterone levels may be associated with a lower sex drive. Typically, testosterone tends to rise around ovulation to stimulate sexual desire.</strong></p>";
+                }
+                else if ( testosterone_range == "normal_testosterone" ){
+                    var hormonal_balance_report = '<p>Having balanced hormones is essential for the body to work properly. When hormones become unbalanced, it can cause different health problems and symptoms.</p>';
+                    hormonal_balance_report += '<p><strong>Skin Condition</strong></p>';
+                    hormonal_balance_report += '<p>When people assigned female at birth have too many male hormones, it can cause skin problems. Testosterone overproduction may lead to excessive oil production, which may increase the risk of inflamed sebaceous glands (small, oil-producing glands)—and can trigger an acne outbreak.</p>';
+                    hormonal_balance_report += "<p><strong>Good news! Your testosterone levels are balanced, and shouldn't cause any problems with your skin.</strong></p>";
+                    hormonal_balance_report += '<p><strong>Sexual Health </strong></p>';
+                    hormonal_balance_report += '<p>Testosterone affects your libido and rises around ovulation to stimulate your sexual desire.</p>';
+                    hormonal_balance_report += "<p><strong>Your testosterone levels are balanced and shouldn't cause any problems with your libido! Typically, testosterone tends to rise around ovulation to stimulate sexual desire.</strong></p>";
+                }
+                else if ( testosterone_range == "high_testosterone" ){
+                    var hormonal_balance_report = '<p>Having balanced hormones is essential for the body to work properly. When hormones become unbalanced, it can cause different health problems and symptoms.</p>';
+                    hormonal_balance_report += '<p><strong>Skin Condition</strong></p>';
+                    hormonal_balance_report += '<p>When people assigned female at birth have too many male hormones, it can cause skin problems. Testosterone overproduction may lead to excessive oil production, which may increase the risk of inflamed sebaceous glands (small, oil-producing glands)—and can trigger an acne outbreak.</p>';
+                    hormonal_balance_report += "<p>Your testosterone levels are higher than the normal range, which could affect your skin. Typically when testosterone is high, it can make your skin produce more oil—possibly leading to acne.</p>";
+                    hormonal_balance_report += '<p><strong>Sexual Health </strong></p>';
+                    hormonal_balance_report += '<p>Testosterone affects your libido and rises around ovulation to stimulate your sexual desire.</p>';
+                    hormonal_balance_report += "<p>Your high testosterone levels could be affecting your libido. Typically, testosterone tends to rise around ovulation to stimulate sexual desire. But if it's too high, it may cause some issues with sexual health.</p>";
+                }
+                else{
+                }
+
+                if ( prolactin_range == "low_prolactin" ) {
+                    hormonal_balance_report += '<p><strong>Breast health</strong></p>';
+                    hormonal_balance_report += '<p>Prolactin is a hormone that helps breast tissue (called mammary alveoli) grow. This typically happens every menstrual cycle. But if you have too much or too little prolactin, it can cause problems. Too much prolactin might promote the growth of lumps in your breasts, causing pain and discomfort throughout your menstrual cycle.</p>';
+                    hormonal_balance_report += '<p><strong>Your prolactin levels are lower than the normal range, meaning this should not affect your breast health.</strong></p>';
+                    hormonal_balance_report += '<div class="green-item-box">';
+                        hormonal_balance_report += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        hormonal_balance_report += '<p><strong>Tip: Be sure to give your breasts the care they deserve :)</strong></p>';
+                        hormonal_balance_report += '<p>Even with high or normal prolactin levels, it’s important to have regular check-ups. If you notice any changes, you should ask your doctor for advice immediately.</p>';
+                    hormonal_balance_report += '</div>';
+                }
+                else if ( prolactin_range == "normal_prolactin" ){
+                    hormonal_balance_report += '<p><strong>Breast health</strong></p>';
+                    hormonal_balance_report += '<p>Prolactin is a hormone that helps breast tissue (called mammary alveoli) grow. This typically happens every menstrual cycle. But if you have too much or too little prolactin, it can cause problems. Too much prolactin might promote the growth of lumps in your breasts, causing pain and discomfort throughout your menstrual cycle.</p>';
+                    hormonal_balance_report += '<p><strong>Your prolactin levels are within the normal range, meaning this should not affect your breast health.</strong></p>';
+                    hormonal_balance_report += '<div class="green-item-box">';
+                        hormonal_balance_report += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        hormonal_balance_report += '<p><strong>Tip: Be sure to give your breasts the care they deserve :)</strong></p>';
+                        hormonal_balance_report += '<p>Even with high or normal prolactin levels, it’s important to have regular check-ups. If you notice any changes, you should ask your doctor for advice immediately.</p>';
+                    hormonal_balance_report += '</div>';
+                }
+                else if ( prolactin_range == "high_prolactin" ){
+                    hormonal_balance_report += '<p><strong>Breast health</strong></p>';
+                    hormonal_balance_report += '<p>Prolactin is a hormone that helps breast tissue (called mammary alveoli) grow. This typically happens every menstrual cycle. But if you have too much or too little prolactin, it can cause problems. Too much prolactin might promote the growth of lumps in your breasts, causing pain and discomfort throughout your menstrual cycle.</p>';
+                    hormonal_balance_report += '<p>Your prolactin levels are bit higher than the normal range, meaning this possibly could affect your breast health.</p>';
+                    hormonal_balance_report += '<div class="green-item-box">';
+                        hormonal_balance_report += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        hormonal_balance_report += '<p><strong>Tip: Be sure to give your breasts the care they deserve :)</strong></p>';
+                        hormonal_balance_report += '<p>Even with high or normal prolactin levels, it’s important to have regular check-ups. If you notice any changes, you should ask your doctor for advice immediately.</p>';
+                    hormonal_balance_report += '</div>';
+                }
+                else{
+                }
+
+                if ( testosterone_range == "low_testosterone" ) {
+                    hormonal_balance_report += '<p><strong>PCOS relation</strong></p>';
+                    hormonal_balance_report += '<p>While hormonal changes can indicate PCOS, they are not the sole indicator. Disruptions in your menstrual cycle and other associated symptoms are criteria for diagnosing PCOS.</p>';
+                    hormonal_balance_report += '<p><strong>Your free testosterone levels are lower the normal range.</strong></p>';
+                    hormonal_balance_report += '<p>Based on your free testosterone levels, it appears that PCOS is currently not present. It also appears that your prolactin level may not be an indirect indicator of PCOS.</p>';
+                }
+                else if ( testosterone_range == "normal_testosterone" ){
+                    hormonal_balance_report += '<p><strong>PCOS relation</strong></p>';
+                    hormonal_balance_report += '<p>While hormonal changes can indicate PCOS, they are not the sole indicator. Disruptions in your menstrual cycle and other associated symptoms are criteria for diagnosing PCOS.</p>';
+                    hormonal_balance_report += '<p><strong>Your free testosterone levels are within the normal range.</strong></p>';
+                    hormonal_balance_report += '<p>Based on your free testosterone levels, it appears that PCOS is currently not present. It also appears that your prolactin level may not be an indirect indicator of PCOS.</p>';
+                }
+                else if ( testosterone_range == "high_testosterone" ){
+                    hormonal_balance_report += '<p><strong>PCOS relation</strong></p>';
+                    hormonal_balance_report += '<p>While hormonal changes can indicate PCOS, they are not the sole indicator. Disruptions in your menstrual cycle and other associated symptoms are criteria for diagnosing PCOS.</p>';
+                    hormonal_balance_report += '<p>Your free testosterone levels are higher than the normal range. A high free testosterone level can possibly indicate PCOS. Additionally, your prolactin level may serve as an indirect indicator of PCOS.</p>';
+                    //hormonal_balance_report += '<p></p>';
+                }
+                else{
+                }
+
+                // if ( prolactin_range == "low_prolactin" ) {
+                //     hormonal_balance_report += '<p><strong>Your prolactin levels are lower the normal range.</strong></p>';
+                //     hormonal_balance_report += '<div class="green-item-box">';
+                //         hormonal_balance_report += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                //         hormonal_balance_report += '<p><strong>Tip: Can I rely on my hormone test results to diagnose myself with PCOS?</strong></p>';
+                //         hormonal_balance_report += "<p>No. Please be aware that hormonal test results alone aren't sufficient enough to diagnose PCOS. Only a medical specialist can confirm whether or not you have PCOS, based on a complete assessment of your medical history. They may also look into other possible check-ups, such as an ultrasound or additional blood tests, including the androgen index, total testosterone, and SHBG (sex hormone binding globulin). If you experience any concerning symptoms, please contact your doctor as soon as possible.</p>";
+                //     hormonal_balance_report += '</div>';
+                // }
+                // else if ( prolactin_range == "normal_prolactin" ){
+                //     hormonal_balance_report += '<p><strong>Your prolactin levels are within the normal range.</strong></p>';
+                //     hormonal_balance_report += '<div class="green-item-box">';
+                //         hormonal_balance_report += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                //         hormonal_balance_report += '<p><strong>Tip: Can I rely on my hormone test results to diagnose myself with PCOS?</strong></p>';
+                //         hormonal_balance_report += "<p>No. Please be aware that hormonal test results alone aren't sufficient enough to diagnose PCOS. Only a medical specialist can confirm whether or not you have PCOS, based on a complete assessment of your medical history. They may also look into other possible check-ups, such as an ultrasound or additional blood tests, including the androgen index, total testosterone, and SHBG (sex hormone binding globulin). If you experience any concerning symptoms, please contact your doctor as soon as possible.</p>";
+                //     hormonal_balance_report += '</div>';
+                // }
+                // else if ( prolactin_range == "high_prolactin" ){
+                //     hormonal_balance_report += '<p><strong>Your prolactin levels are higher than the normal range.</strong></p>';
+                //     hormonal_balance_report += '<div class="green-item-box">';
+                //         hormonal_balance_report += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                //         hormonal_balance_report += '<p><strong>Tip: Can I rely on my hormone test results to diagnose myself with PCOS?</strong></p>';
+                //         hormonal_balance_report += "<p>No. Please be aware that hormonal test results alone aren't sufficient enough to diagnose PCOS. Only a medical specialist can confirm whether or not you have PCOS, based on a complete assessment of your medical history. They may also look into other possible check-ups, such as an ultrasound or additional blood tests, including the androgen index, total testosterone, and SHBG (sex hormone binding globulin). If you experience any concerning symptoms, please contact your doctor as soon as possible.</p>";
+                //     hormonal_balance_report += '</div>';
+                // }
+                // else{
+                // }
+
+                if (report_data.if_the_symptoms != '') {
+                   //hormonal_balance_report += '<p>The symptoms you indicated in the questionnaire, like '+report_data.if_the_symptoms+' are often associated with PCOS.</p>';
+                }
+
+                $('#hormonal_balance_report_text').append(hormonal_balance_report);
+                // ===================== Hormonal Balance(HB) report end ===================== //
+                // =========================================================================== //
+
+                // ==================== Fertility Health(FH) report start ==================== //
+                // =========================================================================== //
+
+
+                var fertility_report_ovulation_text = '<p><strong>Ovulation and Ability to conceive</strong></p>';
+                if ( (testosterone_range == "normal_testosterone") && (prolactin_range == "normal_prolactin") && (FT4_range == "normal_FT4") && (TSH_range == "normal_TSH") ) {
+                    fertility_report_ovulation_text += '<p>Based on your test, your ovulation appears unaffected by abnormal prolactin, free testosterone, TSH, and fT4 levels.</p>';
+                }
+                else if((testosterone_range == "high_testosterone") && (prolactin_range == "high_prolactin") && (FT4_range == "high_FT4") && (TSH_range == "high_TSH")){
+                    fertility_report_ovulation_text += '<p>Based on your test, it appears that your ovulation may be affected by high levels of TSH, high levels of Prolactin, high levels of free testosterone, high levels of fT4</p>';
+                }
+                else{
+                    // fertility_report_ovulation_text += '<p>Based on your test, your ovulation appears unaffected by abnormal prolactin levels, free testosterone, TSH, and fT4.</p>';
+
+                    var hormone_ranges = {
+                        "testosterone": testosterone_range,
+                        "prolactin": prolactin_range,
+                        "FT4": FT4_range,
+                        "TSH": TSH_range,
+                    };
+
+                    // Function to check if a hormone is out of normal range
+                    function isOutOfRange(range) {
+                        return range !== "normal" && range !== "normal_testosterone" && range !== "normal_prolactin" && range !== "normal_FT4" && range !== "normal_TSH";
+                    }
+
+                    // Function to get the display text for the hormone based on its range
+                    function getHormoneDisplayText(hormone, range) {
+                        if (isOutOfRange(range)) {
+                            var level = range.includes("high") ? "high" : "low";
+                            return level + " levels of " + hormone;
+                        }
+                        return null;
+                    }
+
+                    // Build the final sentence based on the dynamic hormone ranges
+                    var unaffectedHormones = [];
+                    var affectedHormones = [];
+
+                    // Check each dynamic hormone range and categorize hormones
+                    for (var hormone in hormone_ranges) {
+                        if (!isOutOfRange(hormone_ranges[hormone])) {
+                            unaffectedHormones.push(hormone);
+                        } else {
+                            affectedHormones.push(getHormoneDisplayText(hormone, hormone_ranges[hormone]));
+                        }
+                    }
+
+                    // Build the final sentence
+                    var sentence = "Based on your test, your ovulation appears unaffected by abnormal ";
+                    if (unaffectedHormones.length > 0) {
+                        sentence += unaffectedHormones.join(", ") + " levels";
+                    } else {
+                        sentence += "no hormones";
+                    }
+
+                    if (affectedHormones.length > 0) {
+                        sentence += ", but it may be affected by " + affectedHormones.join(", ") + ".";
+                    } else {
+                        sentence += " are out of the normal range.";
+                    }
+
+                    // Display the final sentence
+                    console.log(sentence);
+
+                    fertility_report_ovulation_text += '<p>'+sentence+'</p>';
+                }
+                $('#fertility_report_ovulation_text').append(fertility_report_ovulation_text);
+
+
+                if ( prolactin_range == "low_prolactin" ) {
+                    // var fertility_realth_report = '<p><strong>Ability to conceive</strong></p>';
+                    var fertility_realth_report = '<p>The ability to conceive is strongly linked to ovulation. Ovulation during each menstrual cycle accounts for an approximate 30% chance of conceiving! However, prolactin, testosterone, and thyroid hormone imbalances can affect ovulation. Therefore, these hormonal disruptions may impact the possibility of becoming pregnant.</p>';
+                    // fertility_realth_report += '<p><strong>Your prolactin level is lower than the normal range, this does not necessarily indicate that it will take you longer to conceive.</strong></p>';
+                    fertility_realth_report += '<p>To fully understand if your ability to conceive is affected, we recommend monitoring your menstrual cycles. For a comprehensive and accurate overview of your hormonal changes throughout each cycle, we suggest tracking your hormones at home, through your urine. This method provides daily numeric data and high accuracy—plus, it’s non-invasive.</p>';
+                    fertility_realth_report += '<p>Alternatively, you can try the simple and budget-friendly basal body temperature method. However, remember that this method is less accurate than hormone tracking.</p>';
+                    fertility_realth_report += '<div class="green-item-box">';
+                        fertility_realth_report += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        fertility_realth_report += '<p><strong>Please note:</strong></p>';
+                        fertility_realth_report += '<p>If you experience irregular or absent ovulation, seek further medical evaluation and consult your doctor.</p>';
+                    fertility_realth_report += '</div>';
+                }
+                else if ( prolactin_range == "normal_prolactin" ){
+                    // var fertility_realth_report = '<p><strong>Ability to conceive</strong></p>';
+                    var fertility_realth_report = '<p>The ability to conceive is strongly linked to ovulation. Ovulation during each menstrual cycle accounts for an approximate 30% chance of conceiving! However, prolactin, testosterone, and thyroid hormone imbalances can affect ovulation. Therefore, these hormonal disruptions may impact the possibility of becoming pregnant.</p>';
+                    // fertility_realth_report += '<p><strong>Your prolactin level is in a normal range, this should not affect your ability to conceive.</strong></p>';
+                    fertility_realth_report += '<p>To fully understand if your ability to conceive is affected, we recommend monitoring your menstrual cycles. For a comprehensive and accurate overview of your hormonal changes throughout each cycle, we suggest tracking your hormones at home, through your urine. This method provides daily numeric data and high accuracy—plus, it’s non-invasive.</p>';
+                    fertility_realth_report += '<p>Alternatively, you can try the simple and budget-friendly basal body temperature method. However, remember that this method is less accurate than hormone tracking.</p>';
+                    fertility_realth_report += '<div class="green-item-box">';
+                        fertility_realth_report += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        fertility_realth_report += '<p><strong>Please note:</strong></p>';
+                        fertility_realth_report += '<p>If you experience irregular or absent ovulation, seek further medical evaluation and consult your doctor.</p>';
+                    fertility_realth_report += '</div>';
+                }
+                else if ( prolactin_range == "high_prolactin" ){
+                    // var fertility_realth_report = '<p><strong>Ability to conceive</strong></p>';
+                    var fertility_realth_report = '<p>The ability to conceive is strongly linked to ovulation. Ovulation during each menstrual cycle accounts for an approximate 30% chance of conceiving! However, prolactin, testosterone, and thyroid hormone imbalances can affect ovulation. Therefore, these hormonal disruptions may impact the possibility of becoming pregnant.</p>';
+                    // fertility_realth_report += '<p><strong>Your prolactin level is higher than the normal range, this may lead to a longer conception time.</strong></p>';
+                    fertility_realth_report += '<p>To fully understand if your ability to conceive is affected, we recommend monitoring your menstrual cycles. For a comprehensive and accurate overview of your hormonal changes throughout each cycle, we suggest tracking your hormones at home, through your urine. This method provides daily numeric data and high accuracy—plus, it’s non-invasive.</p>';
+                    fertility_realth_report += '<p>Alternatively, you can try the simple and budget-friendly basal body temperature method. However, remember that this method is less accurate than hormone tracking.</p>';
+                    fertility_realth_report += '<div class="green-item-box">';
+                        fertility_realth_report += '<i class="green-alart-icon"><img src="https://cdn.shopify.com/s/files/1/0474/0225/4488/files/alert_circle_2.svg?v=1687031715"></i>';
+                        fertility_realth_report += '<p><strong>Please note:</strong></p>';
+                        fertility_realth_report += '<p>If you experience irregular or absent ovulation, seek further medical evaluation and consult your doctor.</p>';
+                    fertility_realth_report += '</div>';
+                }
+                else{
+                }
+                $('#fertility_report_ability_to_conceive_text').append(fertility_realth_report);
+
+                // ===================== Fertility Health(FH) report end ===================== //
+                // =========================================================================== //
+            }
+
+          $(".multibar_small").each(function(){
+    
+              var noramal_min = parseFloat($(this).data("min"));
+              var noramal_max = parseFloat($(this).data("max"));
+              var data_result = parseFloat($(this).data("result"));
+      
+              var normal_diff = noramal_max - noramal_min;
+              var min_range = noramal_min - normal_diff;
+              var max_range = noramal_max + normal_diff;
+      
+              console.log(normal_diff);
+              console.log(min_range);
+              console.log(max_range);
+              console.log(data_result);
+      
+              var barSmall = $(this).multibar({
+                      size:"small",
+                      min: min_range.toFixed(2),
+                      max: max_range.toFixed(2),
+                      multiBarValue:[
+                          {
+                              val: noramal_min,
+                              bgColor:"#F3EDD0",
+                              label:"Item 1"
+                          },
+                          {
+                              val: noramal_max,
+                              bgColor:"#C8E2C6"
+                          },
+                          {
+                              val: max_range.toFixed(2),
+                              bgColor:"#FFE6E6"
+                          }
+                      ]
+                  }
+              );
+              barSmall.multibar("setValue",[data_result]);
+          });
+          //$(".multibar_small #AMH").
+          $(".multi-bar-initVal").text("Low");
+          $(".multi-bar-lastVal").text("High");
+
+            
+        });
+    });
+    jQuery( document ).ready(function($) {
+      
+    });
+</script>
+
+{% else %}
+
+<script>
+  window.location.href = "/account/login?return_url=/pages/lab-test";
+</script>
+
+{% endif %}
