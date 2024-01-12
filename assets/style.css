@@ -18977,10 +18977,10 @@ body.bf-bundle .product-info-sec {
     display: none !important;
 }
 .shopify-installments__content {
-    font-size: 12px;
+    font-size: 13px;
 }
 .shopify-installments__learn-more {
-    font-size: 14px;
+    font-size: 13px;
 }
 /************************* Media query start here ********************************** */
 @media screen and (min-width: 750px){
