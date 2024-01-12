@@ -18976,6 +18976,12 @@ button.needsclick.klaviyo-close-form {
 body.bf-bundle .product-info-sec {
     display: none !important;
 }
+.shopify-installments__content {
+    font-size: 12px;
+}
+.shopify-installments__learn-more {
+    font-size: 14px;
+}
 /************************* Media query start here ********************************** */
 @media screen and (min-width: 750px){
   .cart .cart-item cart-remove-button {
