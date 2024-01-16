@@ -659,8 +659,8 @@ jQuery(document).ready(function($){
   });
 
   // Scrolled to Referral widget on Reward page
-  var utm_alternate_medium = getUrlVars()["utm-alternate-medium"];
-  if (utm_alternate_medium == "email") {
+  var utm_alternate_medium = getUrlVars()["utm-target-section"];
+  if (utm_alternate_medium == "referral") {
     setTimeout(function(){
       $('html,body').animate({
       scrollTop: $(".yotpo-widget-referral-widget").offset().top - 100 }, 'slow');
