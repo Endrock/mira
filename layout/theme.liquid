@@ -369,6 +369,17 @@
       })(window,document,'script','dataLayer','GTM-TDHXZX8');
     </script>
     <!-- End Google Tag Manager -->
+
+
+    <script>
+      window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
+      window._template = {
+          directory: "{{ template.directory }}",
+          name: "{{ template.name }}",
+          suffix: "{{ template.suffix }}"
+      }
+    </script> 
+    <script src="https://cdn.intelligems.io/5c4dfbeadaf6.js"></script>
   </head>
 
   <body class="gradient template-{{ template | split: '.' | first }} {{ template }}{% if template == "product" %} {{ product.handle }}{% endif %} {% for tag in product.tags %} {{ tag }}{% endfor %}">
