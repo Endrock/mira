@@ -19633,6 +19633,10 @@ footer.cart__footer #md-footer-selector-block {
     }
 }
 
+/* CSS for photo gallery end */
+
+/* CSS for Dual columm abtest start */
+
 @media screen and (max-width: 767px) {
     .col-grid {
         display: grid;
@@ -19669,6 +19673,11 @@ footer.cart__footer #md-footer-selector-block {
         font-size: 18px;
     }
 
+    .badge-row-sec .product-col {
+        padding-top: 24px;
+        margin-bottom: 10px;
+    }
+
 }
 
-/* CSS for photo gallery end */
+/* CSS for Dual columm abtest end */
