@@ -1,40 +1,45 @@
 @charset "utf-8";
 @import url("bootstrap.min.css");
+
 /*------------------------------
 =BASIC SETUP
 ------------------------------*/
 @font-face {
-   font-family: 'Gibson-SemiBold';
-   src: url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-SemiBold.woff2') format('woff2'),
-       url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-SemiBold.woff') format('woff');
-   font-weight: 300;
-   font-style: normal;
-   font-display: swap;
+    font-family: 'Gibson-SemiBold';
+    src: url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-SemiBold.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-SemiBold.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
 }
+
 @font-face {
-   font-family: 'Gibson-Regular';
-   src: url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-Regular.woff2') format('woff2'),
-       url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-Regular.woff') format('woff');
-   font-weight: normal;
-   font-style: normal;
-   font-display: swap;
+    font-family: 'Gibson-Regular';
+    src: url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-Regular.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
+
 @font-face {
-   font-family: 'Gibson-Light';
-   src: url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-Light.woff2') format('woff2'),
-       url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-Light.woff') format('woff');
-   font-weight: 300;
-   font-style: normal;
-   font-display: swap;
+    font-family: 'Gibson-Light';
+    src: url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-Light.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Gibson-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
 }
+
 @font-face {
-   font-family: 'Steinbeck-Regular';
-   src: url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Steinbeck-Regular.woff2') format('woff2'),
-       url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Steinbeck-Regular.woff') format('woff');
-   font-weight: normal;
-   font-style: normal;
-   font-display: swap;
+    font-family: 'Steinbeck-Regular';
+    src: url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Steinbeck-Regular.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0095/3489/8234/t/4/assets/Steinbeck-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
+
 @font-face {
     font-family: 'AeonikPro-Regular';
     src: url('https://cdn.shopify.com/s/files/1/0777/1006/5971/files/AeonikPro-Regular.woff2?v=1703098712') format('woff2'),
@@ -2395,8 +2400,8 @@ video-home-inner.lightIn {
     font-family: 'Gibson-Regular';
 }
 
-.footer h4 a{
-  color:#fff;
+.footer h4 a {
+    color: #fff;
 }
 
 .footer-links-outer {
@@ -2450,8 +2455,8 @@ video-home-inner.lightIn {
 }
 
 .play-store-bts img {
-	width: 150px;
-	margin-right: 10px;
+    width: 150px;
+    margin-right: 10px;
 }
 
 .footer-social {
@@ -2486,8 +2491,8 @@ video-home-inner.lightIn {
     margin-top: 0px;
 }
 
-.copyright-sec p{
-	font-size:14px;
+.copyright-sec p {
+    font-size: 14px;
 }
 
 
@@ -4276,14 +4281,17 @@ body.mira-max-kit.tb_hotspot_small__ {
     background: none !important;
     padding: 0px !important;
 }
+
 .fertility-clinics .testimonials-inner-col .testimonials-img {
     margin-bottom: 0px;
 
 }
+
 /*---------- CSS fertility-clinics Section END ----------*/
 body.mira-max-kit .Stories-testimonials-sec {
     padding-top: 0 !important;
 }
+
 /*========== CSS Vinod END ==============*/
 
 .how-to-use-sec {
@@ -10455,15 +10463,18 @@ body.mira-max-kit .rest-sec {
     font-size: 24px;
     margin-bottom: 10px;
 }
+
 .lab-test-page sub {
-  left: 5px;
+    left: 5px;
 }
+
 .test-result-graph .left sub {
     display: block;
     font-size: 12px;
     top: 5px;
     font-family: Gibson-light;
 }
+
 .lab-test-page p {
     line-height: 26px;
     font-size: 18px;
@@ -10481,8 +10492,9 @@ body.mira-max-kit .rest-sec {
     margin-bottom: 30px;
     text-align: center;
 }
+
 #step4 .lab-sec-title,
-#step5 .lab-sec-title{
+#step5 .lab-sec-title {
     margin-bottom: 50px;
 }
 
@@ -10494,9 +10506,9 @@ body.mira-max-kit .rest-sec {
 /* .lab-sec-title h3 {
   margin-bottom:20px;
 } */
-#test_status_cancelled .lab-sec-title a{
-  color: inherit;
-  text-decoration: underline;
+#test_status_cancelled .lab-sec-title a {
+    color: inherit;
+    text-decoration: underline;
 }
 
 .lab-test-result-sec {
@@ -10595,9 +10607,11 @@ ul.lab-test-result-outer li {
 span.narmal-bg {
     background: #DEEEDD !important;
 }
+
 span.heigh-bg {
     background: #FFE6E6 !important;
 }
+
 span.low-bg {
     background: #F3EDD0 !important;
 }
@@ -10608,7 +10622,7 @@ span.low-bg {
 }
 
 .test-resuld-col .lab-test-tooltip a,
-.test-resuld-col .bottom-box a{
+.test-resuld-col .bottom-box a {
     text-decoration: underline;
     font-size: 16px;
     color: #003630;
@@ -10677,12 +10691,14 @@ span.low-bg {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    height: 100%;  
+    height: 100%;
 }
+
 .graph-title {
     text-align: center;
     margin-bottom: 15px;
 }
+
 .graph-title strong {
     font-size: 24px;
 }
@@ -10697,7 +10713,7 @@ span.low-bg {
 
 .test-result-graph .left {
     width: 23.5%;
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 42px 20px 32px;
     text-align: center;
@@ -10707,16 +10723,17 @@ span.low-bg {
     display: flex;
     flex-direction: column;
 }
+
 .test-result-graph .left strong {
     font-size: 16px;
     display: block;
     font-family: 'Gibson-Regular';
     color: #003630;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
-.test-result-graph .left .bottom-cel span  {
-  font-size: 14px;
+.test-result-graph .left .bottom-cel span {
+    font-size: 14px;
     color: #003630;
     background: #F3EDD0;
     border-radius: 20px;
@@ -10729,45 +10746,46 @@ span.low-bg {
 }
 
 .test-result-graph .left .bottom-cel h4 {
-  font-family: 'Gibson-Regular';
-  color:#667789;
-  font-size: 18px;
-  padding: 0 12px;
-  margin-top: 10px;
+    font-family: 'Gibson-Regular';
+    color: #667789;
+    font-size: 18px;
+    padding: 0 12px;
+    margin-top: 10px;
 }
 
 .test-result-graph .right {
     width: 75%;
     padding: 20px 20px;
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
 
 
-.test-result-graph .multi-bar-initVal, .test-result-graph .multi-bar-value, .test-result-graph .multi-bar-lastVal
-{
-  font-size:16px;
-  margin-top:15px;
-  color:#667789;
-  font-weight:normal;
-  font-family: 'Gibson-Light'; 
+.test-result-graph .multi-bar-initVal,
+.test-result-graph .multi-bar-value,
+.test-result-graph .multi-bar-lastVal {
+    font-size: 16px;
+    margin-top: 15px;
+    color: #667789;
+    font-weight: normal;
+    font-family: 'Gibson-Light';
 }
 
 .test-result-graph .icon-arrow-down {
-  font-size: 0;
-  height: 24px;
-  width: auto;
-  display: block;
-  text-align: center;
+    font-size: 0;
+    height: 24px;
+    width: auto;
+    display: block;
+    text-align: center;
 }
 
 .test-result-graph .icon-arrow-down:before {
-  font-size: 0;
-  height: 24px;
-  width: 1px;
-  background: #667789;
-  display: inline-block;
-  margin-top: 5px;
+    font-size: 0;
+    height: 24px;
+    width: 1px;
+    background: #667789;
+    display: inline-block;
+    margin-top: 5px;
 }
 
 .font-ragular {
@@ -10878,21 +10896,26 @@ ul.date-list-col {
 .information-text p {
     font-size: 20px;
 }
+
 .multi-bar-marker-value {
     padding: 3px 10px 3px 10px;
     width: max-content;
     border-radius: 20px;
     margin-left: -6px;
 }
+
 .low-bg .multi-bar-marker-value {
     background: #F3EDD0;
 }
+
 .heigh-bg .multi-bar-marker-value {
     background: #FFE6E6;
 }
+
 .narmal-bg .multi-bar-marker-value {
     background: #C8E2C6;
 }
+
 /***********Step**Registration***Form****Start********/
 
 .register-fertility-code-sec .container {
@@ -11028,15 +11051,15 @@ ul.date-list-col {
 }
 
 .chaking-box {
-  margin-bottom:8px;
+    margin-bottom: 8px;
 }
 
 .register-lab-test-form .heading-3 {
-  margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 .register-lab-test-form input[type="text"],
-.register-lab-test-form input[type="date"]{
+.register-lab-test-form input[type="date"] {
     height: 48px;
     background: #F2F6F2;
     border-radius: 8px;
@@ -11044,7 +11067,8 @@ ul.date-list-col {
     width: 350px;
     max-width: 100%;
 }
-.register-lab-test-form input[type="date"]{
+
+.register-lab-test-form input[type="date"] {
     width: 270px;
     cursor: pointer;
 }
@@ -11133,10 +11157,12 @@ ul.circle-point-list li {
     font-size: 18px !important;
     line-height: 24px;
 }
+
 .font-20 {
     font-size: 20px !important;
     line-height: 26px;
 }
+
 .inner-bulet-pont {
     padding-left: 30px;
 }
@@ -11179,6 +11205,7 @@ ul.circle-point-list li {
 .disclaimer-title p strong {
     font-family: 'Gibson-SemiBold';
 }
+
 #phone_number::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: #c9c6c6;
@@ -11617,18 +11644,21 @@ ul.panorama-data li {
     color: inherit;
     text-decoration: underline;
 }
-.panorama-popup h2{
-  font-size: 40px;
-  line-height: 48px;
-  margin-bottom: 30px;
+
+.panorama-popup h2 {
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 30px;
 }
-.panorama-popup p{
+
+.panorama-popup p {
     font-family: 'Gibson-Light';
     color: #003630;
     font-size: 18px;
     line-height: 26px;
 }
-.panorama-popup a.btn-custom{
+
+.panorama-popup a.btn-custom {
     padding-left: 40px !important;
     padding-right: 40px !important;
 }
@@ -11730,9 +11760,11 @@ ul.panorama-data li {
 strong {
     font-weight: 700;
 }
+
 .ft-speciality .container {
     padding: 0 10px;
 }
+
 .ft-speciality .row {
     background: #fff;
     border-radius: 32px;
@@ -11742,105 +11774,133 @@ strong {
     margin: 0 -10px;
     margin-top: 25px;
 }
+
 .ft-speciality .tea-benefit-col-outer p {
     color: #003630;
     font-family: 'Steinbeck-Regular';
 }
+
 .tea-benefit-sec.padd-t-100.ft-speciality {
     background: #fff !important;
 }
+
 .ft-why-fertility-tea .pt-right-sec .pt-right-img {
     width: 85% !important;
 }
+
 .ft-why-fertility-tea .left-sec h4 {
-  font-size: 40px;
+    font-size: 40px;
 }
+
 .ft-why-fertility-tea .discover-image {
     border-radius: 32px;
 }
+
 /* .ft-why-fertility-tea .left-sec {
     padding-top: 55px;
 } */
 .ft-why-fertility-tea .can-cup-help-img {
     padding-top: 0px;
 }
+
 .ft-why-fertility-tea {
     padding-bottom: 0px;
 }
+
 .ft-why-fertility-tea {
-  margin: 45px 0 60px;
+    margin: 45px 0 60px;
 }
+
 .ft-why-fertility-tea .btn-lg {
     font-size: 20px !important;
     height: 56px !important;
     line-height: 56px !important;
     padding: 0 28px !important;
 }
+
 .ft-why-fertility-tea .pt-right-sec {
     display: flex;
     flex-direction: row-reverse;
 }
+
 .ft-why-fertility-tea .left-sec ul li {
     font-family: 'Gibson-Light';
 }
+
 .ft-why-fertility-tea .left-sec .description {
     color: #003630;
     font-family: 'Gibson-Regular';
 }
+
 .ft-ingredients {
     padding: 60px 0 0px;
 }
+
 .ft-ingredients .rest-col {
     margin-bottom: 60px;
 }
+
 .ft-ingredients .ft-heading {
     margin-bottom: 50px;
 }
+
 .ft-ingredients .heading-1 h2 {
     margin-bottom: 5px;
 }
+
 .fertility-tea .ft-heading h2 {
     font-size: 40px !important;
 }
+
 .ft-get-best-result .img-fertility img {
     border-radius: 16px;
 }
+
 .ft-get-best-result .text-left h3 {
     font-size: 36px;
 }
+
 .ft-get-best-result .text-left .sub-title {
     font-family: Gibson-regular;
     color: #003630;
     font-size: 20px;
 }
+
 .ft-get-best-result .heading-1 {
     margin-bottom: 0px;
 }
+
 .ft-get-best-result .fertility-info {
     padding-left: 95px;
 }
+
 .ft-how-to-brew .footer-text {
-  font-size: 16px;
-  font-family: 'Gibson-Light';
-  text-align: center;
+    font-size: 16px;
+    font-family: 'Gibson-Light';
+    text-align: center;
 }
+
 .ft-how-to-brew .panorama-lab-test-heading-2 {
     margin-bottom: 35px;
 }
+
 .ft-how-to-brew {
     margin-top: 60px;
 }
+
 .ft-how-to-brew .footer-text p {
-  color: #003630;
-  font-size: 16px;
-  text-align: left;
+    color: #003630;
+    font-size: 16px;
+    text-align: left;
 }
+
 .ft-how-to-brew .testing-steps-img-col {
     padding: 0px 30px 0;
 }
-.ft-get-best-result{
-  margin-top: 60px;
-  margin-bottom: 60px;
+
+.ft-get-best-result {
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .ft_products_columns_4 .content-box img {
@@ -11854,19 +11914,22 @@ strong {
     font-size: 20px;
     padding-bottom: 0px;
     color: #003630;
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
+
 .ft_products_columns_4 .content-box .sub-title {
     margin-bottom: 0px;
     font-size: 14px;
     color: #66788A;
     font-family: 'Gibson-Light';
 }
+
 .ft_products_columns_4 .plat-price {
     font-size: 20px;
     margin-right: 20px;
     font-family: 'Steinbeck-Regular';
 }
+
 .ft_products_columns_4 .button {
     border: solid 2px transparent;
     box-sizing: border-box;
@@ -11879,78 +11942,100 @@ strong {
     font-size: 20px;
     border-radius: 32px;
 }
+
 .ft_products_columns_4 .product-col .btn-custom {
     padding: 0 20px;
 }
+
 .ft_products_columns_4 .learn-more-btn {
     margin-top: 12px;
 }
+
 .ft_products_columns_4 .heading-1 {
     margin-bottom: 40px;
     padding: 0 50px;
 }
+
 .ft_products_columns_4 .heading-1 h2 {
     margin-bottom: 15px;
 }
+
 .ft_products_columns_4 {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
+
 .ft-faq.padd-t-b-100 {
     padding: 60px 0px !important;
 }
 
 
 @media (max-width: 767px) {
-  .ft-get-best-result .fertility-info {
-    padding-left: 0px;
+    .ft-get-best-result .fertility-info {
+        padding-left: 0px;
+    }
+
+    .ft-speciality .tea-benefit-col-outer {
+        width: 100%;
+    }
+
+    .ft-why-fertility-tea .pt-right-sec .pt-right-img {
+        width: 100% !important;
+    }
+
+    .ft-why-fertility-tea {
+        padding-bottom: 0px !important;
+    }
+
+    .ft-why-fertility-tea .discover-image {
+        max-width: 100%;
+    }
+
+    .ft-why-fertility-tea h4 {
+        text-align: left !important;
+    }
+
+    .ft_products_columns_4 .heading-1 {
+        padding: 0px;
+    }
+
+    .ft-get-best-result .img-fertility {
+        padding: 0px 0px 30px;
+    }
+
+    .fertility-tea .ft-heading h2 {
+        font-size: 32px !important;
+    }
+
+    .ft_products_columns_4 br {
+        display: none;
+    }
+
+    .ft_products_columns_4 .col-md-3.product-item {
+        width: 50%;
+    }
+
+    .ft-ingredients .heading-1 p {
+        font-size: 20px !important;
+    }
+
+    .ft-get-best-result .fertility-info p {
+        font-size: 20px;
+    }
+
+    .ft-get-best-result .btn-lg {
+        width: 100%;
+    }
+
+    .ft-why-fertility-tea .btn-lg {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .ft-why-fertility-tea .can-cup-help-img {
+        padding-top: 0px !important;
+    }
 }
-  .ft-speciality .tea-benefit-col-outer {
-    width: 100%;
-}
-.ft-why-fertility-tea .pt-right-sec .pt-right-img {
-    width: 100% !important;
-}
-.ft-why-fertility-tea {
-    padding-bottom: 0px !important;
-}
-  .ft-why-fertility-tea .discover-image {
-    max-width: 100%;
-}
-.ft-why-fertility-tea h4 {
-    text-align: left !important;
-}
-  .ft_products_columns_4 .heading-1 {
-    padding: 0px;
-}
-  .ft-get-best-result .img-fertility {
-    padding: 0px 0px 30px;
-}
-  .fertility-tea .ft-heading h2 {
-    font-size: 32px !important;
-}
-.ft_products_columns_4 br {
-  display: none;
-}
-.ft_products_columns_4 .col-md-3.product-item {
-    width: 50%;
-}
-  .ft-ingredients .heading-1 p {
-    font-size: 20px !important;
-}
-  .ft-get-best-result .fertility-info p {
-    font-size: 20px;
-}
-  .ft-get-best-result .btn-lg {
-    width: 100%;
-}
-  .ft-why-fertility-tea .btn-lg {
-    width: 100%;
-    margin: 10px 0;
-}
-  .ft-why-fertility-tea .can-cup-help-img {
-    padding-top: 0px !important;
-}
-}
+
 /************* Fertility Tea end ********************/
 
 
@@ -11969,58 +12054,72 @@ strong {
     display: flex;
     align-items: center;
     background: #C2DCCB;
-  color: #003630;
+    color: #003630;
 }
+
 .bbt-cta .support-firtility-col h3 {
     color: #003630 !important;
     margin-bottom: 20px;
 }
+
 .bbt-cta .support-firtility-col p {
     color: #003630 !important;
     margin-bottom: 20px;
 }
+
 .bbt-use-steps {
-  padding-top: 70px;
+    padding-top: 70px;
 }
+
 .bbt-how-works {
-  padding-top: 70px;
-  padding-bottom: 70px;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
+
 .bbt-how-works .heading-1 {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
+
 .bbt-how-works .text-left .sub-title {
     font-family: Gibson-regular;
     color: #003630;
     font-size: 20px;
 }
+
 .bbt-how-works .text-left h3 {
     font-size: 36px;
 }
+
 .bbt-how-works .fertility-info {
     padding-left: 95px;
 }
-.bbt-how-works .col-md-7{
+
+.bbt-how-works .col-md-7 {
     display: flex;
     align-items: center;
 }
+
 .bbt-how-works .heading-1 ul {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
+
 .bbt-chart {
     background: #EBF5EB;
     padding: 70px 0px;
 }
+
 .bbt-chart .heading-1 .container {
     padding: 0px 100px;
 }
+
 .bbt-chart h3 {
-  font-size: 40px;
-  padding-left: 15px !important;
-  padding-right: 15px !important;
+    font-size: 40px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
 }
+
 .bbt-cta h3 {
-  font-size: 36px;
+    font-size: 36px;
 }
 
 .bbt-cta .left-text-sec {
@@ -12029,12 +12128,14 @@ strong {
 }
 
 .ft_products_columns_4 .heading-1 h2 {
-  font-size: 40px !important;
+    font-size: 40px !important;
 }
+
 .bbt-cta {
     margin-bottom: 0px !important;
     padding-bottom: 70px;
 }
+
 /* .bbt-faq {
   margin-top: 30px;
 } */
@@ -12042,138 +12143,177 @@ strong {
     padding-left: 95px;
     padding-right: 95px;
 }
+
 .bbt-faq {
-  padding: 70px 0px;
+    padding: 70px 0px;
 }
-  .bbt-faq .heading-1 h2 {
+
+.bbt-faq .heading-1 h2 {
     margin-bottom: 15px;
 }
+
 .bbt-terms-conditions {
     padding-bottom: 0px !important;
 }
 
-@media (max-width: 767px){
-.bbt-how-works .fertility-info {
-    padding-left: 0px;
-}
-.ft_products_columns_4 .heading-1 h2 {
-  font-size: 32px !important;
-}
-.bbt-how-works .text-left h3 {
-    font-size: 32px;
-}
-.bbt-how-works .heading-1 {
-    text-align: center !important;
-}
-.bbt-chart .heading-1 .container {
-    padding: 0px;
-}
-.bbt-chart h3 {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-    font-size: 32px;
-}
-.bbt-chart .hormone-animate-col {
-    padding-right: 0px !important;
-}
-.bbt-chart {
-    padding-right: 15px !important;
-}
-.graph-chart-sec {
-    overflow: auto;
-    padding: 20px;
-}
-.bbt-chart .graph-chart-sec img {
-    max-width: none;
-    width: 920px;
-}
-.bbt-chart .heading-1 {
-    padding-left: 15px;
-    padding-right: 15px;  
-}
-.bbt-chart .graph-chart-sec {
-    padding: 20px 0px !important;
-}
-.bbt-chart .heading-1 p {
-    font-size: 20px;
-}
-.bbt-chart .container {
-    padding-right: 0px;
-    padding-left: 0px;
-}
-.bbt-cta {
-  margin-top: 0px !important;
-}
-.bbt-cta .left-text-sec {
-    text-align: center;
-}
-.bbt-cta .left-text-sec {
-    padding: 50px 25px 20px !important;
-}
-.bbt-cta .support-firtility-row .right-img-sec {
-    padding: 35px 0px 0px 0px !important;
-}
-.bbt-cta .support-firtility-row {
-    padding-bottom: 0px !important;
-}
-.bbt-how-works ul li {
-    padding-left: 20;
-}
-  .bbt-how-works ul li {
-    text-align: left;
-}
-.bbt-cta .left-text-sec {
-    padding: 50px 23px 20px;
-}
-.bbt-how-works {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-.bbt-use-steps {
-    padding-top: 60px;
-}
-  .bbt-chart {
-    padding: 60px 0px;
-}
-  .bbt-chart {
-    padding: 60px 0px;
-}
-  .bbt-faq {
-  padding: 60px 0px;
-}
-  .bbt-faq .heading-1 h2 {
-    margin-bottom: 0px;
-}
+@media (max-width: 767px) {
+    .bbt-how-works .fertility-info {
+        padding-left: 0px;
+    }
+
+    .ft_products_columns_4 .heading-1 h2 {
+        font-size: 32px !important;
+    }
+
+    .bbt-how-works .text-left h3 {
+        font-size: 32px;
+    }
+
+    .bbt-how-works .heading-1 {
+        text-align: center !important;
+    }
+
+    .bbt-chart .heading-1 .container {
+        padding: 0px;
+    }
+
+    .bbt-chart h3 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        font-size: 32px;
+    }
+
+    .bbt-chart .hormone-animate-col {
+        padding-right: 0px !important;
+    }
+
+    .bbt-chart {
+        padding-right: 15px !important;
+    }
+
+    .graph-chart-sec {
+        overflow: auto;
+        padding: 20px;
+    }
+
+    .bbt-chart .graph-chart-sec img {
+        max-width: none;
+        width: 920px;
+    }
+
+    .bbt-chart .heading-1 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .bbt-chart .graph-chart-sec {
+        padding: 20px 0px !important;
+    }
+
+    .bbt-chart .heading-1 p {
+        font-size: 20px;
+    }
+
+    .bbt-chart .container {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .bbt-cta {
+        margin-top: 0px !important;
+    }
+
+    .bbt-cta .left-text-sec {
+        text-align: center;
+    }
+
+    .bbt-cta .left-text-sec {
+        padding: 50px 25px 20px !important;
+    }
+
+    .bbt-cta .support-firtility-row .right-img-sec {
+        padding: 35px 0px 0px 0px !important;
+    }
+
+    .bbt-cta .support-firtility-row {
+        padding-bottom: 0px !important;
+    }
+
+    .bbt-how-works ul li {
+        padding-left: 20;
+    }
+
+    .bbt-how-works ul li {
+        text-align: left;
+    }
+
+    .bbt-cta .left-text-sec {
+        padding: 50px 23px 20px;
+    }
+
+    .bbt-how-works {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .bbt-use-steps {
+        padding-top: 60px;
+    }
+
+    .bbt-chart {
+        padding: 60px 0px;
+    }
+
+    .bbt-chart {
+        padding: 60px 0px;
+    }
+
+    .bbt-faq {
+        padding: 60px 0px;
+    }
+
+    .bbt-faq .heading-1 h2 {
+        margin-bottom: 0px;
+    }
 
 }
+
 /************* BBT LP END ********************/
 
 /************* ob consultation START ********************/
-.ob-add-to-cart-cta1 .testing-steps-col h4{
-  font-size: 20px;
+.ob-add-to-cart-cta1 .testing-steps-col h4 {
+    font-size: 20px;
 }
+
 .ob-book-consultation-cta .top-bordr-row {
-  border-top: 1px solid #C2DCCB;
+    border-top: 1px solid #C2DCCB;
 }
+
 .ob-doctors-team .testimonials-inner-col {
     padding: 55px 20px 55px;
 }
+
 .ob-doctors-team .testimonials-inner-col {
     background: #F0F7F1;
 }
+
 .ob-doctors-vs-coach {
-  background-color: #F5F3EB !important;
+    background-color: #F5F3EB !important;
 }
+
 .ob-doctors-vs-coach .table tr:nth-child(2n) td {
     background: #FFFFFF !important;
 }
+
 .ob-doctors-vs-coach .table tr td {
     text-align: center !important;
 }
+
 .ob-doctors-vs-coach .table tr td:first-child {
     text-align: left !important;
     width: 40% !important;
 }
+
 .ob-doctors-vs-coach .price-with-button span {
     font-size: 18px !important;
     font-family: 'Gibson-Regular';
@@ -12182,404 +12322,511 @@ strong {
 .ob-doctors-vs-coach .analyzer-table .table tr td {
     padding: 0px 0px !important;
 }
-.ob-doctors-vs-coach .analyzer-table .table{
-  border-collapse: separate;
-}
-.ob-doctors-vs-coach .analyzer-table .table th{
-  padding:0rem !important;
-}
-.ob-doctors-vs-coach .analyzer-table .table th h5{
-  margin-bottom:0rem;
-}
-.ob-doctors-vs-coach .analyzer-table .table td div.col1{
-  padding:0px 20px;
-}
-.ob-doctors-vs-coach .analyzer-table .table div.col2{
-    margin-right:8px;
+
+.ob-doctors-vs-coach .analyzer-table .table {
+    border-collapse: separate;
 }
 
-.ob-doctors-vs-coach .analyzer-table .table td div.col2, .ob-doctors-vs-coach .analyzer-table .table td div.col3{
-  padding:15px 20px;
-  height:70px;
-  font-size:18px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.ob-doctors-vs-coach .analyzer-table .table th {
+    padding: 0rem !important;
 }
-.ob-doctors-vs-coach .analyzer-table .table th div.col2,.ob-doctors-vs-coach .analyzer-table .table th div.col3 {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px !important;
-  border-left: 1px solid #C2B2A0;
-  border-right: 1px solid #C2B2A0;
-  border-top: 1px solid #C2B2A0;
+
+.ob-doctors-vs-coach .analyzer-table .table th h5 {
+    margin-bottom: 0rem;
 }
-.ob-doctors-vs-coach .analyzer-table .table td div.col2, .ob-doctors-vs-coach .analyzer-table .table td div.col3  {
- border-left: 1px solid #C2B2A0;
- border-right: 1px solid #C2B2A0;
+
+.ob-doctors-vs-coach .analyzer-table .table td div.col1 {
+    padding: 0px 20px;
 }
-.ob-doctors-vs-coach .analyzer-table .table tr:last-child td div.col2, .ob-doctors-vs-coach .analyzer-table .table tr:last-child td div.col3{
-  border-bottom: 1px solid #C2B2A0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px !important;
+
+.ob-doctors-vs-coach .analyzer-table .table div.col2 {
+    margin-right: 8px;
 }
-.ob-doctors-vs-coach .analyzer-table .table tr td:nth-child(2):before{
-    border:unset !important;
+
+.ob-doctors-vs-coach .analyzer-table .table td div.col2,
+.ob-doctors-vs-coach .analyzer-table .table td div.col3 {
+    padding: 15px 20px;
+    height: 70px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.ob-doctors-vs-coach .analyzer-table .table tr td:nth-child(2):after{
-    border:unset !important;
+
+.ob-doctors-vs-coach .analyzer-table .table th div.col2,
+.ob-doctors-vs-coach .analyzer-table .table th div.col3 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px !important;
+    border-left: 1px solid #C2B2A0;
+    border-right: 1px solid #C2B2A0;
+    border-top: 1px solid #C2B2A0;
 }
-.ob-doctors-vs-coach .analyzer-table .table tr td:last-child{
-  border-radius: unset;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+
+.ob-doctors-vs-coach .analyzer-table .table td div.col2,
+.ob-doctors-vs-coach .analyzer-table .table td div.col3 {
+    border-left: 1px solid #C2B2A0;
+    border-right: 1px solid #C2B2A0;
+}
+
+.ob-doctors-vs-coach .analyzer-table .table tr:last-child td div.col2,
+.ob-doctors-vs-coach .analyzer-table .table tr:last-child td div.col3 {
+    border-bottom: 1px solid #C2B2A0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px !important;
+}
+
+.ob-doctors-vs-coach .analyzer-table .table tr td:nth-child(2):before {
+    border: unset !important;
+}
+
+.ob-doctors-vs-coach .analyzer-table .table tr td:nth-child(2):after {
+    border: unset !important;
+}
+
+.ob-doctors-vs-coach .analyzer-table .table tr td:last-child {
+    border-radius: unset;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 
 .ob-doctors-vs-coach .analyzer-table .table tr td {
     width: 27.33%;
 }
+
 .ob-img-with-desc-22 {
-  margin: 70px 0px !important; 
+    margin: 70px 0px !important;
 }
+
 .ob-img-with-desc-22 ul {
     margin: 0 0 0 18px;
 }
+
 .ob-img-with-desc-22 li {
-list-style: initial;
-  font-size: 20px;
+    list-style: initial;
+    font-size: 20px;
 }
+
 .ob-img-with-desc-22 li span {
-  color: #66788A;
+    color: #66788A;
 }
+
 .ob-doctors-vs-coach {
-  margin-top: 70px;
+    margin-top: 70px;
 }
-.ob-add-to-cart-cta2{
-  background:#F5F3EB;
+
+.ob-add-to-cart-cta2 {
+    background: #F5F3EB;
 }
 
 .ob-add-to-cart-cta2 .table tr td {
     text-align: left !important;
 }
+
 .ob-add-to-cart-cta2 .icon-with-text {
-  display: flex;
+    display: flex;
 }
+
 .ob-add-to-cart-cta2 .icon-with-text span {
-  padding-left: 20px;
+    padding-left: 20px;
 }
-.ob-add-to-cart-cta2 .t_row td{
-  line-height: 20px;
+
+.ob-add-to-cart-cta2 .t_row td {
+    line-height: 20px;
 }
-.ob-add-to-cart-cta2 .heading-1{
-  width:920px;
-  margin:auto;
+
+.ob-add-to-cart-cta2 .heading-1 {
+    width: 920px;
+    margin: auto;
 }
+
 .ob-add-to-cart-cta2 .table tr td {
     width: 29.33% !important;
 }
+
 .ob-add-to-cart-cta2 .analyzer-table .table tr td {
     font-size: 18px !important;
     padding: 0px 0px !important;
 }
-.ob-add-to-cart-cta2 .analyzer-table .table{
-  border-collapse: separate;
+
+.ob-add-to-cart-cta2 .analyzer-table .table {
+    border-collapse: separate;
 }
-.ob-add-to-cart-cta2 .analyzer-table .table th{
-  padding:0rem !important;
+
+.ob-add-to-cart-cta2 .analyzer-table .table th {
+    padding: 0rem !important;
 }
-.ob-add-to-cart-cta2 .analyzer-table .table th h5{
-  margin-bottom:0rem;
+
+.ob-add-to-cart-cta2 .analyzer-table .table th h5 {
+    margin-bottom: 0rem;
 }
-.ob-add-to-cart-cta2 .analyzer-table .table td div.col1{
-  padding:0px 40px;
+
+.ob-add-to-cart-cta2 .analyzer-table .table td div.col1 {
+    padding: 0px 40px;
     font-size: 18px;
 }
-.ob-add-to-cart-cta2 .analyzer-table .table div.col2{
-    margin-right:8px;
+
+.ob-add-to-cart-cta2 .analyzer-table .table div.col2 {
+    margin-right: 8px;
     background-color: rgba(145, 198, 142, 0.2);
-  border:unset !important;
+    border: unset !important;
 }
 
-.ob-add-to-cart-cta2 .analyzer-table .table td div.col2, .ob-add-to-cart-cta2 .analyzer-table .table td div.col3{
-  padding:14px 20px !important;
-  font-size:18px;
-  height:70px;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-}
-.ob-add-to-cart-cta2 .analyzer-table .table th div.col2,.ob-add-to-cart-cta2 .analyzer-table .table th div.col3 {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px !important;
-  border-left: 1px solid #C2B2A0;
-  border-right: 1px solid #C2B2A0;
-  border-top: 1px solid #C2B2A0;
-}
-.ob-add-to-cart-cta2 .analyzer-table .table td div.col2, .ob-add-to-cart-cta2 .analyzer-table .table td div.col3  {
- border-left: 1px solid #C2B2A0;
- border-right: 1px solid #C2B2A0;
-}
-.ob-add-to-cart-cta2 .analyzer-table .table tr:last-child td div.col2, .ob-add-to-cart-cta2 .analyzer-table .table tr:last-child td div.col3{
-  border-bottom: 1px solid #C2B2A0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px !important;
-}
-.ob-add-to-cart-cta2 .analyzer-table .table tr:nth-child(2n) td{
-  background:#fff;
-}
-.ob-add-to-cart-cta2 .analyzer-table .table tr td:nth-child(2):before{
-    border:unset !important;
-}
-.ob-add-to-cart-cta2 .analyzer-table .table tr td:nth-child(2):after{
-    border:unset !important;
-}
-.ob-add-to-cart-cta2 .analyzer-table .table tr td:last-child{
-  border-radius: unset;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+.ob-add-to-cart-cta2 .analyzer-table .table td div.col2,
+.ob-add-to-cart-cta2 .analyzer-table .table td div.col3 {
+    padding: 14px 20px !important;
+    font-size: 18px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
 }
 
-.coaching-coach-vs-ob .analyzer-table .table div.col2{
-  background-color: rgba(145, 198, 142, 0.2);
-  border:unset !important;
+.ob-add-to-cart-cta2 .analyzer-table .table th div.col2,
+.ob-add-to-cart-cta2 .analyzer-table .table th div.col3 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px !important;
+    border-left: 1px solid #C2B2A0;
+    border-right: 1px solid #C2B2A0;
+    border-top: 1px solid #C2B2A0;
 }
-.ob-consultation .pro-description .description, .ob-consultation .pro-description ul {
+
+.ob-add-to-cart-cta2 .analyzer-table .table td div.col2,
+.ob-add-to-cart-cta2 .analyzer-table .table td div.col3 {
+    border-left: 1px solid #C2B2A0;
+    border-right: 1px solid #C2B2A0;
+}
+
+.ob-add-to-cart-cta2 .analyzer-table .table tr:last-child td div.col2,
+.ob-add-to-cart-cta2 .analyzer-table .table tr:last-child td div.col3 {
+    border-bottom: 1px solid #C2B2A0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px !important;
+}
+
+.ob-add-to-cart-cta2 .analyzer-table .table tr:nth-child(2n) td {
+    background: #fff;
+}
+
+.ob-add-to-cart-cta2 .analyzer-table .table tr td:nth-child(2):before {
+    border: unset !important;
+}
+
+.ob-add-to-cart-cta2 .analyzer-table .table tr td:nth-child(2):after {
+    border: unset !important;
+}
+
+.ob-add-to-cart-cta2 .analyzer-table .table tr td:last-child {
+    border-radius: unset;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.coaching-coach-vs-ob .analyzer-table .table div.col2 {
+    background-color: rgba(145, 198, 142, 0.2);
+    border: unset !important;
+}
+
+.ob-consultation .pro-description .description,
+.ob-consultation .pro-description ul {
     font-size: 18px !important;
 }
 
 .ob-book-consultation-cta h4 .green-alart-icon {
     top: 0px;
 }
+
 .ob-add-to-cart-cta1 .padd-t-10 {
     font-size: 20px;
     color: #66788A !important;
 }
+
 /* ob-popup css */
-.ob-available-doctors .pre-popup-container{
-  max-width:100%;
-  padding: 70px 30px;
+.ob-available-doctors .pre-popup-container {
+    max-width: 100%;
+    padding: 70px 30px;
 }
-.ob-available-doctors .title-part{
-  width:920px;
-  margin: auto;
+
+.ob-available-doctors .title-part {
+    width: 920px;
+    margin: auto;
 }
-.ob-available-doctors .title-part h2{
-  font-size:40px;
-  font-family: 'Steinbeck-Regular';
-  line-height: 48px;
+
+.ob-available-doctors .title-part h2 {
+    font-size: 40px;
+    font-family: 'Steinbeck-Regular';
+    line-height: 48px;
 }
-.ob-available-doctors .content-area{
-  margin:80px 0px;
+
+.ob-available-doctors .content-area {
+    margin: 80px 0px;
 }
+
 .ob-available-doctors .content-area span {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius:12px;
+    border-radius: 12px;
     font-family: 'Gibson-Regular';
-    line-height:20px;
+    line-height: 20px;
 }
-@media (max-width: 767px){
-  .ob-book-consultation-cta a {
-    width: 100%;
-  }
-  .ob-add-to-cart-cta1 a{
-    width: 100%;
-    padding-top: 0px;
-  }
-  .ob-add-to-cart-cta1 .btn-row-globel {
-    padding-top: 0px !important;
-  }
-  .ob-available-doctors .pre-popup-container{
-    padding: 70px 5px 5px;
-  }
-  .ob-available-doctors .title-part{
-    width:100%;
-  }
-  .ob-available-doctors .title-part h2{
-    font-size:32px;
-    line-height:36px;
-  }
-  .ob-available-doctors .content-area{
-    margin:20px 0px;
-  }
+
+@media (max-width: 767px) {
+    .ob-book-consultation-cta a {
+        width: 100%;
+    }
+
+    .ob-add-to-cart-cta1 a {
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    .ob-add-to-cart-cta1 .btn-row-globel {
+        padding-top: 0px !important;
+    }
+
+    .ob-available-doctors .pre-popup-container {
+        padding: 70px 5px 5px;
+    }
+
+    .ob-available-doctors .title-part {
+        width: 100%;
+    }
+
+    .ob-available-doctors .title-part h2 {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    .ob-available-doctors .content-area {
+        margin: 20px 0px;
+    }
 }
+
 /************* ob-consultation END ********************/
 /************* Coaching start ********************/
 .coaching-coaches-team .heading-1 {
     margin-bottom: 40px;
 }
+
 .coaching-coaches-team {
     margin-top: 70px;
 }
-.coaching-coaches-team  .experts-info {
+
+.coaching-coaches-team .experts-info {
     padding-top: 0px;
 }
-.coaching-coaches-team  .experts-mira-inner {
-   padding: 40px 45px 50px;
-   background-color: #F0F7F1
+
+.coaching-coaches-team .experts-mira-inner {
+    padding: 40px 45px 50px;
+    background-color: #F0F7F1
 }
-.coaching-session .pro-description .description, .coaching-session .pro-description ul {
+
+.coaching-session .pro-description .description,
+.coaching-session .pro-description ul {
     font-size: 18px !important;
 }
+
 .pro-description .disclaimer {
     font-size: 14px !important;
     line-height: 20px !important;
 }
+
 .coaching-img-with-desc-22 li {
-  font-size: 20px;
+    font-size: 20px;
 }
+
 .coaching-img-with-desc-22 li span {
     color: #66788A;
 }
+
 .coaching-book-consultation-cta h4 .green-alart-icon {
     top: 0px;
 }
-.coaching-book-consultation-cta h4, .ob-book-consultation-cta h4 {
-  font-size: 24px !important;
+
+.coaching-book-consultation-cta h4,
+.ob-book-consultation-cta h4 {
+    font-size: 24px !important;
 }
 
-@media (max-width: 767px){
-  .coaching-coaches-team .experts-info p {
-    padding-top: 15px;
-}
+@media (max-width: 767px) {
+    .coaching-coaches-team .experts-info p {
+        padding-top: 15px;
+    }
 }
 
 /************* Coaching END ********************/
 
 /************* Mira Prenatal Multi-Vitamins Start ********************/
-body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
+body.prenatal-new .product-info-sec,
+body.mira-prenatal .product-info-sec {
     background: #F6F2ED;
 }
+
 .prenatal-quality-trusted {
-	background: #F6F2ED;
+    background: #F6F2ED;
     padding-top: 60px;
-  padding-bottom: 60px;
+    padding-bottom: 60px;
 }
+
 .prenatal-quality-trusted .heading-1 {
     margin-bottom: 50px;
 }
+
 .prenatal-quality-trusted .rest-col {
-	margin-bottom: 0px !important;
+    margin-bottom: 0px !important;
 }
+
 .prenatal-img-with-desc-17 {
-  padding-top: 70px;
-  padding-bottom: 70px;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
+
 .prenatal-img-with-desc-22 {
-  padding-top: 0px;
-  padding-bottom: 70px;
+    padding-top: 0px;
+    padding-bottom: 70px;
 }
+
 .prenatal-medical-expert {
-  padding-top: 0px;
-  padding-bottom: 60px;
+    padding-top: 0px;
+    padding-bottom: 60px;
 }
+
 .prenatal-frequently-buy-together {
-	padding-bottom: 20px;
+    padding-bottom: 20px;
 }
-.prenatal-essentials h2{
-    font-size:40px;
+
+.prenatal-essentials h2 {
+    font-size: 40px;
 }
+
 .prenatal-essentials .title-part {
-  padding-bottom:40px;
+    padding-bottom: 40px;
 }
-.prenatal-essentials .title-part p{
-  font-size:20px;
-  font-family: 'Gibson-Light';
-  color: #003630;
-  margin:0px auto;
-  max-width:920px;
-  line-height:30px;
+
+.prenatal-essentials .title-part p {
+    font-size: 20px;
+    font-family: 'Gibson-Light';
+    color: #003630;
+    margin: 0px auto;
+    max-width: 920px;
+    line-height: 30px;
 }
-.prenatal-essentials .list-icon-row{
-  padding:20px !important;
-  border-radius: 10px;
-  width:920px;
-  margin:0px auto 10px;
-  box-shadow: 0px 0px 8px 0px #00000014;
+
+.prenatal-essentials .list-icon-row {
+    padding: 20px !important;
+    border-radius: 10px;
+    width: 920px;
+    margin: 0px auto 10px;
+    box-shadow: 0px 0px 8px 0px #00000014;
 }
+
 .prenatal-essentials h5 {
     font-family: 'Gibson-Regular';
     line-height: 28px;
     font-size: 20px;
 }
-.prenatal-essentials .list-icon-row p{
-  color: #667789;
-  font-family: 'Gibson-Light';
-  line-height:28px;
-}
-.prenatal-essentials .note-msg{
-  color: #003630;
-  font-size:14px;
-  line-height:20px;
-}
-.prenatal-essentials .btn-row-globel{
-  padding:40px 0px !important;
-}
-.pre-prenatal-popup .heading-1 h2{
-  margin-bottom:10px !important;
-  font-size:40px !important;
-  font-family: 'Gibson-Regular';
-  line-height:48px;
-}
-.pre-prenatal-popup .heading-1 span{
-  font-size:16px;
-  line-height:20px;
-  color: #003630;
+
+.prenatal-essentials .list-icon-row p {
+    color: #667789;
+    font-family: 'Gibson-Light';
+    line-height: 28px;
 }
 
-@media (max-width: 767px){
-.prenatal-essentials .list-icon-row, .prenatal-essentials .title-part p{
-  width:100%;
+.prenatal-essentials .note-msg {
+    color: #003630;
+    font-size: 14px;
+    line-height: 20px;
 }
-.prenatal-essentials .btn-row-globel{
-  padding:30px 0px !important;
+
+.prenatal-essentials .btn-row-globel {
+    padding: 40px 0px !important;
 }
-  
-.prenatal-essentials h2 {
-    font-size: 32px;
-    text-align: center;
+
+.pre-prenatal-popup .heading-1 h2 {
+    margin-bottom: 10px !important;
+    font-size: 40px !important;
+    font-family: 'Gibson-Regular';
+    line-height: 48px;
 }
-.prenatal-quality-trusted .col-12 {
-    max-width: 50%;
+
+.pre-prenatal-popup .heading-1 span {
+    font-size: 16px;
+    line-height: 20px;
+    color: #003630;
 }
-.prenatal-quality-trusted h3 {
-    font-size: 32px;
+
+@media (max-width: 767px) {
+
+    .prenatal-essentials .list-icon-row,
+    .prenatal-essentials .title-part p {
+        width: 100%;
+    }
+
+    .prenatal-essentials .btn-row-globel {
+        padding: 30px 0px !important;
+    }
+
+    .prenatal-essentials h2 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .prenatal-quality-trusted .col-12 {
+        max-width: 50%;
+    }
+
+    .prenatal-quality-trusted h3 {
+        font-size: 32px;
+    }
+
+    .prenatal-quality-trusted .pt-first-sec .pt-icons .rest-icon-col img {
+        max-width: 70%;
+    }
+
+    .prenatal-quality-trusted .rest-col.pt-icons {
+        width: fit-content;
+    }
+
+    .prenatal-quality-trusted .row {
+        padding: 0px 50px;
+    }
+
+    .prenatal-quality-trusted .col-12 {
+        max-width: 50%;
+    }
+
+    .prenatal-quality-trusted {
+        padding-bottom: 20px;
+    }
+
+    .prenatal-img-with-desc-17 {
+        padding-top: 50px !important;
+    }
+
+    .prenatal-img-with-desc-17 .btn-lg {
+        width: 100%;
+    }
+
+    .prenatal-img-with-desc-22 .track-fsh-img .left-img {
+        max-width: auto !important;
+        margin-bottom: 30px;
+    }
+
+    .prenatal-essentials h5,
+    .prenatal-essentials .full-list-text-col {
+        text-align: left;
+    }
 }
-.prenatal-quality-trusted .pt-first-sec .pt-icons .rest-icon-col img {
-    max-width: 70%;
-}
-.prenatal-quality-trusted .rest-col.pt-icons {
-    width: fit-content;
-}
-.prenatal-quality-trusted .row {
-    padding: 0px 50px;
-}
-.prenatal-quality-trusted .col-12 {
-    max-width: 50%;
-}
-.prenatal-quality-trusted {
-  padding-bottom: 20px;
-}
-.prenatal-img-with-desc-17 {
-  padding-top: 50px !important;
-}
-  .prenatal-img-with-desc-17 .btn-lg {
-	width: 100%;
-}
-  .prenatal-img-with-desc-22 .track-fsh-img .left-img {
-    max-width: auto !important;
-    margin-bottom: 30px;
-}
-  .prenatal-essentials h5, .prenatal-essentials .full-list-text-col {
-      text-align: left;
-  }
-}
+
 @media (min-width: 992px) {
-  .prenatal-essentials .list-icon-row, .prenatal-essentials .title-part p{
-    width:100%;
-  }
-.prenatal-quality-trusted .col-lg-3 {
-    max-width: 21% !important;
-}
+
+    .prenatal-essentials .list-icon-row,
+    .prenatal-essentials .title-part p {
+        width: 100%;
+    }
+
+    .prenatal-quality-trusted .col-lg-3 {
+        max-width: 21% !important;
+    }
 }
 
 /************* Mira Prenatal Multi-Vitamins END ********************/
@@ -12601,9 +12848,11 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
     .can-cup-help-sec .can-cup-help-img {
         width: 650px;
     }
-    .prenatal-essentials .list-icon-row, .prenatal-essentials .title-part p{
-    width:100%;
-  }
+
+    .prenatal-essentials .list-icon-row,
+    .prenatal-essentials .title-part p {
+        width: 100%;
+    }
 
     .gel-how-to-conception .heading-1 p {
         max-width: 920px;
@@ -12673,9 +12922,10 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
     .whats-inside-sec .how-different-col {
         max-width: 700px;
     }
-.footer-social ul li a img {
-	width: 40px;
-}
+
+    .footer-social ul li a img {
+        width: 40px;
+    }
 }
 
 
@@ -12722,9 +12972,12 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
     .fertility-game-changer {
         background-position: -14px 330px;
     }
-    .prenatal-essentials .list-icon-row, .prenatal-essentials .title-part p{
-  width:100%;
-}
+
+    .prenatal-essentials .list-icon-row,
+    .prenatal-essentials .title-part p {
+        width: 100%;
+    }
+
     .resent-four-col-slider .owl-nav {
         right: 0;
         left: inherit;
@@ -12912,6 +13165,7 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
     a.cart-top-icon img {
         max-width: 18px;
     }
+
     .user-buttontop-menu img {
         max-width: 100% !important;
     }
@@ -13689,6 +13943,7 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
     .panorama-reports-row ul li {
         width: 50%;
     }
+
     a.cart-top-icon {
         margin-left: 0px;
         margin-right: 5px;
@@ -13701,7 +13956,7 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
 
     .top-head-right.dropdown {
         margin-left: auto !important;
-      }
+    }
 
 }
 
@@ -14340,33 +14595,31 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
 
     .ft-menu ul li a {
         font-size: 16px;
-        line-height:22px;
+        line-height: 22px;
     }
 
     .footer-links-outer .ft-menu {
-        width:100%;
+        width: 100%;
         margin-bottom: 0px;
     }
 
-   .footer-links-outer .ft-menu ul {
-	padding: 15px 0 0;
-	display: none;
-}
+    .footer-links-outer .ft-menu ul {
+        padding: 15px 0 0;
+        display: none;
+    }
 
-  .footer-links-outer .ft-menu.footer-menu-open  ul
-  {
-    display: block;
-  }
+    .footer-links-outer .ft-menu.footer-menu-open ul {
+        display: block;
+    }
 
-  .footer-links-outer .ft-menu .footer-moble-toggle
-  {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding-bottom: 15px;
-  padding-top: 15px;
-    background:url(https://cdn.shopify.com/s/files/1/0777/1006/5971/files/footer-menu-arrow.svg?v=1702914163) no-repeat right center;
-  }
+    .footer-links-outer .ft-menu .footer-moble-toggle {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding-bottom: 15px;
+        padding-top: 15px;
+        background: url(https://cdn.shopify.com/s/files/1/0777/1006/5971/files/footer-menu-arrow.svg?v=1702914163) no-repeat right center;
+    }
 
-  
+
 
     .footer-links-outer .ft-menu:nth-child(1) {
         margin-bottom: 0px;
@@ -14405,7 +14658,7 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
     .play-store-bts {
         display: flex;
         justify-content: space-between;
-      margin-bottom:25px;
+        margin-bottom: 25px;
     }
 
     .play-store-bts a {
@@ -14953,15 +15206,18 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
         white-space: normal;
         min-width: 200px;
     }
-  .ob-add-to-cart-cta2 .table tr th:first-child,
-  .ob-add-to-cart-cta2 .table tr td:first-child{
-    min-width: 300px;
-  }
-  .ob-add-to-cart-cta2 .table tr .col2, .ob-add-to-cart-cta2 .table tr .col3{
-    min-width: 330px;
-    text-wrap: initial;
-    white-space: initial;
-  }
+
+    .ob-add-to-cart-cta2 .table tr th:first-child,
+    .ob-add-to-cart-cta2 .table tr td:first-child {
+        min-width: 300px;
+    }
+
+    .ob-add-to-cart-cta2 .table tr .col2,
+    .ob-add-to-cart-cta2 .table tr .col3 {
+        min-width: 330px;
+        text-wrap: initial;
+        white-space: initial;
+    }
 
     .testkit-table-sec .table tr th:first-child h5 {
         text-align: left;
@@ -16973,7 +17229,7 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
 
     .new-layout-listing .product-col .product-price-col {
         justify-content: space-between;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         display: flex;
         align-items: center;
     }
@@ -18168,12 +18424,15 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
         color: #003630;
         padding: 15px 30px !important;
     }
-    .ob-doctors-vs-coach .analyzer-table .table tr td, .ob-add-to-cart-cta2 .analyzer-table .table tr td{
-      padding:0px !important;
+
+    .ob-doctors-vs-coach .analyzer-table .table tr td,
+    .ob-add-to-cart-cta2 .analyzer-table .table tr td {
+        padding: 0px !important;
     }
-  .ob-add-to-cart-cta2 .heading-1{
-    width:100%
-  }
+
+    .ob-add-to-cart-cta2 .heading-1 {
+        width: 100%
+    }
 
     .price-with-button span {
         margin-right: 15px;
@@ -18181,34 +18440,49 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
         line-height: 24px;
     }
 
-.test-result-graph .left {
-  margin-bottom:8px; 
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-.test-result-graph .left .bottom-cel {
-    flex-direction: row;
-}
-  .test-result-graph .left .bottom-cel span{ margin-right: 10px; }
-.test-result-graph .left strong { margin-right:10px; margin-bottom:0px;}  
-.test-result-graph .left .bottom-cel h4 {
-	margin: 0;
-    padding: 0;
-}
-  
-.test-result-graph .right, .test-result-graph .left {
-	width: 100%;
-}  
-  a.cart-top-icon{
-  	margin-left: 0px;
-  	margin-right: 5px;
-  }
-  a#dropdownMenuButton1 { margin-left: 20px; }
-  .top-head-right {
-  	margin-left: auto;
-  	width: 128px;
-  }
+    .test-result-graph .left {
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .test-result-graph .left .bottom-cel {
+        flex-direction: row;
+    }
+
+    .test-result-graph .left .bottom-cel span {
+        margin-right: 10px;
+    }
+
+    .test-result-graph .left strong {
+        margin-right: 10px;
+        margin-bottom: 0px;
+    }
+
+    .test-result-graph .left .bottom-cel h4 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .test-result-graph .right,
+    .test-result-graph .left {
+        width: 100%;
+    }
+
+    a.cart-top-icon {
+        margin-left: 0px;
+        margin-right: 5px;
+    }
+
+    a#dropdownMenuButton1 {
+        margin-left: 20px;
+    }
+
+    .top-head-right {
+        margin-left: auto;
+        width: 128px;
+    }
 
 }
 
@@ -18256,51 +18530,66 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
     margin-bottom: 24px;
     text-align: center;
 }
-.lab-test-update-info-container .lab-test-update-title  h2 {
+
+.lab-test-update-info-container .lab-test-update-title h2 {
     line-height: 38px;
     font-size: 40px;
     margin-bottom: 10px;
 }
+
 .lab-test-update-info-container .lab-test-update-title p {
     color: #667789 !important;
 }
-.lab-test-update-info-container .img-top{
+
+.lab-test-update-info-container .img-top {
     text-align: center;
     margin-bottom: 24px;
 }
+
 .lab-test-update-info-container .additional-notes-row p {
-  color: #003630;
+    color: #003630;
 }
-#selected-state-doctors-team .owl-stage{
+
+#selected-state-doctors-team .owl-stage {
     margin-left: auto !important;
     margin-right: auto !important;
 }
-#doctorsList h4 {text-align: center;}
+
+#doctorsList h4 {
+    text-align: center;
+}
+
 .additional-notes-row p {
     position: relative;
-      font-size: 16px;
+    font-size: 16px;
 }
+
 .additional-notes-row p .green-alart-icon {
     position: absolute;
     left: -32px;
     top: 6px;
 }
+
 .additional-notes-row p .green-alart-icon img {
     vertical-align: top;
 }
+
 .additional-notes-row {
-   padding: 20px 40px 15px 70px;
+    padding: 20px 40px 15px 70px;
 }
+
 .additional-notes-section {
     border-radius: 8px;
     background: #F0F7F1;
     margin-bottom: 24px;
 }
+
 .dropdown-section select {
-  width: 100%;
-  border-radius: 8px;
-  font-size: 20px !important; 
+    width: 100%;
+    border-radius: 8px;
+    font-size: 20px !important;
 }
+
 .lab-test-update-info-container input[type=submit] {
     background: #F2BFD1;
     border-radius: 40px;
@@ -18314,13 +18603,16 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
     text-transform: none;
     letter-spacing: 0px;
 }
+
 .lab-test-update-info-container input[type=submit]:hover {
     background: #d8a3b6;
     color: #003630 !important;
 }
+
 .dropdown-section {
     margin-bottom: 50px;
 }
+
 .lab-test-update-info-slider input[type=submit] {
     background: #F2BFD1;
     border-radius: 32px;
@@ -18334,6 +18626,7 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
     letter-spacing: 0px;
     font-size: 14px;
 }
+
 .lab-test-update-info-slider input[type=submit]:hover {
     background: #d8a3b6;
     color: #003630 !important;
@@ -18341,29 +18634,33 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
 
 
 
-@media (max-width: 767px){
-.dropdown-section {
-    margin-bottom: 24px;
-}
-.lab-test-update-info-container input[type=submit] {
-    width: 100%;
-}
+@media (max-width: 767px) {
+    .dropdown-section {
+        margin-bottom: 24px;
+    }
+
+    .lab-test-update-info-container input[type=submit] {
+        width: 100%;
+    }
 
 }
 
 
 /******404page css start*****/
-.oops-this-page{
-      padding-bottom: 80px;
+.oops-this-page {
+    padding-bottom: 80px;
 }
+
 .oops-this-page .additional-notes-section {
     background: none;
 }
+
 .oops-this-page .text-center .btn {
-  padding: 18px 30px;
-  font-size: 20px;
-  
+    padding: 18px 30px;
+    font-size: 20px;
+
 }
+
 .oops-this-page .register-fertility-code-sec .container {
     max-width: 670px;
 }
@@ -18371,34 +18668,38 @@ body.prenatal-new .product-info-sec, body.mira-prenatal .product-info-sec {
 .oops-this-page .lab-test-update-title h2 {
     line-height: 48px;
 }
+
 .oops-this-page .text-center {
     display: flex;
     justify-content: space-evenly;
 }
 
-.oops-this-page .text-center .pink{
+.oops-this-page .text-center .pink {
     text-transform: none;
     letter-spacing: 0px;
 }
-.oops-this-page .text-center .white{
-  background: #ffffff;
-    
+
+.oops-this-page .text-center .white {
+    background: #ffffff;
+
     color: #003630 !important;
     text-transform: none;
     letter-spacing: 0px;
     border: 1px solid;
 }
 
-@media (max-width: 767px){
-  .oops-this-page .text-center {
-      display: block;
-  }
-  .oops-this-page .btn {
-      height: auto !important;
-      line-height: unset !important;
-  }
+@media (max-width: 767px) {
+    .oops-this-page .text-center {
+        display: block;
+    }
+
+    .oops-this-page .btn {
+        height: auto !important;
+        line-height: unset !important;
+    }
 
 }
+
 /******404page css and*****/
 
 /*********** Common CSS ends here *****************/
@@ -18411,7 +18712,7 @@ body.template-index div#smile-ui-container,
 body.template-cart div#smile-ui-container,
 body.template-list-collections div#smile-ui-container,
 body.page\.compare-kits div#smile-ui-container,
-body.page\.yotpo-reviews div#smile-ui-container{
+body.page\.yotpo-reviews div#smile-ui-container {
     display: none;
 }
 
@@ -18420,46 +18721,56 @@ body.page\.yotpo-reviews div#smile-ui-container{
 }
 
 @media (max-width: 767px) {
-  shopify-payment-terms {
-      order: 3;
-  }
-  .product-form__item {
-    margin-bottom: 0;
-   }
-  .table-my-orders tr, .table-my-orders td {
-      float: none;
-  }
+    shopify-payment-terms {
+        order: 3;
+    }
+
+    .product-form__item {
+        margin-bottom: 0;
+    }
+
+    .table-my-orders tr,
+    .table-my-orders td {
+        float: none;
+    }
 }
 
 /******Cart page start *******/
 .additional-checkout-buttons {
     margin-top: 0 !important;
 }
+
 .text-link--accent {
     border-bottom: 1px solid currentColor;
 }
-.cart__product-title:not([disabled]):hover, .cart__product-title:focus {
+
+.cart__product-title:not([disabled]):hover,
+.cart__product-title:focus {
     border-bottom: 1px solid currentColor;
 }
+
 .cart__footer .cart__submit {
     display: inline-block;
 }
+
 .cart_disclaimer {
     text-align: right;
     color: #003630;
-  width:100% !important;
+    width: 100% !important;
 }
+
 .outer-paymet-btn {
     -webkit-justify-content: space-between;
-    -ms-justify-content:  space-between;
+    -ms-justify-content: space-between;
     justify-content: space-between;
 }
+
 .cart__footer .cart__submit {
     margin-left: 10px;
 }
 
-.cart__footer .cart__submit:after{
-  display:none; 
+.cart__footer .cart__submit:after {
+    display: none;
 }
 
 .paypal-button {
@@ -18467,58 +18778,62 @@ body.page\.yotpo-reviews div#smile-ui-container{
     min-height: 42px !important;
     max-height: 42px !important;
 }
+
 /*.cart .cart__meta .cart__meta-text {
     display: none;
 }*/
 
- .cart__footer .cart__subtotal-title {
-      font-size: 23px;
-  }
+.cart__footer .cart__subtotal-title {
+    font-size: 23px;
+}
 
 
 @media (max-width: 767px) {
-  .cart .cart__update-wrapper {
-      display: flex!important;
-      justify-content: space-between;
-      padding-top: 5px;
-      align-items: center;
-  }
-  .cart .cart__update-wrapper .cart__qty {
-      padding: 0 10px 0 33px;
-  }
+    .cart .cart__update-wrapper {
+        display: flex !important;
+        justify-content: space-between;
+        padding-top: 5px;
+        align-items: center;
+    }
 
-  .cart__meta a.btn.btn--small.btn--secondary.cart__remove {
-      padding: 0;
-      text-transform: none;
-      color: #668269;
-      text-decoration: underline;
-      font-size: 16px;
-      letter-spacing: 0;
-      display: block;
-      width: 100%;
-      text-align: left;
-  }
+    .cart .cart__update-wrapper .cart__qty {
+        padding: 0 10px 0 33px;
+    }
 
-  .cart__footer .cart_disclaimer {
-      font-size: 18px;
-  }
+    .cart__meta a.btn.btn--small.btn--secondary.cart__remove {
+        padding: 0;
+        text-transform: none;
+        color: #668269;
+        text-decoration: underline;
+        font-size: 16px;
+        letter-spacing: 0;
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
 
-  .cart__footer .cart__subtotal-title {
-      font-size: 24px;
-      vertical-align: middle;
-  }
-  .continue-shop-btn {
-      width: 100%;
-  }
-  .cart .cart__update-wrapper .cart__update {
-      background: transparent !important;
-  } 
-  
+    .cart__footer .cart_disclaimer {
+        font-size: 18px;
+    }
+
+    .cart__footer .cart__subtotal-title {
+        font-size: 24px;
+        vertical-align: middle;
+    }
+
+    .continue-shop-btn {
+        width: 100%;
+    }
+
+    .cart .cart__update-wrapper .cart__update {
+        background: transparent !important;
+    }
+
 }
 
 /******Cart page end******/
 .th_subscription_radio_plans span.th_subscription_radio_fieldset_discount_min_price,
-.th_subscription_radio_plans span.th_subscription_radio_fieldset_discount_val{
+.th_subscription_radio_plans span.th_subscription_radio_fieldset_discount_val {
     display: none;
 }
 
@@ -18538,149 +18853,214 @@ body.page\.yotpo-reviews div#smile-ui-container{
 .mira-max-kit .sticky-bar,
 .mira-kit .sticky-bar,
 .mira-ovum-bundle .sticky-bar,
-.mira-pdg-wands .sticky-bar{
-	display: none;
+.mira-pdg-wands .sticky-bar {
+    display: none;
 }
 
 /*****************************************/
 
 
 /************New Shop CSS*****************/
-body{ letter-spacing: unset; }
-h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a {
+body {
+    letter-spacing: unset;
+}
+
+h1 a,
+.h1 a,
+h2 a,
+.h2 a,
+h3 a,
+.h3 a,
+h4 a,
+.h4 a,
+h5 a,
+.h5 a,
+h6 a,
+.h6 a {
     color: inherit;
     text-decoration: none;
     font-weight: inherit;
 }
+
 /* p:empty, h1:empty, h2:empty, h3:empty, h4:empty, h5:empty, h6:empty {
     display: block !important;
 } */
 .section-header.shopify-section-group-header-group {
     z-index: 99999;
 }
-.financing-sec .hidden, .game-changer-sec .hidden, .how-use-sec .hidden, .perks-mira-cup-sec .hidden, .order-your-mira .hidden {
+
+.financing-sec .hidden,
+.game-changer-sec .hidden,
+.how-use-sec .hidden,
+.perks-mira-cup-sec .hidden,
+.order-your-mira .hidden {
     display: block !important;
 }
 
-.product-media-container{ background: transparent; border: none; }
+.product-media-container {
+    background: transparent;
+    border: none;
+}
+
 .product__info-container .product-form {
     margin: 0 !important;
 }
+
 .price--large {
     line-height: 30px !important;
 }
+
 .product .price__container {
     margin-bottom: 0 !important;
 }
+
 .price .price-item {
     display: block !important;
 }
+
 .cart .title-wrapper-with-link {
     justify-content: center;
     margin: 25px 0 50px 0 !important;
 }
+
 .cart-item__image-container {
     border: none;
     display: block !important;
 }
+
 .cart .cart-item__quantity .quantity {
     width: 98px;
 }
+
 .cart .cart-item__quantity .quantity .quantity__button {
     width: 35px;
 }
+
 .cart .cart-item__totals .price {
     font-size: 21px;
 }
+
 .cart td {
     padding: 22px 0 !important;
 }
+
 #main-cart-items {
-      border: none;
-      padding-bottom: 0;
-  }
+    border: none;
+    padding-bottom: 0;
+}
+
 .cart .cart-item__quantity .quantity .quantity__button:focus {
     outline: none;
 }
+
 #cart_disclaimer-error {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
 }
+
 .faq-sec .accordion {
     border: none;
 }
-ul.product__media-list li, 
-ul.product__media-list .product__media-zoom-lightbox, 
+
+ul.product__media-list li,
+ul.product__media-list .product__media-zoom-lightbox,
 ul.product__media-list .product__media-icon {
     display: none;
 }
+
 ul.product__media-list li.is-active {
     display: block;
 }
+
 .price-and-button .price--on-sale .price-item--regular {
     font-size: 16px;
 }
+
 .is-empty .cart__footer {
     display: none !important;
 }
-.th_pb_section.cart-related-products .button:after{
+
+.th_pb_section.cart-related-products .button:after {
     box-shadow: none !important;
 }
+
 .th_pb_section.cart-related-products .li_product_list_layout_2 .th_pb_list_content_layout_2 figure.th_product_img_layout_2 {
     border: none !important;
 }
+
 .cart .additional-checkout-buttons {
     max-width: 100%;
 }
+
 .cart .additional-checkout-buttons .shopify-cleanslate ul {
     justify-content: center;
 }
+
 cart-items.page-width.is-empty {
     padding-bottom: 100px;
     padding-top: 100px;
 }
+
 .mira-kit .game-changer-sec {
     padding-bottom: 100px;
 }
+
 #swell-overlay {
     display: none !important;
 }
+
 .new-layout-listing .accessories-product-list .product-col p {
     margin-bottom: 16px;
 }
+
 .product-info-sec variant-selects {
     width: 100%;
 }
+
 .product-form__input--dropdown {
     margin-top: 15px !important;
 }
+
 .product-variant-wrapper {
     max-width: 100% !important;
 }
+
 .product-variant-wrapper:after,
-.product-variant-wrapper:focus-visible{
-  box-shadow: none !important;
-  outline: none !important;
+.product-variant-wrapper:focus-visible {
+    box-shadow: none !important;
+    outline: none !important;
 }
-.fancy-dropdown:focus{box-shadow: none !important;border-radius: 25px;}
-.custom-price-select{ height: auto;margin-bottom: 0; }
+
+.fancy-dropdown:focus {
+    box-shadow: none !important;
+    border-radius: 25px;
+}
+
+.custom-price-select {
+    height: auto;
+    margin-bottom: 0;
+}
+
 .product-info-box .price-and-button {
     border-bottom: 1px solid #B6C2CD;
     padding-bottom: 20px;
     margin-bottom: 15px !important;
 }
+
 /* .product-info-box .caption-large {
     font-size: inherit !important;
 } */
 .pro-description {
     margin-bottom: 30px;
 }
+
 .login-register-sec input {
     display: block;
     width: 100%;
     margin-bottom: 20px;
 }
+
 .login-register-sec button.btn {
     background: #F2BFD1;
     border-radius: 40px;
@@ -18694,32 +19074,40 @@ cart-items.page-width.is-empty {
     text-transform: none;
     letter-spacing: 0px;
 }
+
 .login-register-sec .btn:after,
 .login-register-sec .btn:hover:after,
-.button:after, .button:hover:after{
+.button:after,
+.button:hover:after {
     box-shadow: none !important;
 }
+
 .form-message--error {
     border: 1px solid #d20000;
     background-color: #fff8f8;
     color: #d20000;
 }
+
 .form-message--success {
     border: 1px solid #19a340;
     background-color: #f8fff9;
     color: #19a340;
 }
+
 .form-message--error ul {
     margin-bottom: 0 !important;
 }
+
 .form-message {
     margin-bottom: 30px;
 }
+
 .form-message ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 .login-register-sec .form-message--error a {
     font-family: 'Gibson Light';
     font-size: 18px;
@@ -18731,6 +19119,7 @@ cart-items.page-width.is-empty {
     outline: none !important;
     box-shadow: none !important;
 }
+
 .shopify-challenge__button {
     background: #F2BFD1;
     border-radius: 40px;
@@ -18744,65 +19133,90 @@ cart-items.page-width.is-empty {
     letter-spacing: 0px;
 }
 
-header, footer, section, aside, nav, article { display: block !important; }
+header,
+footer,
+section,
+aside,
+nav,
+article {
+    display: block !important;
+}
+
 .plat-price {
-   margin-right: 30px !important;
+    margin-right: 30px !important;
 }
+
 .template_section_video_light_box {
-   display: none !important;
+    display: none !important;
 }
+
 .price-and-button {
-   margin: 10px 0 0 0 !important;
+    margin: 10px 0 0 0 !important;
 }
+
 .cart__footer .cart__shipping {
-   margin-bottom: 20px;
+    margin-bottom: 20px;
 }
-	.page-width {
+
+.page-width {
     padding-top: 0;
     padding-bottom: 0;
 }
+
 .cart__footer .grid {
     width: 100%;
     margin-left: 0px;
 }
+
 .cart__footer .grid__item {
     float: left;
     padding-left: 30px;
     width: min-content;
     max-width: 100%;
 }
+
 .cart__footer {
-   padding-top: 0px !important;
-   padding-bottom: 60px !important;
+    padding-top: 0px !important;
+    padding-bottom: 60px !important;
 }
+
 .cart .cart__row .cart__image {
-      max-width: 100px;
+    max-width: 100px;
 }
+
 .shop-all-tab-bar ul li {
-   list-style: none;
+    list-style: none;
 }
+
 .row.accessories-product-list h4 a {
     color: #003630;
 }
-	.testimonials-col h4 a {
-        color: #003630;
-    }
+
+.testimonials-col h4 a {
+    color: #003630;
+}
+
 .product-info-sec fieldset.product-form__input {
     margin-top: 15px;
 }
+
 .product-info-sec fieldset.product-form__input legend.form__label {
     font-size: 22px;
     font-family: 'Gibson-Regular';
 }
+
 .product-info-sec .slider-buttons {
     display: none;
 }
+
 .product-info-box {
     display: block;
 }
+
 .product-info-sec.featured-product {
     padding-bottom: 0 !important;
 }
+
 /* Need to comment this CSS
 .can-cup-help-sec .can-cup-help-img {
    width: 680px;
@@ -18811,27 +19225,32 @@ header, footer, section, aside, nav, article { display: block !important; }
 .ft-ingredients .ft-heading h2 {
     font-size: 40px !important;
 }
+
 .product-info-box .btn-custom {
     padding: 0 28px;
-  }
+}
 
 .personal-account .order-history tr th {
-  font-family: 'Gibson-Regular';
-  font-weight: 700;
-  text-transform: capitalize;
-  font-size: 18px;
- }
-.personal-account h2 {
-  text-transform: capitalize ;
+    font-family: 'Gibson-Regular';
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 18px;
 }
+
+.personal-account h2 {
+    text-transform: capitalize;
+}
+
 .personal-account .myaccount-table-inner {
     margin-bottom: 50px;
 }
+
 .personal-account p {
-   font-size: 20px !important;
-   color: #69727b;
-  text-transform: capitalize ;
+    font-size: 20px !important;
+    color: #69727b;
+    text-transform: capitalize;
 }
+
 .personal-account .account-details .view-address-btn {
     font-size: 20px;
     margin-bottom: 20px;
@@ -18840,29 +19259,37 @@ header, footer, section, aside, nav, article { display: block !important; }
     text-decoration: underline;
     font-family: Gibson-Regular;
 }
+
 .personal-account .my-account-btn-col a {
     text-decoration: none;
 }
+
 .personal-account .order-history tr td a {
-  color: #668269;
-  font-family: Gibson-Regular;
+    color: #668269;
+    font-family: Gibson-Regular;
 }
+
 label.yotpo-frequency-label {
     font-size: 16px !important;
 }
+
 label.yotpo-radio-label {
     font-size: 16px !important;
 }
+
 .yotpo-subscription-label-price {
     font-size: 16px !important;
 }
+
 .product__tax.caption {
     font-size: 14px;
     letter-spacing: inherit;
 }
+
 input.input--error {
     border: 1px solid #d20000 !important;
 }
+
 .input-error-message {
     display: flex;
     line-height: 1.3;
@@ -18870,272 +19297,352 @@ input.input--error {
     font-size: 0.86667em;
     margin-bottom: 11.66667px;
 }
+
 .input-error-message svg {
     width: 15px;
     margin-right: 5px;
 }
+
 /* .om-position-floating-top header.header {
     margin-top: 60px;
 } */
-.needsclick{
-      z-index: 9999999 !important;
+.needsclick {
+    z-index: 9999999 !important;
 }
+
 button.needsclick.klaviyo-close-form {
     z-index: 99999999 !important;
 }
-#md-app-embed__modal .md-modal__container{
-  z-index: 999999 !important;
+
+#md-app-embed__modal .md-modal__container {
+    z-index: 999999 !important;
 }
 
 .yotpo-widget-subscriptions-customer-portal .yotpo-catalog-item-details {
-  height: 210px !important;
+    height: 210px !important;
 }
+
 .yotpo-modal-container .yotpo-update-frequency-desktop .footer {
-        background: none !important;
-        padding-top: 0;
+    background: none !important;
+    padding-top: 0;
 }
+
 .yotpo-widget-subscriptions-customer-portal .yotpo-customized-button.accept-button.yotpo-disabled {
     color: #003630 !important;
     background: rgb(200, 204, 213) !important;
 }
+
 .yotpo-widget-subscriptions-customer-portal .yotpo-customized-button.accept-button {
-  background-color: #f2bfd1 !important;
-  color: #003630 !important;
+    background-color: #f2bfd1 !important;
+    color: #003630 !important;
 }
+
 .yotpo-widget-subscriptions-customer-portal .yotpo-customized-button.yotpo-disabled {
     opacity: unset !important;
 }
+
 .yotpo-update-frequency-desktop .footer .cancel-button {
-  margin-right: 10px !important;
+    margin-right: 10px !important;
 }
 
 .yotpo-desktop-offer-skip-instead-of-cancel-actions__button {
-  color: #003630 !important;
+    color: #003630 !important;
 }
-.custom_pro_variant fieldset{
-  display:flex;
-   column-gap: 8px;
-  margin-top: 0px !important;
-  max-width: unset !important;
+
+.custom_pro_variant fieldset {
+    display: flex;
+    column-gap: 8px;
+    margin-top: 0px !important;
+    max-width: unset !important;
 }
-.custom_pro_variant .form__label{
-  font-size: 12px !important;
-  font-weight: 400;
-  line-height: 24px !important;
-  letter-spacing: 0.05em !important;
+
+.custom_pro_variant .form__label {
+    font-size: 12px !important;
+    font-weight: 400;
+    line-height: 24px !important;
+    letter-spacing: 0.05em !important;
 }
-.custom_pro_variant .product-form__input input[type=radio]+label{
-  flex: 1;
-  padding: 1.125rem 2rem !important;
-  border-radius:8px !important;
-  border:1px solid #66778933 !important;
-  color:#003630 !important;
-  font-size:16px !important;
-  line-height: 20px !important;
-  height:56px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin: 0.5rem 0 0.75rem !important;
+
+.custom_pro_variant .product-form__input input[type=radio]+label {
+    flex: 1;
+    padding: 1.125rem 2rem !important;
+    border-radius: 8px !important;
+    border: 1px solid #66778933 !important;
+    color: #003630 !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0 0.75rem !important;
 }
-.custom_pro_variant .product-form__input input[type=radio]:checked+label{
-  background-color:unset !important;
-  border:2px solid #91C68D !important;
+
+.custom_pro_variant .product-form__input input[type=radio]:checked+label {
+    background-color: unset !important;
+    border: 2px solid #91C68D !important;
 }
-.custom-buy-button{
-  display:flex;
-  flex:1;
+
+.custom-buy-button {
+    display: flex;
+    flex: 1;
 }
-.custom-buy-button div:first-of-type{
-  display:flex;
-  flex:1;
+
+.custom-buy-button div:first-of-type {
+    display: flex;
+    flex: 1;
 }
-.custom-buy-button .product-form{
-  width:100% !important;
+
+.custom-buy-button .product-form {
+    width: 100% !important;
 }
-.custom-buy-button .btn-custom{
-  width:100% !important;
+
+.custom-buy-button .btn-custom {
+    width: 100% !important;
 }
-.custom_pro_yotpo{
-  padding-bottom:10px;
+
+.custom_pro_yotpo {
+    padding-bottom: 10px;
 }
-.custom_pro_yotpo .yotpo-plans-and-policy-wrapper{
-  max-width:100% !important;
+
+.custom_pro_yotpo .yotpo-plans-and-policy-wrapper {
+    max-width: 100% !important;
 }
-.custom-mobile-price{
-  display:none;
+
+.custom-mobile-price {
+    display: none;
 }
-.loading-overlay__spinner{
-  position: absolute;
-  bottom: 50px !important;
-  right: 70px;
+
+.loading-overlay__spinner {
+    position: absolute;
+    bottom: 50px !important;
+    right: 70px;
 }
+
 .shop-all-tab-bar ul li {
     margin: 0 12px !important;
 }
+
 body.bf-bundle .product-info-sec {
     display: none !important;
 }
+
 .shopify-installments__content,
-.shopify-installments__learn-more{
+.shopify-installments__learn-more {
     font-size: 13px !important;
 }
+
 /************************* Media query start here ********************************** */
-@media screen and (min-width: 750px){
-  .cart .cart-item cart-remove-button {
-      margin-left: 0;
-  }
-  .cart .cart-item td.cart-item__media {
-      width: 13%;
-  }
-  .cart .cart-item td.cart-item__details {
-      width: 42%;
-  }
-  .cart .cart-item td.cart-item__price {
-    width: 15%;
-    text-align: left;
-  }
-  .cart .cart-item td.cart-item__quantity, td.cart-item__totals{
-     width: 15%;
-  }
-  .cart .cart-items th {
-      padding-left: 0 !important;
-  }
-  .cart-items {
-      border-collapse: collapse !important;
-  }
-  .cart-items th {
-      border-bottom: none !important;
-  }
-  .medium-up--hide {
-    display: none !important;
-  }
-  .custom-price-select {
-    width: 80%;
-  }
-  .form-message {
-    padding: 10px;
-  }
+@media screen and (min-width: 750px) {
+    .cart .cart-item cart-remove-button {
+        margin-left: 0;
+    }
+
+    .cart .cart-item td.cart-item__media {
+        width: 13%;
+    }
+
+    .cart .cart-item td.cart-item__details {
+        width: 42%;
+    }
+
+    .cart .cart-item td.cart-item__price {
+        width: 15%;
+        text-align: left;
+    }
+
+    .cart .cart-item td.cart-item__quantity,
+    td.cart-item__totals {
+        width: 15%;
+    }
+
+    .cart .cart-items th {
+        padding-left: 0 !important;
+    }
+
+    .cart-items {
+        border-collapse: collapse !important;
+    }
+
+    .cart-items th {
+        border-bottom: none !important;
+    }
+
+    .medium-up--hide {
+        display: none !important;
+    }
+
+    .custom-price-select {
+        width: 80%;
+    }
+
+    .form-message {
+        padding: 10px;
+    }
 }
 
-@media screen and (max-width: 767px){
-  .cart-items thead tr {
-      margin-bottom: 0 !important;
-      border-bottom: none !important;
-  }
-  .cart td {
-      padding: 0 0 0px !important;
-  }
-  .cart .cart-item__quantity .quantity {
-      min-height: 35px;
-      height: 35px;
-  }
-  cart-remove-button .button {
-      min-width: 15px !important;
-      min-height: auto !important;
-  }
-  .cart .title-wrapper-with-link {
-      margin: 0px 0 20px 0 !important;
-  }
-  .cart__footer .totals {
-      justify-content: end;
-  }
-  .cart__footer .cart__shipping {
-      text-align: right;
-      margin: 10px 0 !important;
-  }
+@media screen and (max-width: 767px) {
+    .cart-items thead tr {
+        margin-bottom: 0 !important;
+        border-bottom: none !important;
+    }
 
-  .cart .cart__row {
-     display: grid !important;
-      padding: 13px 0;
-      margin-bottom: 0 !important;
-   }
-  .cart__footer .grid__item {
-      width: 100%;
-  }
-  .ft-ingredients .ft-heading h2 {
-    font-size: 32px !important;
-  }
-  .product-info-box .btn-custom {
-    padding: 0 0;
-    width: 150px;
-  }
-  /*.product-info-box .plat-price {
+    .cart td {
+        padding: 0 0 0px !important;
+    }
+
+    .cart .cart-item__quantity .quantity {
+        min-height: 35px;
+        height: 35px;
+    }
+
+    cart-remove-button .button {
+        min-width: 15px !important;
+        min-height: auto !important;
+    }
+
+    .cart .title-wrapper-with-link {
+        margin: 0px 0 20px 0 !important;
+    }
+
+    .cart__footer .totals {
+        justify-content: end;
+    }
+
+    .cart__footer .cart__shipping {
+        text-align: right;
+        margin: 10px 0 !important;
+    }
+
+    .cart .cart__row {
+        display: grid !important;
+        padding: 13px 0;
+        margin-bottom: 0 !important;
+    }
+
+    .cart__footer .grid__item {
+        width: 100%;
+    }
+
+    .ft-ingredients .ft-heading h2 {
+        font-size: 32px !important;
+    }
+
+    .product-info-box .btn-custom {
+        padding: 0 0;
+        width: 150px;
+    }
+
+    /*.product-info-box .plat-price {
       font-size: 27px;
       margin-right: 0px !important;
   }*/
-  .outer-paymet-btn .cart__submit.btn {
-      max-width: 100%;
-  }
-  .custom-pro-title-section{
-    order: -1;
-    padding:20px 0;
-  }
-  .custom_pro_variant{
-    display:flex;flex:1;
-    order: -1;
-  }
-  .custom_pro_variant variant-radios, variant-selects{
-    width:100%
-  }
-  .custom_pro_yotpo, .custom_pro_price-btn{
-    order:-1;
-  }
-  .custom_pro_price-btn{
-    padding-bottom: 9px !important;
-    border-bottom:none !important;
-  }
-  .custom-mobile-price{
-    display:block;
-  }
-  .custom_pro_price-btn .custom-price-section{
-    display:none;
-  }
-  .loading-overlay__spinner{
-    bottom: 50px !important;
-  }
+    .outer-paymet-btn .cart__submit.btn {
+        max-width: 100%;
+    }
+
+    .custom-pro-title-section {
+        order: -1;
+        padding: 20px 0;
+    }
+
+    .custom_pro_variant {
+        display: flex;
+        flex: 1;
+        order: -1;
+    }
+
+    .custom_pro_variant variant-radios,
+    variant-selects {
+        width: 100%
+    }
+
+    .custom_pro_yotpo,
+    .custom_pro_price-btn {
+        order: -1;
+    }
+
+    .custom_pro_price-btn {
+        padding-bottom: 9px !important;
+        border-bottom: none !important;
+    }
+
+    .custom-mobile-price {
+        display: block;
+    }
+
+    .custom_pro_price-btn .custom-price-section {
+        display: none;
+    }
+
+    .loading-overlay__spinner {
+        bottom: 50px !important;
+    }
 
 }
+
 /* **************** */
 footer.cart__footer #md-footer-selector-block {
     display: none;
 }
+
 .md-footer-selector__container {
     background-color: #003630 !important;
     padding-bottom: 0 !important;
 }
+
 .needsclick.kl-private-reset-css-Xuajs1 a svg {
     display: none;
 }
+
 .md-modal__footerPoweredOrbe {
     visibility: hidden;
 }
+
 /* .needsclick{
   display: none !important;
-} */ 
+} */
 .md-footer-selector__content {
     background: #183B3F;
 }
+
 .md-footer-selector__content .md-modal__formContent {
     padding-bottom: 0 !important;
 }
+
 /* CSS for photo gallery start */
-@media screen and (min-width: 990px){
-.product-info-sec .product__media-wrapper {
-    max-width: 100% !important;
-    width: 100% !important;
+@media screen and (min-width: 990px) {
+    .product-info-sec .product__media-wrapper {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
 }
-}
+
 .product-info-sec .pwzrswiper-slide {
     border-radius: 20px !important;
 }
+
 .product-info-sec .pwzrswiper-pagination {
     margin-top: -30px !important;
     z-index: 10 !important;
 }
-@media screen and (min-width: 768px){
-  .product-info-box {
-      padding-left: 50px;
-  }
+
+@media screen and (min-width: 768px) {
+    .product-info-box {
+        padding-left: 50px;
+    }
 }
+
+@media screen and (max-width: 767px) {
+    #productlist {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-price-col {
+        flex-wrap: nowrap;
+    }
+
+}
+
 /* CSS for photo gallery end */

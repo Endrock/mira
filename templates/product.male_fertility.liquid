@@ -14,73 +14,97 @@
 {% endif %}
 
 <div class="product-listing-page new-layout-listing padd-t-b-60">
-    <div class="product-listing-sec">
-        <div class="container">
-            {% render 'shop-all-tab' %}
-            <div class="product-list-row">
-                <div class="heading-1 padd-m-t-0 text-left">
-                    <h3>Male Fertility</h3>
-                </div>
-                <div class="row accessories-product-list bundles-product-list">
-                    {% if localization.market.handle == 'international' or localization.market.handle == 'us' or localization.market.handle == 'au' or localization.market.handle == 'ca' %}
-                    <div class="col-md-4">
-                        <div class="product-col">
-                            <div class="product-img-col">
-                                <a href="{{ sub_folder }}/products/home-sperm-test"><img src="{{ 'Yo_Male_Fertility_Sperm_Test_X_2.png' | file_img_url: '' }}" alt="" /></a>
-                            </div>
-                            <h4><a href="{{ sub_folder }}/products/home-sperm-test">{{ all_products['home-sperm-test'].title }}</a></h4>
-                            <p>{{ all_products['home-sperm-test'].metafields.product_fields.sub_title }}</p>
-                            <div class="product-price-col">
-                                <div class="price-btn-row">
-                                    <span class="plat-price">{{ all_products['home-sperm-test'].price | money }}</span>
-                                    <div class="old-price">{{ all_products['home-sperm-test'].compare_at_price | money }}</div>
-                                </div>
-                                <a href="{{ sub_folder }}/products/home-sperm-test" class="btn-custom btn-pink">Buy now</a>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-
-
-                    {% if localization.market.handle == 'eu' or localization.market.handle == 'uk' %}
-                    <div class="col-md-4">
-                        <div class="product-col">
-                            <div class="product-img-col">
-                                <a href="{{ sub_folder }}/products/exseed-home-sperm-test"><img src="{{ 'ExSeed_Sperm_2.png' | file_img_url: '' }}" alt="" /></a>
-                            </div>
-                            <h4><a href="{{ sub_folder }}/products/exseed-home-sperm-test">{{ all_products['exseed-home-sperm-test'].title }}</a></h4>
-                            <p>{{ all_products['exseed-home-sperm-test'].metafields.product_fields.sub_title }}</p>
-                            <div class="product-price-col">
-                                <div class="price-btn-row">
-                                    <span class="plat-price">{{ all_products['exseed-home-sperm-test'].price | money }}</span>
-                                    <div class="old-price">{{ all_products['exseed-home-sperm-test'].compare_at_price | money }}</div>
-                                </div>
-                                <a href="{{ sub_folder }}/products/exseed-home-sperm-test" class="btn-custom btn-pink">Buy now</a>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-            <div class="mira-flat-banner mira-fertility-banner">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="flat-banner-left text-white">
-                            <div class="flat-banner-left-inner">
-                                <h5>Discover<br class="medium-up--hide"> the<br class="small--hide"> science<br class="medium-up--hide"> behind Mira</h5>
-                                <a href="https://www.miracare.com/science/" class="btn-custom white-btn" target="_blank">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="flat-banner-right">
-                            <a href="https://www.miracare.com/science/" target="_blank">
-                                <img src="{{ 'discover_science_banner_mobile.png' | file_img_url: '' }}" alt="" class="hide-dextop flat-banner-mobile" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="product-listing-sec">
+    <div class="container">
+      {% render 'shop-all-tab' %}
+      <div class="product-list-row">
+        <div class="heading-1 padd-m-t-0 text-left">
+          <h3>Male Fertility</h3>
         </div>
+        <div id="productlist" class="row accessories-product-list bundles-product-list">
+          {% if localization.market.handle == 'international'
+            or localization.market.handle == 'us'
+            or localization.market.handle == 'au'
+            or localization.market.handle == 'ca'
+          %}
+            <div class="col-md-4">
+              <div class="product-col">
+                <div class="product-img-col">
+                  <a href="{{ sub_folder }}/products/home-sperm-test"
+                    ><img src="{{ 'Yo_Male_Fertility_Sperm_Test_X_2.png' | file_img_url: '' }}" alt=""
+                  ></a>
+                </div>
+                <h4>
+                  <a href="{{ sub_folder }}/products/home-sperm-test">{{ all_products['home-sperm-test'].title }}</a>
+                </h4>
+                <p>{{ all_products['home-sperm-test'].metafields.product_fields.sub_title }}</p>
+                <div class="product-price-col">
+                  <div class="price-btn-row">
+                    <span class="plat-price">{{ all_products['home-sperm-test'].price | money }}</span>
+                    <div class="old-price">{{ all_products['home-sperm-test'].compare_at_price | money }}</div>
+                  </div>
+                  <a href="{{ sub_folder }}/products/home-sperm-test" class="btn-custom btn-pink">Buy&nbsp;now</a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if localization.market.handle == 'eu' or localization.market.handle == 'uk' %}
+            <div class="col-md-4">
+              <div class="product-col">
+                <div class="product-img-col">
+                  <a href="{{ sub_folder }}/products/exseed-home-sperm-test"
+                    ><img src="{{ 'ExSeed_Sperm_2.png' | file_img_url: '' }}" alt=""
+                  ></a>
+                </div>
+                <h4>
+                  <a href="{{ sub_folder }}/products/exseed-home-sperm-test">
+                    {{- all_products['exseed-home-sperm-test'].title -}}
+                  </a>
+                </h4>
+                <p>{{ all_products['exseed-home-sperm-test'].metafields.product_fields.sub_title }}</p>
+                <div class="product-price-col">
+                  <div class="price-btn-row">
+                    <span class="plat-price">{{ all_products['exseed-home-sperm-test'].price | money }}</span>
+                    <div class="old-price">{{ all_products['exseed-home-sperm-test'].compare_at_price | money }}</div>
+                  </div>
+                  <a href="{{ sub_folder }}/products/exseed-home-sperm-test" class="btn-custom btn-pink"
+                    >Buy&nbsp;now</a
+                  >
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="mira-flat-banner mira-fertility-banner">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="flat-banner-left text-white">
+              <div class="flat-banner-left-inner">
+                <h5>
+                  Discover<br class="medium-up--hide">
+                  the<br class="small--hide">
+                  science<br class="medium-up--hide">
+                  behind Mira
+                </h5>
+                <a href="https://www.miracare.com/science/" class="btn-custom white-btn" target="_blank">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="flat-banner-right">
+              <a href="https://www.miracare.com/science/" target="_blank">
+                <img
+                  src="{{ 'discover_science_banner_mobile.png' | file_img_url: '' }}"
+                  alt=""
+                  class="hide-dextop flat-banner-mobile"
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
