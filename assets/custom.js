@@ -663,8 +663,8 @@ jQuery(document).ready(function($){
   if (utm_alternate_medium == "referral") {
     setTimeout(function(){
       $('html,body').animate({
-      scrollTop: $(".yotpo-widget-referral-widget").offset().top - 100 }, 'slow');
-    }, 1000);    
+      scrollTop: $(".yotpo-widget-referral-widget").offset().top - 0 }, 'slow');
+    }, 4000);    
   }
   
 }); 
