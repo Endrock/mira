@@ -633,6 +633,17 @@ jQuery(document).ready(function($) {
 });
 /******/
 
+// Read a page's GET URL variables and return them as an associative array.
+function getUrlVars(){
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++){
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
 
 jQuery(document).ready(function($){
   $(window).trigger('scroll'); // init the value
@@ -646,6 +657,15 @@ jQuery(document).ready(function($){
   $('html,body').animate({
     scrollTop: $(".product-form__submit").offset().top - 300 }, 'slow');
   });
+
+  // Scrolled to Referral widget on Reward page
+  var utm_alternate_medium = getUrlVars()["utm-target-section"];
+  if (utm_alternate_medium == "referral") {
+    setTimeout(function(){
+      $('html,body').animate({
+      scrollTop: $(".yotpo-widget-referral-widget").offset().top - 0 }, 'slow');
+    }, 4000);    
+  }
   
 }); 
 
