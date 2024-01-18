@@ -16,7 +16,7 @@
 
 <div class="shop-all-tab-bar">
     <ul>
-      <li class="best-sellers"><a href="/collections/best-sellers" {% if request.path contains '/products/best-sellers' %}class="shop-all-active"{% endif %}>Best Sellers</a></li>
+      <li class="best-sellers"><a href="/collections/best-sellers" {% if request.path contains '/collections/best-sellers' %}class="shop-all-active"{% endif %}>Best Sellers</a></li>
       <li><a href="{{ sub_folder }}/products/" {% if request.path == '/products' or request.path == '/' %}class="shop-all-active"{% endif %}>Shop all</a></li>
             
 
