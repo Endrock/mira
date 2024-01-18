@@ -1,1 +1,15 @@
-{"parent":"product.coaching.json","context":{"market":"eu"},"sections":{"d45ed912-aac1-476a-9f7e-40599b524fc9":{"disabled":true,"settings":{},"blocks":{}}}}
+{
+  "parent": "product.coaching.json",
+  "context": {
+    "market": "eu"
+  },
+  "sections": {
+    "d45ed912-aac1-476a-9f7e-40599b524fc9": {
+      "disabled": true,
+      "settings": {
+      },
+      "blocks": {
+      }
+    }
+  }
+}

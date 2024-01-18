@@ -1,5 +1,13 @@
 <script>
-  window.location.href = "/products";
+  console.log('window href:', )
+
+  const url = window.location.href;
+  const substring = "/collections/best-sellers";
+
+if (!url.includes(substring)) {
+    window.location.href = "/products";
+} 
+
 </script>
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
