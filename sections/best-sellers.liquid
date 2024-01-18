@@ -28,14 +28,23 @@
                     </div>
                 </div>
                 <div class="row accessories-product-list bundles-product-list">
-
+                    {% liquid
+                        assign img1 = "20_Mira_Fertility_MAX_Wands.png"
+                        assign img2 = "max-kit.png"
+                        assign img3 = "bf-wands-bundle-shop-all.png"
+                        assign img4 = "bbt-shop.png"
+                        assign img5 = "Prenatal-multi-vitamins.png"
+                        assign img6 = "bf-get-pregnant-bundle-shop-all.png"
+                        assign img7 = "Virtual_OBGYN_Consultation.png"
+                    %}
+                    {% assign counter = 1 %}
                     {% for product in collections['best-sellers'].products %}
+                        {% assign image = 'img' | append: forloop.index  %}
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col">
                                 <a href="/products/{{ product.handle }}">
-                                    <img src="{{ product.featured_image | image_url: width: '1020' }}"
-                                        alt="{{ product.name }}" loading="lazy" />
+                                    <img src="{{ [image] | file_img_url: '' }}" alt="" />
                                 </a>
                                 <span class="offer-badge mira-green-badge main-pro-img-badge">
                                     <svg width="109" height="108" viewBox="0 0 109 108" fill="none"
@@ -60,6 +69,7 @@
                             </div>
                         </div>
                     </div>
+                    {% assign counter = counter | plus: 1 %}
                     {% endfor %}
 
                 </div>
