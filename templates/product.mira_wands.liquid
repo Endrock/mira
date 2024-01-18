@@ -1,3 +1,5 @@
+{{ 'collumndual.css' | asset_url | stylesheet_tag }}
+
 {% assign sub_folder = '' %}
 {% if localization.market.handle == 'au' %}
   {% assign sub_folder = '/en-au' %}
