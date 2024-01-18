@@ -3,10 +3,14 @@
         const vanmeterButton = document.querySelector('#vanmeter-ButtonElement--IxWHQ8VUgEgP3sDIFao0');
         
         vanmeterButton.onclick = () => {
-            const textToCopy = vanmeterButton.textContent.split(" ")[2];
-            navigator.clipboard.writeText(textToCopy)
+            const textToCopy = vanmeterButton.textContent;
+            const promoCode = textToCopy.split(" ")[2]
+            navigator.clipboard.writeText(promoCode)
                 .then(() => {
                     vanmeterButton.textContent = "Copied!";
+                    setTimeout(() => {
+                        vanmeterButton.textContent = textToCopy;
+                    }, 2000);
                 })
                 .catch((error) => {
                     console.error('Failed to copy to clipboard:', error);
