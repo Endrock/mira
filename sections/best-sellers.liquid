@@ -56,12 +56,15 @@
                             </div>
                         </div>
                     </div>
+                    
                     {% for product in collections['best-sellers'].products %}
+
                         <div class="col-md-4">
                             <div class="product-col">
                                 <div class="product-img-col">
-                                    <a href="{{ sub_folder }}/products/{{ product.handle }}"><img
-                                            src="{{ product.featured_image | img_url: '' }}" alt="{{ product.name }}" /></a>
+                                    <a href="{{ sub_folder }}/products/{{ product.handle }}" >
+                                        <img src="{{ product.featured_image | image_url: width: '1020' }}" alt="{{ product.name }}" loading="lazy"/>
+                                    </a>
                                     <span class="offer-badge mira-green-badge main-pro-img-badge">
                                         <svg width="109" height="108" viewBox="0 0 109 108" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
