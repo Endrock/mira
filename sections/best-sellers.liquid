@@ -31,7 +31,7 @@
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col">
-                                <a href="{{ sub_folder }}/products/{{ product.handle }}">
+                                <a href="/products/{{ product.handle }}">
                                     <img src="{{ product.featured_image | image_url: width: '1020' }}"
                                         alt="{{ product.name }}" loading="lazy" />
                                 </a>
@@ -44,7 +44,7 @@
                                     </svg>
                                 </span>
                             </div>
-                            <h4><a href="{{ sub_folder }}/products/{{ product.handle }}">{{
+                            <h4><a href="/products/{{ product.handle }}">{{
                                     all_products[product.handle].title }}</a></h4>
                             <p>{{ all_products[product.handle].metafields.product_fields.sub_title }}</p>
                             <div class="product-price-col">
