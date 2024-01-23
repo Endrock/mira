@@ -827,7 +827,7 @@ jQuery(document).ready(function($) {
       $('.price .price-item--regular').text(shopify_add_to_cart_price);
     }
   });
-  }, 8000);
+  }, 3000);
 });
 
 /* jQuery(document).ready(function($) {
