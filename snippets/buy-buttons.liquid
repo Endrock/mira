@@ -85,7 +85,11 @@
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
             </span>
-            {% if product.handle == 'panorama-fertility-lab-test' %}
+            {% if 
+              product.handle == 'panorama-fertility-lab-test' or 
+              product.handle == 'fertility-max-starter-kit' or
+              product.handle == 'fertility-plus-starter-kit'
+            %}
             <span class="price-separater">&nbsp; — &nbsp;</span>
             <div class="no-js-hidden custom-price-section desktop-price" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               {%- render 'price',

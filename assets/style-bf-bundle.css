@@ -1,11 +1,12 @@
 /*****************Font**Sec******************/
-/* .mira-max-kit p, .mira-max-kit h1, .mira-max-kit h2, .mira-max-kit h3, .mira-max-kit h4, .mira-max-kit h5, .mira-max-kit h6, .mira-max-kit span, .mira-max-kit strong, .mira-max-kit a, .mira-max-kit li, .mira-max-kit div, .mira-max-kit select, .mira-max-kit input, .mira-max-kit textarea, .mira-max-kit button, .mira-max-kit fieldset, .mira-max-kit legend, */
+.group-mira-kits p, .group-mira-kits h1, .group-mira-kits h2, .group-mira-kits h3, .group-mira-kits h4, .group-mira-kits h5, .group-mira-kits h6, .group-mira-kits span, .group-mira-kits strong, .group-mira-kits a, .group-mira-kits li, .group-mira-kits div, .group-mira-kits select, .group-mira-kits input, .group-mira-kits textarea, .group-mira-kits button, .group-mira-kits fieldset, .group-mira-kits legend,
+/*.YGroup_wands p, .YGroup_wands h1, .YGroup_wands h2, .YGroup_wands h3, .YGroup_wands h4, .YGroup_wands h5, .YGroup_wands h6, .YGroup_wands span, .YGroup_wands strong, .YGroup_wands a, .YGroup_wands li, .YGroup_wands div, .YGroup_wands select, .YGroup_wands input, .YGroup_wands textarea, .YGroup_wands button, .YGroup_wands fieldset, .YGroup_wands legend,*/
 .bf-bundle p, .bf-bundle h1, .bf-bundle h2, .bf-bundle h3, .bf-bundle h4, .bf-bundle h5, .bf-bundle h6, .bf-bundle span, .bf-bundle strong, .bf-bundle a, .bf-bundle li, .bf-bundle div, .bf-bundle select, .bf-bundle input, .bf-bundle textarea, .bf-bundle button, .bf-bundle  fieldset, .bf-bundle legend,
 .product-panorama p, .product-panorama h1, .product-panorama h2, .product-panorama h3, .product-panorama h4, .product-panorama h5, .product-panorama h6, .product-panorama span, .product-panorama strong, .product-panorama a, .product-panorama li, .product-panorama div, .product-panorama select, .product-panorama input, .product-panorama textarea, .product-panorama button, .product-panorama fieldset, .product-panorama legend
 {
   font-family: AeonikPro-Regular !important;
 }
-
+mira-ovum-bundle
 
 /************Font***Sec*****************/
 input:focus-visible {
@@ -17,9 +18,11 @@ input, textarea {
     padding: 10px 18px;
 }
 
-.product-panorama .product-info-sec {
-	padding: 70px 0;
-	background: #FFF;
+.product-panorama .product-info-sec,
+/* .YGroup_wands .product-info-sec, */
+.group-mira-kits .product-info-sec{
+    padding: 70px 0;
+    background: #FFF;
 }
 
 .product-panorama .product-info-sec p, .product-panorama .product-info-sec h1, .product-panorama .product-info-sec h2, .product-panorama .product-info-sec h3, .product-panorama .product-info-sec h4, .product-panorama .product-info-sec h5, .product-panorama .product-info-sec h6, 
@@ -30,32 +33,32 @@ input, textarea {
 }
 
 body .product-info-sec .custom_pro_variant .product-form__input input[type="radio"]:checked + label {
-	border: 2px solid #3FC15F !important;
+    border: 2px solid #3FC15F !important;
 }
 
 .new-custom-product-detail h1 {
-	font-size: 40px;
+    font-size: 40px;
 }
 
 .new-custom-product-detail .product-form__input {
-	max-width: 100% !important;
+    max-width: 100% !important;
 }
 
 .new-custom-product-detail .product-form__input select {
-	width: 100% !important;
-	max-width: 100% !important;
-	border-radius: 8px;
-	box-shadow: none !important;
-	border: 1px solid rgba(102, 119, 137, 0.30);
-	text-align: left;
-	padding-left: 15px;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 8px;
+    box-shadow: none !important;
+    border: 1px solid rgba(102, 119, 137, 0.30);
+    text-align: left;
+    padding-left: 15px;
   background-position: 96% 23px;
 }
 
 
 
 .new-custom-product-detail .variant-label {
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 
@@ -66,7 +69,7 @@ body .product-info-sec .custom_pro_variant .product-form__input input[type="radi
 }
 
 .new-custom-product-detail .accordion-sec .card-header.collapsed {
-	border-bottom-color: #D1D6DC;
+    border-bottom-color: #D1D6DC;
 }
 
 .new-custom-product-detail .accordion-sec .card-header::before
@@ -75,16 +78,16 @@ body .product-info-sec .custom_pro_variant .product-form__input input[type="radi
   background-size: 15px;
 }
 .new-custom-product-detail .accordion-sec .card-header {
-	padding: 10px 40px 10px 0;
-	font-size: 16px;
+    padding: 10px 40px 10px 0;
+    font-size: 16px;
 }
 .new-custom-product-detail .accordion-sec .card-header a {
-	font-size: 16px;
+    font-size: 16px;
 }
 
 
 .new-custom-product-detail .accordion-sec .description {
-	font-size: 19px;
+    font-size: 19px;
 }
 
 .new-custom-product-detail .accordion-sec .accordion-link-col ul li {
@@ -96,9 +99,9 @@ body .product-info-sec .custom_pro_variant .product-form__input input[type="radi
 }
 
 .new-custom-product-detail .product-info-box .price-and-button {
-	border-bottom: 0px solid #B6C2CD;
-	padding-bottom: 0;
-	margin-bottom: 0 !important;
+    border-bottom: 0px solid #B6C2CD;
+    padding-bottom: 0;
+    margin-bottom: 0 !important;
 }
 
 .new-custom-product-detail .custom-buy-button .product-form__buttons
@@ -107,11 +110,11 @@ body .product-info-sec .custom_pro_variant .product-form__input input[type="radi
 }
 
 .new-custom-product-detail .custom-buy-button .btn-custom {
-	width: 100% !important;
-	white-space: nowrap;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    width: 100% !important;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   background:#3FC15F !important;
 }
 .new-custom-product-detail .custom-buy-button .btn-custom * {
@@ -249,8 +252,8 @@ section.bf-bundle-header-banner {
 
 @media(max-width:1500px) and (min-width:992px) {
   .bf-bundle-header-banner::before, .bf-bundle-header-banner::after {
-	width: 265px;
-	background-size: 100% !important;
+    width: 265px;
+    background-size: 100% !important;
 }
 }
 
@@ -547,7 +550,7 @@ section.bf-bundle-header-banner p {
 }
 
 .wands-inside-product-sec ul li:nth-child(4) .inside-bundle-item .inside-sec-img {
-	padding: 50px 0 52px;
+    padding: 50px 0 52px;
 }
 
 .wands-inside-product-row .row {
@@ -815,9 +818,9 @@ section.bf-bundle-header-banner p {
 }
 
 .doctors-say-mira-sec .owl-carousel {
-	position: relative;
-	max-width: 400px;
-	margin: 50px auto 0;
+    position: relative;
+    max-width: 400px;
+    margin: 50px auto 0;
 }
 .customers-product-sec .owl-nav, .doctors-say-mira-sec .owl-nav {
     position: absolute;
@@ -831,12 +834,12 @@ section.bf-bundle-header-banner p {
 
 
 .doctors-say-mira-sec .owl-nav {
-	position: absolute;
-	right: inherit;
-	top: inherit;
-	left: 0;
-	transform: none;
-	bottom: -73px;
+    position: absolute;
+    right: inherit;
+    top: inherit;
+    left: 0;
+    transform: none;
+    bottom: -73px;
 }
 
 .customers-product-sec .owl-controls .owl-dots, .doctors-say-mira-sec .owl-controls .owl-dots, .customer-storie .owl-controls .owl-dots, .doctors-about-mira .owl-controls .owl-dots {
@@ -914,11 +917,11 @@ section.bf-bundle-header-banner p {
 }
 
 .exclusive-black-friday-sec {
-	background: #F8F8F8;
-	max-width: calc(100% - 40px);
-	margin: 0 auto;
-	border-radius: 40px;
-	margin-top: 40px;
+    background: #F8F8F8;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    border-radius: 40px;
+    margin-top: 40px;
 }
 
 .exclusive-black-friday-sec .bf-bundle-banner-btn {
@@ -944,8 +947,8 @@ section.bf-bundle-header-banner p {
 }
 
 .bf-bundle .faq-sec .accordion-sec .card-header a {
-	color: #003630;
-	font-size: 24px;
+    color: #003630;
+    font-size: 24px;
 }
 
 
@@ -963,9 +966,9 @@ section.bf-bundle-header-banner p {
 }
 
 .doctor-say-details p {
-	font-size: 31px;
-	color: #183B3F;
-	line-height: 40px;
+    font-size: 31px;
+    color: #183B3F;
+    line-height: 40px;
   margin-bottom:20px;
 }
 
@@ -977,31 +980,31 @@ line-height: 24px;
 }
 
 .doctor-say-info span {
-	font-size: 14px;
-	color: #183B3F;
-	line-height: 20px;
+    font-size: 14px;
+    color: #183B3F;
+    line-height: 20px;
 }
 
 
 
 .doctor-success-stories .customers-product-col {
-	height: 100%;
-	background: #f8f8f8;
-	padding: 25px;
-	border-radius: 20px;
-	min-height: 340px;
-	position: relative;
+    height: 100%;
+    background: #f8f8f8;
+    padding: 25px;
+    border-radius: 20px;
+    min-height: 340px;
+    position: relative;
 }
 
 .doctor-success-stories .customers-product-col h4 {
-	margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 .doctor-success-stories .customers-product-col p {
-	font-size: 19px;
-	line-height: 24px;
-	color: #3fc15f;
-	margin-bottom: 0px;
+    font-size: 19px;
+    line-height: 24px;
+    color: #3fc15f;
+    margin-bottom: 0px;
 }
 
 
@@ -1062,9 +1065,9 @@ line-height: 24px;
 }
 
 .installments-inner {
-	display: flex;
-	align-items: center;
-	padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
   justify-content:center;
   border-radius: 20px;
 background: #F3F4FF;
@@ -1128,22 +1131,22 @@ background: #F3F4FF;
 
 
 .siscover-your-hormones .wands-inside-product-row .col-md-8 .inside-bundle-item {
-	padding: 30px;
+    padding: 30px;
 }
 .siscover-your-hormones .wands-inside-product-row .inside-bundle-item .inside-sec-img {
-	padding: 0px 0 0;
-	margin-top: 0;
+    padding: 0px 0 0;
+    margin-top: 0;
 }
 
 .siscover-your-hormones .inside-bundle-item-top h2 {
-	font-size: 52px;
-	max-width: inherit;
-	margin-bottom: 90px;
+    font-size: 52px;
+    max-width: inherit;
+    margin-bottom: 90px;
 }
 .siscover-your-hormones .inside-bundle-item-top {
-	max-width: 100%;
-	text-align: left;
-	padding: 0 30px;
+    max-width: 100%;
+    text-align: left;
+    padding: 0 30px;
 }
 
 .discover-chart-col {
@@ -1155,11 +1158,11 @@ background: #F3F4FF;
 
 
 .siscover-your-hormones .col-helf {
-	height: calc(50% - 12px);
+    height: calc(50% - 12px);
 }
 
 .siscover-your-hormones .col-helf:last-child {
-	margin-top: auto;
+    margin-top: auto;
 }
 
 
@@ -1172,11 +1175,11 @@ background: #F3F4FF;
 }
 
 .consultation-cta .panorama-lab-test-heading-1 h2 {
-	font-size: 52px;
-	margin-bottom: 0px;
+    font-size: 52px;
+    margin-bottom: 0px;
 }
 .consultation-img {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .consultation-inner {
   border-radius: 32px;
@@ -1196,10 +1199,10 @@ background: #ECF9EF;
 }
 
 .cards-3-columns .inside-bundle-item-top {
-	margin: 0;
-	max-width: 100% !important;
-	padding: 10px;
-	width: 100%;
+    margin: 0;
+    max-width: 100% !important;
+    padding: 10px;
+    width: 100%;
 }
 
 .cards-3-columns .inside-bundle-item h3 {
@@ -1213,9 +1216,9 @@ background: #ECF9EF;
 }
 
 .cards-3-columns .inside-sec-img img {
-	border-radius: 20px;
-	padding: 0 !important;
-	vertical-align: top;
+    border-radius: 20px;
+    padding: 0 !important;
+    vertical-align: top;
 }
 
 
@@ -1224,17 +1227,17 @@ background: #ECF9EF;
 }
 
 .max-kit-faq {
-	background: #fff;
+    background: #fff;
 }
 
 .max-kit-faq .heading-1 h2 {
-	font-size: 40px;
-	margin-bottom: 20px;
-	color: #003630;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #003630;
 }
 
 .full-width-cta .panorama-lab-test-heading-1 h2 {
-	font-size: 52px;
+    font-size: 52px;
 }
 
 
@@ -1262,13 +1265,13 @@ background: #ECF9EF;
 }
 
 .harmones-left-col {
-	height: calc(100% - 20px);
-	padding: 30px 30px 50px 30px;
-	border-radius: 20px;
+    height: calc(100% - 20px);
+    padding: 30px 30px 50px 30px;
+    border-radius: 20px;
 }
 
 .harmones-left-col img {
-	max-width: 345px;
+    max-width: 345px;
 }
 
 .harmones-left-col h2 {
@@ -1291,13 +1294,13 @@ background: #ECF9EF;
   
 }
 .harmones-bubble-col {
-	border-radius: 60px;
-	background: #FFF;
-	padding: 20px 30px;
-	width: auto;
-	display: table;
-	font-size: 31px;
-	line-height: 30px;
+    border-radius: 60px;
+    background: #FFF;
+    padding: 20px 30px;
+    width: auto;
+    display: table;
+    font-size: 31px;
+    line-height: 30px;
 }
 .harmones-bubble-col a{
     width: 100%;
@@ -1314,24 +1317,24 @@ background: #ECF9EF;
 }
 
 .harmones-tooltip-item {
-	display: table;
-	position: absolute;
-	right: 15px;
-	bottom: 15px;
+    display: table;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
 }
 
 .tooltip-btn {
-	width: 32px;
-	height: 32px;
-	display: table;
-	background: #fff;
-	text-align: center;
-	border-radius: 50%;
-	line-height: 32px;
-	position: static;
-	bottom: 15px;
-	right: 15px;
-	cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: table;
+    background: #fff;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 32px;
+    position: static;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
 }
 
 .harmones-tooltip-item {
@@ -1340,32 +1343,32 @@ background: #ECF9EF;
 
 
 .tooltip-popup {
-	position: absolute;
-	bottom: 47px;
-	left: -114px;
-	border-radius: 8px;
-	background: #FFF;
-	box-shadow: 0px 2px 4px 0px rgba(15, 56, 113, 0.08), 0px 1px 2px 0px rgba(15, 56, 113, 0.12), 0px 0px 1px 0px rgba(15, 56, 113, 0.32);
-	padding: 15px;
-	width: 262px;
-	z-index: 1;
+    position: absolute;
+    bottom: 47px;
+    left: -114px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 2px 4px 0px rgba(15, 56, 113, 0.08), 0px 1px 2px 0px rgba(15, 56, 113, 0.12), 0px 0px 1px 0px rgba(15, 56, 113, 0.32);
+    padding: 15px;
+    width: 262px;
+    z-index: 1;
   visibility:hidden;
   opacity:0;
   transition:all ease 0.3s;
 }
 
 .tooltip-popup::after {
-	content: "";
-	width: 20px;
-	height: 20px;
-	background: #fff;
-	position: absolute;
-	bottom: -6px;
-	left: 50%;
-	transform: translateX(-50%) rotate(137deg);
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(137deg);
 }
 .tooltip-popup p {
-	font-size: 16px;
+    font-size: 16px;
 }
 .harmones-tooltip-item:hover .tooltip-popup {
   visibility:visible;
@@ -1380,25 +1383,25 @@ background: #ECF9EF;
 }
 
 .practical-steps .track-key-col ul {
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-	display: flex;
-	flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .practical-steps .track-key-col ul li {
-	border: 0px solid #D3C9E0;
-	font-size: 19px;
-	color: #183B3F;
-	padding: 10px 20px 10px 50px;
-	margin-bottom: 12px;
-	background: #F8F8F8;
-	margin-right: 12px;
+    border: 0px solid #D3C9E0;
+    font-size: 19px;
+    color: #183B3F;
+    padding: 10px 20px 10px 50px;
+    margin-bottom: 12px;
+    background: #F8F8F8;
+    margin-right: 12px;
 }
 
 .practical-steps .track-key-col ul li img {
-	width: 32px;
+    width: 32px;
 }
 
 .practical-steps-col h2 {
@@ -1447,8 +1450,8 @@ background: #ECF9EF;
 }
 
 .report-file-icon {
-	margin-bottom: 10px;
-	display: block;
+    margin-bottom: 10px;
+    display: block;
 }
 .report-col p {
   color: #667789;
@@ -1458,15 +1461,15 @@ background: #ECF9EF;
 
 
 .understand-reason .doctor-success-stories .customers-product-col h4 {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 
 .understand-reason .doctor-success-stories .customers-product-col p {
-	font-size: 16px;
-	line-height: 24px;
-	color: #667789;
-	margin-bottom: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: #667789;
+    margin-bottom: 0;
 }
 
 
@@ -1475,9 +1478,9 @@ background: #ECF9EF;
 }
 
 .result-help-you-discover h2 {
-	font-size: 40px;
-	color: #183b3f;
-	padding-bottom: 10px;
+    font-size: 40px;
+    color: #183b3f;
+    padding-bottom: 10px;
 }
 
 .result-help-you-discover h4 {
@@ -1496,24 +1499,24 @@ background: #ECF9EF;
   background:#F8F6EE;
 } 
 .panorama-test-steps .inside-bundle-item h3 {
-	color: #183B3F;
-	margin-bottom: 10px;
-	margin-top: 10px;
+    color: #183B3F;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .step-number {
-	background: #fff;
-	display: table;
-	padding: 5px 10px;
-	border-radius: 30px;
-	font-size: 16px;
-	line-height: normal;
-	color: #183B3F;
+    background: #fff;
+    display: table;
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-size: 16px;
+    line-height: normal;
+    color: #183B3F;
 }
 
 
 .panorama-max-kit-comparison {
-	padding-bottom: 60px;
+    padding-bottom: 60px;
 }
 
 .panorama-max-kit-comparison h2 {
@@ -1523,18 +1526,18 @@ background: #ECF9EF;
 }
 
 .goals-plan-row {
-	display: flex;
-	justify-content: center;
-	padding: 0 50px;
+    display: flex;
+    justify-content: center;
+    padding: 0 50px;
 }
 .goals-plan-row > li:first-child {
-	width: calc(22% - 20px);
+    width: calc(22% - 20px);
 }
 
 .goals-plan-row > li {
-	width: calc(38% - 20px);
-	list-style: none;
-	margin: 0 10px;
+    width: calc(38% - 20px);
+    list-style: none;
+    margin: 0 10px;
 }
 
 .goals-plan-col {
@@ -1544,17 +1547,17 @@ background: #ECF9EF;
 }
 
 .goals-plan-row > li:nth-child(2) .goals-plan-col {
-	border-color: #3FC15F;
+    border-color: #3FC15F;
 }
 
 .goals-plan-col h3 {
-	font-size: 24px;
-	margin-bottom: 20px;
-	min-height: 57px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    min-height: 57px;
 }
 
 .goals-plan-col ul li:first-child {
-	border-top: 1px solid #E6E6E6;
+    border-top: 1px solid #E6E6E6;
 }
 
 .goals-plan-col ul li {
@@ -1601,8 +1604,8 @@ background: #ECF9EF;
 
 
 .hormonal-report-sec  h2 {
-	font-size: 31px;
-	margin-bottom: 25px;
+    font-size: 31px;
+    margin-bottom: 25px;
   text-align:center;
 }
 
@@ -1656,11 +1659,36 @@ background: #ECF9EF;
 .custom-pro-title-section .panorama-disclaimer {
     font-size: 15px;
 }
+
+/* Vinod custom CSS start */
+.frontrow-container {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    border: 1px solid #EAEAEA;
+}
+.frontrow-container p {
+    font-size: 14px !important;
+    line-height: 20px !important;
+}
+body.mira-max-kit .Stories-testimonials-sec {
+    padding-top: 60px !important;
+}
+/*.custom_pro_yotpo .yotpo-plans-and-policy-wrapper {
+    border: 1px solid #66778933;
+    border-radius: 8px;
+}
+.yotpo-widget-subscriptions-add-to-cart .yotpo-selling-plans-wrapper {
+    margin-top: 0 !important;
+}
+.yotpo-widget-subscriptions-add-to-cart .yotpo-subscription-benefits-wrapper {
+    margin-bottom: 0 !important;
+}*/
+/* Vinod custom CSS end */
 /*******************Responsive**Start*********{}******************************/
 
 @media (max-width:1400px) and (min-width:1200px) {
 .goals-plan-col ul li {
-	font-size: 15px;
+    font-size: 15px;
 }
 }
 
@@ -1673,7 +1701,7 @@ background: #ECF9EF;
 
 @media (max-width:1199px) and (min-width:768px) {
 .goals-plan-col ul li {
-	font-size: 11px;
+    font-size: 11px;
 }
     .simple-wand-sec .practical-steps-left {
         padding-right: 60px;
@@ -1709,32 +1737,32 @@ background: #ECF9EF;
 @media (max-width:1199px) {
 
 .harmones-bubble-col {
-	font-size: 24px;
-	line-height: normal;
+    font-size: 24px;
+    line-height: normal;
 }  
   
 .harmones-bubble-small {
-	width: 72px;
-	height: 72px;
-	line-height: 72px;
-	padding: 0;
-	text-align: center;
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+    padding: 0;
+    text-align: center;
 }
 
 
 .understand-reason .bf-bundle-page-title {
-	padding-right: 150px;
+    padding-right: 150px;
 }  
 
 .goals-price-bar .price-goal {
-	font-size: 23px;
+    font-size: 23px;
 }
   
 
 .goals-price-bar .btn-custom {
-	font-size: 16px;
-	padding: 0 20px !important;
-	min-width: inherit;
+    font-size: 16px;
+    padding: 0 20px !important;
+    min-width: inherit;
 }  
 }
 
@@ -1806,13 +1834,13 @@ background: #ECF9EF;
 
 @media (max-width:991px) {
 .harmones-tooltop-col {
-	padding: 12px;
-	height: auto;
-	min-height: 165px;
-	margin-bottom: 20px;
+    padding: 12px;
+    height: auto;
+    min-height: 165px;
+    margin-bottom: 20px;
 }
   .report-sec ul li {
-	width: 33.33%;
+    width: 33.33%;
 } 
 
 
@@ -2037,103 +2065,103 @@ background: #ECF9EF;
     }
 
  .quality-matters-sec h2 {
-	font-size: 23px;
-	margin-bottom: 30px;
+    font-size: 23px;
+    margin-bottom: 30px;
 }
   .quality-matters-img {
-	max-width: 80px;
-	text-align: center;
-	margin: 0 auto;
+    max-width: 80px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .quality-matters-sec {
-	padding: 60px 0 0;
+    padding: 60px 0 0;
 }  
 
 .quality-matters-img-outer {
-	max-width: 200px;
-	margin: 0 auto;
+    max-width: 200px;
+    margin: 0 auto;
 } 
 
  .wants-bundle-img-sec {
-	padding: 30px 0 !important;
+    padding: 30px 0 !important;
 } 
 
 .wants-bundle-img-sec .practical-steps-left {
-	padding-right: 0;
-	padding-top: 0;
+    padding-right: 0;
+    padding-top: 0;
 }  
 
 .wants-bundle-img-sec .panorama-lab-test-heading-1 {
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }  
 
 .wants-bundle-img-sec h2 {
-	font-size: 28px;
+    font-size: 28px;
 }
 
 .quality-matters-sec {
-	padding: 60px 0 10px;
+    padding: 60px 0 10px;
 } 
 
 .black-friday-offer-box h2 {
-	font-size: 34px;
-	line-height: 38px;
-	margin-bottom: 15px;
+    font-size: 34px;
+    line-height: 38px;
+    margin-bottom: 15px;
 }
 
 .exclusive-black-friday-sec .bf-bundle-banner-btn {
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column-reverse;
-	justify-content: flex-start;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
 }
 
 .exclusive-black-friday-sec .bf-bundle-banner-btn .bf-price-row {
-	margin-right: 0;
-	margin-top: 10px;
+    margin-right: 0;
+    margin-top: 10px;
 }
 
 
 .exclusive-black-friday-sec {
-	background: #F8F8F8;
-	max-width: calc(100% - 30px);
-	border-radius: 24px;
-	margin-top: 40px;
-	padding-top: 15px !important;
-	padding-bottom: 40px !important;
-	margin-bottom: 50px;
+    background: #F8F8F8;
+    max-width: calc(100% - 30px);
+    border-radius: 24px;
+    margin-top: 40px;
+    padding-top: 15px !important;
+    padding-bottom: 40px !important;
+    margin-bottom: 50px;
 }
 
 .bf-bundle .faq-sec .accordion-sec .card-header a {
-	font-size: 19px;
+    font-size: 19px;
 }  
  .all-stories-btn {
-	right: 15px;
+    right: 15px;
 } 
 .doctor-success-stories .col-md-12 {
-	padding: 0;
+    padding: 0;
 }
 
 .doctor-success-stories .customers-product-col {
-	margin-bottom: 0;
+    margin-bottom: 0;
   min-height:255px;
 } 
 
 .doctor-success-stories {
-	padding-top: 30px !important;
+    padding-top: 30px !important;
 }
 
 .doctors-say-mira-sec .owl-nav {
-	display: none;
+    display: none;
 }  
 
 .customers-product-sec .owl-controls .owl-dots, .doctors-say-mira-sec .owl-controls .owl-dots, .customer-storie .owl-controls .owl-dots, .doctors-about-mira .owl-controls .owl-dots {
-	display: block !important;
+    display: block !important;
 }
 
 .doctors-say-mira-sec {
-	padding-top: 0px !important;
+    padding-top: 0px !important;
 }  
 
 .bf-bundle .owl-dots, .customer-storie .owl-dots, .doctors-about-mira .owl-dots, .upsell-4-columns-slider .owl-dots, .panorama-test-steps .owl-dots {
@@ -2181,8 +2209,8 @@ background: #ECF9EF;
 
 
 .installments h2 {
-	font-size: 19px;
-	margin-bottom: 20px;
+    font-size: 19px;
+    margin-bottom: 20px;
 } 
 .installments-inner {
   flex-wrap:wrap;
@@ -2190,12 +2218,12 @@ background: #ECF9EF;
 } 
 
 .cards-3-columns {
-	padding-top: 50px !important;
-	padding-bottom: 10px !important;
+    padding-top: 50px !important;
+    padding-bottom: 10px !important;
 } 
 
 .cards-3-columns .inside-bundle-item-top {
-	margin: 10px 0 0;
+    margin: 10px 0 0;
 }  
 
 .customer-storie .all-stories-btn {
@@ -2203,29 +2231,29 @@ background: #ECF9EF;
 }
 
 .customer-storie {
-	padding-bottom: 40px !important;
+    padding-bottom: 40px !important;
 }
 
 .doctors-about-mira .experts-mira-inner .heading-1 h4 {
-	font-size: 23px;
+    font-size: 23px;
 } 
   
 .doctors-about-mira .experts-mira-inner {
-	padding: 25px 20px 40px 20px;
+    padding: 25px 20px 40px 20px;
 }
 .doctors-about-mira .doctor-say-details p {
-	font-size: 23px;
-	line-height: 24px;
+    font-size: 23px;
+    line-height: 24px;
 }
 
 .doctors-about-mira .doctor-say-name {
-	font-size: 19px;
-	line-height: 24px;
-	margin-bottom: 5px;
+    font-size: 19px;
+    line-height: 24px;
+    margin-bottom: 5px;
 } 
 
 .track-hormones  {
-	padding-top: 20px !important;
+    padding-top: 20px !important;
   padding-bottom: 0px !important;
 } 
 
@@ -2234,93 +2262,93 @@ background: #ECF9EF;
 }
   
 .track-hormones .bf-bundle-page-title h2 br {
-	display:none;
+    display:none;
 }  
 
 
 .track-hormones .inside-bundle-item .inside-sec-img .track-badge {
-	height: 60px;
-	display: block;
-	line-height: 60px;
-	width: 60px;
-	border-radius: 50%;
-	text-align: center;
-	font-size: 23px;
+    height: 60px;
+    display: block;
+    line-height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 23px;
 } 
 
 
 .track-hormones .wands-inside-product-row .inside-bundle-item {
-	margin-bottom: 20px;
-	display: flex;
-	height: auto;
-	text-align: left;
-	justify-content: flex-start;
+    margin-bottom: 20px;
+    display: flex;
+    height: auto;
+    text-align: left;
+    justify-content: flex-start;
 }  
   
 .track-hormones .wands-inside-product-row .inside-bundle-item-top {
-	padding: 0 0px 0 10px;
+    padding: 0 0px 0 10px;
 } 
 
 .siscover-your-hormones {
-	padding-top: 40px !important;
+    padding-top: 40px !important;
 }
 
 .siscover-your-hormones .bf-bundle-page-title h2 {
-	font-size: 23px;
-	margin-bottom: 24px;
+    font-size: 23px;
+    margin-bottom: 24px;
 }
 
 .siscover-your-hormones .wands-inside-product-row .col-md-8 .inside-bundle-item-top {
-	padding: 0 0px;
+    padding: 0 0px;
 }
 .siscover-your-hormones .inside-bundle-item-top h2 {
-	font-size: 34px;
-	margin-bottom: 35px;
+    font-size: 34px;
+    margin-bottom: 35px;
 }
 
 .siscover-your-hormones .wands-inside-product-row .inside-bundle-item h3 {
-	padding: 15px 50px 10px 10px;
+    padding: 15px 50px 10px 10px;
 }
 
 .consultation-cta .panorama-lab-test-heading-1 h2 {
-	font-size: 34px;
-	margin-bottom: 0;
+    font-size: 34px;
+    margin-bottom: 0;
 }  
   
 .consultation-cta .consultation-inner {
-	padding: 50px 25px;
+    padding: 50px 25px;
 }
 .full-width-cta .panorama-lab-test-heading-1 h2 {
-	font-size: 34px;
+    font-size: 34px;
 }
 .full-width-cta p br{
   display:none;
 }
 .full-width-cta .consultation-inner {
-	padding: 50px 25px;
+    padding: 50px 25px;
 }
 
 .new-custom-product-detail h1 {
-	font-size: 28px;
+    font-size: 28px;
 }
 
 .include-wat {
-	font-size: 19px;
+    font-size: 19px;
 }
 
 
  
 .mira-max-kit .product-info-sec {
-	padding: 20px 0 20px;
+    padding: 20px 0 20px;
 } 
 
 .new-custom-product-detail .custom-pro-title-section {
-	padding: 20px 0 0;
+    padding: 20px 0 0;
 }   
 
 .new-custom-product-detail .product-form__input--dropdown {
-	margin-top: 5px !important;
-	margin-bottom: 0 !important;
+    margin-top: 5px !important;
+    margin-bottom: 0 !important;
 }
 .new-custom-product-detail .product-form__input select {
   font-size:16px;
@@ -2329,180 +2357,180 @@ background: #ECF9EF;
 }
 
 .new-custom-product-detail .custom-buy-button .btn-custom * {
-	font-size: 16px;
+    font-size: 16px;
 }  
 .new-custom-product-detail .product-info-box .btn-custom {
-	font-size: 16px !important;
-	height: 45px !important;
-	line-height: 45px !important;
+    font-size: 16px !important;
+    height: 45px !important;
+    line-height: 45px !important;
 }  
 
 .new-custom-product-detail .accordion-sec {
-	margin-top: 5px;
+    margin-top: 5px;
 }
 
 .new-custom-product-detail .accordion-sec .description {
-	font-size: 16px;
+    font-size: 16px;
 } 
 
 
  .hormones-section {
-	padding: 60px 5px 0;
+    padding: 60px 5px 0;
 } 
   
 .harmones-left-col h2 {
-	font-size: 28px;
+    font-size: 28px;
 }
  .harmones-left-col p {
-	font-size: 16px;
-	margin-bottom: 40px;
+    font-size: 16px;
+    margin-bottom: 40px;
 }
 
 .harmones-left-col {
-	padding: 15px 15px 40px;
+    padding: 15px 15px 40px;
 }  
   .harmones-left-col img {
-	max-width: 100%;
+    max-width: 100%;
 }
 
   .harmones-bubble-col {
-	padding: 20px 25px;
+    padding: 20px 25px;
 }
 
 .practical-steps .container {
-	padding-top: 20px;
-	padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 15px;
 }   
 
 .practical-steps-col h2 {
-	font-size: 28px;
-	margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
 .practical-steps-col p {
-	font-size: 16px;
+    font-size: 16px;
 }
 .practical-steps-col h3 {
-	font-size: 19px;
-	margin-bottom: 20px;
+    font-size: 19px;
+    margin-bottom: 20px;
 }
 
 .practical-steps .track-key-col ul li {
-	font-size: 16px;
+    font-size: 16px;
 }
   
 
 
 .report-sec h2 {
-	font-size: 19px;
+    font-size: 19px;
 } 
 
   .report-sec ul li {
-	width: 50%;
-	margin: 0 0px 20px 0;
+    width: 50%;
+    margin: 0 0px 20px 0;
 } 
 
 .report-sec ul li h3 {
-	font-size: 19px;
+    font-size: 19px;
 }  
 .hormonal-report-sec h2 {
-	font-size: 23px;
-	margin-bottom: 25px;
+    font-size: 23px;
+    margin-bottom: 25px;
 }  
 
 .hormonal-report-form-row {
-	flex-wrap: wrap;
+    flex-wrap: wrap;
 }  
 
 .email-input {
-	margin-bottom: 16px;
+    margin-bottom: 16px;
 } 
 
 .hormonal-report-form input[type="email"] {
-	height: 45px;
+    height: 45px;
   text-align:center;
 }  
 
 .hormonal-report-form input[type="submit"] {
-	line-height: 45px !important;
-	padding: 0 25px;
-	height: 45px !important;
-	width: 100%;
-	font-size: 16px;
-	margin-left: 0;
+    line-height: 45px !important;
+    padding: 0 25px;
+    height: 45px !important;
+    width: 100%;
+    font-size: 16px;
+    margin-left: 0;
 }
 
 .result-help-you-discover h2 {
-	font-size: 28px;
-	padding-bottom: 0px;
+    font-size: 28px;
+    padding-bottom: 0px;
 }
 .result-help-left {
-	margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .result-help-you-discover h4 {
-	font-size: 19px;
+    font-size: 19px;
 }
 
  .result-help-you-discover p {
-	font-size: 16px;
+    font-size: 16px;
 } 
   
  .panorama-test-steps {
-	padding-top: 30px !important;
+    padding-top: 30px !important;
 } 
 
 .panorama-test-steps h2 {
-	font-size: 23px;
-	padding-bottom: 15px;
+    font-size: 23px;
+    padding-bottom: 15px;
 }
   
  .report-col {
-	padding: 12px;
+    padding: 12px;
 } 
 
 .report-sec .container {
-	padding-bottom: 0;
+    padding-bottom: 0;
 }
 
 .understand-reason .bf-bundle-page-title {
-	padding-right: 0;
+    padding-right: 0;
 } 
 .understand-reason .doctor-success-stories .customers-product-col {
-	min-height: 320px;
+    min-height: 320px;
 }
 
 .understand-reason .customer-storie {
-	padding-bottom: 0px !important;
+    padding-bottom: 0px !important;
 }  
 
 .panorama-max-kit-comparison h2 {
-	font-size: 28px;
-	text-align: left;
+    font-size: 28px;
+    text-align: left;
 }
 
 .goals-plan-row {
-	padding: 0 0px;
-	flex-wrap: wrap;
+    padding: 0 0px;
+    flex-wrap: wrap;
 }  
 
 .goals-plan-row > li:first-child {
-	width: calc(22% - 20px);
-	display: none;
+    width: calc(22% - 20px);
+    display: none;
 }
 
 .goals-plan-row > li {
-	width: 100%;
-	list-style: none;
-	margin: 0 0 20px;
+    width: 100%;
+    list-style: none;
+    margin: 0 0 20px;
 } 
 
 .goals-plan-col ul li {
-	list-style: none;
-	border-bottom: 1px solid #E6E6E6;
-	padding: 15px 0;
+    list-style: none;
+    border-bottom: 1px solid #E6E6E6;
+    padding: 15px 0;
 
-	font-size: 14px;
+    font-size: 14px;
 }  
 
 .goals-plan-col ul li label {
@@ -2513,31 +2541,31 @@ background: #ECF9EF;
 }  
   
 .panorama-max-kit-comparison {
-	padding-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 .take-control-sec {
-	padding-bottom: 45px;
+    padding-bottom: 45px;
 }
 
 .take-control-sec .panorama-lab-test-heading-1 {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 } 
 
 .tooltip-popup {
-	padding: 8px;
-	width: 150px;
-	left: inherit;
-	right: 0;
+    padding: 8px;
+    width: 150px;
+    left: inherit;
+    right: 0;
 }
   
 
 .tooltip-popup::after {
-	left: 89%;
+    left: 89%;
 }
 
 .tooltip-popup p {
-	font-size: 12px;
+    font-size: 12px;
 }  
   
 }

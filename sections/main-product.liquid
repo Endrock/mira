@@ -67,7 +67,11 @@
         <!--
           <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
         -->
-        {% if product.handle == 'panorama-fertility-lab-test' %}
+        {% if 
+          product.handle == 'panorama-fertility-lab-test' or 
+          product.handle == 'fertility-max-starter-kit' or
+          product.handle == 'fertility-plus-starter-kit'
+        %}
           <div class="col-lg-6 new-custom-product-detail">
               <product-info
                 id="ProductInfo-{{ section.id }}"
@@ -87,6 +91,7 @@
                         <div class="custom-pro-title-section">
                         <h1>{{ product.title | escape }}</h1>
                         <div class="include-wat">{{product.metafields.product_fields.sub_title}}</div>
+                        <div class="review-box yotpo bottomLine" data-product-id="{{ product.id }}"></div>
                         {% include 'frontrow-quant-widget' %}
                         {% if product.handle == 'panorama-fertility-lab-test' %}
                           <p class="panorama-disclaimer">*Mira Panorama Lab Test is not available in the state of New York (NY)</p>
@@ -158,7 +163,7 @@
                     <div class="custom_pro_variant">
                       {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
                     </div>
-                   
+                   <div data-rebuy-id="130816" data-rebuy-shopify-product-ids="{{ product.id }}" style="overflow: hidden;"></div>
                     {%- when 'price' -%}
                      <div class="custom_pro_yotpo">
                        {% render 'yotpo-subs-product-page-widget' %}
@@ -177,7 +182,6 @@
                       
                       </div> 
                     </div>
-                    <div data-rebuy-id="128212" data-rebuy-shopify-product-ids="{{ product.id }}"></div>
         
                                   
                     <!-- <div style="" class="low-price-sec sezzle-widget">
@@ -205,43 +209,7 @@
                                    {{ product.description }}
                                 </div>
                              </div>
-                          </div>
-                          <div class="card" style="display:none;">
-                             <div class="card-header collapsed" data-toggle="collapse" href="#p2">
-                                <a href="javascript:void(0)" class="card-title">Product Features</a>
-                             </div>
-                             <div id="p2" class="card-body collapse" data-parent="#accordion" >
-                                <div class="accordion-link-col">
-                                    <ul>
-                                    <li>Predict & confirm ovulation</li>
-                                    <li>See your 6-day fertile window</li>
-                                    <li>Get real-time numeric hormone scores daily</li>
-                                    <li>99% lab-grade accuracy—without going to the lab</li>
-                                    <li>24/7 customer support</li>
-                                    </ul>
-                                </div>
-                             </div>
-                          </div>
-                          <div class="card" style="display:none;">
-                             <div class="card-header collapsed" data-toggle="collapse" href="#p3">
-                                <a href="javascript:void(0)" class="card-title">What’s Inside</a>
-                             </div>
-                             <div id="p3" class="card-body collapse" data-parent="#accordion" >
-                                <div class="accordion-link-col">
-                                   <p class="description">Hi, you’re looking at the world’s“mini hormone lab. Powered by AI, The Mira Fertility Monitor is designed to track your hormones and give you real-time, lab-grade results — so you can reach your goals with confidence.</p>
-                                </div>
-                             </div>
-                          </div>
-                          <div class="card" style="display:none;">
-                             <div class="card-header collapsed" data-toggle="collapse" href="#p4">
-                                <a href="javascript:void(0)" class="card-title">Delivery, returns & contact</a>
-                             </div>
-                             <div id="p4" class="card-body collapse" data-parent="#accordion" >
-                                <div class="accordion-link-col">
-                                   <p class="description">Hi, you’re looking at the world’s“mini hormone lab. Powered by AI, The Mira Fertility Monitor is designed to track your hormones and give you real-time, lab-grade results — so you can reach your goals with confidence.</p>
-                                </div>
-                             </div>
-                          </div>
+                          </div>                        
                         </div>
         
                         <div class="free-Shipping-text">Free Shipping • FSA / HSA accepted</div>
@@ -552,7 +520,7 @@
     _learnq.push(['track', 'Added to Cart', item]);
     };
     for (var i = 0; i < classname.length; i++) {
-    	classname[i].addEventListener('click', addToCart, false);
+      classname[i].addEventListener('click', addToCart, false);
     }
   </script>
   <!-- Klaviyo code to track visitors and their activity END -->

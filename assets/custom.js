@@ -795,6 +795,41 @@ jQuery(document).ready( function($) {
 });
 // Add UTM parameter to the Mira app end
 
+jQuery(document).ready(function($) {  
+  setTimeout(function(){  
+    $('.rebuy-addon input[type=checkbox]').change(function() { 
+      var shopify_add_to_cart_price = $('.price .price-item--regular').data("price");
+    if (this.checked) {
+      $('.rebuy-addon__subtotal').hide();
+      var rebuy_addon_subtotal =  $('.rebuy-addon__subtotal-value .rebuy-money.sale span:nth-child(2)').text().trim();
+      var rebuy_addon_subtotal_splited = rebuy_addon_subtotal.split(' ');
+      var rebuy_addon_subtotal_num = rebuy_addon_subtotal_splited[0].slice(1);
+      console.log(rebuy_addon_subtotal_num);
+      rebuy_addon_subtotal_numeric = rebuy_addon_subtotal_num.replace(",", ".");
+      console.log(rebuy_addon_subtotal_numeric);
+
+      var shopify_subtotal_splited = shopify_add_to_cart_price.split(' ');
+      var currency_symbol = shopify_add_to_cart_price.charAt(0);
+      var currency_code = shopify_subtotal_splited[1];
+      var shopify_subtotal_splited_num = shopify_subtotal_splited[0].slice(1);
+      console.log(shopify_subtotal_splited_num);
+      shopify_subtotal_splited_numeric = shopify_subtotal_splited_num.replace(",", ".");
+      console.log(shopify_subtotal_splited_numeric);
+
+      var subtotal_sum = parseFloat(rebuy_addon_subtotal_numeric) + parseFloat(shopify_subtotal_splited_numeric);
+      if (typeof currency_code === "undefined") {
+        var final_subtotal = currency_symbol + subtotal_sum.toFixed(2);
+      } else {
+        var final_subtotal = currency_symbol + subtotal_sum.toFixed(2) + ' ' + currency_code;
+      }
+      $('.price .price-item--regular').text(final_subtotal);      
+    } else {
+      $('.price .price-item--regular').text(shopify_add_to_cart_price);
+    }
+  });
+  }, 8000);
+});
+
 /* jQuery(document).ready(function($) {
     $('body').on('click', '[name="checkout"], [name="goto_pp"], [name="goto_gc"]', function() {
       if ($('#agree').is(':checked')) {
