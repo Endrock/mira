@@ -823,7 +823,7 @@ jQuery(document).ready(function($) {
       $('.price .price-item--regular').text(shopify_add_to_cart_price);
     }
   });
-  }, 3000);
+  }, 4000);
 });
 
 /* jQuery(document).ready(function($) {
