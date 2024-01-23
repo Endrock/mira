@@ -441,12 +441,25 @@
       })(window, document, 'script', 'dataLayer', 'GTM-TDHXZX8');
     </script>
     <!-- End Google Tag Manager -->
+
+
+    <script>
+      window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
+      window._template = {
+          directory: "{{ template.directory }}",
+          name: "{{ template.name }}",
+          suffix: "{{ template.suffix }}"
+      }
+    </script> 
+    <script src="https://cdn.intelligems.io/5c4dfbeadaf6.js"></script>
   </head>
+
 
   <body
     data-dualcol="false"
     class="gradient template-{{ template | split: '.' | first }} {{ template }}{% if template == "product" %} {{ product.handle }}{% endif %} {% for tag in product.tags %} {{ tag }}{% endfor %}"
   >
+
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -457,7 +470,7 @@
 
     {% sections 'header-group' %}
     <div id="om-jjjxco9itpcbvmc8dwk6-holder"></div>
-    <div id="om-ed29zomd3vjkge0olzuf-holder"></div>
+    <div id="om-oph4wyzrkxboyx7oef9t-holder"></div>
     <!-- <div id="om-ewfendmhruzmybgyqr83-holder"></div> -->
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}

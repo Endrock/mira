@@ -1,3 +1,5 @@
+{{ 'best-sellers.css' | asset_url | stylesheet_tag }}
+
 {% assign sub_folder = '' %}
 {% if localization.market.handle == 'au' %}
   {% assign sub_folder = '/en-au' %}
@@ -15,6 +17,7 @@
 
 <div class="shop-all-tab-bar">
     <ul>
+    <li class="best-sellers"><a href="{{ sub_folder }}/products/best-sellers" {% if request.path == '/products/best-sellers' %}class="shop-all-active"{% endif %}>Best Sellers</a></li>
       <li><a href="{{ sub_folder }}/products/" {% if request.path == '/products' or request.path == '/' %}class="shop-all-active"{% endif %}>Shop all</a></li>
             
 
