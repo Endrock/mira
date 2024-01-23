@@ -41,7 +41,9 @@
                             </div>
                             <h4><a href="{{ sub_folder }}/products/mira-max-test-wands">{{
                                     all_products['mira-max-test-wands'].title }}</a></h4>
-                            <p>({{ all_products['mira-max-test-wands'].metafields.product_fields.sub_title }})</p>
+                                    {% if all_products['mira-max-test-wands'].metafields.product_fields.sub_title != blank %}
+                                        <p>({{ all_products['mira-max-test-wands'].metafields.product_fields.sub_title }})</p>
+                                    {% endif %}
                             <div class="product-price-col">
                                 <div class="price-btn-row">
                                     <span class="plat-price">{{ all_products['mira-max-test-wands'].price | money
@@ -63,7 +65,9 @@
                             </div>
                             <h4><a href="{{ sub_folder }}/products/fertility-max-starter-kit">{{
                                     all_products['fertility-max-starter-kit'].title }}</a></h4>
-                            <p>({{ all_products['fertility-max-starter-kit'].metafields.product_fields.sub_title }})</p>
+                                    {% if all_products['fertility-max-starter-kit'].metafields.product_fields.sub_title != blank %}
+                                        <p>({{ all_products['fertility-max-starter-kit'].metafields.product_fields.sub_title }})</p>
+                                    {% endif %}
                             <div class="product-price-col">
                                 <div class="price-btn-row">
                                     <span class="plat-price">{{ all_products['fertility-max-starter-kit'].price | money
@@ -85,7 +89,9 @@
                             </div>
                             <h4><a href="{{ sub_folder }}/products/wands-bundle">{{
                                     all_products['wands-bundle'].title }}</a></h4>
-                            <p>({{ all_products['wands-bundle'].metafields.product_fields.sub_title }})</p>
+                                    {% if all_products['wands-bundle'].metafields.product_fields.sub_title != blank %}
+                                        <p>({{ all_products['wands-bundle'].metafields.product_fields.sub_title }})</p>
+                                    {% endif %}
                             <div class="product-price-col">
                                 <div class="price-btn-row">
                                     <span class="plat-price">{{ all_products['wands-bundle'].price | money
@@ -117,8 +123,9 @@
                             </div>
                             <h4><a href="{{ sub_folder }}/products/basal-body-thermometer">{{
                                     all_products['basal-body-thermometer'].title }}</a></h4>
-                            <p>({{ all_products['basal-body-thermometer'].metafields.product_fields.sub_title }})
-                            </p>
+                                    {% if all_products['basal-body-thermometer'].metafields.product_fields.sub_title != blank %}
+                                        <p>({{ all_products['basal-body-thermometer'].metafields.product_fields.sub_title }})</p>
+                                    {% endif %}
                             <div class="product-price-col">
                                 <div class="price-btn-row">
                                     <span class="plat-price">{{ all_products['basal-body-thermometer'].price |
@@ -150,8 +157,9 @@
                             </div>
                             <h4><a href="{{ sub_folder }}/products/prenatal-multivitamin">{{
                                     all_products['prenatal-multivitamin'].title }}</a></h4>
-                            <p>({{ all_products['prenatal-multivitamin'].metafields.product_fields.sub_title }})
-                            </p>
+                                    {% if all_products['prenatal-multivitamin'].metafields.product_fields.sub_title != blank %}
+                                        <p>({{ all_products['prenatal-multivitamin'].metafields.product_fields.sub_title }})</p>
+                                    {% endif %}
                             <div class="product-price-col">
                                 <div class="price-btn-row">
                                     <span class="plat-price">{{ all_products['prenatal-multivitamin'].price |
@@ -183,8 +191,9 @@
                             </div>
                             <h4><a href="{{ sub_folder }}/products/get-pregnant-bundle">{{
                                     all_products['get-pregnant-bundle'].title }}</a></h4>
-                            <p>({{ all_products['get-pregnant-bundle'].metafields.product_fields.sub_title }})
-                            </p>
+                                    {% if all_products['get-pregnant-bundle'].metafields.product_fields.sub_title != blank %}
+                                        <p>({{ all_products['get-pregnant-bundle'].metafields.product_fields.sub_title }})</p>
+                                    {% endif %}
                             <div class="product-price-col">
                                 <div class="price-btn-row">
                                     <span class="plat-price">{{ all_products['get-pregnant-bundle'].price |
@@ -216,8 +225,9 @@
                             </div>
                             <h4><a href="{{ sub_folder }}/products/coaching">{{
                                     all_products['coaching'].title }}</a></h4>
-                            <p>({{ all_products['coaching'].metafields.product_fields.sub_title }})
-                            </p>
+                                    {% if all_products['coaching'].metafields.product_fields.sub_title != blank %}
+                                        <p>({{ all_products['coaching'].metafields.product_fields.sub_title }})</p>
+                                    {% endif %}
                             <div class="product-price-col">
                                 <div class="price-btn-row">
                                     <span class="plat-price">{{ all_products['coaching'].price |
