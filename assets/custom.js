@@ -801,20 +801,16 @@ jQuery(document).ready(function($) {
       var shopify_add_to_cart_price = $('.price .price-item--regular').data("price");
     if (this.checked) {
       $('.rebuy-addon__subtotal').hide();
-      var rebuy_addon_subtotal =  $('.rebuy-addon__subtotal-value .rebuy-money.sale span:nth-child(2)').text().trim();
+      var rebuy_addon_subtotal =  $('.rebuy-addon__subtotal-value .rebuy-money span:nth-child(2), .rebuy-addon__subtotal-value .rebuy-money.sale span:nth-child(2)').text().trim();
       var rebuy_addon_subtotal_splited = rebuy_addon_subtotal.split(' ');
       var rebuy_addon_subtotal_num = rebuy_addon_subtotal_splited[0].slice(1);
-      console.log(rebuy_addon_subtotal_num);
-      rebuy_addon_subtotal_numeric = rebuy_addon_subtotal_num.replace(",", ".");
-      console.log(rebuy_addon_subtotal_numeric);
+      var rebuy_addon_subtotal_numeric = rebuy_addon_subtotal_num.replace(",", ".");
 
       var shopify_subtotal_splited = shopify_add_to_cart_price.split(' ');
       var currency_symbol = shopify_add_to_cart_price.charAt(0);
       var currency_code = shopify_subtotal_splited[1];
       var shopify_subtotal_splited_num = shopify_subtotal_splited[0].slice(1);
-      console.log(shopify_subtotal_splited_num);
-      shopify_subtotal_splited_numeric = shopify_subtotal_splited_num.replace(",", ".");
-      console.log(shopify_subtotal_splited_numeric);
+      var shopify_subtotal_splited_numeric = shopify_subtotal_splited_num.replace(",", ".");
 
       var subtotal_sum = parseFloat(rebuy_addon_subtotal_numeric) + parseFloat(shopify_subtotal_splited_numeric);
       if (typeof currency_code === "undefined") {
