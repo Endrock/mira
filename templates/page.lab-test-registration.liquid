@@ -29,7 +29,7 @@
             <div class="register-code-form">
                 <form>
                     <label>Your Registration Code</label>
-                    <input type="text" name="registration_code" id="registration_code"/>
+                    <input type="text" name="registration_code" id="registration_code" value="" style="text-transform:uppercase" />
                     <label>Your Phone Number</label>
                     <input type="text" name="phone_number" id="phone_number" value="{{ customer.phone }}" placeholder="(000) 000-0000"/>
                     <button type="submit" class="btn-custom btn-pink btn-md" id="step1_submit_btn">Register</button>
@@ -487,7 +487,7 @@
                     "x-api-key": "wE3jBBX6FGlbhfSaq5hi"
                   },
                   "data": JSON.stringify({
-                    "registrationCode": registration_code,
+                    "registrationCode": registration_code.toUpperCase(),
                      "patient": {
                         "firstName": "{{ customer.first_name }}",
                         "lastName": "{{ customer.last_name }}",
@@ -525,7 +525,7 @@
                         },
                         "data": JSON.stringify({
                           "user_id": user_id,
-                          "registration_code": registration_code,
+                          "registration_code": registration_code.toUpperCase(),
                           "i_am_patient": patient_or_legal_guardian,
                           "dob": DOB,
                           "whats_your_cycle": whats_your_cycle,
@@ -655,7 +655,7 @@
 {% else %}
 
 <script>
-  window.location.href = "/account/login?return_url=/pages/lab-test";
+  window.location.href = "/account/login?return_url=/pages/lab-test-registration";
 </script>
 
 {% endif %}
