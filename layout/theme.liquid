@@ -10,16 +10,16 @@
 
     <script>
       function createCookie(name, value, days) {
-          var expires;
+        var expires;
 
-          if (days) {
-              var date = new Date();
-              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-              expires = "; expires=" + date.toGMTString();
-          } else {
-              expires = "";
-          }
-          document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+          expires = '; expires=' + date.toGMTString();
+        } else {
+          expires = '';
+        }
+        document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value) + expires + '; path=/';
       }
       //createCookie('localization', 'FR', 180);
     </script>
@@ -300,21 +300,81 @@
     <link rel="preconnect dns-prefetch" href="https://triplewhale-pixel.web.app/" crossorigin>
     <link rel="preconnect dns-prefetch" href="https://api.config-security.com/" crossorigin>
     <script>
-    /* >> TriplePixel :: start*/
-    ~function(W,H,A,L,E,_,B,N){function O(U,T,H,R){void 0===R&&(R=!1),H=new XMLHttpRequest,H.open("GET",U,!0),H.send(null),H.onreadystatechange=function(){4===H.readyState&&200===H.status?(R=H.responseText,U.includes(".txt")?eval(R):N[B]=R):(299<H.status||H.status<200)&&T&&!R&&(R=!0,O(U,T-1))}}if(N=window,!N[H+"sn"]){N[H+"sn"]=1;try{A.setItem(H,1+(0|A.getItem(H)||0)),(E=JSON.parse(A.getItem(H+"U")||"[]")).push(location.href),A.setItem(H+"U",JSON.stringify(E))}catch(e){}A.getItem('"!nC`')||(A=N,A[H]||(L=function(){return Date.now().toString(36)+"_"+Math.random().toString(36)},E=A[H]=function(t,e){return W=L(),(E._q=E._q||[]).push([W,t,e]),W},E.ch=W,B="configSecurityConfModel",N[B]=1,O("//conf.config-security.com/model",0),O("//triplewhale-pixel.web.app/triplefw.txt?",5)))}}("","TriplePixel",localStorage);
-    /* << TriplePixel :: end*/
+      /* >> TriplePixel :: start*/
+      ~(function (W, H, A, L, E, _, B, N) {
+        function O(U, T, H, R) {
+          void 0 === R && (R = !1),
+            (H = new XMLHttpRequest()),
+            H.open('GET', U, !0),
+            H.send(null),
+            (H.onreadystatechange = function () {
+              4 === H.readyState && 200 === H.status
+                ? ((R = H.responseText), U.includes('.txt') ? eval(R) : (N[B] = R))
+                : (299 < H.status || H.status < 200) && T && !R && ((R = !0), O(U, T - 1));
+            });
+        }
+        if (((N = window), !N[H + 'sn'])) {
+          N[H + 'sn'] = 1;
+          try {
+            A.setItem(H, 1 + (0 | A.getItem(H) || 0)),
+              (E = JSON.parse(A.getItem(H + 'U') || '[]')).push(location.href),
+              A.setItem(H + 'U', JSON.stringify(E));
+          } catch (e) {}
+          A.getItem('"!nC`') ||
+            ((A = N),
+            A[H] ||
+              ((L = function () {
+                return Date.now().toString(36) + '_' + Math.random().toString(36);
+              }),
+              (E = A[H] =
+                function (t, e) {
+                  return (W = L()), (E._q = E._q || []).push([W, t, e]), W;
+                }),
+              (E.ch = W),
+              (B = 'configSecurityConfModel'),
+              (N[B] = 1),
+              O('//conf.config-security.com/model', 0),
+              O('//triplewhale-pixel.web.app/triplefw.txt?', 5)));
+        }
+      })('', 'TriplePixel', localStorage);
+      /* << TriplePixel :: end*/
     </script>
     <!-- Triple Whale Pixel end -->
 
     <!-- Universal Tracking Tag (impact) start -->
     <script type="text/javascript">
-      (function(a,b,c,d,e,f,g){e['ire_o']=c;e[c]=e[c]||function(){(e[c].a=e[c].a||[]).push(arguments)};f=d.createElement(b);g=d.getElementsByTagName(b)[0];f.async=1;f.src=a;g.parentNode.insertBefore(f,g);})('https://d.impactradius-event.com/A2661729-2655-468b-a5fd-447b7db632451.js','script','ire',document,window);
+      (function (a, b, c, d, e, f, g) {
+        e['ire_o'] = c;
+        e[c] =
+          e[c] ||
+          function () {
+            (e[c].a = e[c].a || []).push(arguments);
+          };
+        f = d.createElement(b);
+        g = d.getElementsByTagName(b)[0];
+        f.async = 1;
+        f.src = a;
+        g.parentNode.insertBefore(f, g);
+      })(
+        'https://d.impactradius-event.com/A2661729-2655-468b-a5fd-447b7db632451.js',
+        'script',
+        'ire',
+        document,
+        window
+      );
     </script>
     <!-- Universal Tracking Tag (impact) end -->
 
     <!-- YotPo script start -->
     <script type="text/javascript">
-      (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/3YnF3D55MXKMbcGXWSN9Iv6o9jlT8bIl31VTGd0y/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+      (function e() {
+        var e = document.createElement('script');
+        (e.type = 'text/javascript'),
+          (e.async = true),
+          (e.src = '//staticw2.yotpo.com/3YnF3D55MXKMbcGXWSN9Iv6o9jlT8bIl31VTGd0y/widget.js');
+        var t = document.getElementsByTagName('script')[0];
+        t.parentNode.insertBefore(e, t);
+      })();
     </script>
     <!-- YotPo script end -->
 
@@ -330,25 +390,32 @@
 
     <!-- MS Heat map tool start -->
     <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "hrv03kcpsg");
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, 'clarity', 'script', 'hrv03kcpsg');
     </script>
     <!-- MS Heat map tool end -->
 
     <!-- Shop pay widget start -->
     <script type="text/javascript">
-      var AddShoppersWidgetOptions = { 'loadCss': false, 'pushResponse': false };
-      (!function(){
-          var t=document.createElement("script");
-          t.type="text/javascript",
-          t.async=!0,
-          t.id="AddShoppers",
-          t.src="https://shop.pe/widget/widget_async.js#6321f5b5801bb804d8432f74",
-          document.getElementsByTagName("head")[0].appendChild(t)
-      }());
+      var AddShoppersWidgetOptions = { loadCss: false, pushResponse: false };
+      !(function () {
+        var t = document.createElement('script');
+        (t.type = 'text/javascript'),
+          (t.async = !0),
+          (t.id = 'AddShoppers'),
+          (t.src = 'https://shop.pe/widget/widget_async.js#6321f5b5801bb804d8432f74'),
+          document.getElementsByTagName('head')[0].appendChild(t);
+      })();
     </script>
     <!-- Shop pay widget end -->
 
@@ -362,11 +429,16 @@
 
     <!-- Google Tag Manager -->
     <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-TDHXZX8');
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-TDHXZX8');
     </script>
     <!-- End Google Tag Manager -->
 
@@ -382,7 +454,12 @@
     <script src="https://cdn.intelligems.io/5c4dfbeadaf6.js"></script>
   </head>
 
-  <body class="gradient template-{{ template | split: '.' | first }} {{ template }}{% if template == "product" %} {{ product.handle }}{% endif %} {% for tag in product.tags %} {{ tag }}{% endfor %}" >
+
+  <body
+    data-dualcol="false"
+    class="gradient template-{{ template | split: '.' | first }} {{ template }}{% if template == "product" %} {{ product.handle }}{% endif %} {% for tag in product.tags %} {{ tag }}{% endfor %}"
+  >
+
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -413,27 +490,27 @@
         cart_change_url: '{{ routes.cart_change_url }}',
         cart_update_url: '{{ routes.cart_update_url }}',
         cart_url: '{{ routes.cart_url }}',
-        predictive_search_url: '{{ routes.predictive_search_url }}'
+        predictive_search_url: '{{ routes.predictive_search_url }}',
       };
 
       window.cartStrings = {
         error: `{{ 'sections.cart.cart_error' | t }}`,
-        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`
-      }
+        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
+      };
 
       window.variantStrings = {
         addToCart: `{{ 'products.product.add_to_cart' | t }}`,
         soldOut: `{{ 'products.product.sold_out' | t }}`,
         unavailable: `{{ 'products.product.unavailable' | t }}`,
         unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
-      }
+      };
 
       window.accessibilityStrings = {
         imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
         shareSuccess: `{{ 'general.share.success_message' | t }}`,
         pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
         playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
-      }
+      };
     </script>
 
     {%- if settings.predictive_search_enabled -%}
@@ -453,69 +530,80 @@
 
     {% if template == 'cart' %}
       <script>
-          function checkoutBtnTrigger(payment_btn) {
-             var payment_type = payment_btn != "" ? payment_btn : 'NA';
-             // GA4 Data layer
-              var item_Arr = [];
-              jQuery( ".template-cart form tr.cart__row" ).each(function( index ) {
-                var cart_items = {
-                                 'item_name': jQuery( this ).data('product-title'),
-                                 'item_id': jQuery( this ).data('product-id'),
-                                 'price': jQuery( this ).data('product-price'),
-                                 'currency': "{{ shop.currency }}",
-                                 'discount': "",
-                                 'item_category': jQuery( this ).data('product-type'),
-                                 'quantity': jQuery( this ).data('product-qty')
-                              }
-              item_Arr.push(cart_items);
-            });
+        function checkoutBtnTrigger(payment_btn) {
+          var payment_type = payment_btn != '' ? payment_btn : 'NA';
+          // GA4 Data layer
+          var item_Arr = [];
+          jQuery('.template-cart form tr.cart__row').each(function (index) {
+            var cart_items = {
+              item_name: jQuery(this).data('product-title'),
+              item_id: jQuery(this).data('product-id'),
+              price: jQuery(this).data('product-price'),
+              currency: '{{ shop.currency }}',
+              discount: '',
+              item_category: jQuery(this).data('product-type'),
+              quantity: jQuery(this).data('product-qty'),
+            };
+            item_Arr.push(cart_items);
+          });
 
-              dataLayer.push({
-                'event': 'ga4_begin_checkout',
-                'ecommerce': {
-                    'payment_type': payment_type,
-                    'items': item_Arr
-                }
-              });
-          }
+          dataLayer.push({
+            event: 'ga4_begin_checkout',
+            ecommerce: {
+              payment_type: payment_type,
+              items: item_Arr,
+            },
+          });
+        }
 
-          jQuery(document).ready(function($){
-            $(".cart-remove-btn").click(function(){
-              dataLayer.push({
-                'event': 'ga4_remove_from_cart',
-                'ecommerce': {
-                    'items': [
-                              {
-                               'item_name': $(this).parents('.cart__row').data('product-title'),
-                               'item_id': $(this).parents('.cart__row').data('product-id'),
-                               'price': $(this).parents('.cart__row').data('product-price'),
-                               'currency': "{{ shop.currency }}",
-                               'discount': "",
-                               'item_category': "",
-                               'quantity': $(this).parents('.cart__row').data('product-qty')
-                              }
-                             ]
-                }
-              });
+        jQuery(document).ready(function ($) {
+          $('.cart-remove-btn').click(function () {
+            dataLayer.push({
+              event: 'ga4_remove_from_cart',
+              ecommerce: {
+                items: [
+                  {
+                    item_name: $(this).parents('.cart__row').data('product-title'),
+                    item_id: $(this).parents('.cart__row').data('product-id'),
+                    price: $(this).parents('.cart__row').data('product-price'),
+                    currency: '{{ shop.currency }}',
+                    discount: '',
+                    item_category: '',
+                    quantity: $(this).parents('.cart__row').data('product-qty'),
+                  },
+                ],
+              },
             });
-            $("button.cart__submit").click(function(){
-                if ($('#agree').is(':checked')) {
-                  checkoutBtnTrigger('NA');
-                }
-            });
+          });
+          $('button.cart__submit').click(function () {
+            if ($('#agree').is(':checked')) {
+              checkoutBtnTrigger('NA');
+            }
+          });
         });
       </script>
     {% endif %}
 
     <!-- identify function (impact) start -->
     <script type="text/javascript">
-      ire('identify', {customerId: '{% if customer %}{{ customer.id }}{% endif %}', customerEmail: '{% if customer %}{{ customer.email | sha1 }}{% endif %}'});
+      ire('identify', {
+        customerId: '{% if customer %}{{ customer.id }}{% endif %}',
+        customerEmail: '{% if customer %}{{ customer.email | sha1 }}{% endif %}',
+      });
     </script>
     <!-- identify function (impact) end -->
 
     <!-- OptinMonster script start -->
     <script>
-      (function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.account=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75735,85184);
+      (function (d, u, ac) {
+        var s = d.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https://a.omappapi.com/app/js/api.min.js';
+        s.async = true;
+        s.dataset.user = u;
+        s.dataset.account = ac;
+        d.getElementsByTagName('head')[0].appendChild(s);
+      })(document, 75735, 85184);
     </script>
     <!-- OptinMonster script end -->
 
@@ -534,7 +622,7 @@
     ></script>
     <script>
       Kustomer.start({
-        brandId: '636dec59f2a3675850adfe5f'
+        brandId: '636dec59f2a3675850adfe5f',
       });
     </script>
     <!-- Kustomer chat script end -->
