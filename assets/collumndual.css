@@ -2,7 +2,7 @@
 
 
     .row {
-        display: grid;
+        display: block !important;
         grid-template-columns: repeat(2, 1fr);
     }
 
