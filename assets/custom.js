@@ -309,10 +309,8 @@ jQuery(document).ready(function ($) {
 // Desktop stuff start
 jQuery(document).ready(function ($) {
   if ($(window).width() >= 768) {
-    const attribute = document.body.getAttribute('data-dualcol');
-    if (attribute == 'true') {
-      startDesktopCarousel($);
-    }
+    startDesktopCarousel($);
+
     // For product part
     $(".mobile-price").remove();
   }
@@ -636,15 +634,15 @@ jQuery(document).ready(function ($) {
 /******/
 
 // Read a page's GET URL variables and return them as an associative array.
-function getUrlVars(){
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++){
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
+function getUrlVars() {
+  var vars = [], hash;
+  var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+  for (var i = 0; i < hashes.length; i++) {
+    hash = hashes[i].split('=');
+    vars.push(hash[0]);
+    vars[hash[0]] = hash[1];
+  }
+  return vars;
 }
 
 jQuery(document).ready(function ($) {
@@ -666,28 +664,29 @@ jQuery(document).ready(function ($) {
   // Scrolled to Referral widget on Reward page
   var utm_alternate_medium = getUrlVars()["utm-target-section"];
   if (utm_alternate_medium == "referral") {
-    setTimeout(function(){
+    setTimeout(function () {
       $('html,body').animate({
-      scrollTop: $(".yotpo-widget-referral-widget").offset().top - 0 }, 'slow');
-    }, 4000);    
+        scrollTop: $(".yotpo-widget-referral-widget").offset().top - 0
+      }, 'slow');
+    }, 4000);
   }
-  
-}); 
+
+});
 
 
-jQuery(document).ready(function($){
-    $('.home-design-gallary').flexslider({
-      animation: "slide",
-      controlNav: false,
-      animationLoop: false,
-      slideshow: false,
-      itemWidth: 79,
-      itemMargin:0,
-      directionNav: true,
-      //asNavFor: '.slider-gallary'
-    });
-   
-   
+jQuery(document).ready(function ($) {
+  $('.home-design-gallary').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 79,
+    itemMargin: 0,
+    directionNav: true,
+    //asNavFor: '.slider-gallary'
+  });
+
+
 
 });
 
@@ -817,34 +816,34 @@ jQuery(document).ready(function ($) {
 });
 // Add UTM parameter to the Mira app end
 
-jQuery(document).ready(function($) {  
-  setTimeout(function(){  
-    $('.rebuy-addon input[type=checkbox]').change(function() { 
+jQuery(document).ready(function ($) {
+  setTimeout(function () {
+    $('.rebuy-addon input[type=checkbox]').change(function () {
       var shopify_add_to_cart_price = $('.price .price-item--regular').data("price");
-    if (this.checked) {
-      $('.rebuy-addon__subtotal').hide();
-      var rebuy_addon_subtotal =  $('.rebuy-addon__subtotal-value .rebuy-money span:nth-child(2), .rebuy-addon__subtotal-value .rebuy-money.sale span:nth-child(2)').text().trim();
-      var rebuy_addon_subtotal_splited = rebuy_addon_subtotal.split(' ');
-      var rebuy_addon_subtotal_num = rebuy_addon_subtotal_splited[0].slice(1);
-      var rebuy_addon_subtotal_numeric = rebuy_addon_subtotal_num.replace(",", ".");
+      if (this.checked) {
+        $('.rebuy-addon__subtotal').hide();
+        var rebuy_addon_subtotal = $('.rebuy-addon__subtotal-value .rebuy-money span:nth-child(2), .rebuy-addon__subtotal-value .rebuy-money.sale span:nth-child(2)').text().trim();
+        var rebuy_addon_subtotal_splited = rebuy_addon_subtotal.split(' ');
+        var rebuy_addon_subtotal_num = rebuy_addon_subtotal_splited[0].slice(1);
+        var rebuy_addon_subtotal_numeric = rebuy_addon_subtotal_num.replace(",", ".");
 
-      var shopify_subtotal_splited = shopify_add_to_cart_price.split(' ');
-      var currency_symbol = shopify_add_to_cart_price.charAt(0);
-      var currency_code = shopify_subtotal_splited[1];
-      var shopify_subtotal_splited_num = shopify_subtotal_splited[0].slice(1);
-      var shopify_subtotal_splited_numeric = shopify_subtotal_splited_num.replace(",", ".");
+        var shopify_subtotal_splited = shopify_add_to_cart_price.split(' ');
+        var currency_symbol = shopify_add_to_cart_price.charAt(0);
+        var currency_code = shopify_subtotal_splited[1];
+        var shopify_subtotal_splited_num = shopify_subtotal_splited[0].slice(1);
+        var shopify_subtotal_splited_numeric = shopify_subtotal_splited_num.replace(",", ".");
 
-      var subtotal_sum = parseFloat(rebuy_addon_subtotal_numeric) + parseFloat(shopify_subtotal_splited_numeric);
-      if (typeof currency_code === "undefined") {
-        var final_subtotal = currency_symbol + subtotal_sum.toFixed(2);
+        var subtotal_sum = parseFloat(rebuy_addon_subtotal_numeric) + parseFloat(shopify_subtotal_splited_numeric);
+        if (typeof currency_code === "undefined") {
+          var final_subtotal = currency_symbol + subtotal_sum.toFixed(2);
+        } else {
+          var final_subtotal = currency_symbol + subtotal_sum.toFixed(2) + ' ' + currency_code;
+        }
+        $('.price .price-item--regular').text(final_subtotal);
       } else {
-        var final_subtotal = currency_symbol + subtotal_sum.toFixed(2) + ' ' + currency_code;
+        $('.price .price-item--regular').text(shopify_add_to_cart_price);
       }
-      $('.price .price-item--regular').text(final_subtotal);      
-    } else {
-      $('.price .price-item--regular').text(shopify_add_to_cart_price);
-    }
-  });
+    });
   }, 4000);
 });
 
