@@ -301,18 +301,30 @@
                 <h2>Register your Mira Panorama<br> Fertility Lab Test</h2>
             </div>
             <div class="register-lab-test-form text-center">
-                <form>
-                    <div class="heading-3 margin-b-20">
+                
+              <div id="registration-success" style="display: none;">
+                  <div class="heading-3 margin-b-20">
                         <h3>You Completed Your Registration!</h3>
-                    </div>
+                  </div>
                     <div class="font-20">
                         <p>All you have to do now is collect your sample and mail it to us.</p>
                     </div>
                     <div class="btn-form text-center">
-                        <a style="display:none;" href="https://miracare.com/assets/lab_test_instruction.mp4" target="_blank" class="btn-custom btn-pink btn-md" id="step6_submit_btn">See instructions</button>
-                        <a style="display:none;" href="/pages/lab-test-registration" class="btn-custom btn-pink btn-md" id="step6_submit_btn_failed">Try again</a>
+                        <a href="https://miracare.com/assets/lab_test_instruction.mp4" target="_blank" class="btn-custom btn-pink btn-md" id="step6_submit_btn">See instructions</a>
                     </div>
-                </form>
+                </div>
+
+                <div id="registration-failed" style="display: none;">
+                  <div class="heading-3 margin-b-20">
+                        <h3>You have the following error(s) during registration.</h3>
+                        <ul></ul>
+                  </div>
+                  <div class="btn-form text-center">
+                      <a href="/pages/lab-test-registration" class="btn-custom btn-pink btn-md" id="step6_submit_btn_failed">Try again</a>
+                  </div>
+                </div>
+        
+                      
             </div>
         </div>
     </div>
@@ -353,7 +365,7 @@
         return phonePattern.test(inputValue);
       }
       var user_id = "{{ customer.id }}";
-  
+
       jQuery("#step1_submit_btn").click(function(e) {
           $(".register-code-form input").css("border-color", "#667789");
           e.preventDefault();
@@ -456,12 +468,12 @@
               var whats_your_cycle = $("input:checkbox[name=whats_your_cycle]:checked").map(function(){
                             return $(this).val();
                         }).toArray();
-                  console.log(whats_your_cycle);
+                  //console.log(whats_your_cycle);
            
               var how_you_feel_during_cycle = $("input:checkbox[name=how_you_feel_during_cycle]:checked").map(function(){
                             return $(this).val();
                         }).toArray();
-                  console.log(how_you_feel_during_cycle);
+                  //console.log(how_you_feel_during_cycle);
            
               var how_tall_are_you = jQuery('#how_tall_are_you').val();
               var whats_your_weight = jQuery('#whats_your_weight').val();
@@ -469,55 +481,61 @@
               var fertility_goal = $("input:checkbox[name=fertility_goal]:checked").map(function(){
                             return $(this).val();
                         }).toArray();
-                  console.log(fertility_goal);
+                  //console.log(fertility_goal);
   
               var conceive_duration = $("input:checkbox[name=conceive_duration]:checked").map(function(){
                             return $(this).val();
                         }).toArray();
-                  console.log(conceive_duration);
+                  //console.log(conceive_duration);
   
               var signing_informed_consent = jQuery('#signing_informed_consent').val();
               var consent_for_telemedicine = jQuery('#consent_for_telemedicine').val();
-              
-               var settings_order_register = {
-                  "url": "https://labflow.ihdlab.com/api/order/register",
-                  "method": "PUT",
-                  "headers": {
-                    "Content-Type": "application/json",
-                    "x-api-key": "wE3jBBX6FGlbhfSaq5hi"
-                  },
-                  "data": JSON.stringify({
-                    "registrationCode": registration_code.toUpperCase(),
-                     "patient": {
-                        "firstName": "{{ customer.first_name }}",
-                        "lastName": "{{ customer.last_name }}",
-                        "middleName": " ",
-                        "email": "{{ customer.email }}",
-                        "phone": phone_number,
-                        "dob": DOB,
-                        "gender": "Female",
-                        "address": {
-                          "name": {{ customer.default_address.name | json }},
-                          "street1": {{ customer.default_address.address1 | json }},
-                          "street2": {{ customer.default_address.address2 | json }},
-                          "city": {{ customer.default_address.city | json }},
-                          "state": {{ customer.default_address.province | json }},
-                          "postalCode": {{ customer.default_address.zip | json }},
-                          "country": {{ customer.default_address.country_code | json }}
+  
+              $("#loader").show();
+              var url = "https://labflow.ihdlab.com/api/order/register";
+              var err_list = "";
+               fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*',
+                        'x-api-key': "wE3jBBX6FGlbhfSaq5hi",
+                    },
+                    body: JSON.stringify({
+                      "registrationCode": registration_code.toUpperCase(),
+                       "patient": {
+                          "firstName": "{{ customer.first_name }}",
+                          "lastName": "{{ customer.last_name }}",
+                          "middleName": " ",
+                          "email": "{{ customer.email }}",
+                          "phone": phone_number,
+                          "dob": DOB,
+                          "gender": "Female",
+                          "address": {
+                            "name": {{ customer.default_address.name | json }},
+                            "street1": {{ customer.default_address.address1 | json }},
+                            "street2": {{ customer.default_address.address2 | json }},
+                            "city": {{ customer.default_address.city | json }},
+                            "state": {{ customer.default_address.province | json }},
+                            "postalCode": {{ customer.default_address.zip | json }},
+                            "country": {{ customer.default_address.country_code | json }}
+                          }
                         }
-                      }
-                  }),
-                };
-
-               console.log(settings_order_register);
-                $("#loader").show();
-               $.ajax(settings_order_register).done(function (response) {
-                  
-                  console.log("IHD Order register response---");
-                  console.log(response);
-                  if(response.success){
-                    var settings = {
+                    })
+                }).then(response => {
+                    if (!response.ok) {
+                        return response.json().then(error => {
+                            throw error;
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("Success:", data);
+                    if(data.success){
+                        var settings = {
                         "url": "https://www.miracare.com/wp-json/api/lab-test-api/registration",
+                        //"url": "https://mirav3staging.wpengine.com/wp-json/api/lab-test-api/registration",
                         "method": "POST",
                         "timeout": 0,
                         "headers": {
@@ -540,23 +558,25 @@
                       };
                       
                       $.ajax(settings).done(function (response) {
-                        //console.log("Mira Database entry response");
                         console.log(response);
-                        $("#step6_submit_btn").show();
+                        $( "#registration-success" ).show();
                         $("#loader").hide();
                       });
-                  }
-                }).fail(function(err) {
-                  //alert("Something went wrong. Please try again later!");
-                 $("#step6 .font-20").hide();
-                  $("#step6 h3").text("Invalid registration code. Please check your registration code and try again.");
-                  $("#step6 h3").css({'color':'red', 'font-family':'Gibson-Light'});
-                  $("#step6_submit_btn_failed").show();
-                  console.log(err);
-                  $("#loader").hide();
-                });
-                $('html,body').animate({ scrollTop: 0 }, 'slow');
-  
+                    }
+                })
+                .catch(error => {
+                    console.error("LocalError:", error);
+                    if(jQuery.isArray( error.errors )){
+                       jQuery.each( error.errors, function( key, err ) {
+                        err_list += "<li>" + err.msg + " — " + err.value + "</li>";
+                      });
+                    } else {
+                      err_list += "<li>" + error.error + "</li>";
+                    }
+                    $( "#registration-failed ul" ).append( err_list );
+                    $( "#registration-failed" ).show(); 
+                    $("#loader").hide();
+                  });
           }
           else{
               // console.log('empty');');
@@ -658,4 +678,4 @@
   window.location.href = "/account/login?return_url=/pages/lab-test-registration";
 </script>
 
-{% endif %}
+{% endif %} 
