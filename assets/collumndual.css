@@ -6,6 +6,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /*
     .product-price-col {
         flex-wrap: nowrap;
     }
@@ -40,7 +41,7 @@
         padding-top: 24px;
         margin-bottom: 10px;
     }
-
+*/
 }
 
 /* CSS for Dual columm abtest end */
