@@ -1683,6 +1683,18 @@ body.mira-max-kit .Stories-testimonials-sec {
 .yotpo-widget-subscriptions-add-to-cart .yotpo-subscription-benefits-wrapper {
     margin-bottom: 0 !important;
 }*/
+#registration-failed h3 {
+    font-family: 'Gibson Light';
+    color: #ff0000;
+    text-align: left; 
+}
+#registration-failed {
+    color: #ff0000;
+}
+#registration-failed ul {
+    text-align: left;
+    padding-left: 15px;
+}
 /* Vinod custom CSS end */
 /*******************Responsive**Start*********{}******************************/
 
