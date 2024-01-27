@@ -375,7 +375,6 @@
         
           jQuery('p.error-message').remove();
           if(registration_code == ''){
-              // console.log('empty');
               $('#registration_code').focus();
               $('#registration_code').css("border-color", "#ff0000");
               $('<p class="error-message" >Please fill the registration code.</p>').insertAfter("#registration_code");
@@ -389,7 +388,6 @@
               $('<p class="error-message" >Enter a valid phone number.</p>').insertAfter("#phone_number");
           }
           else{
-              //console.log('value');
               jQuery('.register-fertility-code-sec').hide();
               jQuery('#step2').show();
               jQuery('html,body').animate({ scrollTop: 0 }, 'slow');
@@ -402,13 +400,11 @@
           e.preventDefault();
         jQuery('p.error-message').remove();
          if (jQuery('#patient_or_legal_guardian').is(':checked')) {
-              // console.log('value');
               jQuery('.register-fertility-code-sec').hide();
               jQuery('#step3').show();
               jQuery('html,body').animate({ scrollTop: 0 }, 'slow');
           }
           else{
-              // console.log('empty');
               $('#patient_or_legal_guardian').focus();
               $('<p class="error-message" style="text-align: center;">Please checked the checkbox.</p>').insertBefore(this);
           }
@@ -440,13 +436,11 @@
           e.preventDefault();
           jQuery('p.error-message').remove();
          if (jQuery('#signing_informed_consent').is(':checked')) {
-              // console.log('value');
               jQuery('.register-fertility-code-sec').hide()
               jQuery('#step5').show();
               jQuery('html,body').animate({ scrollTop: 0 }, 'slow');
           }
           else{
-              // console.log('empty');');
               $('.signing_informed_consent').focus();
               $('<p class="error-message">Please checked the checkbox.</p>').insertAfter('.signing_informed_consent');
           }
@@ -456,7 +450,6 @@
           e.preventDefault();
           jQuery('p.error-message').remove();
          if (jQuery('#consent_for_telemedicine').is(':checked')) {
-              // console.log('value');
               jQuery('.register-fertility-code-sec').hide();
               jQuery('#step6').show();
            
@@ -468,12 +461,10 @@
               var whats_your_cycle = $("input:checkbox[name=whats_your_cycle]:checked").map(function(){
                             return $(this).val();
                         }).toArray();
-                  //console.log(whats_your_cycle);
            
               var how_you_feel_during_cycle = $("input:checkbox[name=how_you_feel_during_cycle]:checked").map(function(){
                             return $(this).val();
                         }).toArray();
-                  //console.log(how_you_feel_during_cycle);
            
               var how_tall_are_you = jQuery('#how_tall_are_you').val();
               var whats_your_weight = jQuery('#whats_your_weight').val();
@@ -481,15 +472,18 @@
               var fertility_goal = $("input:checkbox[name=fertility_goal]:checked").map(function(){
                             return $(this).val();
                         }).toArray();
-                  //console.log(fertility_goal);
   
               var conceive_duration = $("input:checkbox[name=conceive_duration]:checked").map(function(){
                             return $(this).val();
                         }).toArray();
-                  //console.log(conceive_duration);
   
               var signing_informed_consent = jQuery('#signing_informed_consent').val();
               var consent_for_telemedicine = jQuery('#consent_for_telemedicine').val();
+
+              var default_address2 = {{ customer.default_address.address2 | json }};
+              if(default_address2 == null){
+                default_address2 = ""
+              }
   
               $("#loader").show();
               var url = "https://labflow.ihdlab.com/api/order/register";
@@ -514,7 +508,7 @@
                           "address": {
                             "name": {{ customer.default_address.name | json }},
                             "street1": {{ customer.default_address.address1 | json }},
-                            "street2": {{ customer.default_address.address2 | json }},
+                            "street2": default_address2,
                             "city": {{ customer.default_address.city | json }},
                             "state": {{ customer.default_address.province | json }},
                             "postalCode": {{ customer.default_address.zip | json }},
@@ -531,7 +525,7 @@
                     return response.json();
                 })
                 .then(data => {
-                    console.log("Success:", data);
+                    //console.log("Success:", data);
                     if(data.success){
                         var settings = {
                         "url": "https://www.miracare.com/wp-json/api/lab-test-api/registration",
@@ -558,7 +552,7 @@
                       };
                       
                       $.ajax(settings).done(function (response) {
-                        console.log(response);
+                        //console.log(response);
                         $( "#registration-success" ).show();
                         $("#loader").hide();
                       });
@@ -579,7 +573,6 @@
                   });
           }
           else{
-              // console.log('empty');');
               $('.consent_for_telemedicine').focus();
               $('<p class="error-message">Please checked the checkbox.</p>').insertAfter('.consent_for_telemedicine');
           }
@@ -654,7 +647,7 @@
       }
     
       var phone_number = jQuery('#phone_number').val();
-      console.log('customer.phone ', phone_number);
+      //console.log('customer.phone ', phone_number);
       jQuery('#phone_number').val(formatPhoneNumber(phone_number));
 
       jQuery('input[name="whats_your_cycle"]').on('change', function() {
