@@ -24,6 +24,7 @@
                     </div>
                 </div>
                 <div class="row accessories-product-list bundles-product-list">
+                {% if localization.market.handle == 'us' %}
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col">
@@ -240,6 +241,7 @@
                             </div>
                         </div>
                     </div>
+                {% endif %}
 
                     {% if localization.market.handle == 'zzz' %}
                     <div class="col-md-4">
