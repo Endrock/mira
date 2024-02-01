@@ -118,6 +118,7 @@
                                         <li class="menu-item"> <a href="https://www.miracare.com/resources/" class="menu-link">Free Ebooks</a> </li>
                                         <li class="menu-item"> <a href="https://www.miracare.com/mira-shop/academy" class="menu-link">Online Fertility Course</a> </li>
                                         <li class="menu-item"> <a href="https://www.miracare.com/mira-partners/" class="menu-link">Partner Discounts</a> </li>
+                                        <li class="menu-item"> <a href="https://www.miracare.com/awareness-week/" class="menu-link">Sex Hormones Awareness Week</a> </li>
                                     </ul>
                                 </li>
                                 <li class="mobile-nav-link menu-item"><a class="dropdown-item" href="{{ sub_folder }}/account">My Account</a></li>
@@ -195,6 +196,9 @@
                                         <a class="dropdown-item" href="javascript:void(0)">More for Fertility</a>
                                         <ul class="dropdown-menu-submenu">
                                             {% if localization.market.handle == 'us' %}
+                                            <li class="sub-bagge-row"><a class="dropdown-item" href="{{ sub_folder }}/products/panorama-fertility-lab-test"><div class="globel-link-badge front-badge"><span>NEW</span></div>Mira Panorama Fertility Lab Test</a></li>
+                                            {% endif %}
+                                            {% if localization.market.handle == 'us' %}
                                             <li class="sub-bagge-row"><a class="dropdown-item" href="{{ sub_folder }}/products/basal-body-thermometer">
                                                     <div class="globel-link-badge front-badge"><span>NEW</span></div>Basal Body Thermometer
                                                 </a></li>
@@ -220,9 +224,6 @@
                                             {% if localization.market.handle == 'zzz' %}
                                             <li><a class="dropdown-item" href="{{ sub_folder }}/products/fertilily-conception-gel ">Fertility Lubricant</a></li>
                                             <li><a class="dropdown-item" href="{{ sub_folder }}/products/fertilily-conception-cup">Fertility Cup</a></li>
-                                            {% endif %}
-                                            {% if localization.market.handle == 'us' %}
-                                            <li><a class="dropdown-item" href="{{ sub_folder }}/products/panorama-fertility-lab-test">Mira Panorama Fertility Lab Test</a></li>
                                             {% endif %}
                                         </ul>
                                     </li>
