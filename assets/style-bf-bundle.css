@@ -1695,6 +1695,9 @@ body.mira-max-kit .Stories-testimonials-sec {
     text-align: left;
     padding-left: 15px;
 }
+.mira-kit .product-detail-tab {
+    padding-bottom: 0;
+}
 /* Vinod custom CSS end */
 /*******************Responsive**Start*********{}******************************/
 

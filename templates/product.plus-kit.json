@@ -101,6 +101,7 @@
     },
     "65fcc2a2-8798-4ca1-8996-99b5d9b54c80": {
       "type": "financing",
+      "disabled": true,
       "settings": {
       }
     },
