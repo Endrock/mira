@@ -23,9 +23,8 @@
                         <h3>Best Sellers</h3>
                     </div>
                 </div>
-                <div class="row accessories-product-list bundles-product-list" id="productlist">
-                
-                
+                <div class="row accessories-product-list bundles-product-list">
+
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col">
@@ -58,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col"><a
@@ -83,6 +82,7 @@
                         </div>
                     </div>
 
+
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col">
@@ -106,6 +106,7 @@
                             </div>
                         </div>
                     </div>
+
                 {% if localization.market.handle == 'us' %}
                     <div class="col-md-4">
                         <div class="product-col">
@@ -209,6 +210,7 @@
                         </div>
                     </div>
                 {% endif %}
+                
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col">
@@ -242,8 +244,8 @@
                             </div>
                         </div>
                     </div>
-                
-                {% comment %}
+
+
                     {% if localization.market.handle == 'zzz' %}
                     <div class="col-md-4">
                         <div class="product-col">
@@ -266,7 +268,6 @@
                         </div>
                     </div>
                     {% endif %}
-                {% endcomment %}
                 </div>
             </div>
             <div class="mira-flat-banner mira-fertility-banner">
@@ -294,15 +295,3 @@
         </div>
     </div>
 </div>
-
-{% schema %}
-{
-  "name": "Best Sellers List",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Best Sellers List"
-    }
-  ]
-}
-{% endschema %}
