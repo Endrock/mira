@@ -3,16 +3,7 @@
 {{ 'multibar.css' | asset_url | stylesheet_tag }}
 <script type="text/javascript" src="//test.miracare.com/cdn/shop/t/29/assets/jquery.min.js"></script>
 <script type="text/javascript" src="{{ 'multibar.js' | asset_url }}" ></script>
-<style>
-   #loader{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #21242d url('https://cdn.shopify.com/s/files/1/0755/9620/2277/files/Bouncy-Preloader.gif') no-repeat center;
-    z-index: 999;
-  } 
-</style>
-<div id="loader"></div>
+{% render 'mira-loader' %}
 
 <div class="lab-test-page" id="no_data_found" style="display:none; padding-top:0;">
   <div class="lab-test-result-sec">
@@ -347,7 +338,7 @@
         };
         
         $.ajax(settings).done(function (report_response) {
-            $("#loader").hide();
+            $("#loader_main").hide();
             $(".lab-test-result-outer .bottom-box span").removeAttr('class');
 
             if (report_response.status == false) {
