@@ -1698,6 +1698,13 @@ body.mira-max-kit .Stories-testimonials-sec {
 .mira-kit .product-detail-tab {
     padding-bottom: 0;
 }
+.new-custom-product-detail .price-and-button .price--on-sale .price__regular {
+    display: none !important;
+}
+.new-custom-product-detail .price-and-button .price--on-sale .price-item--regular {
+    font-size: 14px !important;
+    line-height: 1;
+}
 /* Vinod custom CSS end */
 /*******************Responsive**Start*********{}******************************/
 
