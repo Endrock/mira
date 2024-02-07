@@ -1,0 +1,486 @@
+<div class="traking-sec" style="background-image:url(https://cdn.shopify.com/s/files/1/0755/9620/2277/files/order_form_bg.png);">
+  <div class="traking-mobile-banner"><img src="{{ 'order_form_bg.png' | file_img_url: '' }}"></div>
+    <div class="container">
+        <div class="traking-form-box">
+            <div class="section-header text-center">
+                <h1>{{ page.title }}</h1>
+            </div>
+            <div class="rte">
+                {%- for block in section.blocks -%}
+                  {%- case block.type -%}
+                    {%- when '@app' -%}
+                        {% render block %}
+                  {%- endcase -%}
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="product-listing-page checkout-best-seller new-layout-listing padd-t-60">
+    <div class="product-listing-sec">
+        <div class="container">
+            <div class="product-list-row">
+                <div class="heading-1 padd-m-t-0">
+                    <div class="with-arrow-btn">
+                        <h3>Check out our best sellers</h3>
+                        <a target="_blank" href="/products" class="view-all-list-btn">View all <img src="{{ 'arrow-right_2.svg' | file_url }}"></a>
+                    </div>
+                </div> 
+                
+                <div class="row accessories-product-list bundles-product-list"> 
+                    <div class="col-md-4">
+                      <div class="product-col">
+                         <div class="product-img-col"><a href="/products/fertility-plus-test-wands"><img src="{{ '20_Mira_Fertility_Plus_Wands.png' | file_img_url: '' }}" alt="" /></a>
+                         </div>
+                         <h4><a href="/products/fertility-plus-test-wands">{{ all_products['fertility-plus-test-wands'].title }}</a></h4>
+                         <p>({{ all_products['fertility-plus-test-wands'].metafields.product_fields.sub_title }})</p>
+                         <div class="product-price-col">
+                            <div class="price-btn-row">
+                               <span class="plat-price">{{ all_products['fertility-plus-test-wands'].price | money }}</span>
+                               <div class="old-price">{{ all_products['fertility-plus-test-wands'].compare_at_price | money }}</div>
+                            </div>
+                            <a href="/products/fertility-plus-test-wands" class="btn-custom btn-pink">Buy now</a>
+                         </div>
+                      </div>
+                   </div> 
+
+                    <div class="col-md-4">
+                      <div class="product-col">
+                         <div class="product-img-col">
+                            <a href="/products/mira-max-test-wands"><img src="{{ '20_Mira_Fertility_MAX_Wands.png' | file_img_url: '' }}" alt="" /></a>                      
+                         </div>
+                         <h4><a href="/products/mira-max-test-wands">{{ all_products['mira-max-test-wands'].title }}</a></h4>
+                         <p>({{ all_products['mira-max-test-wands'].metafields.product_fields.sub_title }})</p>
+                         <div class="product-price-col">
+                            <div class="price-btn-row">
+                               <span class="plat-price">{{ all_products['mira-max-test-wands'].price | money }}</span>
+                               <div class="old-price">{{ all_products['mira-max-test-wands'].compare_at_price | money }}</div>
+                            </div>
+                            <a href="/products/mira-max-test-wands" class="btn-custom btn-pink">Buy now</a>
+                         </div>
+                      </div>
+                   </div>
+                  <div class="col-md-4">
+                    <div class="product-col">
+                       <div class="product-img-col">
+                          <a href="/products/fertility-ovum-wands"><img src="{{ '20_Mira_Ovum_Wands.png' | file_img_url: '' }}" alt="" /></a>
+                       </div>
+                       <h4><a href="/products/fertility-ovum-wands">{{ all_products['fertility-ovum-wands'].title }}</a></h4>
+                       <p>({{ all_products['fertility-ovum-wands'].metafields.product_fields.sub_title }})</p>
+                       <div class="product-price-col">
+                          <div class="price-btn-row">
+                             <span class="plat-price">{{ all_products['fertility-ovum-wands'].price | money }}</span>
+                             <div class="old-price">{{ all_products['fertility-ovum-wands'].compare_at_price | money }}</div>
+                          </div>
+                          <a href="/products/fertility-ovum-wands" class="btn-custom btn-pink">Buy now</a>
+                       </div>
+                    </div>
+                 </div>
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="/products/prenatal-multivitamin"><img src="{{ 'Prenatal-multi-vitamins.png' | file_img_url: '' }}" alt="" /></a>
+                            </div>
+                            <h4><a href="/products/prenatal-multivitamin">{{ all_products['prenatal-multivitamin'].title }}</a></h4>
+                            <p></p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['prenatal-multivitamin'].price | money }}</span>
+                                </div>
+                                <a href="/products/prenatal-multivitamin" class="btn-custom btn-pink">Buy now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                  <div class="col-md-4">
+                  <div class="product-col">
+                     <div class="product-img-col"><a href="/products/fertility-meditations"><img src="{{ 'Meditation_Playlist2.jpg' | file_img_url: '' }}" alt="" /></a>
+                     </div>
+                     <h4><a href="/products/fertility-meditations">{{ all_products['fertility-meditations'].title }}</a></h4>
+                     <p></p>
+                     <div class="product-price-col">
+                        <div class="price-btn-row">
+                           <span class="plat-price">{{ all_products['fertility-meditations'].price | money }}</span>
+                        </div>
+                        <a href="/products/fertility-meditations" class="btn-custom btn-pink">Buy now</a>
+                     </div>
+                  </div>
+               </div>
+                  
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col"><a href="/products/academy"><img src="{{ 'Online_Fertility_Course2.jpg' | file_img_url: '' }}" alt="" /></a>
+                            </div>
+                            <h4><a href="/products/academy">Online Fertility Course</a></h4>
+                            <p></p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['academy'].price | money }}</span>
+                                </div>
+                                <a href="/products/academy" class="btn-custom btn-pink">Buy now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+              <div class="with-arrow-btn mobile" style="display:none;">
+                    <a target="_blank" href="/products" class="view-all-list-btn">View all <img src="{{ 'arrow-right_2.svg' | file_url }}"></a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="signup-sec padd-b-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="signup-item purple-bg">
+                    <p>Sign up for our SMS and
+                        get $15 off your next order</p>
+                    <a href="https://mira.attn.tv/p/xgS/landing-page" target="_blank" class="btn-custom btn-pink">Sign Up</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="signup-item mat-green-bg">
+                    <p>Join our loyalty program to unlock special offers</p>
+                    <a href="https://usd.miracare.com/account" target="_blank" class="btn-custom btn-pink">Join now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wait-for-package green-bg padd-t-b-80">
+    <div class="container">
+        <div class="heading-1 padd-m-t-0">
+            <h3>While you wait for your package:</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="fertility-guide">
+                    <div class="img-guide-col">
+                        <img src="{{ 'easy_start_guide.jpg' | file_img_url: '' }}" alt="">
+                    </div>
+                    <div class="guide-info">
+                        <h4><a href="https://www.miracare.com/blog/how-to-test-with-mira-fertility-plus/" target="_blank">Check our Easy Start Guide to test with the Mira Analyzer.</a></h4>
+                        <a href="https://www.miracare.com/blog/how-to-test-with-mira-fertility-plus/" class="btn-custom btn-pink">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="fertility-guide">
+                    <div class="img-guide-col">
+                        <img src="{{ 'success-stories-cta.jpg' | file_img_url: '' }}" alt="">
+                    </div>
+                    <div class="guide-info">
+                        <h4><a href="https://www.miracare.com/success-stories/" target="_blank">77% of Mira users conceived during the first 3 cycles of using Mira. Browse through our success stories.</a></h4>
+                        <a href="https://www.miracare.com/success-stories/" class="btn-custom btn-pink">Success Stories</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="fertility-guide">
+                    <div class="img-guide-col">
+                        <img src="{{ 'webinar-cta.jpg' | file_img_url: '' }}" alt="">
+                    </div>
+                    <div class="guide-info">
+                        <h4><a href="https://www.miracare.com/mira-events/" target="_blank">We work with experts from all over the world to give you more insights about fertility. Don’t miss our free webinars!</a></h4>
+                        <a href="https://www.miracare.com/mira-events/" class="btn-custom btn-pink">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+  "name": "Malomo Banner",
+  "blocks": [
+    {
+      "limit": 1,
+      "name": "Image/Spacer",
+      "settings": [
+        {
+          "id": "image",
+          "label": "Image",
+          "type": "image_picker"
+        },
+        {
+          "default": "center",
+          "id": "image_horizontal_alignment",
+          "label": "Horizontal Alignment",
+          "options": [
+            {
+              "label": "Left",
+              "value": "left"
+            },
+            {
+              "label": "Center",
+              "value": "center"
+            },
+            {
+              "label": "Right",
+              "value": "right"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "id": "image_link_url",
+          "label": "Image link URL",
+          "type": "url"
+        },
+        {
+          "id": "image_width",
+          "label": "Width",
+          "type": "text"
+        }
+      ],
+      "type": "image"
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "settings": [
+    {
+      "content": "Desktop Image",
+      "type": "header"
+    },
+    {
+      "id": "background_image_enabled",
+      "label": "Enable Background Image",
+      "type": "checkbox",
+      "default": true
+    },
+    {
+      "id": "background_image",
+      "label": "Desktop Background Image",
+      "type": "image_picker"
+    },
+    {
+      "default": "repeat",
+      "id": "background_repeat",
+      "label": "Background Image Repeat",
+      "options": [
+        {
+          "label": "No Repeat",
+          "value": "no-repeat"
+        },
+        {
+          "label": "Repeat",
+          "value": "repeat"
+        },
+        {
+          "label": "Repeat X",
+          "value": "repeat-x"
+        },
+        {
+          "label": "Repeat Y",
+          "value": "repeat-y"
+        },
+        {
+          "label": "Round",
+          "value": "round"
+        },
+        {
+          "label": "Space",
+          "value": "space"
+        }
+      ],
+      "type": "select"
+    },
+    {
+      "default": "auto",
+      "id": "background_size",
+      "label": "Background Image Size",
+      "options": [
+        {
+          "label": "Auto",
+          "value": "auto"
+        },
+        {
+          "label": "Contain",
+          "value": "contain"
+        },
+        {
+          "label": "Cover",
+          "value": "cover"
+        }
+      ],
+      "type": "select"
+    },
+    {
+      "content": "Mobile Image",
+      "type": "header"
+    },
+    {
+      "id": "mobile_image",
+      "label": "Mobile Image",
+      "type": "image_picker",
+      "info": "Mobile image appears above the tracking block on mobile screens. If no mobile image is uploaded, then no image will appear on mobile screens."
+    },
+    {
+      "content": "Background Color",
+      "type": "header"
+    },
+    {
+      "default": "transparent",
+      "id": "background_color",
+      "label": "Background color",
+      "type": "color"
+    },
+    {
+      "content": "Banner Layout",
+      "type": "header"
+    },
+    {
+      "id": "height",
+      "label": "Height",
+      "type": "text"
+    },
+    {
+      "default": "20",
+      "id": "padding",
+      "label": "Desktop Banner Padding",
+      "type": "text"
+    },
+    {
+      "content": "Header",
+      "type": "header"
+    },
+    {
+      "default": "transparent",
+      "id": "header_background_color",
+      "label": "Background Color",
+      "type": "color"
+    },
+    {
+      "default": "sans-serif",
+      "id": "header_font",
+      "label": "Font",
+      "type": "font_picker"
+    },
+    {
+      "default": "40",
+      "id": "header_font_size",
+      "label": "Font Size",
+      "type": "text"
+    },
+    {
+      "default": "center",
+      "id": "header_horizontal_alignment",
+      "label": "Horizontal Alignment",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ],
+      "type": "select"
+    },
+    {
+      "default": "20",
+      "id": "header_padding_top",
+      "label": "Padding - Top",
+      "type": "text"
+    },
+    {
+      "default": "20",
+      "id": "header_padding_bottom",
+      "label": "Padding - Bottom",
+      "type": "text"
+    },
+    {
+      "default": "h2",
+      "id": "header_level",
+      "label": "Level",
+      "options": [
+        {
+          "label": "1",
+          "value": "h1"
+        },
+        {
+          "label": "2",
+          "value": "h2"
+        },
+        {
+          "label": "3",
+          "value": "h3"
+        },
+        {
+          "label": "4",
+          "value": "h4"
+        },
+        {
+          "label": "5",
+          "value": "h5"
+        },
+        {
+          "label": "6",
+          "value": "h6"
+        }
+      ],
+      "type": "select"
+    },
+    {
+      "id": "header_text",
+      "label": "Text",
+      "type": "text"
+    },
+    {
+      "content": "Malomo Tracking Block",
+      "type": "header"
+    },
+    {
+      "default": "#ffffff",
+      "id": "malomo_background_color",
+      "label": "Background color",
+      "type": "color"
+    },
+    {
+      "id": "malomo_border_color",
+      "label": "Border color",
+      "type": "color"
+    },
+    {
+      "default": "0",
+      "id": "malomo_border_radius",
+      "label": "Border radius",
+      "type": "text"
+    },
+    {
+      "default": "none",
+      "id": "malomo_border_style",
+      "label": "Border style",
+      "type": "text"
+    },
+    {
+      "default": "0",
+      "id": "malomo_border_width",
+      "label": "Border width",
+      "type": "text"
+    },
+    {
+      "default": "40",
+      "id": "malomo_padding",
+      "label": "Padding",
+      "type": "text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Malomo Banner"
+    }
+  ]
+}
+
+{% endschema %}
