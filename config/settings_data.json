@@ -129,7 +129,7 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "image_1": "shopify:\/\/shop_images\/icon_1.svg",
-    "text_1": "Trusted by over <span style=\"font-weight: 500;\">95,000<\/span> customers.",
+    "text_1": "Trusted by over <div style=\"font-weight: 500;\">95,000<\/div> customers.",
     "category_1_countries": "US,CA,MX",
     "category_2_countries": "GB",
     "category_3_countries": "AU,SG",
