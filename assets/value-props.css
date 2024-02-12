@@ -37,7 +37,7 @@
 .valuecont_block{
     display: flex;
 align-items: center;
-gap: 16px;
+gap: 12px;
 align-self: stretch;
 }
 
