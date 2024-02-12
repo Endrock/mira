@@ -7,6 +7,12 @@
     <meta name="referrer" content="origin">
 
     {{ 'value-props.css' | asset_url | stylesheet_tag }}
+    <style>
+      @font-face {
+        font-family: "Aeonik Pro";
+        src: url("{{ 'AeonikPro-Regular.otf' | asset_url }}") format("opentype");
+      }
+    </style>
 
     <title>{{ page_title }}</title>
 
