@@ -34,6 +34,10 @@
     .valuecont_mob {
         display: none;
     }
+
+    .valuecont_block p{
+        font-size: 16px;
+    }
 }
 
 .valuecont_block{
