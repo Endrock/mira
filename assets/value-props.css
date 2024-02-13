@@ -30,14 +30,14 @@
         align-items: flex-start;
         gap: 23px;
     }
+    .valuecont_block p{
+        font-size: 18px !important;
+    }
 
     .valuecont_mob {
         display: none;
     }
 
-    .valuecont_block p{
-        font-size: 16px !important;
-    }
 }
 
 .valuecont_block{
@@ -54,7 +54,7 @@ align-self: stretch;
 .valuecont_block p{
     color: #000;
     font-family: "Aeonik Pro";
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
