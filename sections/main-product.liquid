@@ -92,7 +92,7 @@
                     {%- when 'text' -%}
                       
                     {%- when 'title' -%}
-                        <div class="custom-pro-title-section">
+                        <div id="atc-section" class="custom-pro-title-section">
                         <h1>{{ product.title | escape }}</h1>
                         <div class="include-wat">{{product.metafields.product_fields.sub_title}}</div>
                         <div class="review-box yotpo bottomLine" data-product-id="{{ product.id }}"></div>
@@ -164,7 +164,7 @@
                       </p>
                     
                     {%- when 'variant_picker' -%}
-                    <div class="custom_pro_variant">
+                    <div id="atc-section" class="custom_pro_variant">
                       {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
                     </div>
                    <div data-rebuy-id="130816" data-rebuy-shopify-product-ids="{{ product.id }}" style="overflow: hidden;"></div>
@@ -279,7 +279,7 @@
                         {%- endif -%}
       
                         {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
-                          <div class="product__tax caption rte">
+                          <div  id="atc-section"  class="product__tax caption rte">
                             {%- if shop.taxes_included -%}
                               {{ 'products.product.include_taxes' | t }}
                             {%- endif -%}
@@ -346,7 +346,7 @@
                         </p>
       
                       {%- when 'variant_picker' -%}
-                        <div id="atc-section" class="custom_pro_variant">
+                        <div class="custom_pro_variant">
                           {% render 'product-variant-picker',
                             product: product,
                             block: block,

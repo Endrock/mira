@@ -1,32 +1,19 @@
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var button = document.getElementById('myButton');
+{{ 'atc-sticky.js' | asset_url | script_tag }}
 
-    if (button) {
-        button.addEventListener('click', function () {
-            var section = document.getElementById('atc-section');
-
-            if (section) {
-                section.scrollIntoView({
-                    behavior: 'smooth',
-                });
-            }
-        });
-    }
-});
-</script>
 <style>
-    @media screen and (min-width: 768px) {
-        .sticky-atc {
-            display: none !important;
-        }
+  @media screen and (min-width: 768px) {
+    .sticky-abc {
+      display: none !important;
     }
+  }
   .sticky-atc {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
     position: fixed;
-    top: 72px;
-    z-index: 100;
+    top: 0px;
+    z-index: 9999999999;
     display: flex;
-    width: 390px;
+    width: 100%;
     padding: 8px 24px;
     justify-content: center;
     align-items: center;
@@ -39,11 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex: 1 0 0;
   }
   .sticky-atc__title {
     color: #003630;
-    font-family: Aeonik;
+    font-family: AeonikPro-Regular;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -56,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
     margin-top: 8px;
     justify-content: center;
     align-items: center;
-    align-self: stretch;
     border-radius: 30px;
     background: #3fc15f;
     white-space: nowrap;
@@ -65,15 +50,25 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   .sticky-atc__image {
-    width: 86px;
+    min-width: 86px;
     height: 86px;
   }
 
   .sticky-atc__review-bg {
     background: #fff;
   }
+
+  body {
+    padding-top: 0px;
+  }
+  .yotpo .text-m {
+    padding-left: 4px;
+    font-weight: 300;
+    line-height: 17px;
+  }
 </style>
 
+<div class="sticky-abc">
 <div class="sticky-atc">
   <div class="sticky-atc__image">
     {{
@@ -91,4 +86,5 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="sticky-atc__review-box yotpo bottomLine sticky-atc__review-bg" data-product-id="{{ product.id }}"></div>
     <button id="myButton" class="sticky-atc__button">Select Your Product</button>
   </div>
+</div>
 </div>
