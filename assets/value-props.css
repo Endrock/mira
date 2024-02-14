@@ -1,27 +1,6 @@
-
-
-.order-summary__sections {
-    height: auto !important;
-}
-
-
-.valuecont {
-    display: none;
-}
-
-.valuecont_mob {
-    display: flex;
-    border-top: 1px solid #DBDBDB;
-    width: auto;
-    padding: 32px 0px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 23px;
-}
-
 @media (min-width: 1000px) {
     .valuecont {
-        display: flex;
+        display: none;
         border-top: 1px solid #DBDBDB;
         width: auto;
         margin-top: 48px;
@@ -30,7 +9,8 @@
         align-items: flex-start;
         gap: 23px;
     }
-    .valuecont_block p{
+
+    .valuecont_block p {
         font-size: 18px !important;
     }
 
@@ -40,18 +20,37 @@
 
 }
 
-.valuecont_block{
-    display: flex;
-align-items: center;
-gap: 12px;
-align-self: stretch;
+.valuecont {
+    display: none;
 }
 
-.valuecont_block img{
+.valuecont_mob {
+    display: none;
+    border-top: 1px solid #DBDBDB;
+    width: auto;
+    padding: 32px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 23px;
+}
+
+.order-summary__sections {
+    height: auto !important;
+}
+
+.valuecont_block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.valuecont_block img {
     width: 80px;
     height: 80px;
-    } 
-.valuecont_block p{
+}
+
+.valuecont_block p {
     color: #000;
     font-family: "Aeonik Pro";
     font-size: 16px;
