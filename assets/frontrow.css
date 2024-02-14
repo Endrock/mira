@@ -17,6 +17,10 @@
   font-size: 15px;
 }
 
+#frontrow-widget {
+  display: none;
+}
+
 .frontrow-container > p {
   margin: 0;
 }

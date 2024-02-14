@@ -7,6 +7,7 @@ Usage:
 
 <frontrow-widget>
   {%- if product.metafields.custom.frontrow_provider_count -%}
+    <div id="frontrow-widget"></div>
     <div class="frontrow-container">
       <p>
         <span class="fr-num-value">{{ product.metafields.custom.frontrow_provider_count }}</span>
@@ -24,5 +25,44 @@ Usage:
         {% endif %}
       </p>
     </div>
+    <script>
+      function openFrontrowModal() {
+          const modal = document.getElementById('frontrow-modal');
+          document.body.appendChild(modal);
+          modal.style.display = 'block';
+      };
+      
+      function closeFrontrowModal() {
+          document.getElementById('frontrow-modal').style.display = 'none';
+      }
+      
+      {% if request.path contains '/products/fertility-max-starter-kit' %}
+          var url = 'https://app.thefrontrowhealth.com/api/widgets?presentation_type=quant&product_id=276';
+      {% elsif request.path contains '/products/prenatal-multivitamin' %}
+          var url = 'https://app.thefrontrowhealth.com/api/widgets?presentation_type=quant&product_id=545';
+      {% elsif request.path contains '/products/home-sperm-test' %}
+          var url = 'https://app.thefrontrowhealth.com/api/widgets?presentation_type=quant&product_id=544';
+      {% else %}
+          var url = "";
+      {% endif %}
+
+      
+      function fetchDataAndUpdateDiv() {
+          if (url) {
+            fetch(url)
+              .then(response => {
+                  if (response.ok) return response.text();
+                  else throw new Error("failed to fetch content")
+              })
+              .then(html => {
+                  document.getElementById('frontrow-widget').innerHTML = html;
+              })
+              .catch(error => {
+                  console.error('Error fetching data:', error);
+              });
+              }
+          }
+      fetchDataAndUpdateDiv();
+    </script> 
   {% endif %}
 </frontrow-widget>
