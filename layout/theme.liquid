@@ -456,6 +456,7 @@
   <body
     data-dual-col="true"
     class="gradient template-{{ template | split: '.' | first }} {{ template }}{% if template == "product" %} {{ product.handle }}{% endif %} {% for tag in product.tags %} {{ tag }}{% endfor %}"
+    data-addtocart-variant-b
   >
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
@@ -649,5 +650,8 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Add To Cart -->
+    <script src='{{ 'add-to-cart.js' | asset_url}}' defer='defer'></script>
   </body>
 </html>

@@ -45,6 +45,9 @@
                     <span class="plat-price">{{ all_products['home-sperm-test'].price | money }}</span>
                     <div class="old-price">{{ all_products['home-sperm-test'].compare_at_price | money }}</div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'home-sperm-test', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/home-sperm-test" class="btn-custom btn-pink">Buy&nbsp;now</a>
                 </div>
               </div>
@@ -70,6 +73,9 @@
                     <span class="plat-price">{{ all_products['exseed-home-sperm-test'].price | money }}</span>
                     <div class="old-price">{{ all_products['exseed-home-sperm-test'].compare_at_price | money }}</div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'exseed-home-sperm-test', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/exseed-home-sperm-test" class="btn-custom btn-pink"
                     >Buy&nbsp;now</a
                   >

@@ -53,6 +53,9 @@
                   <span class="plat-price">{{ all_products['fertility-max-starter-kit'].price | money }}</span>
                   <div class="old-price">{{ all_products['fertility-max-starter-kit'].compare_at_price | money }}</div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'fertility-max-starter-kit', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/fertility-max-starter-kit" class="btn-custom btn-pink"
                   >Buy&nbsp;now</a
                 >
@@ -76,6 +79,9 @@
                 <div class="price-btn-row">
                   <span class="plat-price">{{ all_products['fertility-plus-starter-kit'].price | money }}</span>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'fertility-plus-starter-kit', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/fertility-plus-starter-kit" class="btn-custom btn-pink"
                   >Buy&nbsp;now</a
                 >
@@ -105,6 +111,9 @@
                 <div class="price-btn-row">
                   <span class="plat-price">{{ all_products['mira-max-ovum-bundle'].price | money }}</span>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'mira-max-ovum-bundle', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/mira-max-ovum-bundle" class="btn-custom btn-pink">Buy&nbsp;now</a>
               </div>
             </div>
@@ -135,6 +144,9 @@
                     <span class="plat-price">{{ all_products['mira-plus-confirm-bundle'].price | money }}</span>
                     <div class="old-price">{{ all_products['mira-plus-confirm-bundle'].compare_at_price | money }}</div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'mira-plus-confirm-bundle', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/mira-plus-confirm-bundle" class="btn-custom btn-pink"
                     >Buy&nbsp;now</a
                   >

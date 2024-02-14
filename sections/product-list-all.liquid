@@ -54,6 +54,9 @@
                     </span>
                     <div class="old-price">{{ all_products['get-pregnant-bundle'].compare_at_price | money }}</div>
                   </div>
+
+                   {% include 'subscription-plp-endrock', with string_variable: 'get-pregnant-bundle', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/get-pregnant-bundle" class="btn-custom btn-pink">Buy&nbsp;now</a>
                 </div>
               </div>
@@ -83,12 +86,17 @@
                   <span class="plat-price">{{ all_products['fertility-max-starter-kit'].price | money }}</span>
                   <div class="old-price">{{ all_products['fertility-max-starter-kit'].compare_at_price | money }}</div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'fertility-max-starter-kit', sub_folder: sub_folder %}
+
+
                 <a href="{{ sub_folder }}/products/fertility-max-starter-kit" class="btn-custom btn-pink"
                   >Buy&nbsp;now</a
                 >
               </div>
             </div>
           </div>
+
           <div class="col-md-12">
             <div class="product-col">
               <div class="product-img-col">
@@ -106,12 +114,16 @@
                 <div class="price-btn-row">
                   <span class="plat-price">{{ all_products['fertility-plus-starter-kit'].price | money }}</span>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'fertility-plus-starter-kit', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/fertility-plus-starter-kit" class="btn-custom btn-pink"
                   >Buy&nbsp;now</a
                 >
               </div>
             </div>
           </div>
+
           <div class="col-md-12">
             <div class="product-col">
               <div class="product-img-col">
@@ -135,10 +147,14 @@
                 <div class="price-btn-row">
                   <span class="plat-price">{{ all_products['mira-max-ovum-bundle'].price | money }}</span>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'mira-max-ovum-bundle', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/mira-max-ovum-bundle" class="btn-custom btn-pink">Buy&nbsp;now</a>
               </div>
             </div>
           </div>
+
           {% if localization.market.handle == 'zzz' %}
             <div class="col-md-12">
               <div class="product-col">
@@ -164,6 +180,9 @@
                     <span class="plat-price">{{ all_products['mira-plus-confirm-bundle'].price | money }}</span>
                     <div class="old-price">{{ all_products['mira-plus-confirm-bundle'].compare_at_price | money }}</div>
                   </div>
+                  
+                  {% include 'subscription-plp-endrock', with string_variable:'mira-plus-confirm-bundle', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/mira-plus-confirm-bundle" class="btn-custom btn-pink"
                     >Buy&nbsp;now</a
                   >
@@ -209,10 +228,14 @@
                   </span>
                   <div class="old-price">{{ all_products['wands-bundle'].compare_at_price | money }}</div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'wands-bundle', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/wands-bundle" class="btn-custom btn-pink">Buy&nbsp;now</a>
               </div>
             </div>
           </div>
+
           <div class="col-md-12">
             <div class="product-col">
               <div class="product-img-col">
@@ -237,10 +260,14 @@
                   <span class="plat-price">{{ all_products['mira-max-test-wands'].price | money }}</span>
                   <div class="old-price">{{ all_products['mira-max-test-wands'].compare_at_price | money }}</div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'mira-max-test-wands', sub_folder: sub_folder %}
+                
                 <a href="{{ sub_folder }}/products/mira-max-test-wands" class="btn-custom btn-pink">Buy&nbsp;now</a>
               </div>
             </div>
           </div>
+
           <div class="col-md-12">
             <div class="product-col">
               <div class="product-img-col">
@@ -259,12 +286,17 @@
                   <span class="plat-price">{{ all_products['fertility-plus-test-wands'].price | money }}</span>
                   <div class="old-price">{{ all_products['fertility-plus-test-wands'].compare_at_price | money }}</div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'fertility-plus-test-wands', sub_folder: sub_folder %}
+
+
                 <a href="{{ sub_folder }}/products/fertility-plus-test-wands" class="btn-custom btn-pink"
                   >Buy&nbsp;now</a
                 >
               </div>
             </div>
           </div>
+
           <div class="col-md-12">
             <div class="product-col">
               <div class="product-img-col">
@@ -283,6 +315,9 @@
                   <span class="plat-price">{{ all_products['fertility-ovum-wands'].price | money }}</span>
                   <div class="old-price">{{ all_products['fertility-ovum-wands'].compare_at_price | money }}</div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'fertility-ovum-wands', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/fertility-ovum-wands" class="btn-custom btn-pink">Buy&nbsp;now</a>
               </div>
             </div>
@@ -314,6 +349,9 @@
                     {{ all_products['fertility-confirm-test-wands'].compare_at_price | money }}
                   </div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'fertility-confirm-test-wands', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/fertility-confirm-test-wands" class="btn-custom btn-pink"
                   >Buy&nbsp;now</a
                 >
@@ -321,6 +359,7 @@
             </div>
           </div>
 
+          <!-- HASTA AQUI HE AGREGADO EL SNIPPET DEL PLP ADD TO CART SUBSCRIPTION -->
           {% if localization.market.handle == 'zzz' %}
             <div class="col-md-12">
               <div class="product-col">
@@ -340,6 +379,9 @@
                     <span class="plat-price">{{ all_products['fertility-test-wands'].price | money }}</span>
                     <div class="old-price"></div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'fertility-test-wands', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/fertility-test-wands" class="btn-custom btn-pink">Buy&nbsp;now</a>
                 </div>
               </div>
@@ -369,6 +411,7 @@
                   <span class="plat-price">{{ all_products.coaching.first_available_variant.price | money }}</span>
                   <div class="old-price"></div>
                 </div>
+                {% include 'subscription-plp-endrock', with string_variable: 'coaching', sub_folder: sub_folder %}
                 <a href="{{ sub_folder }}/products/coaching" class="btn-custom btn-pink">Buy&nbsp;now</a>
               </div>
             </div>
@@ -402,6 +445,9 @@
                     <span class="plat-price">{{ all_products['home-sperm-test'].price | money }}</span>
                     <div class="old-price"></div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'home-sperm-test', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/home-sperm-test" class="btn-custom btn-pink">Buy&nbsp;now</a>
                 </div>
               </div>
@@ -426,6 +472,9 @@
                     <span class="plat-price">{{ all_products['exseed-home-sperm-test'].price | money }}</span>
                     <div class="old-price">{{ all_products['exseed-home-sperm-test'].compare_at_price | money }}</div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'exseed-home-sperm-test', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/exseed-home-sperm-test" class="btn-custom btn-pink"
                     >Buy&nbsp;now</a
                   >
@@ -468,6 +517,9 @@
                     <span class="plat-price">{{ all_products['basal-body-thermometer'].price | money }}</span>
                     <div class="old-price"></div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'basal-body-thermometer', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/basal-body-thermometer" class="btn-custom btn-pink"
                     >Buy&nbsp;now</a
                   >
@@ -492,6 +544,9 @@
                     <span class="plat-price">{{ all_products['fertility-tea'].price | money }}</span>
                     <div class="old-price"></div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'fertility-tea', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/fertility-tea" class="btn-custom btn-pink">Buy&nbsp;now</a>
                 </div>
               </div>
@@ -513,6 +568,9 @@
                     <span class="plat-price">{{ all_products['fertility-tea-ww'].price | money }}</span>
                     <div class="old-price"></div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'fertility-tea-ww', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/fertility-tea-ww" class="btn-custom btn-pink">Buy&nbsp;now</a>
                 </div>
               </div>
@@ -535,6 +593,9 @@
                     <span class="plat-price">{{ all_products['pregnancy-tea'].price | money }}</span>
                     <div class="old-price"></div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'pregnancy-tea', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/pregnancy-tea" class="btn-custom btn-pink">Buy&nbsp;now</a>
                 </div>
               </div>
@@ -556,6 +617,9 @@
                   <div class="price-btn-row">
                     <span class="plat-price">{{ all_products['prenatal-multivitamin'].price | money }}</span>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'prenatal-multivitamin', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/prenatal-multivitamin" class="btn-custom btn-pink">Buy&nbsp;now</a>
                 </div>
               </div>
@@ -576,6 +640,9 @@
                   <span class="plat-price">{{ all_products.academy.price | money }}</span>
                   <div class="old-price"></div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'academy', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/academy" class="btn-custom btn-pink">Buy&nbsp;now</a>
               </div>
             </div>
@@ -599,6 +666,9 @@
                   <span class="plat-price">{{ all_products['fertility-meditations'].price | money }}</span>
                   <div class="old-price"></div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'fertility-meditations', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/fertility-meditations" class="btn-custom btn-pink">Buy&nbsp;now</a>
               </div>
             </div>
@@ -622,6 +692,9 @@
                     <span class="plat-price">{{ all_products['biogenesis-fertility-lubricant'].price | money }}</span>
                     <div class="old-price"></div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'biogenesis-fertility-lubricant', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/biogenesis-fertility-lubricant" class="btn-custom btn-pink"
                     >Buy&nbsp;now</a
                   >
@@ -649,6 +722,9 @@
                     <span class="plat-price">{{ all_products['panorama-fertility-lab-test'].price | money }}</span>
                     <div class="old-price"></div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'panorama-fertility-lab-test', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/panorama-fertility-lab-test" class="btn-custom btn-pink"
                     >Buy&nbsp;now</a
                   >
@@ -699,6 +775,14 @@
     </div>
   </div>
 </div>
+
+<script>
+
+  // access the every one mont subscription: all_products['fertility-plus-test-wands'].selling_plan_groups[0].selling_plans[0].id
+  const product = {{ all_products['fertility-plus-test-wands'].selling_plan_groups[0].selling_plans[0] | json }}
+  console.log('The Product:', product)
+</script>
+
 {% schema %}
 {
   "name": "All products List",

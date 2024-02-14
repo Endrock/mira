@@ -2879,6 +2879,47 @@ html[xmlns] .flexslider .slides {
 .pro-description .morelink {
     display: block;
 }
+/* ============================
+        PLP ADD TO CART START
+ ============================ */
+
+ .subscriptions {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    [data-addtocart-variant-a] .new-layout-listing .product-col .product-price-col {
+        justify-content: unset;
+        /* flex-wrap: nowrap; */
+        display: grid;
+        align-items: center;
+    }
+
+    [data-addtocart-variant-b] .new-layout-listing .product-col .product-price-col {
+        justify-content: unset;
+        /* flex-wrap: nowrap; */
+        display: grid;
+        align-items: center;
+    }
+}
+
+@media  (min-width: 768px){
+[data-addtocart-variant-a] .new-layout-listing .product-listing-sec .product-col .product-price-col {
+        justify-content: space-between;
+        display: block;
+        align-items: center;
+    }
+
+    [data-addtocart-variant-b] .new-layout-listing .product-listing-sec .product-col .product-price-col {
+        justify-content: space-between;
+        display: block;
+        align-items: center;
+    }
+}
+
+[data-addtocart-variant-a] .one-time-wrapper {
+    display: none;
+}
 
 .product-price-col {
     border-bottom: 1px solid #B6C2CD;
@@ -2888,6 +2929,119 @@ html[xmlns] .flexslider .slides {
     align-items: center;
     flex-wrap: wrap;
 }
+
+[data-addtocart-variant-a] .subscriptions {
+    display: block;
+}
+
+[data-addtocart-variant-b] .subscriptions {
+    display: block;
+}
+
+[data-addtocart-variant-a] .btn-custom {
+    display: none;
+}
+
+[data-addtocart-variant-b] .btn-custom {
+    display: none;
+}
+
+.subscriptions-text{
+    font-family: 'Gibson';
+    font-size: 14px;
+    color: #003630;
+}
+
+.subscription-highlight {
+    color: #3BAA35;
+}
+
+.card-style {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #DEEEE3;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.selected-label {
+    background-color: #C2DCCB;
+  }
+
+.text-span {
+    font-size: 12px !important;
+    color: #65717C !important;
+    flex-basis: 100%;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.subscriptions label {
+    cursor: pointer;
+    font-family: 'Gibson';
+}
+
+.atc-button {
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    background-color: #F2BFD1;
+    padding: 8px 32px;
+    border-radius: 30px;
+    border: transparent;
+    color: #003630;
+    font-family: 'Aeonik';
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+input[name="subscription-type"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #DEEEE3;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+input[name="subscription-type"]::before {
+    content: '\2713';
+    color: #3FC15F;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+    display: none;
+    text-align: center;
+}
+
+input[name="subscription-type"]:checked {
+    border: 1px solid #3FC15F;
+}
+
+input[name="subscription-type"]:checked::before {
+    display: block;
+}
+
+#subscription-btn {
+    display: block;
+}
+
+.subscription-btn-endrock {
+    display: none;
+}
+  
+/* ============================
+        PLP ADD TO CART END
+ ============================ */
 
 
 .product-info-box .btn-custom {

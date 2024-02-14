@@ -50,6 +50,9 @@
                   <span class="plat-price">{{ all_products['mira-max-test-wands'].price | money }}</span>
                   <div class="old-price">{{ all_products['mira-max-test-wands'].compare_at_price | money }}</div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'mira-max-test-wands', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/mira-max-test-wands" class="btn-custom btn-pink">Buy&nbsp;now</a>
               </div>
             </div>
@@ -72,6 +75,9 @@
                   <span class="plat-price">{{ all_products['fertility-plus-test-wands'].price | money }}</span>
                   <div class="old-price">{{ all_products['fertility-plus-test-wands'].compare_at_price | money }}</div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'fertility-plus-test-wands', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/fertility-plus-test-wands" class="btn-custom btn-pink"
                   >Buy&nbsp;now</a
                 >
@@ -96,6 +102,9 @@
                   <span class="plat-price">{{ all_products['fertility-ovum-wands'].price | money }}</span>
                   <div class="old-price">{{ all_products['fertility-ovum-wands'].compare_at_price | money }}</div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'fertility-ovum-wands', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/fertility-ovum-wands" class="btn-custom btn-pink">Buy&nbsp;now</a>
               </div>
             </div>
@@ -127,6 +136,9 @@
                     {{ all_products['fertility-confirm-test-wands'].compare_at_price | money }}
                   </div>
                 </div>
+
+                {% include 'subscription-plp-endrock', with string_variable: 'fertility-confirm-test-wands', sub_folder: sub_folder %}
+
                 <a href="{{ sub_folder }}/products/fertility-confirm-test-wands" class="btn-custom btn-pink"
                   >Buy&nbsp;now</a
                 >
@@ -152,6 +164,9 @@
                     <span class="plat-price">{{ all_products['fertility-test-wands'].price | money }}</span>
                     <div class="old-price">{{ all_products['fertility-test-wands'].compare_at_price | money }}</div>
                   </div>
+
+                  {% include 'subscription-plp-endrock', with string_variable: 'fertility-test-wands', sub_folder: sub_folder %}
+
                   <a href="{{ sub_folder }}/products/fertility-test-wands" class="btn-custom btn-pink">Buy&nbsp;now</a>
                 </div>
               </div>
