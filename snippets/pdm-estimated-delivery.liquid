@@ -1,0 +1,34 @@
+{% comment %}
+Renders the estimated deliverty
+
+
+Params:
+  block {Block}
+
+{% endcomment %}
+
+
+{{ 'pdm-estimated-delivery.css' | asset_url | stylesheet_tag }}
+
+
+<div class="pdm-estimated-delivery">
+  <div class="pdm-estimated-delivery__info">
+    <span class="delivery-copy">
+      <img src="{{ 'ic-delivery.svg' | asset_url }}" alt="Delivery icon"
+        width="32px" height="32px">
+      Estimated delivery:
+    </span>
+
+    <p id="dates">
+      <span class="delivery-date" id="initial-date">date</span>
+      <span class="delivery-date" id="final-date">date</span>
+    </p>
+
+  </div>
+
+  <p class="disclaimer">
+    *Expect shipping delays from holidays, weather, and peak seasons. 
+    Plan for timely deliveries accordingly.
+  </p>
+
+</div>
