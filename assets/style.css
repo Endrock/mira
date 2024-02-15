@@ -2938,11 +2938,11 @@ html[xmlns] .flexslider .slides {
     display: block;
 }
 
-[data-addtocart-variant-a] .btn-custom {
+[data-addtocart-variant-a] .btn-custom[data-plpBtn="true"] {
     display: none;
 }
 
-[data-addtocart-variant-b] .btn-custom {
+[data-addtocart-variant-b] .btn-custom[data-plpBtn="true"] {
     display: none;
 }
 
