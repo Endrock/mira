@@ -6,16 +6,29 @@
       display: none !important;
     }
   }
+
+  [data-sticky-original] .sticky-atc {
+    transform: scale(0);
+  }
+
+  [data-sticky-top] .sticky-atc {
+    top: 0px;
+  }
+
+  [data-sticky-bottom] .sticky-atc {
+    bottom: 0px;
+  }
+
+
+
   .sticky-atc {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     position: fixed;
-    top: 0px;
     z-index: 9999999999;
     display: flex;
     width: 100%;
     padding: 8px 24px;
-    justify-content: center;
     align-items: center;
     gap: 16px;
     background: #fff;
