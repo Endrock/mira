@@ -41,7 +41,7 @@
                   <div class="old-price">{{ all_products.coaching.compare_at_price | money }}</div>
                 </div>
 
-                {% include 'subscription-plp-endrock', with string_variable: 'coaching', sub_folder: sub_folder %}
+                {% include 'subscription-plp-endrock', with string_variable: 'coaching', with sub_folder: sub_folder, with num: 32 %}
 
                 <a href="{{ sub_folder }}/products/coaching" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
               </div>

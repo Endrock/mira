@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const addSubscriptionBtn = subscription.querySelector('.subscription-btn-endrock');
         const labels = subscription.querySelectorAll('label');
         const subscriptionInput = subscription.querySelector('[data-subscription-input]');
-    
+        
         labels.forEach(label => {
             label.addEventListener('click', () => {
                 const input = label.querySelector('input[name="subscription-type"]');
@@ -94,5 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
 
 
