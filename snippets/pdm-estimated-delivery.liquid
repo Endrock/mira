@@ -11,6 +11,9 @@ Params:
 {{ 'pdm-estimated-delivery.css' | asset_url | stylesheet_tag }}
 
 
+<script src="{{ 'pdm-estimated-delivery.js' | asset_url }}" defer></script>
+
+
 <div class="pdm-estimated-delivery">
   <div class="pdm-estimated-delivery__info">
     <span class="delivery-copy">
@@ -20,8 +23,9 @@ Params:
     </span>
 
     <p id="dates">
-      <span class="delivery-date" id="initial-date">date</span>
-      <span class="delivery-date" id="final-date">date</span>
+      <span class="delivery-date" id="initial-date">...</span>
+      -
+      <span class="delivery-date" id="final-date">...</span>
     </p>
 
   </div>
