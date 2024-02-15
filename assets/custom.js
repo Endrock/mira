@@ -533,6 +533,30 @@ jQuery(document).ready(function ($) {
     }
   })
 });
+
+jQuery(document).ready(function($) {
+    $('.slider-column-2').owlCarousel({
+        loop:true,
+        margin:0,
+        nav:true,
+        dots:true,
+        autoplay:false,
+        responsive:{
+            0:{
+                items:1,
+                autoplay:true
+            },
+            767:{
+                items:2
+            },
+            1024:{
+                items:2
+            }
+            
+        }
+    })
+});
+
 jQuery(document).ready(function ($) {
   $('#doctors-slider').owlCarousel({
     loop: true,

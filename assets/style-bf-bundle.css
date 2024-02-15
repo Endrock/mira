@@ -1048,8 +1048,16 @@ line-height: 24px;
   height: 93px;
 }
 
-
-
+.doctor-success-stories.mira-journey .customers-product-col{
+  padding:40px !important;
+  min-height:300px !important;
+}
+.doctor-success-stories.mira-journey .customers-product-col .badge-heading{
+  padding:5px;font-size:16px; line-height:20px; margin-bottom:15px;display: inline-block;
+}
+.doctor-success-stories.mira-journey .customers-product-col .badge-description{
+  color:#183B3F; font-size:24px; line-height:28px;max-width: 470px !important;
+}
 /*************************************/
 .installments {
   margin-top:50px;
@@ -1665,6 +1673,7 @@ background: #ECF9EF;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     border: 1px solid #EAEAEA;
+    margin-bottom: 25px !important;
 }
 .frontrow-container p {
     font-size: 14px !important;
@@ -1704,6 +1713,31 @@ body.mira-max-kit .Stories-testimonials-sec {
 .new-custom-product-detail .price-and-button .price--on-sale .price-item--regular {
     font-size: 14px !important;
     line-height: 1;
+}
+.health-research-quote {
+    width: calc(100% - 20px);
+    padding: 24px 24px 24px 100px;
+    margin-top: 0;
+    border-radius: 0 32px 32px;
+    background: #FAF6EE;
+    line-height: 24px;
+    max-width: 1132px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    position: relative;
+}
+.health-research-quote img {
+    position: absolute;
+    left: 10px;
+}
+.health-research-quote p {
+    font-size: 24px;
+    line-height: 24px;
+}
+.health-research-quote a {
+    color: inherit;
+    text-decoration: underline;
 }
 /* Vinod custom CSS end */
 /*******************Responsive**Start*********{}******************************/
@@ -2589,6 +2623,23 @@ body.mira-max-kit .Stories-testimonials-sec {
 .tooltip-popup p {
     font-size: 12px;
 }  
-  
+  .doctor-success-stories.mira-journey .customers-product-col{
+    padding:25px !important;
+    min-height:260px !important;
+    margin-left:35px;
+  }
+  .doctor-success-stories.mira-journey .customers-product-col .badge-description{
+      font-size:19px;
+    line-height:24px;
+  }
+  .health-research-quote {
+      padding: 20px;
+  }
+  .health-research-quote img {
+      position: relative;
+  }
+  .health-research-quote p {
+      font-size: 22px;
+  }
 }
 
