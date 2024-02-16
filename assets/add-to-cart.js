@@ -23,9 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
         function formatNumber(number) {
             let formattedNumber = parseFloat(number).toFixed(2);
             
-            // Check if the formatted number has only one decimal place
             if (formattedNumber.indexOf('.') === formattedNumber.length - 2) {
-                formattedNumber += '0'; // Add a trailing zero
+                formattedNumber += '0';
             }
             
             return `$${formattedNumber}`;
@@ -62,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         oldPrice.textContent = rawPrice;
                         priceRow.querySelector('.plat-price').textContent = `${formatedUpdatedPrice}`;
                     } else {
-                        console.log('selling plan price adjustment type not supported, please go to assets/add-to-cart.js line 52 and add inside the else block.')
+                        console.log('selling plan price adjustment type not supported, please go to assets/add-to-cart.js line 64 and add inside the else block.')
                     }
                     
                 }
