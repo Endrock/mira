@@ -27,3 +27,11 @@
     {% endif %}
 </div>
 
+<script>
+  try {
+    const product = {{ all_products[product_handle].selling_plan_groups[0].selling_plans[0] | json }};
+  } catch (error) {
+    console.error('Error in script:', error);
+  }
+</script>
+

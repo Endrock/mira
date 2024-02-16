@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     allSubscriptions.forEach(subscription => {
 
+        const priceColumn = subscription.parentElement;
+        const priceRow = priceColumn.querySelector('.price-btn-row');
+        const rawPrice = priceRow.querySelector('.plat-price').textContent;
+        const flatPrice = Number(priceRow.querySelector('.plat-price').textContent.split('$').pop());
+        const oldPrice = priceRow.querySelector(".old-price") ? priceRow.querySelector(".old-price") : null;
+        console.log('Old price is:', oldPrice)
+
         const variantId = subscription.querySelector('input[name="id"]').value;
         const qty = subscription.querySelector('input[name="quantity"]').value;
         const sellingPlanId = subscription.querySelector('form').getAttribute('data-selling-plan') ? subscription.querySelector('form').getAttribute('data-selling-plan') : null;
@@ -12,6 +19,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const addSubscriptionBtn = subscription.querySelector('.subscription-btn-endrock');
         const labels = subscription.querySelectorAll('label');
         const subscriptionInput = subscription.querySelector('[data-subscription-input]');
+
+        function formatNumber(number) {
+            let formattedNumber = parseFloat(number).toFixed(2);
+            
+            // Check if the formatted number has only one decimal place
+            if (formattedNumber.indexOf('.') === formattedNumber.length - 2) {
+                formattedNumber += '0'; // Add a trailing zero
+            }
+            
+            return `$${formattedNumber}`;
+        }
         
         labels.forEach(label => {
             label.addEventListener('click', () => {
@@ -31,6 +49,23 @@ document.addEventListener('DOMContentLoaded', function () {
     
                 label.classList.add('selected-label');
                 label.style.backgroundColor = '#C2DCCB';
+                
+                if (input.hasAttribute('data-subscription-input')) {
+                    console.log('the product selling plan is:', product);
+                    console.log('product flat price:', flatPrice);
+
+                    const productPriceAdjustments = product.price_adjustments[0];
+
+                    if (productPriceAdjustments.value_type == 'percentage') {
+                        const updatedPrice =  flatPrice - (flatPrice * (productPriceAdjustments.value / 100));
+                        const formatedUpdatedPrice = formatNumber(updatedPrice);
+                        oldPrice.textContent = rawPrice;
+                        priceRow.querySelector('.plat-price').textContent = `${formatedUpdatedPrice}`;
+                    } else {
+                        console.log('selling plan price adjustment type not supported, please go to assets/add-to-cart.js line 52 and add inside the else block.')
+                    }
+                    
+                }
             });
     
             
@@ -73,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         };
         
+
 
         if (sellingPlanId) {
             addSubscriptionBtn.addEventListener('click', () => {
