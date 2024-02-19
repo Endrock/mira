@@ -309,10 +309,7 @@ jQuery(document).ready(function ($) {
 // Desktop stuff start
 jQuery(document).ready(function ($) {
   if ($(window).width() >= 768) {
-    const attribute = document.body.getAttribute('data-dual-col');
-    if (attribute == 'true') {
       startDesktopCarousel($);
-    }
     // For product part
     $(".mobile-price").remove();
   }
