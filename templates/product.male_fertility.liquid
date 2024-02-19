@@ -29,6 +29,7 @@
             or localization.market.handle == 'au'
             or localization.market.handle == 'ca'
           %}
+          {% if all_products['home-sperm-test'].available == true %}            
             <div class="col-md-4">
               <div class="product-col">
                 <div class="product-img-col">
@@ -53,35 +54,38 @@
               </div>
             </div>
           {% endif %}
+          {% endif %}
 
           {% if localization.market.handle == 'eu' or localization.market.handle == 'uk' %}
-            <div class="col-md-4">
-              <div class="product-col">
-                <div class="product-img-col">
-                  <a href="{{ sub_folder }}/products/exseed-home-sperm-test"
-                    ><img src="{{ 'ExSeed_Sperm_2.png' | file_img_url: '' }}" alt=""
-                  ></a>
-                </div>
-                <h4>
-                  <a href="{{ sub_folder }}/products/exseed-home-sperm-test">
-                    {{- all_products['exseed-home-sperm-test'].title -}}
-                  </a>
-                </h4>
-                <p>{{ all_products['exseed-home-sperm-test'].metafields.product_fields.sub_title }}</p>
-                <div class="product-price-col">
-                  <div class="price-btn-row">
-                    <span class="plat-price">{{ all_products['exseed-home-sperm-test'].price | money }}</span>
-                    <div class="old-price">{{ all_products['exseed-home-sperm-test'].compare_at_price | money }}</div>
+            {% if all_products['exseed-home-sperm-test'].available == true %}              
+              <div class="col-md-4">
+                <div class="product-col">
+                  <div class="product-img-col">
+                    <a href="{{ sub_folder }}/products/exseed-home-sperm-test"
+                      ><img src="{{ 'ExSeed_Sperm_2.png' | file_img_url: '' }}" alt=""
+                    ></a>
                   </div>
-
-                  {% include 'subscription-plp-endrock', with string_variable: 'exseed-home-sperm-test', with sub_folder: sub_folder, with num: 34 %}
-
-                  <a href="{{ sub_folder }}/products/exseed-home-sperm-test" class="btn-custom btn-pink" data-plpBtn="true"
-                    >Buy&nbsp;now</a
-                  >
+                  <h4>
+                    <a href="{{ sub_folder }}/products/exseed-home-sperm-test">
+                      {{- all_products['exseed-home-sperm-test'].title -}}
+                    </a>
+                  </h4>
+                  <p>{{ all_products['exseed-home-sperm-test'].metafields.product_fields.sub_title }}</p>
+                  <div class="product-price-col">
+                    <div class="price-btn-row">
+                      <span class="plat-price">{{ all_products['exseed-home-sperm-test'].price | money }}</span>
+                      <div class="old-price">{{ all_products['exseed-home-sperm-test'].compare_at_price | money }}</div>
+                    </div>
+  
+                    {% include 'subscription-plp-endrock', with string_variable: 'exseed-home-sperm-test', with sub_folder: sub_folder, with num: 34 %}
+  
+                    <a href="{{ sub_folder }}/products/exseed-home-sperm-test" class="btn-custom btn-pink" data-plpBtn="true"
+                      >Buy&nbsp;now</a
+                    >
+                  </div>
                 </div>
               </div>
-            </div>
+            {% endif %}
           {% endif %}
         </div>
       </div>
