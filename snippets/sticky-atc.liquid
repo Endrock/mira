@@ -19,7 +19,9 @@
     bottom: 0px;
   }
 
-
+  /* [data-sticky-bottom] .needsclick {
+    bottom: 90px !important;
+  } */
 
   .sticky-atc {
     opacity: 0;
@@ -70,10 +72,6 @@
   .sticky-atc__review-bg {
     background: #fff;
   }
-
-  body {
-    padding-top: 0px;
-  }
   .yotpo .text-m {
     padding-left: 4px;
     font-weight: 300;
@@ -82,22 +80,22 @@
 </style>
 
 <div class="sticky-abc">
-<div class="sticky-atc">
-  <div class="sticky-atc__image">
-    {{
-      product.media[0].preview_image
-      | image_url: width: 86
-      | image_tag:
-        class: image_class,
-        loading: lazy,
-        sizes: sizes,
-        widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
-    }}
+  <div class="sticky-atc">
+    <div class="sticky-atc__image">
+      {{
+        product.media[0].preview_image
+        | image_url: width: 86
+        | image_tag:
+          class: image_class,
+          loading: lazy,
+          sizes: sizes,
+          widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+      }}
+    </div>
+    <div class="sticky-atc__left">
+      <div class="sticky-atc__title">{{ product.title }}</div>
+      <div class="sticky-atc__review-box yotpo bottomLine sticky-atc__review-bg" data-product-id="{{ product.id }}"></div>
+      <button id="atcButton" class="sticky-atc__button">Select Your Product</button>
+    </div>
   </div>
-  <div class="sticky-atc__left">
-    <div class="sticky-atc__title">{{ product.title }}</div>
-    <div class="sticky-atc__review-box yotpo bottomLine sticky-atc__review-bg" data-product-id="{{ product.id }}"></div>
-    <button id="myButton" class="sticky-atc__button">Select Your Product</button>
-  </div>
-</div>
 </div>
