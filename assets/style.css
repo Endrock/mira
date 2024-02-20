@@ -2917,6 +2917,52 @@ html[xmlns] .flexslider .slides {
     }
 }
 
+
+@media (max-width: 1199px) and (min-width: 768px){
+    [data-addtocart-variant-a] .new-layout-listing .product-listing-sec .old-price {
+            font-size: 15px; 
+        }
+
+    [data-addtocart-variant-b] .new-layout-listing .product-listing-sec .old-price {
+        font-size: 15px; 
+    }
+} 
+
+@media screen and (min-width: 1199px) {
+    [data-addtocart-variant-a] .new-layout-listing .product-listing-sec .old-price {
+        font-size: 21px;
+        text-decoration: line-through;
+    }
+    
+    [data-addtocart-variant-b] .new-layout-listing .product-listing-sec .old-price {
+        font-size: 21px;
+        text-decoration: line-through;
+    }
+}
+
+@media (min-width: 766px) and (max-width: 992px) {
+    .endrock-badge {
+        padding: 4px 8px !important;
+    }
+}
+
+
+[data-addtocart-variant-a] .product-listing-sec .old-price {
+    position: unset;
+    text-decoration: line-through;
+    display: block;
+    width: auto;
+}
+
+[data-addtocart-variant-b] .product-listing-sec .old-price {
+    position: unset;
+    text-decoration: line-through;
+    display: block;
+    width: auto;
+}
+
+
+
 [data-addtocart-variant-a] .one-time-wrapper {
     display: none;
 }
@@ -2947,7 +2993,7 @@ html[xmlns] .flexslider .slides {
 }
 
 .subscriptions-text{
-    font-family: 'Gibson';
+    font-family: 'Gibson-Regular';
     font-size: 14px;
     color: #003630;
 }
@@ -2981,7 +3027,7 @@ html[xmlns] .flexslider .slides {
 
 .subscriptions label {
     cursor: pointer;
-    font-family: 'Gibson';
+    font-family: 'Gibson-Regular';
 }
 
 .atc-button {
@@ -3038,6 +3084,36 @@ input[name="subscription-type"]:checked::before {
 .subscription-btn-endrock {
     display: none;
 }
+
+[data-addtocart-variant-a] .plat-price {
+    margin-right: 0px !important;
+}
+
+
+[data-addtocart-variant-b] .plat-price {
+    margin-right: 0px !important;
+}
+
+[data-addtocart-variant-a] .price-btn-row {
+    gap: 20px;
+}
+
+[data-addtocart-variant-b] .price-btn-row {
+    gap: 20px;
+}
+
+.endrock-badge {
+    background-color: #41C15F;
+    color: white;
+    font-size: 12px;
+    padding: 4px 16px;
+    border-radius: 16px;
+    display: none;
+    font-weight: normal;
+}
+
+
+
   
 /* ============================
         PLP ADD TO CART END
@@ -3064,6 +3140,8 @@ input[name="subscription-type"]:checked::before {
     margin-bottom: -8px;
     width: 100%;
 }
+
+
 
 
 

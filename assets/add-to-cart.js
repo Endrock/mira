@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const priceRow = priceColumn.querySelector('.price-btn-row');
         const rawPrice = priceRow.querySelector('.plat-price').textContent;
         const flatPrice = Number(priceRow.querySelector('.plat-price').textContent.split('$').pop());
+        const initPrice = rawPrice;
         const oldPrice = priceRow.querySelector(".old-price") ? priceRow.querySelector(".old-price") : null;
         console.log('Old price is:', oldPrice)
 
@@ -20,6 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const labels = subscription.querySelectorAll('label');
         const subscriptionInput = subscription.querySelector('[data-subscription-input]');
 
+        const badge = document.createElement('div');
+        badge.textContent = '';
+        badge.classList.add('endrock-badge');
+        priceRow.appendChild(badge)
+
+        
+
         function formatNumber(number) {
             let formattedNumber = parseFloat(number).toFixed(2);
             
@@ -31,47 +39,76 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
         labels.forEach(label => {
+
+            label.isClicked = false
+
+
             label.addEventListener('click', () => {
                 const input = label.querySelector('input[name="subscription-type"]');
                 input.click();
+
+                console.log('isClick State:', label.isClicked)
             });
         });
     
         labels.forEach((label, index) => {
             const input = label.querySelector('input[name="subscription-type"]');
-    
+
             input.addEventListener('click', (e) => {
+                console.log("label:", label)
+
                 labels.forEach(otherLabel => {
                     otherLabel.classList.remove('selected-label');
                     otherLabel.style.backgroundColor = '';
                 });
     
-                label.classList.add('selected-label');
-                label.style.backgroundColor = '#C2DCCB';
                 
+                if(!label.isClicked){
+                    label.style.backgroundColor = '#C2DCCB';
+                    label.classList.add('selected-label');
+                    
+
+                    label.isClicked = true
+                } else {     
+                    priceRow.querySelector('.plat-price').textContent = initPrice;
+                    oldPrice.textContent = '';
+                    label.classList.remove('selected-label');
+                    label.style.backgroundColor = '';
+                    input.checked = false;
+                    badge.style.display = 'none'
+                    
+                    
+                    label.isClicked = false
+                }
+                
+                    
                 if (input.hasAttribute('data-subscription-input')) {
-                    console.log('the product selling plan is:', product);
-                    console.log('product flat price:', flatPrice);
-
+                    
+        
                     const productPriceAdjustments = product.price_adjustments[0];
-
-                    if (productPriceAdjustments.value_type == 'percentage') {
-                        const updatedPrice =  flatPrice - (flatPrice * (productPriceAdjustments.value / 100));
+                    badge.textContent = ''
+                    
+                  
+                    if (label.isClicked) {
+                        const updatedPrice = flatPrice - (flatPrice * (productPriceAdjustments.value / 100));
                         const formatedUpdatedPrice = formatNumber(updatedPrice);
                         oldPrice.textContent = rawPrice;
                         priceRow.querySelector('.plat-price').textContent = `${formatedUpdatedPrice}`;
-                    } else {
-                        console.log('selling plan price adjustment type not supported, please go to assets/add-to-cart.js line 64 and add inside the else block.')
+                        badge.textContent = 'SAVE 10%'
+                        badge.style.display = 'block'
                     }
-                    
+                } else {
+                    priceRow.querySelector('.plat-price').textContent = initPrice;
+                    oldPrice.textContent = '';
                 }
             });
-    
-            
+        
             if (index === 1) {
                 input.click();
             }
+            
         });
+        
         
         const addSubscriptionToCart = () => {
             console.log('variant id:', variantId);
