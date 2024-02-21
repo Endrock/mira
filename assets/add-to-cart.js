@@ -2,16 +2,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var allSubscriptions = document.querySelectorAll('.subscriptions');
 
+    //======== observer tes =============
+
+    var observerOptions = {
+        root: null, // use the viewport as the root
+        rootMargin: '0px',
+        threshold: 0.5 // callback when 50% of the element is visible
+    };
+
+    // Callback function for the Intersection Observer
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Subscription is on screen
+                console.log('Subscription is on screen:', entry.target);
+                // You can perform additional actions here if needed
+            } else {
+                // Subscription is not on screen
+                console.log('Subscription is not on screen:', entry.target);
+                // You can perform additional actions here if needed
+            }
+        });
+    }
+
+    // Create an Intersection Observer
+    var observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+    //=====================================
+
     allSubscriptions.forEach(subscription => {
 
-       //console.log(subscription)
+        observer.observe(subscription);
 
         var priceColumn = subscription.parentElement;
         var priceRow = priceColumn.querySelector('.price-btn-row');
         var rawPrice = priceRow.querySelector('.plat-price').textContent;
         var flatPrice = Number(priceRow.querySelector('.plat-price').textContent.split('$').pop());
         var oldPrice = priceRow.querySelector(".old-price") ? priceRow.querySelector(".old-price") : null;
-        //console.log('Old price is:', oldPrice)
+
 
         var variantId = subscription.querySelector('input[name="id"]').value;
         var qty = subscription.querySelector('input[name="quantity"]').value;
@@ -50,7 +78,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 const subscriptionLabelClicked = label.querySelector('input[name="subscription-type"]').hasAttribute('data-subscription-input') && label.querySelector('input[name="subscription-type"]').checked;
 
                     if (subscriptionLabelClicked) {
+                        console.log('second click detected')
                         subscription.querySelector('.one-time-wrapper').click();
+
+                     if(label.classList.contains('selected-label')) {
+                        
+                     }  
+
+                        
+
                     } else {
                         input.click();
                         label.classList.add('selected-label');
