@@ -15,7 +15,7 @@
 
 {% render 'sticky-atc' %}
 
-<section class="bf-bundle-header-banner">
+<section id="atc-section" class="bf-bundle-header-banner product-form__buttons">
     <div class="container">
         <div class="bf-bundle-banner-content">
             <div class="limited-edition-label"><span>Limited Edition!</span></div>
@@ -26,7 +26,7 @@
                 <span class="plat-price">{{ all_products['wands-bundle'].price | money }}</span>
                 <div class="old-price">{{ all_products['wands-bundle'].compare_at_price | money }}</div>
             </div>
-            <div id="atc-section" class="bf-bundle-banner-btn">
+            <div  class="bf-bundle-banner-btn">
                 <form method="post" action="{{ sub_folder }}/cart/add" class="add-to-cart">
                     <input type="hidden" name="quantity" value="1">
                     <input type="hidden" name="id" value="{{ product.variants.first.id }}" />

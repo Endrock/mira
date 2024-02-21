@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
     
     let target = document.querySelector(".product-form__buttons");
     let observer = new IntersectionObserver( function(entries){
-    var moveBtn = document.querySelector("[data-sticky-bottom] .needsclick");
-    var stickyAtc = document.querySelector('.sticky-atc');
+        var moveBtn = document.querySelector("[data-sticky-bottom] .needsclick");
+        var stickyAtc = document.querySelector('.sticky-atc');
 
         entries.forEach((entry) => {
             if (entry.isIntersecting){
