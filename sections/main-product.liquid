@@ -164,7 +164,7 @@
                       </p>
                     
                     {%- when 'variant_picker' -%}
-                    <div id="atc-section" class="custom_pro_variant">
+                    <div class="custom_pro_variant">
                       {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
                     </div>
                    <div data-rebuy-id="130816" data-rebuy-shopify-product-ids="{{ product.id }}" style="overflow: hidden;"></div>
@@ -273,7 +273,7 @@
       
                       {%- when 'description' -%}
                         {%- if product.description != blank -%}
-                          <div id="atc-section" class="pro-description custom-pro-des">
+                          <div class="pro-description custom-pro-des">
                             <div class="full-text show-hide-desc">{{ product.description }}</div>
                           </div>
                         {%- endif -%}
