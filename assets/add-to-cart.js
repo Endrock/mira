@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var priceRow = priceColumn.querySelector('.price-btn-row');
         var rawPrice = priceRow.querySelector('.plat-price').textContent;
         var flatPrice = Number(priceRow.querySelector('.plat-price').textContent.split('$').pop());
-        var initPrice = rawPrice;
         var oldPrice = priceRow.querySelector(".old-price") ? priceRow.querySelector(".old-price") : null;
         console.log('Old price is:', oldPrice)
 
@@ -18,7 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var atcButton = subscription.querySelector('.atc-button');
         var addSubscriptionBtn = subscription.querySelector('.subscription-btn-endrock');
+
         var labels = subscription.querySelectorAll('label');
+
         var subscriptionInput = subscription.querySelector('[data-subscription-input]');
 
         var badge = document.createElement('div');
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         badge.classList.add('hide');
         priceRow.appendChild(badge)
 
-        
+        subscription.isClicked = false
 
         function formatNumber(number) {
             var formattedNumber = parseFloat(number).toFixed(2);
@@ -41,41 +42,44 @@ document.addEventListener('DOMContentLoaded', function () {
         
         labels.forEach(label => {
 
-            label.isClicked = false
-
-
             label.addEventListener('click', () => {
 
                 var input = label.querySelector('input[name="subscription-type"]');
-                
-                    input.click();
-                    label.classList.add('selected-label');
-                    input.checked = true;
+
+                const subscriptionLabelClicked = label.querySelector('input[name="subscription-type"]').hasAttribute('data-subscription-input') && label.querySelector('input[name="subscription-type"]').checked;
+     
+                    if (subscriptionLabelClicked) {
+                        console.log('second click detected')
+                        console.log(subscription.querySelector('.one-time-wrapper'))
+                        subscription.querySelector('.one-time-wrapper').click();
+                    } else {
+                        input.click();
+                        label.classList.add('selected-label');
+                        input.checked = true;
+                    }
+                  
                     
-                    
-                    label.isClicked = true
                 
 
             });
         });
     
         labels.forEach((label, index) => {
+
             var input = label.querySelector('input[name="subscription-type"]');
+            
+            
 
             input.addEventListener('click', (e) => {
-                console.log("label:", label)
 
                 labels.forEach(otherLabel => {
                     otherLabel.classList.remove('selected-label');
                     input.checked = false;
                 });
-    
-                
-          
-                
+
                     
                 if (input.hasAttribute('data-subscription-input')) {
-                    
+
                     var productPriceAdjustments = product.price_adjustments[0];
                     badge.textContent = ''
                     
@@ -91,23 +95,24 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                     
                 } else {
-                    priceRow.querySelector('.plat-price').textContent = initPrice;
+                    priceRow.querySelector('.plat-price').textContent = rawPrice;
                     if(oldPrice != null) {
                         oldPrice.textContent = '';
                         if(badge.classList.contains('show')) {
                             badge.classList.remove('show');
                             badge.classList.add('hide');
                         }
+                      
                     }
                 }
+                
             });
-        
+            
             if (index === 1) {
                 input.click();
             }
             
         });
-        
         
         var addSubscriptionToCart = () => {
             console.log('variant id:', variantId);
@@ -144,16 +149,15 @@ document.addEventListener('DOMContentLoaded', function () {
         };
         
 
-
         if (sellingPlanId) {
             addSubscriptionBtn.addEventListener('click', () => {
                 addSubscriptionToCart();
             });
         
             atcButton.addEventListener('click', (e) => {
-                var isSubscription = subscriptionInput.checked;
+                
         
-                if (isSubscription) {
+                if (subscriptionInput.checked) {
                     e.preventDefault();
                     addSubscriptionBtn.click();
                 }
@@ -162,8 +166,9 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('No selling plan has been selected');
         }
         
+        
     });
-
+    
 });
 
 
