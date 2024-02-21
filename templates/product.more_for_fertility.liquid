@@ -155,6 +155,7 @@
                   <div class="product-price-col">
                     <div class="price-btn-row">
                       <span class="plat-price">{{ all_products['prenatal-multivitamin'].price | money }}</span>
+                      <div class="old-price">{{ all_products['prenatal-multivitamin'].compare_at_price | money }}</div>
                     </div>
   
                     {% include 'subscription-plp-endrock', with string_variable: 'prenatal-multivitamin', with sub_folder: sub_folder, with num: 39 %}
@@ -178,6 +179,7 @@
                 <div class="product-price-col">
                   <div class="price-btn-row">
                     <span class="plat-price">{{ all_products.academy.price | money }}</span>
+                    <div class="old-price">{{ all_products.academy.compare_at_price | money }}</div>
                   </div>
   
                   {% include 'subscription-plp-endrock', with string_variable: 'academy', with sub_folder: sub_folder, with num: 40 %}
@@ -204,6 +206,7 @@
                 <div class="product-price-col">
                   <div class="price-btn-row">
                     <span class="plat-price">{{ all_products['fertility-meditations'].price | money }}</span>
+                    <div class="old-price">{{ all_products['fertility-meditations'].compare_at_price | money }}</div>
                   </div>
   
                   {% include 'subscription-plp-endrock', with string_variable: 'fertility-meditations', with sub_folder: sub_folder, with num: 41 %}
@@ -323,7 +326,7 @@
                   <div class="product-price-col">
                     <div class="price-btn-row">
                       <span class="plat-price">{{ all_products['panorama-fertility-lab-test'].price | money }}</span>
-                      <div class="old-price"></div>
+                      <div class="old-price">{{ all_products['panorama-fertility-lab-test'].compare_at_price | money }}</div>
                     </div>
   
                     {% include 'subscription-plp-endrock', with string_variable: 'panorama-fertility-lab-test', with sub_folder: sub_folder, with num: 45 %}

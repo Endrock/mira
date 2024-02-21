@@ -3017,6 +3017,10 @@ html[xmlns] .flexslider .slides {
     background-color: #C2DCCB;
   }
 
+.unselected-label {
+    background-color: transparent;
+}
+
 .text-span {
     font-size: 12px !important;
     color: #65717C !important;
@@ -3042,6 +3046,7 @@ html[xmlns] .flexslider .slides {
     font-family: 'Aeonik';
     margin-top: 16px;
     cursor: pointer;
+    font-family: 'Lo';
 }
 
 input[name="subscription-type"] {
@@ -3103,15 +3108,24 @@ input[name="subscription-type"]:checked::before {
 }
 
 .endrock-badge {
-    background-color: #41C15F;
+    background-color: transparent;
     color: white;
     font-size: 12px;
     padding: 4px 16px;
     border-radius: 16px;
-    display: none;
+    display: unset;
     font-weight: normal;
 }
 
+.hide {
+    display: none;
+    background-color: transparent;
+}
+
+.show {
+    display: block;
+    background-color: #41C15F;
+}
 
 
   
