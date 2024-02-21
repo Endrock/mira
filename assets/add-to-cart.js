@@ -4,12 +4,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     allSubscriptions.forEach(subscription => {
 
+       //console.log(subscription)
+
         var priceColumn = subscription.parentElement;
         var priceRow = priceColumn.querySelector('.price-btn-row');
         var rawPrice = priceRow.querySelector('.plat-price').textContent;
         var flatPrice = Number(priceRow.querySelector('.plat-price').textContent.split('$').pop());
         var oldPrice = priceRow.querySelector(".old-price") ? priceRow.querySelector(".old-price") : null;
-        console.log('Old price is:', oldPrice)
+        //console.log('Old price is:', oldPrice)
 
         var variantId = subscription.querySelector('input[name="id"]').value;
         var qty = subscription.querySelector('input[name="quantity"]').value;
@@ -27,8 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         badge.classList.add('endrock-badge');
         badge.classList.add('hide');
         priceRow.appendChild(badge)
-
-        subscription.isClicked = false
+        
 
         function formatNumber(number) {
             var formattedNumber = parseFloat(number).toFixed(2);
@@ -39,36 +40,25 @@ document.addEventListener('DOMContentLoaded', function () {
             
             return `$${formattedNumber}`;
         }
-        
-        labels.forEach(label => {
+    
+        labels.forEach((label, index) => {
+
+            var input = label.querySelector('input[name="subscription-type"]');
 
             label.addEventListener('click', () => {
 
-                var input = label.querySelector('input[name="subscription-type"]');
-
                 const subscriptionLabelClicked = label.querySelector('input[name="subscription-type"]').hasAttribute('data-subscription-input') && label.querySelector('input[name="subscription-type"]').checked;
-     
+
                     if (subscriptionLabelClicked) {
-                        console.log('second click detected')
-                        console.log(subscription.querySelector('.one-time-wrapper'))
                         subscription.querySelector('.one-time-wrapper').click();
                     } else {
                         input.click();
                         label.classList.add('selected-label');
                         input.checked = true;
                     }
-                  
                     
-                
-
+                    
             });
-        });
-    
-        labels.forEach((label, index) => {
-
-            var input = label.querySelector('input[name="subscription-type"]');
-            
-            
 
             input.addEventListener('click', (e) => {
 
@@ -77,23 +67,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     input.checked = false;
                 });
 
-                    
                 if (input.hasAttribute('data-subscription-input')) {
 
-                    var productPriceAdjustments = product.price_adjustments[0];
-                    badge.textContent = ''
-                    
-                    var updatedPrice = flatPrice - (flatPrice * (productPriceAdjustments.value / 100));
-                    var formatedUpdatedPrice = formatNumber(updatedPrice);
-                    oldPrice.textContent = rawPrice;
-                    priceRow.querySelector('.plat-price').textContent = `${formatedUpdatedPrice}`;
-                    badge.textContent = 'SAVE 10%'
-                    
-                    if(badge.classList.contains('hide')) {
-                        badge.classList.remove('hide');
-                        badge.classList.add('show');
-                    }
-                    
+                        var productPriceAdjustments = product.price_adjustments[0];
+                        badge.textContent = ''
+                        
+                        var updatedPrice = flatPrice - (flatPrice * (productPriceAdjustments.value / 100));
+                        var formatedUpdatedPrice = formatNumber(updatedPrice);
+                        oldPrice.textContent = rawPrice;
+                        priceRow.querySelector('.plat-price').textContent = `${formatedUpdatedPrice}`;
+                        badge.textContent = 'SAVE 10%'
+                        
+                        if(badge.classList.contains('hide')) {
+                            badge.classList.remove('hide');
+                            badge.classList.add('show');
+                        }
+                   
                 } else {
                     priceRow.querySelector('.plat-price').textContent = rawPrice;
                     if(oldPrice != null) {
@@ -102,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
                             badge.classList.remove('show');
                             badge.classList.add('hide');
                         }
-                      
                     }
                 }
                 
@@ -165,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             console.log('No selling plan has been selected');
         }
+        
         
         
     });
