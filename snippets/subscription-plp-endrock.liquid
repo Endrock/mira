@@ -10,7 +10,7 @@
       <input type="hidden" name="quantity" value="1">
       <input type="hidden" name="id" value="{{ all_products[product_handle].variants.first.id }}" />
     {% if all_products[product_handle].selling_plan_groups != blank %}                   
-        <label for="subscription-endrock{{ number }}" class="subscriptions-text card-style subscription-wrapper">
+        <label for="subscription-endrock{{ number }}" class="subscriptions-text card-style subscription-wrapper" data-subscription-label>
           <input type="radio" name="subscription-type" id="subscription-endrock{{ number }}" data-subscription-input/>
           <div>Subscribe & save <span class="subscription-highlight">10% OFF</span>
           <p class="text-span">Cancel or change your subscription online any time</p></div>
@@ -24,6 +24,7 @@
     </form>
     
       <button class="subscription-btn-endrock">Add Subscription</button>
+      <button class="resetSubscription-btn-endrock">Reset Subscription</button>
    
 </div>
 

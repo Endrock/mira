@@ -2948,22 +2948,32 @@ html[xmlns] .flexslider .slides {
 
 
 [data-addtocart-variant-a] .product-listing-sec .old-price {
-    position: unset;
+    /* position: unset; */
     text-decoration: line-through;
     display: block;
     width: auto;
 }
 
 [data-addtocart-variant-b] .product-listing-sec .old-price {
-    position: unset;
+    /* position: unset; */
     text-decoration: line-through;
     display: block;
     width: auto;
 }
 
-
-
 [data-addtocart-variant-a] .one-time-wrapper {
+    display: none;
+}
+
+[data-addtocart-variant-a] .product-listing-sec .old-price::after {
+    width: 0%;
+}
+
+[data-addtocart-variant-b] .product-listing-sec .old-price::after {
+    width: 0%;
+}
+
+.resetSubscription-btn-endrock {
     display: none;
 }
 
@@ -3034,7 +3044,7 @@ html[xmlns] .flexslider .slides {
     font-family: 'Gibson-Regular';
 }
 
-.atc-button {
+[data-addtocart-variant-a] .atc-button {
     font-size: 16px;
     font-weight: 500;
     width: 100%;
@@ -3043,7 +3053,22 @@ html[xmlns] .flexslider .slides {
     border-radius: 30px;
     border: transparent;
     color: #003630;
-    font-family: 'Aeonik';
+    font-family: 'AeonikPro-Regular' !important;
+    margin-top: 16px;
+    cursor: pointer;
+    font-family: 'Lo';
+}
+
+[data-addtocart-variant-b] .atc-button {
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    background-color: #F2BFD1;
+    padding: 8px 32px;
+    border-radius: 30px;
+    border: transparent;
+    color: #003630;
+    font-family: 'AeonikPro-Regular' !important;
     margin-top: 16px;
     cursor: pointer;
     font-family: 'Lo';
