@@ -1,6 +1,7 @@
 {{ 'atc-sticky.js' | asset_url | script_tag }}
 
 <style>
+  html{scroll-behavior:smooth}
   @media screen and (min-width: 768px) {
     .sticky-abc {
       display: none !important;
@@ -19,15 +20,15 @@
     bottom: 0px;
   }
 
-  /* [data-sticky-bottom] .needsclick {
-    bottom: 90px !important;
-  } */
+  [data-sticky-top] .needsclick {
+    bottom: 0px !important;
+  }
 
   .sticky-atc {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     position: fixed;
-    z-index: 9999999999;
+    z-index: 1000;
     display: flex;
     width: 100%;
     padding: 8px 24px;
@@ -35,6 +36,14 @@
     gap: 16px;
     background: #fff;
     box-shadow: 0px 0px 13px 0px rgba(0, 54, 48, 0.14);
+  }
+
+  .nav-open .sticky-atc {
+    z-index: 1000 !important;
+  }
+
+  .position-up {
+    z-index: 999999;
   }
 
   .sticky-atc__left {
@@ -62,6 +71,10 @@
     white-space: nowrap;
     border: none;
     color: #fff;
+  }
+
+  .sticky-atc__button:hover {
+    color: #ffff !important;
   }
 
   .sticky-atc__image {
@@ -95,10 +108,7 @@
     <div class="sticky-atc__left">
       <div class="sticky-atc__title">{{ product.title }}</div>
       <div class="sticky-atc__review-box yotpo bottomLine sticky-atc__review-bg" data-product-id="{{ product.id }}"></div>
-      <button id="atcButton" class="sticky-atc__button">Select Your Product</button>
-      <a href="#atc-section">
-      HELLO
-     </a>
+      <a class="sticky-atc__button" href="#atc-section">Select Your Product</a>
     </div>
   </div>
 </div>

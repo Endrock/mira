@@ -1,36 +1,39 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var button = document.getElementById('atcButton');
-
-    if (button) {
-        button.addEventListener('click', function () {
-            const header = document.querySelector('.header');
-            const headerHeight = header.clientHeight;
-
-            var section = document.getElementById('atc-section');
-
-            if (section) {
-                const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-                const scrollToPosition = headerHeight - sectionTop;
-    
-                window.scrollTo({
-                    top: scrollToPosition,
-                    behavior: 'smooth',
-                });
-            } 
-
-        });
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.sticky-atc').style.opacity = '0';
+    function scrollDetect(){
+        var lastScroll = 0;
+      
+        window.onscroll = function() {
+            let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            var topVariation = document.querySelector("[data-sticky-top] .sticky-atc");
+            var header = document.querySelector("header");
+      
+            if (currentScroll > 0 && lastScroll <= currentScroll){
+              lastScroll = currentScroll;
+              topVariation.style.top = '0px'; 
+              topVariation.classList.add("position-up");
+            }else{
+              lastScroll = currentScroll;
+              topVariation.style.top = '70px'; 
+              header.classList.add("position-up");
+            }
+        };
+      }    
+      
+    scrollDetect(); 
 });
 
 document.addEventListener("scroll", function() {
     var moveBtn = document.querySelector(".needsclick");
     var scroll = window.scrollY;
-    var atcSectionPosition = 1300 ;
     var stickyAtc = document.querySelector('.sticky-atc');
+
+    if (window.location.toString().includes("en-int")){
+        var atcSectionPosition = 1300;
+    }
+    else {
+        var atcSectionPosition = 500;
+    }
     
     if (scroll > atcSectionPosition) {
         moveBtn.style.bottom = "90px"
