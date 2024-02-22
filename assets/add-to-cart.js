@@ -77,6 +77,20 @@ document.addEventListener('DOMContentLoaded', function () {
                             resetSubscriptionBtn.click();
                             labels[1].classList.add('selected-label')
                             timesClicked = 0;
+                        } else if (label.hasAttribute('data-subscription-label') && timesClicked === 1) {
+                            var productPriceAdjustments = product.price_adjustments[0];
+                            badge.textContent = ''
+                            
+                            var updatedPrice = flatPrice - (flatPrice * (productPriceAdjustments.value / 100));
+                            var formatedUpdatedPrice = formatNumber(updatedPrice);
+                            oldPrice.textContent = rawPrice;
+                            priceRow.querySelector('.plat-price').textContent = `${formatedUpdatedPrice}`;
+                            badge.textContent = 'SAVE 10%'
+                            
+                            if(badge.classList.contains('hide')) {
+                                badge.classList.remove('hide');
+                                badge.classList.add('show');
+                            }
                         }
 
                         timesClicked++
