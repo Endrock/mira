@@ -91,6 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 badge.classList.remove('hide');
                                 badge.classList.add('show');
                             }
+                        } else if (label.hasAttribute('data-one-time-purchase')) {
+                            label.classList.add('selected-label')
                         }
 
                         timesClicked++
