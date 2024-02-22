@@ -42,7 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         function resetSubscription(subscription) {
-            labels.forEach(label => label.classList.remove('selected-label'));
+            labels.forEach(label => 
+                
+            label.classList.remove('selected-label'));
             subscriptionInput.checked = false;
         
             priceRow.querySelector('.plat-price').textContent = rawPrice;
@@ -61,17 +63,19 @@ document.addEventListener('DOMContentLoaded', function () {
         labels.forEach((label, index) => {
 
             var input = label.querySelector('input[name="subscription-type"]');
+            
 
             label.addEventListener('click', () => {
 
                         input.click();
                         label.classList.add('selected-label');
+                        labels[1].classList.remove('selected-label')
                         input.checked = true;
 
                         if(label.hasAttribute('data-subscription-label') && timesClicked > 0 && timesClicked % 2 === 0) {
                             console.log('clicking subscription label aaa')
                             resetSubscriptionBtn.click();
-
+                            labels[1].classList.add('selected-label')
                             timesClicked = 0;
                         }
 
@@ -79,15 +83,17 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             input.addEventListener('click', (e) => {
-
                 labels.forEach(otherLabel => {
+
                     otherLabel.classList.remove('selected-label');
                     input.checked = false;
+
                 });
 
                 if (input.hasAttribute('data-subscription-input')) {
 
-                        console.log('clicking subscription')
+                        console.log('clicking subscription');
+                        
 
                         var productPriceAdjustments = product.price_adjustments[0];
                         badge.textContent = ''
@@ -120,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
             
             if (index === 1) {
                 input.click();
+                input.parentElement.classList.add('selected-label')
             }
             
         });
