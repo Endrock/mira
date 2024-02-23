@@ -339,6 +339,7 @@
               </div>
             {% endif %}
 
+          {% if all_products['mira-stainless-steel-bottle'].available == true %} 
           <div class="col-md-4">
             <div class="product-col">
                 <div class="product-img-col">
@@ -355,10 +356,15 @@
                         <span class="plat-price">$15.99</span>
                         <div class="old-price"></div>
                     </div>
-                    <a href="{{ sub_folder }}/products/mira-stainless-steel-bottle" class="btn-custom btn-pink">Buy&nbsp;now</a>
+
+                    {% include 'subscription-plp-endrock', with string_variable: 'panorama-fertility-lab-test', with sub_folder: sub_folder, with num: 48 %}
+
+                    <a href="{{ sub_folder }}/products/mira-stainless-steel-bottle" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
                 </div>
             </div>
         </div>
+        {% endif %}
+        {% if all_products['mira-recycled-tri-borough-shopper'].available == true %} 
         <div class="col-md-4">
             <div class="product-col">
                 <div class="product-img-col">
@@ -375,11 +381,14 @@
                         <span class="plat-price">$16.99</span>
                         <div class="old-price"></div>
                     </div>
-                    <a href="{{ sub_folder }}/products/mira-recycled-tri-borough-shopper" class="btn-custom btn-pink">Buy&nbsp;now</a>
+
+                    {% include 'subscription-plp-endrock', with string_variable: 'panorama-fertility-lab-test', with sub_folder: sub_folder, with num: 49 %}
+
+                    <a href="{{ sub_folder }}/products/mira-recycled-tri-borough-shopper" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
                 </div>
             </div>
         </div>
-          
+      {% endif %}
           {% endif %}
         </div>
       </div>
