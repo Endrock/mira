@@ -107,8 +107,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const pricesDiv = subscription.parentElement.querySelector('.price-btn-row');
 
         const prices = {
-            platPrice: pricesDiv.querySelector('.plat-price'),
-            oldPrice: pricesDiv.querySelector('.old-price')
+            platPrice: pricesDiv.querySelector('.plat-price').textContent,
+            oldPrice: pricesDiv.querySelector('.old-price').textContent
         }
 
         const variantId = subscription.querySelector('input[name="id"]').value;
