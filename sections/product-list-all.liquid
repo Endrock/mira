@@ -30,7 +30,6 @@
           </div>
         </div>
         <div
-          id="productlist"
           class="row accessories-product-list bundles-product-list shop-all-slider arrow-slider-nav col-grid"
         >
           {% if localization.market.handle == 'us' %}
@@ -215,7 +214,6 @@
           </div>
         </div>
         <div
-          id="productlist"
           class="row accessories-product-list bundles-product-list shop-all-slider arrow-slider-nav col-grid"
         >
           {% if all_products['wands-bundle'].available == true %}            
@@ -436,7 +434,7 @@
         <div class="heading-1 padd-m-t-0 text-left">
           <h3>Male Fertility</h3>
         </div>
-        <div id="productlist" class="row accessories-product-list bundles-product-list col-grid">
+        <div class="row accessories-product-list bundles-product-list col-grid">
           {% if localization.market.handle == 'international'
             or localization.market.handle == 'us'
             or localization.market.handle == 'au'
@@ -512,7 +510,6 @@
           </div>
         </div>
         <div
-          id="productlist"
           class="row accessories-product-list bundles-product-list shop-all-slider arrow-slider-nav col-grid"
         >
           {% if localization.market.handle == 'us' %}
@@ -529,7 +526,7 @@
                       {{- all_products['basal-body-thermometer'].title -}}
                     </a>
                   </h4>
-                  <p></p>
+                  <p>{{ all_products.basal-body-thermometer.metafields.product_fields.sub_title }}</p>
                   <div class="product-price-col">
                     <div class="price-btn-row">
                       <span class="plat-price">{{ all_products['basal-body-thermometer'].price | money }}</span>
@@ -558,7 +555,7 @@
                   <h4>
                     <a href="{{ sub_folder }}/products/fertility-tea">{{ all_products['fertility-tea'].title }}</a>
                   </h4>
-                  <p></p>
+                  <p>{{ all_products.fertility-tea.metafields.product_fields.sub_title }}</p>
                   <div class="product-price-col">
                     <div class="price-btn-row">
                       <span class="plat-price">{{ all_products['fertility-tea'].price | money }}</span>
@@ -584,7 +581,7 @@
                 <h4>
                   <a href="{{ sub_folder }}/products/fertility-tea-ww">{{ all_products['fertility-tea-ww'].title }}</a>
                 </h4>
-                <p></p>
+                <p>{{ all_products.fertility-tea-ww.metafields.product_fields.sub_title }}</p>
                 <div class="product-price-col">
                   <div class="price-btn-row">
                     <span class="plat-price">{{ all_products['fertility-tea-ww'].price | money }}</span>
@@ -611,7 +608,7 @@
                   <h4>
                     <a href="{{ sub_folder }}/products/pregnancy-tea">{{ all_products['pregnancy-tea'].title }}</a>
                   </h4>
-                  <p></p>
+                  <p>{{ all_products.pregnancy-tea.metafields.product_fields.sub_title }}</p>
                   <div class="product-price-col">
                     <div class="price-btn-row">
                       <span class="plat-price">{{ all_products['pregnancy-tea'].price | money }}</span>
@@ -638,7 +635,7 @@
                       {{- all_products['prenatal-multivitamin'].title -}}
                     </a>
                   </h4>
-                  <p></p>
+                  <p>{{ all_products.prenatal-multivitamin.metafields.product_fields.sub_title }}</p>
                   <div class="product-price-col">
                     <div class="price-btn-row">
                       <span class="plat-price">{{ all_products['prenatal-multivitamin'].price | money }}</span>
@@ -663,7 +660,7 @@
                   ></a>
                 </div>
                 <h4><a href="{{ sub_folder }}/products/academy">Online Fertility Course</a></h4>
-                <p></p>
+                <p>{{ all_products.academy.metafields.product_fields.sub_title }}</p>
                 <div class="product-price-col">
                   <div class="price-btn-row">
                     <span class="plat-price">{{ all_products.academy.price | money }}</span>
@@ -691,7 +688,7 @@
                     {{- all_products['fertility-meditations'].title -}}
                   </a>
                 </h4>
-                <p></p>
+                <p>{{ all_products.fertility-meditations.metafields.product_fields.sub_title }}</p>
                 <div class="product-price-col">
                   <div class="price-btn-row">
                     <span class="plat-price">{{ all_products['fertility-meditations'].price | money }}</span>
@@ -719,7 +716,7 @@
                       {{- all_products['biogenesis-fertility-lubricant'].title -}}
                     </a>
                   </h4>
-                  <p></p>
+                  <p>{{ all_products.biogenesis-fertility-lubricant.metafields.product_fields.sub_title }}</p>
                   <div class="product-price-col">
                     <div class="price-btn-row">
                       <span class="plat-price">{{ all_products['biogenesis-fertility-lubricant'].price | money }}</span>
@@ -751,7 +748,7 @@
                       {{- all_products['panorama-fertility-lab-test'].title -}}
                     </a>
                   </h4>
-                  <p></p>
+                  <p>{{ all_products.panorama-fertility-lab-test.metafields.product_fields.sub_title }}</p>
                   <div class="product-price-col">
                     <div class="price-btn-row">
                       <span class="plat-price">{{ all_products['panorama-fertility-lab-test'].price | money }}</span>
@@ -767,6 +764,50 @@
                 </div>
               </div>
             {% endif %}
+
+          <div class="col-md-12">
+            <div class="product-col">
+                <div class="product-img-col">
+                    <a href="{{ sub_folder }}/products/mira-stainless-steel-bottle"><img src="{{ 'bottle-shop-all.png' | file_img_url: '' }}" alt=""></a>
+                </div>
+                <h4>
+                    <a href="{{ sub_folder }}/products/mira-stainless-steel-bottle">
+                        Mira Stainless Steel Bottle
+                    </a>
+                </h4>
+                <p></p>
+                <div class="product-price-col">
+                    <div class="price-btn-row">
+                        <span class="plat-price">$15.99</span>
+                        <div class="old-price"></div>
+                    </div>
+                    <a href="{{ sub_folder }}/products/mira-stainless-steel-bottle" class="btn-custom btn-pink">Buy&nbsp;now</a>
+                </div>
+            </div>
+        </div>
+
+          <div class="col-md-12">
+              <div class="product-col">
+                  <div class="product-img-col">
+                      <a href="{{ sub_folder }}/products/mira-recycled-tri-borough-shopper"><img src="{{ 'shopper-shop-all.png' | file_img_url: '' }}" alt=""></a>
+                  </div>
+                  <h4>
+                      <a href="{{ sub_folder }}/products/mira-recycled-tri-borough-shopper">
+                          Mira Recycled Tri-Borough Shopper
+                      </a>
+                  </h4>
+                  <p></p>
+                  <div class="product-price-col">
+                      <div class="price-btn-row">
+                          <span class="plat-price">$16.99</span>
+                          <div class="old-price"></div>
+                      </div>
+                      <a href="{{ sub_folder }}/products/mira-recycled-tri-borough-shopper" class="btn-custom btn-pink">Buy&nbsp;now</a>
+                  </div>
+              </div>
+          </div>
+
+          
           {% endif %}
 
           {% comment %}

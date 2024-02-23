@@ -71,7 +71,9 @@
           product.handle == 'panorama-fertility-lab-test' or 
           product.handle == 'fertility-max-starter-kit' or
           product.handle == 'fertility-plus-starter-kit' or
-          product.handle == 'mira-max-ovum-bundle'
+          product.handle == 'mira-max-ovum-bundle' or
+          product.handle == 'mira-recycled-tri-borough-shopper' or
+          product.handle == 'mira-stainless-steel-bottle'
         %}
           <div class="col-lg-6 new-custom-product-detail">
               <product-info
@@ -170,24 +172,16 @@
                        {% render 'yotpo-subs-product-page-widget' %}
                      </div>
                     <div class="price-and-button custom_pro_price-btn">
-                      
                       <div class="custom-buy-button">
-        
                       {% if product.handle == 'fertility-tea' %}
                         <a href="https://app.monstercampaigns.com/c/lc6objz5jjg4mbkugvkf/" target="_blank" rel="noopener noreferrer" class="btn-custom btn-pink">Join the waiting list</a>
                       {% else %}
                         {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
                       {% endif %}
-                    
-                      
-                      
                       </div> 
                     </div>
         
-                                  
-                    <!-- <div style="" class="low-price-sec sezzle-widget">
-                    </div> -->
-        
+                      {% render 'pdm-estimated-delivery' %}
                       <div {{ block.shopify_attributes }}>
                         {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
                         {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
@@ -195,6 +189,7 @@
                           {{ form | payment_terms }}
                         {%- endform -%}
                       </div>
+
         
                       {%- when 'description' -%}
                       {%- if product.description != blank -%}
@@ -389,6 +384,7 @@
                             {% endif %}
                           </div>
                         </div>
+                        {% render 'pdm-estimated-delivery' %}
                         <div {{ block.shopify_attributes }}>
                           {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
                           {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}

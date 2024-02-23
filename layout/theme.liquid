@@ -454,7 +454,6 @@
   </head>
 
   <body
-    data-dual-col="true"
     class="gradient template-{{ template | split: '.' | first }} {{ template }}{% if template == "product" %} {{ product.handle }}{% endif %} {% for tag in product.tags %} {{ tag }}{% endfor %}"
     data-addtocart-original
   >
@@ -467,9 +466,8 @@
     {%- endif -%}
 
     {% sections 'header-group' %}
-    <div id="om-jjjxco9itpcbvmc8dwk6-holder"></div>
-    <div id="om-oph4wyzrkxboyx7oef9t-holder"></div>
     <div id="om-emfefa01a70ipincu7s0-holder"></div>
+    <div id="om-ebmyg76gzxqf6qcgvacc-holder"></div>
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
@@ -654,7 +652,8 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Add To Cart -->
-    
+    <!-- Widget : Gift with Purchase - HAW Merch -->
+    <div data-rebuy-id="134542"></div>
+    <!-- End Widget : Gift with Purchase - HAW Merch -->
   </body>
 </html>

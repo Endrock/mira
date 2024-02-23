@@ -25,7 +25,7 @@
             <h3>More for Fertility</h3>
           </div>
         </div>
-        <div id="productlist" class="row accessories-product-list bundles-product-list col-grid">
+        <div class="row accessories-product-list bundles-product-list col-grid">
           {% if localization.market.handle == 'us' or localization.market.handle == 'shop' %}
             {% if all_products['basal-body-thermometer'].available == true %}              
               <div class="col-md-4">
@@ -338,6 +338,48 @@
                 </div>
               </div>
             {% endif %}
+
+          <div class="col-md-4">
+            <div class="product-col">
+                <div class="product-img-col">
+                    <a href="{{ sub_folder }}/products/mira-stainless-steel-bottle"><img src="{{ 'bottle-shop-all.png' | file_img_url: '' }}" alt=""></a>
+                </div>
+                <h4>
+                    <a href="{{ sub_folder }}/products/mira-stainless-steel-bottle">
+                        Mira Stainless Steel Bottle
+                    </a>
+                </h4>
+                <p></p>
+                <div class="product-price-col">
+                    <div class="price-btn-row">
+                        <span class="plat-price">$15.99</span>
+                        <div class="old-price"></div>
+                    </div>
+                    <a href="{{ sub_folder }}/products/mira-stainless-steel-bottle" class="btn-custom btn-pink">Buy&nbsp;now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-col">
+                <div class="product-img-col">
+                    <a href="{{ sub_folder }}/products/mira-recycled-tri-borough-shopper"><img src="{{ 'shopper-shop-all.png' | file_img_url: '' }}" alt=""></a>
+                </div>
+                <h4>
+                    <a href="{{ sub_folder }}/products/mira-recycled-tri-borough-shopper">
+                        Mira Recycled Tri-Borough Shopper
+                    </a>
+                </h4>
+                <p></p>
+                <div class="product-price-col">
+                    <div class="price-btn-row">
+                        <span class="plat-price">$16.99</span>
+                        <div class="old-price"></div>
+                    </div>
+                    <a href="{{ sub_folder }}/products/mira-recycled-tri-borough-shopper" class="btn-custom btn-pink">Buy&nbsp;now</a>
+                </div>
+            </div>
+        </div>
+          
           {% endif %}
         </div>
       </div>
