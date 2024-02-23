@@ -249,7 +249,7 @@
                         {% render block %}
                       {%- when 'text' -%}
                       {%- when 'title' -%}
-                        <div class="custom-pro-title-section">
+                        <div  id="atc-section" class="custom-pro-title-section">
                           <h1>{{ product.title | escape }}</h1>
                           <div class="include-wat">{{ product.metafields.product_fields.sub_title }}</div>
                           <div class="review-box yotpo bottomLine" data-product-id="{{ product.id }}"></div>
