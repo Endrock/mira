@@ -25,13 +25,16 @@ document.addEventListener('DOMContentLoaded', function () {
         otherInput.click()
     }
 
-    function showDiscount(subscription) {
+    function showDiscount(subscription, prices) {
         var productPriceAdjustments = product.selling_plans.find(plan => plan.name === "Every 1 month").price_adjustments[0].value / 100;
         const pricesDiv = subscription.parentElement.querySelector('.price-btn-row');
+
         const platPrice = pricesDiv.querySelector('.plat-price');
         const oldPrice = pricesDiv.querySelector('.old-price');
-        subscriptionElement.platPrice = platPrice.textContent;
-        subscriptionElement.oldPrice = oldPrice.textContent;
+
+        prices.platPrice = platPrice.textContent;
+        prices.oldPrice = oldPrice.textContent;
+
         const badge = pricesDiv.querySelector('.endrock-badge ');
         badge.textContent = `SAVE ${productPriceAdjustments * 100}%`;
 
@@ -46,13 +49,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function hideDiscount(subscription) {
+    function hideDiscount(subscription, prices) {
         const pricesDiv = subscription.parentElement.querySelector('.price-btn-row');
+
         const platPrice = pricesDiv.querySelector('.plat-price');
         const oldPrice = pricesDiv.querySelector('.old-price');
+
         const badge = pricesDiv.querySelector('.endrock-badge ');
 
-        platPrice.textContent = subscriptionElement.platPrice;
+        platPrice.textContent = prices.platPrice;
         oldPrice.textContent = '';
 
         if (badge.classList.contains('show')) {
@@ -99,6 +104,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     allSubscriptions.forEach(subscription => {
 
+        const prices = {
+
+        }
+
         const variantId = subscription.querySelector('input[name="id"]').value;
         const qty = subscription.querySelector('input[name="quantity"]').value;
         const sellingPlanId = subscription.querySelector('form').getAttribute('data-selling-plan') ? subscription.querySelector('form').getAttribute('data-selling-plan') : null;
@@ -132,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (isSubscriptionInput && subscriptionElement.subscribed === 1) {
                     console.log('clicking subscription !');
                     setSubscription(input, otherInput);
-                    showDiscount(subscription);
+                    showDiscount(subscription, prices);
                     subscriptionElement.subscribed++;
                     subscriptionElement.isSubscribed = true;
                 } else if (isSubscriptionInput && subscriptionElement.subscribed === 2) {
@@ -141,14 +150,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     //subscriptionElement.subscribed = false;
                     
                     unsubscribe(input, otherInput);
-                    hideDiscount(subscription);
+                    hideDiscount(subscription, prices);
                     subscriptionElement.subscribed = 1;
                     subscriptionElement.isSubscribed = false;
                 } else if (isOneTimePurchaseInput) {
                     console.log('clicking one time purchase !');
                     console.log('other input:', otherInput)
                     setSubscription(input, otherInput);
-                    hideDiscount(subscription);
+                    hideDiscount(subscription, prices);
                     subscriptionElement.subscribed = 1
                     subscriptionElement.isSubscribed = false;
                 }
