@@ -104,8 +104,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     allSubscriptions.forEach(subscription => {
 
-        const prices = {
+        const pricesDiv = subscription.parentElement.querySelector('.price-btn-row');
 
+        const prices = {
+            platPrice: pricesDiv.querySelector('.plat-price'),
+            oldPrice: pricesDiv.querySelector('.old-price')
         }
 
         const variantId = subscription.querySelector('input[name="id"]').value;
@@ -121,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function () {
         badge.textContent = '';
         badge.classList.add('endrock-badge');
         badge.classList.add('hide');
-        const pricesDiv = subscription.parentElement.querySelector('.price-btn-row');
         pricesDiv.appendChild(badge)
         
         inputs.forEach(input => {
