@@ -99,9 +99,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     allSubscriptions.forEach(subscription => {
 
-        subscriptionElement.variantId = subscription.querySelector('input[name="id"]').value;
-        subscriptionElement.qty = subscription.querySelector('input[name="quantity"]').value;
-        subscriptionElement.sellingPlanId = subscription.querySelector('form').getAttribute('data-selling-plan') ? subscription.querySelector('form').getAttribute('data-selling-plan') : null;
+        const variantId = subscription.querySelector('input[name="id"]').value;
+        const qty = subscription.querySelector('input[name="quantity"]').value;
+        const sellingPlanId = subscription.querySelector('form').getAttribute('data-selling-plan') ? subscription.querySelector('form').getAttribute('data-selling-plan') : null;
 
         var atcButton = subscription.querySelector('.atc-button');
         var addSubscriptionBtn = subscription.querySelector('.subscription-btn-endrock');
@@ -131,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                 if (isSubscriptionInput && subscriptionElement.subscribed === 1) {
                     console.log('clicking subscription !');
-                    subscriptionElement.subscribed = true;
                     setSubscription(input, otherInput);
                     showDiscount(subscription);
                     subscriptionElement.subscribed++;
@@ -157,9 +156,9 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        if (subscriptionElement.sellingPlanId) {
+        if (sellingPlanId) {
             addSubscriptionBtn.addEventListener('click', () => {
-                addSubscriptionToCart(subscriptionElement.variantId, subscriptionElement.qty, subscriptionElement.sellingPlanId);
+                addSubscriptionToCart(variantId, qty, sellingPlanId);
             });
         
             atcButton.addEventListener('click', (e) => {
