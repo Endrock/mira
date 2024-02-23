@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const prices = {
             platPrice: pricesDiv.querySelector('.plat-price').textContent,
-            oldPrice: pricesDiv.querySelector('.old-price').textContent
+            oldPrice: pricesDiv.querySelector('.old-price')
         }
 
         const variantId = subscription.querySelector('input[name="id"]').value;
