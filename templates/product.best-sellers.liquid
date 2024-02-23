@@ -25,7 +25,7 @@
                 </div>
                 <div class="row accessories-product-list bundles-product-list" id="productlist">
                 
-                
+                    {% if all_products['mira-max-test-wands'].available == true %}  
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col">
@@ -53,12 +53,17 @@
                                     <div class="old-price">{{ all_products['mira-max-test-wands'].compare_at_price |
                                         money }}</div>
                                 </div>
-                                <a href="{{ sub_folder }}/products/mira-max-test-wands" class="btn-custom btn-pink">Buy
+
+                                {% include 'subscription-plp-endrock', with string_variable: 'mira-max-test-wands', with sub_folder: sub_folder, with num: 160 %}
+
+                                <a href="{{ sub_folder }}/products/mira-max-test-wands" class="btn-custom btn-pink" data-plpBtn="true">Buy
                                     now</a>
                             </div>
                         </div>
                     </div>
+                    {% endif %}
 
+                    {% if all_products['fertility-max-starter-kit'].available == true %}  
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col"><a
@@ -77,12 +82,17 @@
                                     <div class="old-price">{{ all_products['fertility-max-starter-kit'].compare_at_price
                                         | money }}</div>
                                 </div>
+
+                                {% include 'subscription-plp-endrock', with string_variable: 'fertility-max-starter-kit', with sub_folder: sub_folder, with num: 161 %}
+
                                 <a href="{{ sub_folder }}/products/fertility-max-starter-kit"
-                                    class="btn-custom btn-pink">Buy now</a>
+                                    class="btn-custom btn-pink" data-plpBtn="true">Buy now</a>
                             </div>
                         </div>
                     </div>
+                    {% endif %}
 
+                    {% if all_products['wands-bundle'].available == true %}  
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col">
@@ -101,12 +111,19 @@
                                     <div class="old-price">{{ all_products['wands-bundle'].compare_at_price |
                                         money }}</div>
                                 </div>
-                                <a href="{{ sub_folder }}/products/wands-bundle" class="btn-custom btn-pink">Buy
+
+                                {% include 'subscription-plp-endrock', with string_variable: 'wands-bundle', with sub_folder: sub_folder, with num: 162 %}
+
+                                <a href="{{ sub_folder }}/products/wands-bundle" class="btn-custom btn-pink" data-plpBtn="true">Buy
                                     now</a>
                             </div>
                         </div>
                     </div>
+                    {% endif %}
+
                 {% if localization.market.handle == 'us' %}
+
+                    {% if all_products['basal-body-thermometer'].available == true %}  
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col">
@@ -135,12 +152,18 @@
                                     <div class="old-price">{{
                                         all_products['basal-body-thermometer'].compare_at_price | money }}</div>
                                 </div>
+
+                                {% include 'subscription-plp-endrock', with string_variable: 'basal-body-thermometer', with sub_folder: sub_folder, with num: 163 %}
+
                                 <a href="{{ sub_folder }}/products/basal-body-thermometer"
-                                    class="btn-custom btn-pink">Buy now</a>
+                                    class="btn-custom btn-pink" data-plpBtn="true">Buy now</a>
                             </div>
                         </div>
                     </div>
+                    {% endif %}
 
+
+                    {% if all_products['prenatal-multivitamin'].available == true %}  
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col">
@@ -169,12 +192,17 @@
                                     <div class="old-price">{{
                                         all_products['prenatal-multivitamin'].compare_at_price | money }}</div>
                                 </div>
+
+                                {% include 'subscription-plp-endrock', with string_variable: 'prenatal-multivitamin', with sub_folder: sub_folder, with num: 164 %}
+
                                 <a href="{{ sub_folder }}/products/prenatal-multivitamin"
-                                    class="btn-custom btn-pink">Buy now</a>
+                                    class="btn-custom btn-pink" data-plpBtn="true">Buy now</a>
                             </div>
                         </div>
                     </div>
+                    {% endif %}
 
+                    {% if all_products['get-pregnant-bundle'].available == true %}  
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col">
@@ -203,12 +231,18 @@
                                     <div class="old-price">{{
                                         all_products['get-pregnant-bundle'].compare_at_price | money }}</div>
                                 </div>
+
+                                {% include 'subscription-plp-endrock', with string_variable: 'get-pregnant-bundle', with sub_folder: sub_folder, with num: 165 %}
+
                                 <a href="{{ sub_folder }}/products/get-pregnant-bundle"
-                                    class="btn-custom btn-pink">Buy now</a>
+                                    class="btn-custom btn-pink" data-plpBtn="true">Buy now</a>
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 {% endif %}
+
+                    {% if all_products['coaching'].available == true %} 
                     <div class="col-md-4">
                         <div class="product-col">
                             <div class="product-img-col">
@@ -237,11 +271,15 @@
                                     <div class="old-price">{{
                                         all_products['coaching'].compare_at_price | money }}</div>
                                 </div>
+
+                                {% include 'subscription-plp-endrock', with string_variable: 'coaching', with sub_folder: sub_folder, with num: 166 %}
+
                                 <a href="{{ sub_folder }}/products/coaching"
-                                    class="btn-custom btn-pink">Buy now</a>
+                                    class="btn-custom btn-pink" data-plpBtn="true">Buy now</a>
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 
                 {% comment %}
                     {% if localization.market.handle == 'zzz' %}
@@ -295,14 +333,9 @@
     </div>
 </div>
 
-{% schema %}
-{
-  "name": "Best Sellers List",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Best Sellers List"
-    }
-  ]
-}
-{% endschema %}
+<script>
+    // access the every one mont subscription: all_products['fertility-plus-test-wands'].selling_plan_groups[0].selling_plans[0].id
+    const product = {{ all_products['fertility-plus-test-wands'].selling_plan_groups[0] | json }}
+    console.log('The Product:', product)
+</script>
+

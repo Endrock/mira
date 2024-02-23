@@ -218,6 +218,6 @@
 
 <script>
   // access the every one mont subscription: all_products['fertility-plus-test-wands'].selling_plan_groups[0].selling_plans[0].id
-  const product = {{ all_products['fertility-plus-test-wands'].selling_plan_groups[0].selling_plans[0] | json }}
+  const product = {{ all_products['fertility-plus-test-wands'].selling_plan_groups[0] | json }}
   console.log('The Product:', product)
 </script>
