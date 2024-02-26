@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.sticky-atc').style.opacity = '0';
+
     function scrollDetect(){
         var lastScroll = 0;
       
         window.onscroll = function() {
             let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
             var topVariation = document.querySelector("[data-sticky-top] .sticky-atc");
-            var header = document.querySelector("header");
+            var header = document.querySelector(".header");
       
             if (currentScroll > 0 && lastScroll <= currentScroll){
               lastScroll = currentScroll;
@@ -20,30 +21,38 @@ document.addEventListener('DOMContentLoaded', function () {
         };
       }    
       
-    scrollDetect(); 
-});
+    scrollDetect();
 
-document.addEventListener("scroll", function() {
-    var moveBtn = document.querySelector(".needsclick");
-    var scroll = window.scrollY;
-    var stickyAtc = document.querySelector('.sticky-atc');
-
-    if (window.location.toString().includes("en-int")){
-        var atcSectionPosition = 1300;
-    }
-    else {
-        var atcSectionPosition = 500;
-    }
+    let options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 1.0,
+    };
     
-    if (scroll > atcSectionPosition) {
-        moveBtn.style.bottom = "90px"
-        stickyAtc.style.opacity = '1';
-        stickyAtc.style.display = 'flex';
-    } else {
-        stickyAtc.style.opacity = '0';
-        stickyAtc.style.display = 'none';
-        moveBtn.style.bottom = "0px"
-    }
+    let target = document.querySelector(".product-form__buttons");
+    var varTop = target.getBoundingClientRect().top;
+
+    let observer = new IntersectionObserver( function(entries){
+        var moveBtn = document.querySelector("[data-sticky-bottom] .needsclick");
+        var stickyAtc = document.querySelector('.sticky-atc');
+
+        entries.forEach((entry) => {
+            if (entry.isIntersecting){
+                stickyAtc.style.opacity = '0';
+                stickyAtc.style.display = 'none';
+                moveBtn.style.bottom = '0px';
+            }
+            else {
+                if( window.scrollY > varTop){
+                    stickyAtc.style.opacity = '1';
+                    stickyAtc.style.display = 'flex';    
+                    moveBtn.style.bottom = '90px';
+                }
+            }
+        });
+    } , options );
+
+    observer.observe(target);
 });
 
 

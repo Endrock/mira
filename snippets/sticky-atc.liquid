@@ -43,7 +43,7 @@
   }
 
   .position-up {
-    z-index: 999999;
+    z-index: 999998;
   }
 
   .sticky-atc__left {
@@ -90,10 +90,11 @@
     font-weight: 300;
     line-height: 17px;
   }
+
 </style>
 
 <div class="sticky-abc">
-  <div class="sticky-atc">
+  <div class="sticky-atc" id="sticky-atc-custom">
     <div class="sticky-atc__image">
       {{
         product.media[0].preview_image

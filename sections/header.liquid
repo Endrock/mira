@@ -259,6 +259,14 @@
     </div>
 </header>
 
+<script>
+    function openNav() {
+        var element = document.getElementById("sticky-atc-custom");
+        element.classList.remove("position-up");                          
+    }
+    document.querySelector('.top-head-right.side-bar-new.dropdown').addEventListener('click', openNav);
+</script>
+
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
 {%- endif -%}
