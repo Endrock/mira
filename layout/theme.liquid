@@ -455,7 +455,7 @@
 
   <body
     class="gradient template-{{ template | split: '.' | first }} {{ template }}{% if template == "product" %} {{ product.handle }}{% endif %} {% for tag in product.tags %} {{ tag }}{% endfor %}"
-    data-addtocart-variant-b
+    data-addtocart-original
   >
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
