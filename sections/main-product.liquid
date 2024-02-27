@@ -249,7 +249,7 @@
                         {% render block %}
                       {%- when 'text' -%}
                       {%- when 'title' -%}
-                        <div  id="atc-section" class="custom-pro-title-section">
+                        <div class="custom-pro-title-section">
                           <h1>{{ product.title | escape }}</h1>
                           <div class="include-wat">{{ product.metafields.product_fields.sub_title }}</div>
                           <div class="review-box yotpo bottomLine" data-product-id="{{ product.id }}"></div>
@@ -270,14 +270,18 @@
                             </div>
                           {%- endif -%}
                         </div>
-      
+
+                        {% if product.handle == 'academy' or product.handle == 'fertility-meditations' or product.handle contains 'home-sperm-test' %}
+                          <div id="atc-section"></div>
+                        {% endif %}
+                        
                       {%- when 'description' -%}
                         {%- if product.description != blank -%}
                           <div class="pro-description custom-pro-des">
                             <div class="full-text show-hide-desc">{{ product.description }}</div>
                           </div>
                         {%- endif -%}
-                        
+
                         {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
                           <div class="product__tax caption rte">
                             {%- if shop.taxes_included -%}
@@ -289,6 +293,10 @@
                           </div>
                         {%- endif -%}
       
+                        {% if product.handle != 'academy' or product.handle != 'fertility-meditations' or product.handle != 'home-sperm-test' %}
+                          <div id="atc-section"></div>
+                        {% endif %}
+
                       {%- when 'inventory' -%}
                         <p
                           class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -353,7 +361,7 @@
                             product_form_id: product_form_id
                           %}
                         </div>
-      
+                        
                       {%- when 'price' -%}
                         <div class="custom_pro_yotpo">
                           {% render 'yotpo-subs-product-page-widget' %}
