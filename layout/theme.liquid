@@ -455,6 +455,7 @@
 
   <body
     class="gradient template-{{ template | split: '.' | first }} {{ template }}{% if template == "product" %} {{ product.handle }}{% endif %} {% for tag in product.tags %} {{ tag }}{% endfor %}"
+    data-addtocart-original
   >
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
@@ -513,15 +514,18 @@
     {%- endif -%}
 
     <script type="text/javascript" src="{{ 'bootstrap.js' | asset_url }}" async="async"></script>
-    <script type="text/javascript" src="{{ 'owl.carousel.js' | asset_url }}"></script>
-    <script type="text/javascript" src="{{ 'viewportchecker.js' | asset_url }}"></script>
+
+    <script type="text/javascript" src="{{ 'owl.carousel.js' | asset_url }}" defer="defer"></script>
+    <script type="text/javascript" src='{{ 'add-to-cart.js' | asset_url}}' defer='defer'></script>
+
+    <script type="text/javascript" src="{{ 'viewportchecker.js' | asset_url }}" defer="defer"></script>
     <script type="text/javascript" src="{{ 'jquery.flexslider.js' | asset_url }}" defer="defer"></script>
     <script
       src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
       async="async"
       id="lottie-player-js"
     ></script>
-    <script type="text/javascript" src="{{ 'custom.js' | asset_url }}"></script>
+    <script type="text/javascript" src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
 
     {% if template == 'cart' %}
       <script>

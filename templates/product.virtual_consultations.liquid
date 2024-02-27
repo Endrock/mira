@@ -23,27 +23,32 @@
         <div class="heading-1 padd-m-t-0 text-left">
           <h3>Virtual Consultations</h3>
         </div>
-        <div class="row accessories-product-list bundles-product-list col-grid">
-          <div class="col-md-4">
-            <div class="product-col">
-              <div class="product-img-col">
-                <a href="{{ sub_folder }}/products/coaching"
-                  ><img src="{{ 'Virtual_OBGYN_Consultation.png' | file_img_url: '' }}" alt=""
-                ></a>
-              </div>
-              <h4>
-                <a href="{{ sub_folder }}/products/coaching">{{ all_products.coaching.title }}</a>
-              </h4>
-              <p>{{ all_products.coaching.metafields.product_fields.sub_title }}</p>
-              <div class="product-price-col">
-                <div class="price-btn-row">
-                  <span class="plat-price">{{ all_products.coaching.first_available_variant.price | money }}</span>
-                  <div class="old-price">{{ all_products.coaching.compare_at_price | money }}</div>
+        <div id="productlist" class="row accessories-product-list bundles-product-list col-grid">
+          {% if all_products.coaching.available == true %}            
+            <div class="col-md-4">
+              <div class="product-col">
+                <div class="product-img-col">
+                  <a href="{{ sub_folder }}/products/coaching"
+                    ><img src="{{ 'Virtual_OBGYN_Consultation.png' | file_img_url: '' }}" alt=""
+                  ></a>
                 </div>
-                <a href="{{ sub_folder }}/products/coaching" class="btn-custom btn-pink">Buy&nbsp;now</a>
+                <h4>
+                  <a href="{{ sub_folder }}/products/coaching">{{ all_products.coaching.title }}</a>
+                </h4>
+                <p>{{ all_products.coaching.metafields.product_fields.sub_title }}</p>
+                <div class="product-price-col">
+                  <div class="price-btn-row">
+                    <span class="plat-price">{{ all_products.coaching.first_available_variant.price | money }}</span>
+                    <div class="old-price">{{ all_products.coaching.compare_at_price | money }}</div>
+                  </div>
+  
+                  {% include 'subscription-plp-endrock', with string_variable: 'coaching', with sub_folder: sub_folder, with num: 32 %}
+  
+                  <a href="{{ sub_folder }}/products/coaching" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                </div>
               </div>
             </div>
-          </div>
+          {% endif %}
         </div>
       </div>
       <div class="mira-flat-banner mira-fertility-banner">
@@ -77,3 +82,9 @@
     </div>
   </div>
 </div>
+
+<script>
+  // access the every one mont subscription: all_products['fertility-plus-test-wands'].selling_plan_groups[0].selling_plans[0].id
+  const product = {{ all_products['fertility-plus-test-wands'].selling_plan_groups[0] | json }}
+  console.log('The Product:', product)
+</script>

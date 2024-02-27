@@ -2879,6 +2879,103 @@ html[xmlns] .flexslider .slides {
 .pro-description .morelink {
     display: block;
 }
+/* ============================
+        PLP ADD TO CART START
+ ============================ */
+
+ .subscriptions {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    [data-addtocart-variant-a] .new-layout-listing .product-col .product-price-col {
+        justify-content: unset;
+        /* flex-wrap: nowrap; */
+        display: grid;
+        align-items: center;
+    }
+
+    [data-addtocart-variant-b] .new-layout-listing .product-col .product-price-col {
+        justify-content: unset;
+        /* flex-wrap: nowrap; */
+        display: grid;
+        align-items: center;
+    }
+}
+
+@media  (min-width: 768px){
+[data-addtocart-variant-a] .new-layout-listing .product-listing-sec .product-col .product-price-col {
+        justify-content: space-between;
+        display: block;
+        align-items: center;
+    }
+
+    [data-addtocart-variant-b] .new-layout-listing .product-listing-sec .product-col .product-price-col {
+        justify-content: space-between;
+        display: block;
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 1199px) and (min-width: 768px){
+    [data-addtocart-variant-a] .new-layout-listing .product-listing-sec .old-price {
+            font-size: 15px; 
+        }
+
+    [data-addtocart-variant-b] .new-layout-listing .product-listing-sec .old-price {
+        font-size: 15px; 
+    }
+} 
+
+@media screen and (min-width: 1199px) {
+    [data-addtocart-variant-a] .new-layout-listing .product-listing-sec .old-price {
+        font-size: 21px;
+        text-decoration: line-through;
+    }
+    
+    [data-addtocart-variant-b] .new-layout-listing .product-listing-sec .old-price {
+        font-size: 21px;
+        text-decoration: line-through;
+    }
+}
+
+@media (min-width: 766px) and (max-width: 992px) {
+    .endrock-badge {
+        padding: 4px 8px !important;
+    }
+}
+
+
+[data-addtocart-variant-a] .product-listing-sec .old-price {
+    /* position: unset; */
+    text-decoration: line-through;
+    display: block;
+    width: auto;
+}
+
+[data-addtocart-variant-b] .product-listing-sec .old-price {
+    /* position: unset; */
+    text-decoration: line-through;
+    display: block;
+    width: auto;
+}
+
+[data-addtocart-variant-a] .one-time-wrapper {
+    display: none;
+}
+
+[data-addtocart-variant-a] .product-listing-sec .old-price::after {
+    width: 0%;
+}
+
+[data-addtocart-variant-b] .product-listing-sec .old-price::after {
+    width: 0%;
+}
+
+.resetSubscription-btn-endrock {
+    display: none;
+}
 
 .product-price-col {
     border-bottom: 1px solid #B6C2CD;
@@ -2888,6 +2985,183 @@ html[xmlns] .flexslider .slides {
     align-items: center;
     flex-wrap: wrap;
 }
+
+[data-addtocart-variant-a] .subscriptions {
+    display: block;
+}
+
+[data-addtocart-variant-b] .subscriptions {
+    display: block;
+}
+
+[data-addtocart-variant-a] .btn-custom[data-plpBtn="true"] {
+    display: none;
+}
+
+[data-addtocart-variant-b] .btn-custom[data-plpBtn="true"] {
+    display: none;
+}
+
+.subscriptions-text{
+    font-family: 'Gibson-Regular';
+    font-size: 14px;
+    color: #003630;
+}
+
+.subscription-highlight {
+    color: #3BAA35;
+}
+
+.card-style {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #DEEEE3;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+/*test*/
+
+
+
+/*====*/
+.selected-label {
+    background-color: #C2DCCB;
+  }
+
+.unselected-label {
+    background-color: transparent;
+}
+
+.text-span {
+    font-size: 12px !important;
+    color: #65717C !important;
+    flex-basis: 100%;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.subscriptions label {
+    cursor: pointer;
+    font-family: 'Gibson-Regular';
+}
+
+[data-addtocart-variant-a] .atc-button {
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    background-color: #F2BFD1;
+    padding: 8px 32px;
+    border-radius: 30px;
+    border: transparent;
+    color: #003630;
+    font-family: 'AeonikPro-Regular' !important;
+    margin-top: 16px;
+    cursor: pointer;
+    font-family: 'Lo';
+}
+
+[data-addtocart-variant-b] .atc-button {
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    background-color: #F2BFD1;
+    padding: 8px 32px;
+    border-radius: 30px;
+    border: transparent;
+    color: #003630;
+    font-family: 'AeonikPro-Regular' !important;
+    margin-top: 16px;
+    cursor: pointer;
+    font-family: 'Lo';
+}
+
+input[name="subscription-type"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #DEEEE3;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+input[name="subscription-type"]::before {
+    content: '\2713';
+    color: #3FC15F;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+    display: none;
+    text-align: center;
+}
+
+input[name="subscription-type"]:checked {
+    border: 1px solid #3FC15F;
+}
+
+input[name="subscription-type"]:checked::before {
+    display: block;
+}
+
+#subscription-btn {
+    display: block;
+}
+
+.subscription-btn-endrock {
+    display: none;
+}
+
+[data-addtocart-variant-a] .plat-price {
+    margin-right: 0px !important;
+}
+
+
+[data-addtocart-variant-b] .plat-price {
+    margin-right: 0px !important;
+}
+
+[data-addtocart-variant-a] .price-btn-row {
+    gap: 20px;
+}
+
+[data-addtocart-variant-b] .price-btn-row {
+    gap: 20px;
+}
+
+.endrock-badge {
+    background-color: transparent;
+    color: white;
+    font-size: 12px;
+    padding: 4px 16px;
+    border-radius: 16px;
+    display: unset;
+    font-weight: normal;
+}
+
+.hide {
+    display: none;
+    background-color: transparent;
+}
+
+.show {
+    display: block;
+    background-color: #41C15F;
+}
+
+
+  
+/* ============================
+        PLP ADD TO CART END
+ ============================ */
 
 
 .product-info-box .btn-custom {
@@ -2910,6 +3184,8 @@ html[xmlns] .flexslider .slides {
     margin-bottom: -8px;
     width: 100%;
 }
+
+
 
 
 
