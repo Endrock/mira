@@ -93,6 +93,24 @@
 
 </style>
 
+{% if product.handle == 'mira-max-test-wands' or product.handle == 'fertility-plus-test-wands' or product.handle == 'fertility-ovum-wands' or product.handle == 'fertility-confirm-test-wands' %}
+  <style>
+  #atc-section {
+      margin-top: -120px;
+      padding-top: 120px;
+    }
+  </style>
+{% endif %}
+
+{% if product.handle == 'coaching' or product.handle == 'academy' or product.handle == 'fertility-meditations' or product.handle == 'home-sperm-test'%}
+  <style>
+  #atc-section {
+      margin-top: -370px;
+      padding-top: 370px;
+    }
+  </style>
+{% endif %}
+
 <div class="sticky-abc">
   <div class="sticky-atc" id="sticky-atc-custom">
     <div class="sticky-atc__image">
