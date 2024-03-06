@@ -8,7 +8,7 @@ Usage:
 <frontrow-widget>
   {%- if product.metafields.custom.frontrow_provider_count -%}
     <div id="frontrow-widget"></div>
-    <div class="frontrow-container">
+    {% comment %} <div class="frontrow-container">
       <p>
         <span class="fr-num-value">{{ product.metafields.custom.frontrow_provider_count }}</span>
         <span class="fr-bold">medical providers
@@ -24,7 +24,7 @@ Usage:
           </a>
         {% endif %}
       </p>
-    </div>
+    </div> {% endcomment %}
     <script>
       function openFrontrowModal() {
           const modal = document.getElementById('frontrow-modal');
