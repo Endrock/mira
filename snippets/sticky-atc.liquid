@@ -102,7 +102,16 @@
   </style>
 {% endif %}
 
-{% if product.handle == 'coaching' or product.handle == 'academy' or product.handle == 'fertility-meditations' or product.handle == 'home-sperm-test'%}
+{% if product.handle == 'prenatal-multivitamin' or product.handle == 'pregnancy-tea' or product.handle == 'gift-card' %}
+  <style>
+  #atc-section {
+      margin-top: -120px;
+      padding-top: 120px;
+    }
+  </style>
+{% endif %}
+
+{% if product.handle == 'coaching' or product.handle == 'academy' or product.handle == 'fertility-meditations' or product.handle == 'home-sperm-test' or product.handle == 'biogenesis-fertility-lubricant' or product.handle == 'basal-body-thermometer'%}
   <style>
   #atc-section {
       margin-top: -370px;
