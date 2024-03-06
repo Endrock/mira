@@ -29,11 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
         threshold: 1.0,
     };
     
-    let target = document.querySelector(".product-form__buttons");
+    let target = document.querySelector(".product-form-custom");
     var varTop = target.getBoundingClientRect().top;
 
     let observer = new IntersectionObserver( function(entries){
         var moveBtn = document.querySelector("[data-sticky-bottom] .needsclick");
+        var moveLtr = document.querySelector("[data-sticky-bottom] #kustomer-ui-sdk-iframe");
         var stickyAtc = document.querySelector('.sticky-atc');
 
         entries.forEach((entry) => {
@@ -41,12 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 stickyAtc.style.opacity = '0';
                 stickyAtc.style.display = 'none';
                 moveBtn.style.bottom = '0px';
+                moveLtr.style.bottom = '0px';
             }
             else {
                 if( window.scrollY > varTop){
                     stickyAtc.style.opacity = '1';
                     stickyAtc.style.display = 'flex';    
                     moveBtn.style.bottom = '90px';
+                    moveLtr.style.bottom = '105px';
                 }
             }
         });
