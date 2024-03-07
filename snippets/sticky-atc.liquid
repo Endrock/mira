@@ -1,0 +1,142 @@
+{{ 'atc-sticky.js' | asset_url | script_tag }}
+
+<style>
+  html{scroll-behavior:smooth}
+  @media screen and (min-width: 768px) {
+    .sticky-abc {
+      display: none !important;
+    }
+  }
+
+  [data-sticky-original] .sticky-atc {
+    transform: scale(0);
+  }
+
+  [data-sticky-top] .sticky-atc {
+    top: 0px;
+  }
+
+  [data-sticky-bottom] .sticky-atc {
+    bottom: 0px;
+  }
+
+  [data-sticky-top] .needsclick {
+    bottom: 0px !important;
+  }
+
+  .sticky-atc {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    width: 100%;
+    padding: 8px 24px;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    box-shadow: 0px 0px 13px 0px rgba(0, 54, 48, 0.14);
+  }
+
+  .nav-open .sticky-atc {
+    z-index: 1000 !important;
+  }
+
+  .position-up {
+    z-index: 999998;
+  }
+
+  .sticky-atc__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sticky-atc__title {
+    color: #003630;
+    font-family: AeonikPro-Regular;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2px;
+  }
+  .sticky-atc__button {
+    display: flex;
+    padding: 6px 56px;
+    margin-top: 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background: #3fc15f;
+    white-space: nowrap;
+    border: none;
+    color: #fff;
+  }
+
+  .sticky-atc__button:hover {
+    color: #ffff !important;
+  }
+
+  .sticky-atc__image {
+    min-width: 86px;
+    height: 86px;
+  }
+
+  .sticky-atc__review-bg {
+    background: #fff;
+  }
+  .yotpo .text-m {
+    padding-left: 4px;
+    font-weight: 300;
+    line-height: 17px;
+  }
+
+</style>
+
+{% if product.handle == 'mira-max-test-wands' or product.handle == 'fertility-plus-test-wands' or product.handle == 'fertility-ovum-wands' or product.handle == 'fertility-confirm-test-wands' %}
+  <style>
+  #atc-section {
+      margin-top: -120px;
+      padding-top: 120px;
+    }
+  </style>
+{% endif %}
+
+{% if product.handle == 'prenatal-multivitamin' or product.handle == 'pregnancy-tea' or product.handle == 'gift-card' %}
+  <style>
+  #atc-section {
+      margin-top: -120px;
+      padding-top: 120px;
+    }
+  </style>
+{% endif %}
+
+{% if product.handle == 'coaching' or product.handle == 'academy' or product.handle == 'fertility-meditations' or product.handle == 'home-sperm-test' or product.handle == 'biogenesis-fertility-lubricant' or product.handle == 'basal-body-thermometer'%}
+  <style>
+  #atc-section {
+      margin-top: -370px;
+      padding-top: 370px;
+    }
+  </style>
+{% endif %}
+
+<div class="sticky-abc">
+  <div class="sticky-atc" id="sticky-atc-custom">
+    <div class="sticky-atc__image">
+      {{
+        product.media[0].preview_image
+        | image_url: width: 86
+        | image_tag:
+          class: image_class,
+          loading: lazy,
+          sizes: sizes,
+          widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+      }}
+    </div>
+    <div class="sticky-atc__left">
+      <div class="sticky-atc__title">{{ product.title }}</div>
+      <div class="sticky-atc__review-box yotpo bottomLine sticky-atc__review-bg" data-product-id="{{ product.id }}"></div>
+      <a class="sticky-atc__button" href="#atc-section">Select Your Product</a>
+    </div>
+  </div>
+</div>
