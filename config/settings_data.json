@@ -256,8 +256,8 @@
         }
       },
       "1486654112309516955": {
-        "type": "shopify:\/\/apps\/bogo-easy-free-gift-upsell\/blocks\/feeniks-offers\/9416ce92-aaaf-4a81-8fdf-b9a4e639d6dc",
-        "disabled": false,
+        "type": "shopify:\/\/apps\/bogo\/blocks\/feeniks-offers\/9416ce92-aaaf-4a81-8fdf-b9a4e639d6dc",
+        "disabled": true,
         "settings": {
         }
       }
