@@ -1,317 +1,345 @@
 {{ 'collumndual.css' | asset_url | stylesheet_tag }}
-
 {% assign sub_folder = '' %}
 {% if localization.market.handle == 'au' %}
-  {% assign sub_folder = '/en-au' %}
+{% assign sub_folder = '/en-au' %}
 {% elsif localization.market.handle == 'ca' %}
-  {% assign sub_folder = '/en-ca' %}
+{% assign sub_folder = '/en-ca' %}
 {% elsif localization.market.handle == 'eu' %}
-  {% assign sub_folder = '/en-eu' %}
+{% assign sub_folder = '/en-eu' %}
 {% elsif localization.market.handle == 'uk' %}
-  {% assign sub_folder = '/en-gb' %}
+{% assign sub_folder = '/en-gb' %}
 {% elsif localization.market.handle == 'international' %}
-  {% assign sub_folder = '/en-int' %}
+{% assign sub_folder = '/en-int' %}
 {% else %}
-  {% assign sub_folder = '' %}
+{% assign sub_folder = '' %}
 {% endif %}
-
 <div class="product-listing-page new-layout-listing padd-t-b-60">
-  <div class="product-listing-sec">
-    <div class="container">
-      {% render 'shop-all-tab' %}
-      <div class="product-list-row">
-        <div class="heading-1 padd-m-t-0 text-left">
-          <div class="with-arrow-btn">
-            <h3>More for Fertility</h3>
-          </div>
-        </div>
-        <div id="productlist" class="row accessories-product-list bundles-product-list col-grid">
-          {% if localization.market.handle == 'us' or localization.market.handle == 'shop' %}
-            <div class="col-md-4">
-              <div class="product-col">
-                <div class="product-img-col">
-                  <a href="{{ sub_folder }}/products/basal-body-thermometer"
-                    ><img src="{{ 'bbt-shop.png' | file_img_url: '' }}" alt=""
-                  ></a>
-                </div>
-                <h4>
-                  <a href="{{ sub_folder }}/products/basal-body-thermometer">
-                    {{- all_products['basal-body-thermometer'].title -}}
-                  </a>
-                </h4>
-                <p>{{ all_products['basal-body-thermometer'].metafields.product_fields.sub_title }}</p>
-                <div class="product-price-col">
-                  <div class="price-btn-row">
-                    <span class="plat-price">{{ all_products['basal-body-thermometer'].price | money }}</span>
-                    <div class="old-price">{{ all_products['basal-body-thermometer'].compare_at_price | money }}</div>
-                  </div>
-                  <a href="{{ sub_folder }}/products/basal-body-thermometer" class="btn-custom btn-pink"
-                    >Buy&nbsp;now</a
-                  >
-                </div>
-              </div>
-            </div>
-          {% endif %}
-
-          {% if localization.market.handle == 'us' %}
-            <div class="col-md-4">
-              <div class="product-col">
-                <div class="product-img-col">
-                  <a href="{{ sub_folder }}/products/fertility-tea"
-                    ><img src="{{ 'new_fertility_tea_Image.png' | file_img_url: '' }}" alt=""
-                  ></a>
-                </div>
-                <h4>
-                  <a href="{{ sub_folder }}/products/fertility-tea">{{ all_products['fertility-tea'].title }}</a>
-                </h4>
-                <p></p>
-                <div class="product-price-col">
-                  <div class="price-btn-row">
-                    <span class="plat-price">{{ all_products['fertility-tea'].price | money }}</span>
-                    <div class="old-price">{{ all_products['fertility-tea'].compare_at_price | money }}</div>
-                  </div>
-                  <a href="{{ sub_folder }}/products/fertility-tea" class="btn-custom btn-pink">Buy&nbsp;now</a>
-                </div>
-              </div>
-            </div>
-          {% elsif localization.market.handle == 'au' or localization.market.handle == 'uk' %}
-            <div class="col-md-4">
-              <div class="product-col">
-                <div class="product-img-col">
-                  <a href="{{ sub_folder }}/products/fertility-tea-ww"
-                    ><img src="{{ 'Mira_Fertility_Tea.png' | file_img_url: '' }}" alt=""
-                  ></a>
-                </div>
-                <h4>
-                  <a href="{{ sub_folder }}/products/fertility-tea-ww">{{ all_products['fertility-tea-ww'].title }}</a>
-                </h4>
-                <p></p>
-                <div class="product-price-col">
-                  <div class="price-btn-row">
-                    <span class="plat-price">{{ all_products['fertility-tea-ww'].price | money }}</span>
-                    <div class="old-price">{{ all_products['fertility-tea-ww'].compare_at_price | money }}</div>
-                  </div>
-                  <a href="{{ sub_folder }}/products/fertility-tea-ww" class="btn-custom btn-pink">Buy&nbsp;now</a>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-
-          {% if localization.market.handle == 'us' %}
-            <div class="col-md-4">
-              <div class="product-col">
-                <div class="product-img-col">
-                  <a href="{{ sub_folder }}/products/pregnancy-tea"
-                    ><img src="{{ 'Pregnancy_Tea.png' | file_img_url: '' }}" alt=""
-                  ></a>
-                </div>
-                <h4>
-                  <a href="{{ sub_folder }}/products/pregnancy-tea">{{ all_products['pregnancy-tea'].title }}</a>
-                </h4>
-                <p></p>
-                <div class="product-price-col">
-                  <div class="price-btn-row">
-                    <span class="plat-price">{{ all_products['pregnancy-tea'].price | money }}</span>
-                    <div class="old-price">{{ all_products['pregnancy-tea'].compare_at_price | money }}</div>
-                  </div>
-                  <a href="{{ sub_folder }}/products/pregnancy-tea" class="btn-custom btn-pink">Buy&nbsp;now</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="product-col">
-                <div class="product-img-col">
-                  <a href="{{ sub_folder }}/products/prenatal-multivitamin"
-                    ><img src="{{ 'Prenatal-multi-vitamins.png' | file_img_url: '' }}" alt=""
-                  ></a>
-                </div>
-                <h4>
-                  <a href="{{ sub_folder }}/products/prenatal-multivitamin">
-                    {{- all_products['prenatal-multivitamin'].title -}}
-                  </a>
-                </h4>
-                <p></p>
-                <div class="product-price-col">
-                  <div class="price-btn-row">
-                    <span class="plat-price">{{ all_products['prenatal-multivitamin'].price | money }}</span>
-                  </div>
-                  <a href="{{ sub_folder }}/products/prenatal-multivitamin" class="btn-custom btn-pink">Buy&nbsp;now</a>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-          <div class="col-md-4 hide_ios">
-            <div class="product-col">
-              <div class="product-img-col">
-                <a href="{{ sub_folder }}/products/academy"
-                  ><img src="{{ 'Online_Fertility_Course.png' | file_img_url: '' }}" alt=""
-                ></a>
-              </div>
-              <h4><a href="{{ sub_folder }}/products/academy">Online Fertility Course</a></h4>
-              <p></p>
-              <div class="product-price-col">
-                <div class="price-btn-row">
-                  <span class="plat-price">{{ all_products.academy.price | money }}</span>
-                </div>
-                <a href="{{ sub_folder }}/products/academy" class="btn-custom btn-pink">Buy&nbsp;now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 hide_ios">
-            <div class="product-col">
-              <div class="product-img-col">
-                <a href="{{ sub_folder }}/products/fertility-meditations"
-                  ><img src="{{ 'Meditation_Playlist.png' | file_img_url: '' }}" alt=""
-                ></a>
-              </div>
-              <h4>
-                <a href="{{ sub_folder }}/products/fertility-meditations">
-                  {{- all_products['fertility-meditations'].title -}}
-                </a>
-              </h4>
-              <p></p>
-              <div class="product-price-col">
-                <div class="price-btn-row">
-                  <span class="plat-price">{{ all_products['fertility-meditations'].price | money }}</span>
-                </div>
-                <a href="{{ sub_folder }}/products/fertility-meditations" class="btn-custom btn-pink">Buy&nbsp;now</a>
-              </div>
-            </div>
-          </div>
-          {% if localization.market.handle == 'zzz' %}
-            <div class="col-md-4">
-              <div class="product-col">
-                <div class="product-img-col">
-                  <a href="{{ sub_folder }}/products/kgoal-smart-kegel-exerciser"
-                    ><img src="{{ 'Kgoal.png' | file_img_url: '' }}" alt=""
-                  ></a>
-                </div>
-                <h4>
-                  <a href="{{ sub_folder }}/products/kgoal-smart-kegel-exerciser">
-                    {{- all_products['kgoal-smart-kegel-exerciser'].title -}}
-                  </a>
-                </h4>
-                <p>{{ all_products['kgoal-smart-kegel-exerciser'].metafields.product_fields.sub_title }}</p>
-                <div class="product-price-col">
-                  <div class="price-btn-row">
-                    <span class="plat-price">{{ all_products['kgoal-smart-kegel-exerciser'].price | money }}</span>
-                    <div class="old-price">
-                      {{ all_products['kgoal-smart-kegel-exerciser'].compare_at_price | money }}
+    <div class="product-listing-sec">
+        <div class="container">
+            {% render 'shop-all-tab' %}
+            <div class="product-list-row">
+                <div class="heading-1 padd-m-t-0 text-left">
+                    <div class="with-arrow-btn">
+                        <h3>More for Fertility</h3>
                     </div>
-                  </div>
-                  <a href="{{ sub_folder }}/products/kgoal-smart-kegel-exerciser" class="btn-custom btn-pink"
-                    >Buy&nbsp;now</a
-                  >
                 </div>
-              </div>
-            </div>
-          {% endif %}
-          {% if localization.market.handle == 'us' or localization.market.handle == 'ca' %}
-            <div class="col-md-4">
-              <div class="product-col">
-                <div class="product-img-col">
-                  <a href="{{ sub_folder }}/products/biogenesis-fertility-lubricant"
-                    ><img src="{{ 'BioGenesis_Fertility_Lubricant.png' | file_img_url: '' }}" alt=""
-                  ></a>
-                </div>
-                <h4>
-                  <a href="{{ sub_folder }}/products/biogenesis-fertility-lubricant">
-                    {{- all_products['biogenesis-fertility-lubricant'].title -}}
-                  </a>
-                </h4>
-                <p>{{ all_products['biogenesis-fertility-lubricant'].metafields.product_fields.sub_title }}</p>
-                <div class="product-price-col">
-                  <div class="price-btn-row">
-                    <span class="plat-price">{{ all_products['biogenesis-fertility-lubricant'].price | money }}</span>
-                    <div class="old-price">
-                      {{ all_products['biogenesis-fertility-lubricant'].compare_at_price | money }}
+                <div class="row accessories-product-list bundles-product-list col-grid">
+                    {% if localization.market.handle == 'us' or localization.market.handle == 'shop' %}
+                    {% if all_products['basal-body-thermometer'].available == true %}
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="{{ sub_folder }}/products/basal-body-thermometer"><img src="{{ 'bbt-shop.png' | file_img_url: '' }}" alt=""></a>
+                                {% include 'product-offer-badge', with offer_label: 'NEW' %}
+                            </div>
+                            <h4>
+                                <a href="{{ sub_folder }}/products/basal-body-thermometer">
+                                    {{- all_products['basal-body-thermometer'].title -}}
+                                </a>
+                            </h4>
+                            <p>{{ all_products['basal-body-thermometer'].metafields.product_fields.sub_title }}</p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['basal-body-thermometer'].price | money }}</span>
+                                    <div class="old-price">{{ all_products['basal-body-thermometer'].compare_at_price | money }}</div>
+                                </div>
+                                {% include 'subscription-plp-endrock', with string_variable: 'basal-body-thermometer', with sub_folder: sub_folder, with num: 35 %}
+                                <a href="{{ sub_folder }}/products/basal-body-thermometer" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <a href="{{ sub_folder }}/products/biogenesis-fertility-lubricant" class="btn-custom btn-pink"
-                    >Buy&nbsp;now</a
-                  >
-                </div>
-              </div>
-            </div>
-          {% endif %}
-          <div class="col-md-4">
-            <div class="product-col">
-              <div class="product-img-col">
-                <a href="{{ sub_folder }}/products/gift-card/"
-                  ><img src="{{ 'GiftCard.png' | file_img_url: '' }}" alt=""
-                ></a>
-              </div>
-              <h4>
-                <a href="{{ sub_folder }}/products/gift-card/">{{ all_products['gift-card'].title }}</a>
-              </h4>
-              <p>{{ all_products['gift-card'].metafields.product_fields.sub_title }}</p>
-              <div class="product-price-col">
-                <div class="price-btn-row">
-                  <span class="plat-price">{{ all_products['gift-card'].price | money }}</span>
-                  <div class="old-price"></div>
-                </div>
-                <a href="{{ sub_folder }}/products/gift-card/" class="btn-custom btn-pink">Buy&nbsp;now</a>
-              </div>
-            </div>
-          </div>
+                    {% endif %}
+                    {% endif %}
+                    {% if localization.market.handle == 'us' %}
+                    {% if all_products['fertility-tea'].available == true %}
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="{{ sub_folder }}/products/fertility-tea"><img src="{{ 'new_fertility_tea_Image.png' | file_img_url: '' }}" alt=""></a>
+                            </div>
+                            <h4>
+                                <a href="{{ sub_folder }}/products/fertility-tea">{{ all_products['fertility-tea'].title }}</a>
+                            </h4>
+                            <p>{{ all_products['fertility-tea'].metafields.product_fields.sub_title }}</p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['fertility-tea'].price | money }}</span>
+                                    <div class="old-price">{{ all_products['fertility-tea'].compare_at_price | money }}</div>
+                                </div>
+                                {% include 'subscription-plp-endrock', with string_variable: 'fertility-tea', with sub_folder: sub_folder, with num: 36 %}
+                                <a href="{{ sub_folder }}/products/fertility-tea" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% elsif localization.market.handle == 'au' or localization.market.handle == 'uk' %}
+                    {% if all_products['fertility-tea-ww'].available == true %}
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="{{ sub_folder }}/products/fertility-tea-ww"><img src="{{ 'Mira_Fertility_Tea.png' | file_img_url: '' }}" alt=""></a>
+                            </div>
+                            <h4>
+                                <a href="{{ sub_folder }}/products/fertility-tea-ww">{{ all_products['fertility-tea-ww'].title }}</a>
+                            </h4>
+                            <p>{{ all_products['fertility-tea-ww'].metafields.product_fields.sub_title }}</p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['fertility-tea-ww'].price | money }}</span>
+                                    <div class="old-price">{{ all_products['fertility-tea-ww'].compare_at_price | money }}</div>
+                                </div>
+                                {% include 'subscription-plp-endrock', with string_variable: 'fertility-tea-ww', with sub_folder: sub_folder, with num: 37 %}
+                                <a href="{{ sub_folder }}/products/fertility-tea-ww" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    {% if localization.market.handle == 'us' %}
+                    {% if all_products['pregnancy-tea'].available == true %}
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="{{ sub_folder }}/products/pregnancy-tea"><img src="{{ 'Pregnancy_Tea.png' | file_img_url: '' }}" alt=""></a>
+                            </div>
+                            <h4>
+                                <a href="{{ sub_folder }}/products/pregnancy-tea">{{ all_products['pregnancy-tea'].title }}</a>
+                            </h4>
+                            <p>{{ all_products['pregnancy-tea'].metafields.product_fields.sub_title }}</p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['pregnancy-tea'].price | money }}</span>
+                                    <div class="old-price">{{ all_products['pregnancy-tea'].compare_at_price | money }}</div>
+                                </div>
+                                {% include 'subscription-plp-endrock', with string_variable: 'pregnancy-tea', with sub_folder: sub_folder, with num: 38 %}
+                                <a href="{{ sub_folder }}/products/pregnancy-tea" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if all_products['prenatal-multivitamin'].available == true %}
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="{{ sub_folder }}/products/prenatal-multivitamin"><img src="{{ 'Prenatal-multi-vitamins.png' | file_img_url: '' }}" alt=""></a>
+                                {% include 'product-offer-badge', with offer_label: 'Best Seller' %}
+                            </div>
+                            <h4>
+                                <a href="{{ sub_folder }}/products/prenatal-multivitamin">
+                                    {{- all_products['prenatal-multivitamin'].title -}}
+                                </a>
+                            </h4>
+                            <p>{{ all_products['prenatal-multivitamin'].metafields.product_fields.sub_title }}</p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['prenatal-multivitamin'].price | money }}</span>
+                                    <div class="old-price">{{ all_products['prenatal-multivitamin'].compare_at_price | money }}</div>
+                                </div>
+                                {% include 'subscription-plp-endrock', with string_variable: 'prenatal-multivitamin', with sub_folder: sub_folder, with num: 39 %}
+                                <a href="{{ sub_folder }}/products/prenatal-multivitamin" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    {% if all_products['academy'].available == true %}
+                    <div class="col-md-4 hide_ios">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="{{ sub_folder }}/products/academy"><img src="{{ 'Online_Fertility_Course.png' | file_img_url: '' }}" alt=""></a>
+                                {% include 'product-offer-badge', with offer_label: 'SALE' %}
+                            </div>
+                            <h4>
+                                <a href="{{ sub_folder }}/products/academy">
+                                {{- all_products['academy'].title -}}
+                                </a>
+                            </h4>
+                            <p>{{ all_products['academy'].metafields.product_fields.sub_title }}</p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products.academy.price | money }}</span>
+                                    <div class="old-price">{{ all_products.academy.compare_at_price | money }}</div>
+                                </div>
+                                {% include 'subscription-plp-endrock', with string_variable: 'academy', with sub_folder: sub_folder, with num: 40 %}
+                                <a href="{{ sub_folder }}/products/academy" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if all_products['fertility-meditations'].available == true %}
+                    <div class="col-md-4 hide_ios">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="{{ sub_folder }}/products/fertility-meditations"><img src="{{ 'Meditation_Playlist.png' | file_img_url: '' }}" alt=""></a>
+                            </div>
+                            <h4>
+                                <a href="{{ sub_folder }}/products/fertility-meditations">
+                                    {{- all_products['fertility-meditations'].title -}}
+                                </a>
+                            </h4>
+                            <p>{{ all_products['fertility-meditations'].metafields.product_fields.sub_title }}</p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['fertility-meditations'].price | money }}</span>
+                                    <div class="old-price">{{ all_products['fertility-meditations'].compare_at_price | money }}</div>
+                                </div>
+                                {% include 'subscription-plp-endrock', with string_variable: 'fertility-meditations', with sub_folder: sub_folder, with num: 41 %}
+                                <a href="{{ sub_folder }}/products/fertility-meditations" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
 
-          {% if localization.market.handle == 'us' %}
-            <div class="col-md-4">
-              <div class="product-col">
-                <div class="product-img-col">
-                  <a href="{{ sub_folder }}/products/panorama-fertility-lab-test"
-                    ><img src="{{ 'panorama-shop-all.png' | file_img_url: '' }}" alt=""
-                  ></a>
+                    {% if localization.market.handle == 'us' or localization.market.handle == 'ca' %}
+                    {% if all_products['biogenesis-fertility-lubricant'].available == true %}
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="{{ sub_folder }}/products/biogenesis-fertility-lubricant"><img src="{{ 'BioGenesis_Fertility_Lubricant.png' | file_img_url: '' }}" alt=""></a>
+                            </div>
+                            <h4>
+                                <a href="{{ sub_folder }}/products/biogenesis-fertility-lubricant">
+                                    {{- all_products['biogenesis-fertility-lubricant'].title -}}
+                                </a>
+                            </h4>
+                            <p>{{ all_products['biogenesis-fertility-lubricant'].metafields.product_fields.sub_title }}</p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['biogenesis-fertility-lubricant'].price | money }}</span>
+                                    <div class="old-price">
+                                        {{ all_products['biogenesis-fertility-lubricant'].compare_at_price | money }}
+                                    </div>
+                                </div>
+                                {% include 'subscription-plp-endrock', with string_variable: 'biogenesis-fertility-lubricant', with sub_folder: sub_folder, with num: 43 %}
+                                <a href="{{ sub_folder }}/products/biogenesis-fertility-lubricant" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    {% if all_products['gift-card'].available == true %}
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="{{ sub_folder }}/products/gift-card/"><img src="{{ 'GiftCard.png' | file_img_url: '' }}" alt=""></a>
+                            </div>
+                            <h4>
+                                <a href="{{ sub_folder }}/products/gift-card/">{{ all_products['gift-card'].title }}</a>
+                            </h4>
+                            <p>{{ all_products['gift-card'].metafields.product_fields.sub_title }}</p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['gift-card'].price | money }}</span>
+                                    <div class="old-price"></div>
+                                </div>
+                                {% include 'subscription-plp-endrock', with string_variable: 'gift-card', with sub_folder: sub_folder, with num: 44 %}
+                                <a href="{{ sub_folder }}/products/gift-card/" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if localization.market.handle == 'us' %}
+                    {% if all_products['panorama-fertility-lab-test'].available == true %}
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="{{ sub_folder }}/products/panorama-fertility-lab-test"><img src="{{ 'panorama-shop-all.png' | file_img_url: '' }}" alt=""></a>
+                            </div>
+                            <h4>
+                                <a href="{{ sub_folder }}/products/panorama-fertility-lab-test">
+                                    {{- all_products['panorama-fertility-lab-test'].title -}}
+                                </a>
+                            </h4>
+                            <p>{{ all_products['panorama-fertility-lab-test'].metafields.product_fields.sub_title }}</p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">{{ all_products['panorama-fertility-lab-test'].price | money }}</span>
+                                    <div class="old-price">{{ all_products['panorama-fertility-lab-test'].compare_at_price | money }}</div>
+                                </div>
+                                {% include 'subscription-plp-endrock', with string_variable: 'panorama-fertility-lab-test', with sub_folder: sub_folder, with num: 45 %}
+                                <a href="{{ sub_folder }}/products/panorama-fertility-lab-test" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if all_products['mira-stainless-steel-bottle'].available == true %}
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="{{ sub_folder }}/products/mira-stainless-steel-bottle"><img src="{{ 'bottle-shop-all.png' | file_img_url: '' }}" alt=""></a>
+                            </div>
+                            <h4>
+                                <a href="{{ sub_folder }}/products/mira-stainless-steel-bottle">
+                                    Mira Stainless Steel Bottle
+                                </a>
+                            </h4>
+                            <p></p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">$15.99</span>
+                                    <div class="old-price"></div>
+                                </div>
+                                {% include 'subscription-plp-endrock', with string_variable: 'panorama-fertility-lab-test', with sub_folder: sub_folder, with num: 48 %}
+                                <a href="{{ sub_folder }}/products/mira-stainless-steel-bottle" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if all_products['mira-recycled-tri-borough-shopper'].available == true %}
+                    <div class="col-md-4">
+                        <div class="product-col">
+                            <div class="product-img-col">
+                                <a href="{{ sub_folder }}/products/mira-recycled-tri-borough-shopper"><img src="{{ 'shopper-shop-all.png' | file_img_url: '' }}" alt=""></a>
+                            </div>
+                            <h4>
+                                <a href="{{ sub_folder }}/products/mira-recycled-tri-borough-shopper">
+                                    Mira Recycled Tri-Borough Shopper
+                                </a>
+                            </h4>
+                            <p></p>
+                            <div class="product-price-col">
+                                <div class="price-btn-row">
+                                    <span class="plat-price">$16.99</span>
+                                    <div class="old-price"></div>
+                                </div>
+                                {% include 'subscription-plp-endrock', with string_variable: 'panorama-fertility-lab-test', with sub_folder: sub_folder, with num: 49 %}
+                                <a href="{{ sub_folder }}/products/mira-recycled-tri-borough-shopper" class="btn-custom btn-pink" data-plpBtn="true">Buy&nbsp;now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endif %}
                 </div>
-                <h4>
-                  <a href="{{ sub_folder }}/products/panorama-fertility-lab-test">
-                    {{- all_products['panorama-fertility-lab-test'].title -}}
-                  </a>
-                </h4>
-                <p></p>
-                <div class="product-price-col">
-                  <div class="price-btn-row">
-                    <span class="plat-price">{{ all_products['panorama-fertility-lab-test'].price | money }}</span>
-                    <div class="old-price"></div>
-                  </div>
-                  <a href="{{ sub_folder }}/products/panorama-fertility-lab-test" class="btn-custom btn-pink"
-                    >Buy&nbsp;now</a
-                  >
+            </div>
+            <div class="mira-flat-banner mira-fertility-banner">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="flat-banner-left text-white">
+                            <div class="flat-banner-left-inner">
+                                <h5>
+                                    Discover<br class="medium-up--hide">
+                                    the<br class="small--hide">
+                                    science<br class="medium-up--hide">
+                                    behind Mira
+                                </h5>
+                                <a href="https://www.miracare.com/science/" class="btn-custom white-btn" target="_blank">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="flat-banner-right">
+                            <a href="https://www.miracare.com/science/" target="_blank">
+                                <img src="{{ 'discover_science_banner_mobile.png' | file_img_url: '' }}" alt="" class="hide-dextop flat-banner-mobile">
+                            </a>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          {% endif %}
         </div>
-      </div>
-      <div class="mira-flat-banner mira-fertility-banner">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="flat-banner-left text-white">
-              <div class="flat-banner-left-inner">
-                <h5>
-                  Discover<br class="medium-up--hide">
-                  the<br class="small--hide">
-                  science<br class="medium-up--hide">
-                  behind Mira
-                </h5>
-                <a href="https://www.miracare.com/science/" class="btn-custom white-btn" target="_blank">Learn More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="flat-banner-right">
-              <a href="https://www.miracare.com/science/" target="_blank">
-                <img
-                  src="{{ 'discover_science_banner_mobile.png' | file_img_url: '' }}"
-                  alt=""
-                  class="hide-dextop flat-banner-mobile"
-                >
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
+<script>
+// access the every one mont subscription: all_products['fertility-plus-test-wands'].selling_plan_groups[0].selling_plans[0].id
+const product = { { all_products['fertility-plus-test-wands'].selling_plan_groups[0] | json } }
+console.log('The Product:', product)
+</script>

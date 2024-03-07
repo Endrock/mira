@@ -1,7 +1,0 @@
-.best-sellers {
-    display: none;
-}
-
-[data-bestsellers] .best-sellers{
-    display: block;
-}

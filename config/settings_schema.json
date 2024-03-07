@@ -34,27 +34,6 @@
         ]
     },
     {
-        "name": "AB Test Sticky",
-        "settings": [
-            {
-                "type": "select",
-                "id": "ab_test_sticky",
-                "options": [
-                    {
-                        "value": "data-sticky-top",
-                        "label": "Sticky Top"
-                    },
-                    {
-                        "value": "data-sticky-bottom",
-                        "label": "Sticky Bottom"
-                    }
-                ],
-                "default": "data-sticky-top",
-                "label": "Ab Test Sticky"
-            }
-        ]
-    },
-    {
         "name": "t:settings_schema.colors.name",
         "settings": [
             {

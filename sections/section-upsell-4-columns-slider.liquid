@@ -15,9 +15,26 @@
 <div class="upsell-4-columns-slider customers-product-sec padd-b-60 padd-t-60">
     <div class="container">
         <div class="bf-bundle-page-title padd-b-20">
-            <h2>Our customers enjoy these products too</h2>
+            <h2>Our customers enjoy these products too</h2>
         </div>
         <div class="row" id="product-column-4-slider">
+
+            {% if localization.market.handle == 'us' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/panorama-fertility-lab-test" target="_blank">
+                            <img class="image" src="https://cdn.shopify.com/s/files/1/0755/9620/2277/files/panorama-upsell.png?width=300" alt=""></a>
+                        <a href="{{ sub_folder }}/products/panorama-fertility-lab-test" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/panorama-fertility-lab-test" target="_blank">{{ all_products['panorama-fertility-lab-test'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['panorama-fertility-lab-test'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
             <div class="col-md-12">
                 <div class="customers-product-col">
                     <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/coaching" target="_blank">
@@ -31,20 +48,47 @@
                     </div>
                 </div>
             </div>
+
+            {% if localization.market.handle == 'us' %}
             <div class="col-md-12">
                 <div class="customers-product-col">
-                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/academy" target="_blank">
-                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/Cover.png" alt=""></a>
-                        <a href="{{ sub_folder }}/products/academy" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/prenatal-multivitamin" target="_blank">
+                            <img class="image" src="https://cdn.shopify.com/s/files/1/0755/9620/2277/files/Mira_Prenatal_Multi_Vitamins_new_product_img01.png?width=300" alt=""></a>
+                        <a href="{{ sub_folder }}/products/prenatal-multivitamin" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
                     </div>
-                    <h4><a href="{{ sub_folder }}/products/academy" target="_blank">Online Fertility Course</a></h4>
+                    <h4><a href="{{ sub_folder }}/products/prenatal-multivitamin" target="_blank">{{ all_products['prenatal-multivitamin'].title }}</a></h4>
                     <p></p>
                     <div class="price-btn-row">
-                        <span class="plat-price">{{ all_products['academy'].price | money }}</span>
+                        <span class="plat-price">{{ all_products['prenatal-multivitamin'].price | money }}</span>
                     </div>
                 </div>
             </div>
-            {% if localization.market.handle == 'us' %}
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/basal-body-thermometer" target="_blank">
+                            <img class="image" src="https://cdn.shopify.com/s/files/1/0755/9620/2277/files/bbt1.png?width=300" alt=""></a>
+                        <a href="{{ sub_folder }}/products/basal-body-thermometer" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/basal-body-thermometer" target="_blank">{{ all_products['basal-body-thermometer'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['basal-body-thermometer'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/wands-bundle" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/files/BlackFridayWandsBundleUpsell.png?width=300" alt=""></a>
+                        <a href="{{ sub_folder }}/products/wands-bundle" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/wands-bundle" target="_blank">{{ all_products['wands-bundle'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['wands-bundle'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
             <div class="col-md-12">
                 <div class="customers-product-col">
                     <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/fertility-tea" target="_blank">
@@ -58,22 +102,41 @@
                     </div>
                 </div>
             </div>
-            {% elsif localization.market.handle == 'au' or localization.market.handle == 'uk' or localization.market.handle == 'international' %}
+            {% endif %}
+
+            {% if localization.market.handle != 'us' %}
+
             <div class="col-md-12">
                 <div class="customers-product-col">
-                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/fertility-tea-ww" target="_blank">
-                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/mira-tea2.png" alt=""></a>
-                        <a href="{{ sub_folder }}/products/fertility-tea-ww" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/wands-bundle" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/files/BlackFridayWandsBundleUpsell.png?width=300" alt=""></a>
+                        <a href="{{ sub_folder }}/products/wands-bundle" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
                     </div>
-                    <h4><a href="{{ sub_folder }}/products/fertility-tea-ww" target="_blank">{{ all_products['fertility-tea-ww'].title }}</a></h4>
+                    <h4><a href="{{ sub_folder }}/products/wands-bundle" target="_blank">{{ all_products['wands-bundle'].title }}</a></h4>
                     <p></p>
                     <div class="price-btn-row">
-                        <span class="plat-price">{{ all_products['fertility-tea-ww'].price | money }}</span>
+                        <span class="plat-price">{{ all_products['wands-bundle'].price | money }}</span>
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/academy" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/Cover.png" alt=""></a>
+                        <a href="{{ sub_folder }}/products/academy" class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/academy" target="_blank">Get Pregnant Online Course</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['academy'].price | money }}</span>
+                    </div>
+                </div>
+            </div>
+
             {% endif %}
-            {% if localization.market.handle == 'international' or localization.market.handle == 'us' or localization.market.handle == 'au' or localization.market.handle == 'ca' %}
+
+            {% if localization.market.handle == 'international' or localization.market.handle == 'au' or localization.market.handle == 'ca' %}
             <div class="col-md-12">
                 <div class="customers-product-col">
                     <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/home-sperm-test" target="_blank">
@@ -88,6 +151,7 @@
                 </div>
             </div>
             {% endif %}
+
             {% if localization.market.handle == 'eu' or localization.market.handle == 'uk' %}
             <div class="col-md-12">
                 <div class="customers-product-col">
@@ -103,6 +167,21 @@
                 </div>
             </div>
             {% endif %}
+            
+            <div class="col-md-12">
+                <div class="customers-product-col">
+                    <div class="customers-product-img-col"><a href="{{ sub_folder }}/products/fertility-meditations" target="_blank">
+                            <img class="image" src="https://shop.miracare.com/cdn/shop/products/meditation-product-1.png?width=300" alt=""></a>
+                        <a href="{{ sub_folder }}/products/fertility-meditations" class="bf-bundle-arrow-btn" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" alt=""></a>
+                    </div>
+                    <h4><a href="{{ sub_folder }}/products/fertility-meditations" target="_blank">{{ all_products['fertility-meditations'].title }}</a></h4>
+                    <p></p>
+                    <div class="price-btn-row">
+                        <span class="plat-price">{{ all_products['fertility-meditations'].price | money }}</span>
+                    </div>
+                </div>
+            </div>            
+            
         </div>
     </div>
 </div>

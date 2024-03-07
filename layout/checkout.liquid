@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
     <meta name="referrer" content="origin">
 
+    {{ 'value-props.css' | asset_url | stylesheet_tag }}
+    <style>
+      @font-face {
+        font-family: "Aeonik Pro";
+        src: url("{{ 'AeonikPro-Regular.otf' | asset_url }}") format("opentype");
+      }
+    </style>
+
     <title>{{ page_title }}</title>
 
     {{ content_for_header }}
@@ -200,6 +208,32 @@
           <main class="main__content" role="main">
             {{ content_for_layout }}
           </main>
+          <div class="valuecont_mob">
+            <div class="valuecont_block">
+              {% if settings.image_1 != blank %}
+                <img src="{{ settings.image_1 | img_url: '80x80' }}" width="80" height="80">
+              {% endif %}
+              {% if settings.text_1 != blank %}
+                <p>{{ settings.text_1 }}</p>
+              {% endif %}
+            </div>
+            <div class="valuecont_block">
+              {% if settings.image_2 != blank %}
+                <img src="{{ settings.image_2 | img_url: '80x80' }}" width="80" height="80">
+              {% endif %}
+              {% if settings.text_2 != blank %}
+                <p>{{ settings.text_2 }}</p>
+              {% endif %}
+            </div>
+            <div class="valuecont_block">
+              {% if settings.image_3 != blank %}
+                <img src="{{ settings.image_3 | img_url: '80x80' }}" width="80" height="80">
+              {% endif %}
+              {% if settings.text_3 != blank %}
+                <p>{{ settings.text_3 }}</p>
+              {% endif %}
+            </div>
+          </div>
           <footer class="main__footer" role="contentinfo">
             {{ content_for_footer }}
           </footer>
@@ -210,6 +244,32 @@
           </div>
           <div class="sidebar__content">
             {{ content_for_order_summary }}
+          </div>
+          <div class="valuecont">
+            <div class="valuecont_block">
+              {% if settings.image_1 != blank %}
+                <img src="{{ settings.image_1 |  img_url: '80x80' }}" width="80" height="80">
+              {% endif %}
+              {% if settings.text_1 != blank %}
+                <p>{{ settings.text_1 }}</p>
+              {% endif %}
+            </div>
+            <div class="valuecont_block">
+              {% if settings.image_2 != blank %}
+                <img src="{{ settings.image_2 | img_url: '80x80' }}" width="80" height="80">
+              {% endif %}
+              {% if settings.text_2 != blank %}
+                <p>{{ settings.text_2 }}</p>
+              {% endif %}
+            </div>
+            <div class="valuecont_block">
+              {% if settings.image_3 != blank %}
+                <img src="{{ settings.image_3 | img_url: '80x80' }}" width="80" height="80">
+              {% endif %}
+              {% if settings.text_3 != blank %}
+                <p>{{ settings.text_3 }}</p>
+              {% endif %}
+            </div>
           </div>
         </aside>
       </div>

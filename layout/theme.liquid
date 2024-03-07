@@ -442,7 +442,14 @@
     </script>
     <!-- End Google Tag Manager -->
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QC5SFQ36FV"></script>
     <script>
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QC5SFQ36FV')
       window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
       window._template = {
           directory: "{{ template.directory }}",
@@ -454,9 +461,7 @@
   </head>
 
   <body
-    data-dual-col="true"
     class="gradient template-{{ template | split: '.' | first }} {{ template }}{% if template == "product" %} {{ product.handle }}{% endif %} {% for tag in product.tags %} {{ tag }}{% endfor %}"
-    {{ settings.ab_test_sticky }}
   >
   {% render 'sticky-atc' %}
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -468,9 +473,9 @@
     {%- endif -%}
 
     {% sections 'header-group' %}
-    <div id="om-jjjxco9itpcbvmc8dwk6-holder"></div>
-    <div id="om-oph4wyzrkxboyx7oef9t-holder"></div>
     <div id="om-emfefa01a70ipincu7s0-holder"></div>
+    <div id="om-ebmyg76gzxqf6qcgvacc-holder"></div>
+    <div id="om-l8ysovgxvoactc4hs85q-holder"></div>
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
@@ -517,15 +522,18 @@
     {%- endif -%}
 
     <script type="text/javascript" src="{{ 'bootstrap.js' | asset_url }}" async="async"></script>
-    <script type="text/javascript" src="{{ 'owl.carousel.js' | asset_url }}"></script>
-    <script type="text/javascript" src="{{ 'viewportchecker.js' | asset_url }}"></script>
+
+    <script type="text/javascript" src="{{ 'owl.carousel.js' | asset_url }}" defer="defer"></script>
+    <script type="text/javascript" src='{{ 'add-to-cart.js' | asset_url}}' defer='defer'></script>
+
+    <script type="text/javascript" src="{{ 'viewportchecker.js' | asset_url }}" defer="defer"></script>
     <script type="text/javascript" src="{{ 'jquery.flexslider.js' | asset_url }}" defer="defer"></script>
     <script
       src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
       async="async"
       id="lottie-player-js"
     ></script>
-    <script type="text/javascript" src="{{ 'custom.js' | asset_url }}"></script>
+    <script type="text/javascript" src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
 
     {% if template == 'cart' %}
       <script>
@@ -651,5 +659,9 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Widget : Gift with Purchase - HAW Merch -->
+    <div data-rebuy-id="134542"></div>
+    <!-- End Widget : Gift with Purchase - HAW Merch -->
   </body>
 </html>

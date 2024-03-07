@@ -3,7 +3,6 @@
     "logo": "shopify:\/\/shop_images\/logo.svg",
     "logo_width": 80,
     "favicon": "shopify:\/\/shop_images\/mira-favicon.png",
-    "ab_test_sticky": "data-sticky-top",
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
     "gradient_accent_1": "",
