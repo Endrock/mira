@@ -12,18 +12,21 @@
 {% else %}
 {% assign sub_folder = '' %}
 {% endif %}
+
+{% render 'sticky-atc' %}
+
 <section class="bf-bundle-header-banner">
     <div class="container">
         <div class="bf-bundle-banner-content">
             <div class="limited-edition-label"><span>Limited Edition!</span></div>
             <h5>Special bundle: Science helps you get pregnant faster</h5>
-            <h1>Get 6 Fertility Items for Less</h1>
+            <h1 id="atc-section">Get 6 Fertility Items for Less</h1>
             <p>This set includes everything you need to reach your fertility goals from home!</p>
             <div class="bf-price-row">
                 <span class="plat-price">{{ all_products['get-pregnant-bundle'].price | money }}</span>
                 <div class="old-price">{{ all_products['get-pregnant-bundle'].compare_at_price | money }}</div>
             </div>
-            <div class="bf-bundle-banner-btn">
+            <div class="bf-bundle-banner-btn product-form-custom">
                 <form method="post" action="{{ sub_folder }}/cart/add" class="add-to-cart">
                     <input type="hidden" name="quantity" value="1">
                     <input type="hidden" name="id" value="{{ product.variants.first.id }}" />

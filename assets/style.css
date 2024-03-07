@@ -155,7 +155,7 @@ body {
     padding: 0px 0 0 0;
     top: 0px;
     width: 100%;
-    z-index: 99999;
+    z-index: 1000;
     -ms-transition: all .6s ease;
     -o-transition: all .6s ease;
     -webkit-transition: all .6s ease;
@@ -388,7 +388,7 @@ a.cart-top-icon:hover {
     display: inline-block;
     padding: 1.25rem 1rem;
     border: 0;
-    z-index: 999;
+    z-index: 99;
     position: relative;
     background: transparent;
     cursor: pointer;
@@ -5027,7 +5027,7 @@ mask-repeat: no-repeat; */
     position: fixed;
     top: 0px;
     height: 100%;
-    z-index: 999;
+    z-index: 99;
 }
 
 
@@ -10640,7 +10640,7 @@ body.mira-max-kit .rest-sec {
     top: 0;
     right: 0;
     content: "";
-    z-index: 999;
+    z-index: 99;
 }
 
 .side-bar-new.dropdown .dropdown-menu.order-now-menu-box ul li.dropdown-nav-list>a {
@@ -13701,7 +13701,7 @@ body.mira-prenatal .product-info-sec {
         transition: all 0.6s ease 0s;
         visibility: visible;
         width: 100%;
-        z-index: 999;
+        z-index: 99;
     }
 
     body::after {
@@ -19911,3 +19911,12 @@ footer.cart__footer #md-footer-selector-block {
 
 /* CSS for photo gallery end */
 /* CSS for Dual columm abtest start */
+
+
+/*====================================
+        STICKY ATC 
+====================================*/
+
+.atc-section-endrock {
+    height: 70px;
+}

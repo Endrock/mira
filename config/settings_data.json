@@ -128,12 +128,6 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
-    "image_1": "shopify:\/\/shop_images\/icon_1.svg",
-    "text_1": "Trusted by over <span style=\"font-weight: 600;font-family: Aeonik Pro;\">95,000<\/span> customers.",
-    "image_2": "shopify:\/\/shop_images\/icon_2.svg",
-    "text_2": "Flexible payment options:\u2028Shop Mira now, and <span style=\"font-weight: 600;font-family: Aeonik Pro;\">pay later.<\/span>",
-    "image_3": "shopify:\/\/shop_images\/icon_3.svg",
-    "text_3": "<span style=\"font-weight: 600;font-family: Aeonik Pro;\">84% of TTC users got pregnant<\/span> during the first 6 cycles of using Mira Monitor.",
     "category_1_countries": "US,CA,MX",
     "category_2_countries": "GB",
     "category_3_countries": "AU,SG",
@@ -252,12 +246,6 @@
       "14288002729265275678": {
         "type": "shopify:\/\/apps\/go-product-page-gallery-zoom\/blocks\/app-embed\/00e2bd89-9dbb-4f36-8a7f-03768835bc78",
         "disabled": false,
-        "settings": {
-        }
-      },
-      "1486654112309516955": {
-        "type": "shopify:\/\/apps\/bogo\/blocks\/feeniks-offers\/9416ce92-aaaf-4a81-8fdf-b9a4e639d6dc",
-        "disabled": true,
         "settings": {
         }
       }
