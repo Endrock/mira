@@ -10149,11 +10149,11 @@ li.btn-li-box {
 
 .traking-form-box .malomo-order-lookup-form input[type="text"],
 .traking-form-box .malomo-order-lookup-form input[type="email"] {
-    width: 100%;
+    width: 100% !important;
     border: 1px solid #66788A;
-    border-radius: 10px;
-    height: 56px;
-    padding: 0 15px;
+    border-radius: 10px !important;
+    height: 56px !important;
+    padding: 0 15px !important;
 }
 
 .traking-form-box .malomo-order-lookup-form input[type="text"]:focus,
@@ -10176,15 +10176,15 @@ li.btn-li-box {
 
 
 .traking-form-box .malomo-order-lookup-form .malomo-order-lookup-submit-button {
-    font-size: 20px;
+    font-size: 20px !important;
     padding: 0 10px;
     background: #F2BFD1 !important;
     color: #003630 !important;
     border: 0px;
-    border-radius: 50px;
+    border-radius: 50px !important;
     font-weight: 400;
-    width: 208px;
-    height: 56px;
+    width: 208px !important;
+    height: 56px !important;
     line-height: 56px;
     font-family: 'Gibson-Regular';
     margin: 40px auto 0;
@@ -10234,7 +10234,7 @@ li.btn-li-box {
     font-family: 'Steinbeck-Regular';
     font-size: 30px;
     line-height: 40px;
-    color: #fff;
+    color: #183b3f;
     margin-bottom: 25px;
 }
 
@@ -10297,26 +10297,26 @@ li.btn-li-box {
 }
 
 .traking-form-box .malomo-shipment-tracker-body .malomo-shipment-tracker-delivered-message a {
-    color: #8EC68C;
+    color: #8EC68C !important;
 }
 
 .traking-form-box a.malomo-shipment-tracker-history-control {
-    cursor: pointer;
+    cursor: pointer !important;
     border: 0px !important;
     text-align: center;
-    background: #F2BFD1;
+    background: #F2BFD1 !important;
     color: #003630 !important;
     outline: none !important;
-    display: table;
+    display: table !important;
     margin: 25px auto 0;
     text-decoration: none !important;
-    -webkit-border-radius: 35px;
-    border-radius: 35px;
+    -webkit-border-radius: 35px !important;
+    border-radius: 35px !important;
     font-family: 'Gibson-Regular';
-    height: 56px;
+    height: 56px !important;
     line-height: 56px;
     padding: 0 50px;
-    font-size: 20px;
+    font-size: 20px !important;
 }
 
 .traking-form-box a.malomo-shipment-tracker-history-control:hover {
@@ -10382,16 +10382,6 @@ li.btn-li-box {
 
 .traking-form-box .malomo-shipment-tracker-events>.malomo-shipment-tracker-event:first-child {
     padding: 0 0 12px;
-}
-
-.traking-form-box .malomo-shipment-tracker-event-timestamp {
-    margin-bottom: 2px;
-}
-
-.traking-form-box .malomo-shipment-tracker-event-timestamp-date {
-    font-weight: bold;
-    line-height: 1;
-    margin-right: 6px;
 }
 
 .traking-form-box .malomo-shipment-tracker-events-backdrop {
