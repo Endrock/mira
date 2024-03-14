@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 if( window.scrollY > varTop){
                     stickyAtc.style.opacity = '1';
                     stickyAtc.style.display = 'flex';    
-                    moveBtn.style.bottom = '90px';
-                    moveLtr.style.bottom = '105px';
+                    moveBtn.style.bottom = '110px';
+                    moveLtr.style.bottom = '115px';
                 }
             }
         });
