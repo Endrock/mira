@@ -13,10 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
               lastScroll = currentScroll;
               topVariation.style.top = '0px'; 
               topVariation.classList.add("position-up");
+              header.classList.remove("position-up");
             }else{
               lastScroll = currentScroll;
               topVariation.style.top = '70px'; 
               header.classList.add("position-up");
+              topVariation.classList.remove("position-up");
             }
         };
       }    
@@ -39,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         entries.forEach((entry) => {
             if (entry.isIntersecting){
+                console.log(entry.isIntersecting);
+                
                 stickyAtc.style.opacity = '0';
                 stickyAtc.style.display = 'none';
                 moveBtn.style.bottom = '0px';
