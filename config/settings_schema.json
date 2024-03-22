@@ -1555,6 +1555,36 @@
                 "id": "cart_drawer_collection",
                 "label": "t:settings_schema.cart.settings.cart_drawer.collection.label",
                 "info": "t:settings_schema.cart.settings.cart_drawer.collection.info"
+            },
+            {
+                "type": "image_picker",
+                "label": "Image Value Props 1",
+                "id": "image_1"
+            },
+            {
+                "type": "text",
+                "label": "Text Value Props 1",
+                "id": "text_1"
+            },
+            {
+                "type": "image_picker",
+                "label": "Image Value Props 2",
+                "id": "image_2"
+            },
+            {
+                "type": "text",
+                "label": "Text Value Props 2",
+                "id": "text_2"
+            },
+            {
+                "type": "image_picker",
+                "label": "Image Value Props 3",
+                "id": "image_3"
+            },
+            {
+                "type": "text",
+                "label": "Text Value Props 3",
+                "id": "text_3"
             }
         ]
     },
