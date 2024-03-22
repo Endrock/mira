@@ -463,8 +463,9 @@
   <body
     class="gradient template-{{ template | split: '.' | first }} {{ template }}{% if template == "product" %} {{ product.handle }}{% endif %} {% for tag in product.tags %} {{ tag }}{% endfor %}"
     data-sticky-original
+    data-exit-intent="true"
   >
-  {% if page.handle == 'products' 
+  {% if page.handle == 'products' %}
     {% render 'sticky-atc' %}
   {% endif %}
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
