@@ -45,22 +45,24 @@
     const paymentTermsModal = document.getElementById('shopify-payment-terms-cover');
 
     if (paymentTermsModal) {
-      paymentTermsModal.addEventListener('click', () => {
-        const closeButton = paymentTermsModal
-          .querySelector('div')
-          .querySelector('shopify-installments-prequal-modal')
-          .shadowRoot.querySelector('#shopify-payment-terms-modal')
-          .querySelector('section')
-          .querySelector('header')
-          .querySelector('#header-icons')
-          .querySelector('button');
+      paymentTermsModal.addEventListener('click', (event) => {
+        const clickedElement = event.target;
 
-        closeButton.click();
+        const excludedTagName = 'shopify-installments-prequal-modal';
+
+        if (!clickedElement.closest(excludedTagName)) {
+          const closeButton = paymentTermsModal
+            .querySelector('div shopify-installments-prequal-modal')
+            ?.shadowRoot.querySelector('#shopify-payment-terms-modal button');
+
+          if (closeButton) {
+            closeButton.click();
+          }
+        }
       });
     }
   };
 
-  // Arrow function to observe DOM changes
   const observeDOMChanges = () => {
     const targetNode = document.body;
     const config = { childList: true, subtree: true };
@@ -68,8 +70,7 @@
     const callback = (mutationsList, observer) => {
       for (const mutation of mutationsList) {
         if (mutation.type === 'childList') {
-          const addedNodes = mutation.addedNodes;
-          for (const node of addedNodes) {
+          for (const node of mutation.addedNodes) {
             if (node.nodeType === Node.ELEMENT_NODE && node.id === 'shopify-payment-terms-cover') {
               closeModal();
             }
