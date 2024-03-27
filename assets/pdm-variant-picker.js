@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
       pdmVariantItem.parentNode.classList.add("selected");
 
       // set the value to the default select element and trigger the change
-      console.log(pdmVariantItem, pdmVariantItem.value);
       document.querySelector("variant-selects select").value =
         pdmVariantItem.value;
 
