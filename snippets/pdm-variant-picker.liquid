@@ -1,0 +1,39 @@
+
+{% comment %}
+Custom implementation for variant picker FOR the Mira Home Monitor product
+
+- Product {Product} product object from section
+{% endcomment %}
+
+
+{{ 'pdm-variant-picker.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'pdm-variant-picker.js' | asset_url }}" defer></script>
+
+<div class="pdm-variant-picker">
+  {%- for option in product.options_with_values  -%}
+    {%- assign values = option.values  -%}
+    {%- for value in values -%}
+      {%- assign current_variant = product.variants | where: 'option1', value -%}
+      {%- capture checked -%}
+        {%- if current_variant.first.id == product.selected_or_first_available_variant.id -%}
+          true
+        {%- else -%}
+          false
+        {%- endif -%}
+      {%- endcapture -%}
+      <label class="pdm-variant__item {% if checked == "true" %}selected{% endif %}"
+             data-variant-id="{{ current_variant.first.id }}"
+             for="{{ current_variant.first.id }}">
+        <input type="radio" 
+               name="{{ option.name }}"
+               value="{{ value }}"
+               {% if checked == "true"%} checked {% endif %} 
+               id="{{ current_variant.first.id }}">
+        <span class="item__name">{{ value }}</span>
+        <span class="item__price">{{ current_variant.first.price | money }}</span>
+      </label>
+    {%- endfor -%}
+  {%- endfor -%}
+</div>
+
+

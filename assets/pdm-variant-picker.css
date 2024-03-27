@@ -1,0 +1,82 @@
+body:not([data-variant-picker]) .pdm-variant-picker {
+  display: none;
+}
+
+body[data-variant-picker] .select.product-variant-wrapper {
+  display: none;
+}
+
+body[data-variant-picker] .product-form__input.product-form__input--dropdown {
+  margin-bottom: 10px;
+  margin-top: 14px;
+}
+
+.pdm-variant-picker .pdm-variant__item {
+  display: flex;
+  align-items: center;
+  font-size: 19px;
+  padding: 12px 16px;
+  border: 1px solid #6677894d;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pdm-variant__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+@supports selector(:has(input:checked)) {
+  .pdm-variant__item:has(input:checked) {
+    border-color: #3fc15f;
+    border-width: 2px;
+  }
+}
+
+@supports not selector(:has(input:checked)) {
+  .pdm-variant__item.selected {
+    border-color: #3fc15f;
+    border-width: 2px;
+  }
+}
+
+.pdm-variant__item .item__price {
+  margin-left: auto;
+  color: #a3b1b2;
+}
+
+.pdm-variant__item input {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #667789;
+  margin-right: 11px;
+}
+
+.pdm-variant__item input::after {
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.pdm-variant__item input:checked {
+  background: #3fc15f;
+  border-color: #3fc15f;
+}
+
+.pdm-variant__item input:checked::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.pdm-variant__item input:checked ~ .item__price {
+  color: #3fc15f;
+}
