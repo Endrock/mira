@@ -2,7 +2,8 @@
   <div class="container">
     <div class="installments-inner">
       <h2>Pay in 4 interest-free installments—from $20.67/mo</h2>
-      <button id="button-view-details" class="bf-add-cart-btn btn-custom button">View details</button>
+      {% comment %} <button id="button-view-details" class="bf-add-cart-btn btn-custom button">View details</button> {% endcomment %}
+      <button id="button-view-details" class="bf-add-cart-btn btn-custom button">View plans</button>
 
       <div class="hidden">
         {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
@@ -31,57 +32,79 @@
 {% endstylesheet %}
 
 {% javascript %}
-  document.getElementById('button-view-details').addEventListener('click', () => {
-    let button = document
-      .querySelector('shopify-payment-terms')
-      .shadowRoot.querySelector('shop-pay-installments-banner')
-      .shadowRoot.querySelector('#shopify-installments')
-      .querySelector('#shopify-installments-cta');
+  const newFeatureViewDetails = () => {
+    document.getElementById('button-view-details').addEventListener('click', () => {
+      let button = document
+        .querySelector('shopify-payment-terms')
+        .shadowRoot.querySelector('shop-pay-installments-banner')
+        .shadowRoot.querySelector('#shopify-installments')
+        .querySelector('#shopify-installments-cta');
 
-    button.click();
-  });
+      button.click();
+    });
 
-  const closeModal = () => {
-    const paymentTermsModal = document.getElementById('shopify-payment-terms-cover');
+    const closeModal = () => {
+      const paymentTermsModal = document.getElementById('shopify-payment-terms-cover');
 
-    if (paymentTermsModal) {
-      paymentTermsModal.addEventListener('click', (event) => {
-        const clickedElement = event.target;
+      if (paymentTermsModal) {
+        paymentTermsModal.addEventListener('click', (event) => {
+          const clickedElement = event.target;
 
-        const excludedTagName = 'shopify-installments-prequal-modal';
+          const excludedTagName = 'shopify-installments-prequal-modal';
 
-        if (!clickedElement.closest(excludedTagName)) {
-          const closeButton = paymentTermsModal
-            .querySelector('div shopify-installments-prequal-modal')
-            ?.shadowRoot.querySelector('#shopify-payment-terms-modal button');
+          if (!clickedElement.closest(excludedTagName)) {
+            const closeButton = paymentTermsModal
+              .querySelector('div shopify-installments-prequal-modal')
+              ?.shadowRoot.querySelector('#shopify-payment-terms-modal button');
 
-          if (closeButton) {
-            closeButton.click();
-          }
-        }
-      });
-    }
-  };
-
-  const observeDOMChanges = () => {
-    const targetNode = document.body;
-    const config = { childList: true, subtree: true };
-
-    const callback = (mutationsList, observer) => {
-      for (const mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-          for (const node of mutation.addedNodes) {
-            if (node.nodeType === Node.ELEMENT_NODE && node.id === 'shopify-payment-terms-cover') {
-              closeModal();
+            if (closeButton) {
+              closeButton.click();
             }
           }
-        }
+        });
       }
     };
 
-    const observer = new MutationObserver(callback);
-    observer.observe(targetNode, config);
+    const observeDOMChanges = () => {
+      const targetNode = document.body;
+      const config = { childList: true, subtree: true };
+
+      const callback = (mutationsList, observer) => {
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE && node.id === 'shopify-payment-terms-cover') {
+                closeModal();
+              }
+            }
+          }
+        }
+      };
+
+      const observer = new MutationObserver(callback);
+      observer.observe(targetNode, config);
+    };
+
+    observeDOMChanges();
   };
 
-  observeDOMChanges();
+  const targetNode = document.body;
+
+  const config = { attributes: true, attributeFilter: ['data-view-details'] };
+
+  const callback = function (mutationsList, observer) {
+    for (let mutation of mutationsList) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-view-details') {
+        const newValue = mutation.target.getAttribute('data-view-details');
+        if (newValue === 'true') {
+          document.getElementById('button-view-details').innerText = 'View details';
+          newFeatureViewDetails();
+        }
+      }
+    }
+  };
+
+  const observer = new MutationObserver(callback);
+
+  observer.observe(targetNode, config);
 {% endjavascript %}
