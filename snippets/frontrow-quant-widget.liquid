@@ -26,15 +26,15 @@ Usage:
       </p>
     </div> {% endcomment %}
     <script>
-      // function openFrontrowModal() {
-      //     const modal = document.getElementById('frontrow-modal');
-      //     document.body.appendChild(modal);
-      //     modal.style.display = 'block';
-      // };
-      
-      // function closeFrontrowModal() {
-      //     document.getElementById('frontrow-modal').style.display = 'none';
-      // }
+      function openFrontrowModal() {
+        const modal = document.getElementById('frontrow-modal');
+        document.body.appendChild(modal);
+        modal.style.display = 'block';
+      };
+
+      function closeFrontrowModal() {
+          document.getElementById('frontrow-modal').style.display = 'none';
+      }
       
       {% if request.path contains '/products/fertility-max-starter-kit' %}
           var url = 'https://app.thefrontrowhealth.com/api/widgets?presentation_type=quant&product_id=276';
@@ -66,3 +66,5 @@ Usage:
     </script> 
   {% endif %}
 </frontrow-widget>
+
+
