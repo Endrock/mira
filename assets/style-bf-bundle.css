@@ -185,6 +185,10 @@ a#dropdownMenuButton1 {
     vertical-align: top;
 }
 
+.cart-col-top {
+    margin-left: 1px;
+}
+
 .cart-col-top .cart-top-icon {
     background: #fff !important;
     border: 1px solid #BEC4D5;
@@ -1740,6 +1744,309 @@ body.mira-max-kit .Stories-testimonials-sec {
     text-decoration: underline;
 }
 /* Vinod custom CSS end */
+
+
+/**************New**Header**menu****************/
+
+.nav-menu li a {
+  font-size:19px;
+}
+
+
+.shop-menu-outer-box ul {
+    border-radius: 24px;
+    background: #f8f8f8;
+    box-shadow: 0 2px 4px #0f387114;
+    min-width: max-content;
+    left: 50%;
+    transform: translate(-50%);
+    margin: 0;
+    padding-right: 50px;
+ 
+    /* align-items: flex-end; */
+}
+
+
+
+
+.shop-menu-links {
+    border-left: 1px solid #D9D9D9;
+    padding-left: 10px;
+    margin-left: 12px;
+    height: 100%;
+    display: flex;
+}
+
+.shop-menu-links-inner {
+    margin-top: auto;
+    width: 100%;
+}
+.shop-menu-outer-box ul h5, .fertility-blog-menu h5 {
+  font-size:19px;
+  margin-bottom:10px;
+  color:#183B3F;
+  font-family: 'AeonikPro-Regular';
+}
+
+.shop-menu-outer-box ul a { 
+    font-size: 16px!important;
+    color: #183b3f!important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+
+
+.shop-menu-outer-box > a {
+  color:#3FC15F !important;
+}
+
+.shop-menu-outer-box > a:after {
+  background-image:url(https://cdn.shopify.com/s/files/1/0755/9620/2277/files/shop_menu_arrow_down.svg?v=1708725631) !important;
+}
+
+a.arrow-icon-link:after {
+    position: static;
+    top: 50%;
+    right: 0;
+    width: 10px;
+    height: 6px;
+    padding: 0;
+    margin-top: 0;
+    content: "";
+    opacity: 1;
+    border-color: transparent!important;
+    background: url(https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf_menu_arrow.svg?v=1699204741) no-repeat center;
+    transform: translateY(-50%) rotate(-90deg);
+    border: 0;
+    display: inline-block;
+    margin-left: 6px;
+    background-size: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top:4px;
+}
+
+
+.img-menu-items .menu-img-thumb {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.img-menu-items .menu-img-thumb img {
+    max-width: 160px;
+}
+.img-menu-items .menu-img-thumb .bf-bundle-arrow-btn {
+  opacity:0.6;
+}
+
+.img-menu-items .menu-img-thumb:hover .bf-bundle-arrow-btn {
+  opacity:1;
+  transition:all ease 0.3s !important;
+}
+
+@media screen and (min-width: 992px) {
+.nav-dropdown .menu-item a {
+    padding: 6px 24px 5px 24px;
+}  
+.fertility-blog-menu
+{
+  min-width:570px;
+  border-left: 1px solid #D9D9D9;
+    padding-left: 10px;
+    margin-left: 12px;
+    display: flex;
+      right: -99%;
+}
+
+.fertility-blog-menu .shop-menu-links {
+    padding-left: 30px;
+    margin-left: 7px;
+    height: 100%;
+}
+
+.fertility-blog-menu-inner {
+    margin-top: auto;
+    width: 100%;
+}
+.userCartBtnRow {
+    display: flex;
+}
+
+span.btnTextMobile {
+    display: none;
+}  
+  
+  
+ .nav-container {
+    padding-right: 0px !important;
+} 
+.nav-menu > .menu-item {
+  transition:none !important;
+  padding:0px 30px 0px 20px;
+  border-radius: 25px 25px;
+}
+.nav-menu > .menu-item.has-dropdown {
+  border-radius: 25px 25px 0 0;
+}
+
+li.menu-item.has-dropdown.last-child {
+    padding-right: 20px;
+}
+.nav-menu > .menu-item:hover {
+    background: #F8F8F8;
+}  
+
+.nav-menu>.has-dropdown:hover>a:after {
+  transform:scaleY(-1);
+} 
+
+  li.menu-item.has-dropdown.last-child * {
+    transition: none;
+}
+  .nav-dropdown {
+    padding:30px;
+    background: #f8f8f8;
+    box-shadow: 0 2px 4px #0f387114;
+    right: -33%;
+  }
+  
+.nav-dropdown a {
+  font-size:16px !important;
+  color:#183B3F !important; 
+}
+  
+.shop-menu-outer-box:hover ul, .fertility-blog-menu-outer:hover ul {
+    display: flex !important;
+    flex-wrap: wrap;
+}
+  .shop-menu-links a {
+      margin-bottom: 5px;
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+   .nav-container {
+   display: flex;
+    flex-wrap: wrap;
+     top: 59px;
+}
+
+.menu {
+    width: 100%;
+    margin-bottom: 25px;
+}
+    
+.userCartBtnRow {
+       margin-top: auto;
+    width: 100%;
+    padding: 0 15px 50px;
+}
+
+  .shop-menu-outer-box ul {
+    border-radius: 0;
+    background: #fff;
+    box-shadow: 0 0px 0px #0f387114;
+    min-width: 100%;
+    left: 0;
+    transform: none;
+    margin: 0;
+    padding-right: 0;
+}
+
+.userCartBtnRow .user-buttontop-menu a.cart-top-icon {
+    background: #fff!important;
+    border: 1px solid #BEC4D5;
+    border-radius: 30px;
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    line-height: 60px;
+    margin-bottom: 12px;
+  font-size: 23px;
+}
+  
+.userCartBtnRow .user-buttontop-menu {
+    width: 100%;
+    margin: 0px;
+    display: block;
+}
+  
+.userCartBtnRow .cart-col-top {
+    width: 100%;
+    right: 0;
+    left: 0;
+    margin: 0;
+}  
+.userCartBtnRow .cart-col-top a.cart-top-icon {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    margin: 0;
+    font-size: 23px;
+}
+.shop-menu-outer-box.is-active>.nav-dropdown, .fertility-blog-menu-outer.is-active>.nav-dropdown {
+    display: flex;
+    flex-wrap: wrap;
+}
+.shop-menu-outer-box.is-active>.nav-dropdown li, .fertility-blog-menu-outer.is-active>.nav-dropdown li {
+  width:25%;
+}
+
+  .shop-menu-outer-box.is-active>.nav-dropdown li:last-child, .fertility-blog-menu-outer.is-active>.nav-dropdown:last-child {
+  width:100%;
+}
+
+ a.arrow-icon-link:after {
+    position: static;
+    top: 50%;
+    right: 0;
+    width: 12px;
+    height: 7px;
+    padding: 0;
+    margin-top: 0;
+    margin-left: 0;
+    content: "";
+    opacity: 1;
+    border-color: transparent!important;
+    background: url(https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf_menu_arrow.svg?v=1699204741) no-repeat center;
+    transform: translateY(-50%) rotate(-90deg);
+    border: 0;
+    display: inline-block !important;
+    margin-left: 10px;
+}
+
+.shop-menu-links {
+    border-left: 0px solid #D9D9D9;
+    padding-left: 0;
+    margin-left: 0;
+} 
+
+.shop-menu-links a
+  {
+    position:relative;
+  }
+  
+.shop-menu-links a:before {
+      font-size: 22px;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    padding-right: 15px;
+    text-align: right;
+    content: "\f105";
+    font-family: FontAwesome;
+    color: #003530;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}
+
+  
+}  
+
+
+
 /*******************Responsive**Start*********{}******************************/
 
 @media (max-width:1400px) and (min-width:1200px) {
@@ -1914,7 +2221,8 @@ body.mira-max-kit .Stories-testimonials-sec {
         width: 38px;
         height: 38px;
         border-radius: 50%;
-        border: 1px solid #BEC4D5;
+        border: 0px solid #BEC4D5;
+      right:0px;
     }
 
     .nav-toggle .icon-menu {
@@ -2641,5 +2949,17 @@ body.mira-max-kit .Stories-testimonials-sec {
   .health-research-quote p {
       font-size: 22px;
   }
+
+.shop-menu-outer-box.is-active>.nav-dropdown li, .fertility-blog-menu-outer.is-active>.nav-dropdown li {
+  width:50%;
+}
+.menu-img-thumb img {
+ width:100%;
+} 
+
+  .shop-menu-outer-box.is-active>.nav-dropdown li:last-child, .fertility-blog-menu-outer.is-active>.nav-dropdown li:last-child {
+  width:100%;
+}
+  
 }
 

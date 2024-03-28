@@ -1,33 +1,30 @@
 {{ 'best-sellers.css' | asset_url | stylesheet_tag }}
-
 {% assign sub_folder = '' %}
 {% if localization.market.handle == 'au' %}
-  {% assign sub_folder = '/en-au' %}
+{% assign sub_folder = '/en-au' %}
 {% elsif localization.market.handle == 'ca' %}
-  {% assign sub_folder = '/en-ca' %}
+{% assign sub_folder = '/en-ca' %}
 {% elsif localization.market.handle == 'eu' %}
-  {% assign sub_folder = '/en-eu' %}
+{% assign sub_folder = '/en-eu' %}
 {% elsif localization.market.handle == 'uk' %}
-  {% assign sub_folder = '/en-gb' %}
+{% assign sub_folder = '/en-gb' %}
 {% elsif localization.market.handle == 'international' %}
-  {% assign sub_folder = '/en-int' %}
+{% assign sub_folder = '/en-int' %}
 {% else %}
-  {% assign sub_folder = '' %}
+{% assign sub_folder = '' %}
 {% endif %}
+
+{% assign shop_all_handle = sub_folder | append: '/products' %}
 
 <div class="shop-all-tab-bar">
     <ul>
-    <li class="best-sellers"><a href="{{ sub_folder }}/products/best-sellers" {% if request.path == '/products/best-sellers' %}class="shop-all-active"{% endif %}>Best Sellers</a></li>
-      <li><a href="{{ sub_folder }}/products/" {% if request.path == '/products' or request.path == '/' %}class="shop-all-active"{% endif %}>Shop all</a></li>
-            
-
-      <li><a href="{{ sub_folder }}/products/mira-kits" {% if request.path contains '/products/mira-kits' %}class="shop-all-active"{% endif %}>Starter Kit & Bundles</a></li>
-
-       <li><a href="{{ sub_folder }}/products/mira-wands" {% if request.path contains '/products/mira-wands' %}class="shop-all-active"{% endif %}>Mira Wands</a></li>
-       
-       <li><a href="{{ sub_folder }}/products/virtual-consultations" {% if request.path contains '/products/virtual-consultations' %}class="shop-all-active"{% endif %}>Virtual Consultations</a></li>
- 
-      <li><a href="{{ sub_folder }}/products/male-fertility" {% if request.path contains '/products/male-fertility' %}class="shop-all-active"{% endif %}>Male Fertility</a></li>
-       <li><a href="{{ sub_folder }}/products/more-for-fertility" {% if request.path contains '/products/more-for-fertility' %}class="shop-all-active"{% endif %}>More for Fertility</a></li>
+        <li class="best-sellers"><a href="{{ sub_folder }}/products/best-sellers" {% if request.path contains '/products/best-sellers' %}class="shop-all-active" {% endif %}>Best Sellers</a></li>
+        <li><a href="{{ sub_folder }}/products" {% if request.path == "/" or request.path == shop_all_handle or request.path == sub_folder %}class="shop-all-active" {% endif %}>Shop all</a></li>
+        <li><a href="{{ sub_folder }}/collections/test-your-fertility" {% if request.path contains '/collections/test-your-fertility' %}class="shop-all-active" {% endif %}>Test Your Fertility</a></li>
+        {% if localization.market.handle == 'us' %}
+      <li><a href="{{ sub_folder }}/collections/boost-your-fertility" {% if request.path contains '/collections/boost-your-fertility' %}class="shop-all-active" {% endif %}>Boost Your Fertility</a></li>
+        {% endif %}
+          <li><a href="{{ sub_folder }}/collections/navigate-your-fertility" {% if request.path contains '/collections/navigate-your-fertility' %}class="shop-all-active" {% endif %}>Navigate Your Fertility</a></li>
+        <li><a href="{{ sub_folder }}/collections/restock-your-wands" {% if request.path contains '/collections/restock-your-wands' %}class="shop-all-active" {% endif %}>Restock Your Wands</a></li>
     </ul>
- </div>
+</div>

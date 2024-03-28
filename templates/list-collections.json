@@ -13,8 +13,19 @@
     },
     "9658b7b4-36ab-4d7b-a3c8-d7c6f8328c56": {
       "type": "product-list-all",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "shop_all_gMJGef": {
+      "type": "shop-all",
+      "settings": {
+      }
     }
   },
-  "order": ["main", "9658b7b4-36ab-4d7b-a3c8-d7c6f8328c56"]
+  "order": [
+    "main",
+    "9658b7b4-36ab-4d7b-a3c8-d7c6f8328c56",
+    "shop_all_gMJGef"
+  ]
 }

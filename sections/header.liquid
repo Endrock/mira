@@ -100,42 +100,119 @@
                         </div>
                         <div class="nav-container">
                             <ul class="nav-menu menu">
+                              <li class="menu-item has-dropdown shop-menu-outer-box">
+                                    <a href="#" class="menu-link">Shop</a>
+                                    <ul class="nav-dropdown menu">
+                                        <li class="menu-item"> <a href="{{ sub_folder }}/collections/test-your-fertility" class="menu-link">
+                                          <div class="img-menu-items">
+                                            <h5>Test</h5>
+                                            <div class="menu-img-thumb">
+                                              <img src="https://cdn.shopify.com/s/files/1/0755/9620/2277/files/menu-test-your-fertility.png" width="" height="" alt="">
+                                              <span class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" width="32" height="32" alt=""></span>
+                                            </div>
+                                          </div>
+                                        
+                                        </a> </li>
+                                        {% if localization.market.handle == 'us' %}
+                                         <li class="menu-item"> <a href="{{ sub_folder }}/collections/boost-your-fertility" class="menu-link">
+                                          <div class="img-menu-items">
+                                            <h5>Boost</h5>
+                                            <div class="menu-img-thumb">
+                                              <img src="https://cdn.shopify.com/s/files/1/0755/9620/2277/files/menu-boost-your-fertility.png" width="" height="" alt="">
+                                              <span class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" width="32" height="32" alt=""></span>
+                                            </div>
+                                          </div>
+                                        </a> </li>
+                                          {% endif %}
+                                       <li class="menu-item"> <a href="{{ sub_folder }}/collections/navigate-your-fertility" class="menu-link">
+                                          <div class="img-menu-items">
+                                            <h5>Navigate</h5>
+                                            <div class="menu-img-thumb">
+                                              <img src="https://cdn.shopify.com/s/files/1/0755/9620/2277/files/menu-navigate-your-fertility.png" width="" height="" alt="">
+                                              <span class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" width="32" height="32"  alt=""></span>
+                                            </div>
+                                          </div>
+                                        
+                                        </a> </li>
+                                       <li class="menu-item"> <a href="{{ sub_folder }}/collections/restock-your-wands" class="menu-link">
+                                          <div class="img-menu-items">
+                                            <h5>Restock</h5>
+                                            <div class="menu-img-thumb">
+                                              <img src="https://cdn.shopify.com/s/files/1/0755/9620/2277/files/menu-restock-your-wands.png" width="" height="" alt="">
+                                              <span class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" width="32" height="32" alt=""></span>
+                                            </div>
+                                          </div>
+                                        
+                                        </a> </li>
+                                      <li>
+                                        <div class="shop-menu-links">
+                                          <div class="shop-menu-links-inner">
+                                         <a href="{{ sub_folder }}/products" class="menu-link arrow-icon-link">Shop all</a>
+                                          <a href="{{ sub_folder }}/products/best-sellers" class="menu-link arrow-icon-link" style="color: #41C15F !important">Best sellers</a>
+                                          <a href="{{ sub_folder }}/pages/rewards" class="menu-link arrow-icon-link">Loyalty program & referral</a>
+                                       </div>
+                                        </div>
+                                      </li>
+                                    </ul>
+                              
+                                </li>
                                 <li class="menu-item has-dropdown">
                                     <a href="#" class="menu-link">What is Mira?</a>
                                     <ul class="nav-dropdown menu">
-                                        <li class="menu-item"> <a href="https://www.miracare.com/how-mira-works/" class="menu-link">How Mira Works</a> </li>
-                                        <li class="menu-item"> <a href="https://www.miracare.com/how-mira-works/pcos/" class="menu-link">Get Pregnant with PCOS</a> </li>
-                                        <li class="menu-item"> <a href="https://www.miracare.com/mira-app/" class="menu-link">Mira App</a> </li>
-                                        <li class="menu-item"> <a href="https://help.miracare.com/" class="menu-link">FAQs</a> </li>
+                                        <li class="menu-item"> <a href="https://www.miracare.com/how-mira-works/" class="menu-link arrow-icon-link">How Mira Works</a> </li>
+                                        <li class="menu-item"> <a href="https://www.miracare.com/how-mira-works/pcos/" class="menu-link arrow-icon-link">Get Pregnant with PCOS</a> </li>
+                                        <li class="menu-item"> <a href="https://www.miracare.com/mira-app/" class="menu-link arrow-icon-link">Mira App</a> </li>
+                                        <li class="menu-item"> <a href="https://help.miracare.com/" class="menu-link arrow-icon-link">FAQs</a> </li>
                                     </ul>
                                 </li>
                                 <li class="menu-item"> <a href="https://www.miracare.com/success-stories/" class="menu-link">Success Stories</a> </li>
-                                <li class="menu-item has-dropdown last-child">
+                                <li class="menu-item has-dropdown last-child fertility-blog-menu-outer">
                                     <a href="#" class="menu-link">Fertility 101</a>
-                                    <ul class="nav-dropdown menu">
-                                        <li class="menu-item"> <a href="https://www.miracare.com/blog/" class="menu-link">Blog</a> </li>
-                                        <li class="menu-item"> <a href="https://www.miracare.com/mira-events/" class="menu-link">Free Webinars</a> </li>
-                                        <li class="menu-item"> <a href="https://www.miracare.com/resources/" class="menu-link">Free Ebooks</a> </li>
-                                        <li class="menu-item"> <a href="https://www.miracare.com/mira-shop/academy" class="menu-link">Online Fertility Course</a> </li>
-                                        <li class="menu-item"> <a href="https://www.miracare.com/mira-partners/" class="menu-link">Partner Discounts</a> </li>
-                                        <li class="menu-item"> <a href="https://www.miracare.com/awareness-week/" class="menu-link">Sex Hormones Awareness Week</a> </li>
+                                    <ul class="nav-dropdown menu fertility-blog-menu">
+                                        <li class="menu-item"> <a href="https://www.miracare.com/blog/" class="menu-link">
+                                           <div class="img-menu-items">
+                                            <h5>Blog</h5>
+                                            <div class="menu-img-thumb">
+                                              <img src="https://cdn.shopify.com/s/files/1/0755/9620/2277/files/menu-blog.png" width="" height="" alt="">
+                                              <span class="bf-bundle-arrow-btn"><img src="https://cdn.shopify.com/s/files/1/0777/1006/5971/files/bf-arrow-btn.svg?v=1698846246" width="32" height="32"  alt=""></span>
+                                            </div>
+                                          </div>
+                                        </a> </li>
+
+                                      <li>
+                                        <div class="shop-menu-links">
+                                          <div class="shop-menu-links-inner">
+                                         <a href="https://www.miracare.com/mira-events/" class="menu-link arrow-icon-link">Free Webinars</a>
+                                        <a href="https://www.miracare.com/resources/" class="menu-link arrow-icon-link">Free Ebooks</a>
+                                       <a href="https://www.miracare.com/mira-shop/academy" class="menu-link arrow-icon-link">Online Fertility Course</a> 
+                                        <a href="https://www.miracare.com/mira-partners/" class="menu-link arrow-icon-link">Partner Discounts</a> 
+                                        <a href="https://www.miracare.com/awareness-week/" class="menu-link arrow-icon-link">Sex Hormones Awareness Week</a> 
+                                       </div>
+                                        </div>
+                                      </li>
+                                        
                                     </ul>
                                 </li>
                                 <li class="mobile-nav-link menu-item"><a class="dropdown-item" href="{{ sub_folder }}/account">My Account</a></li>
                             </ul>
+                          <div class="userCartBtnRow">
+                             <div class="user-buttontop-menu">
+                            <a href="{{ sub_folder }}/account/" class="cart-top-icon"><span class="btnTextMobile">Sign Up</span> <img src="{{ 'user-menu-icon.svg' | file_url }}" alt="user_menu_icon"></a>
+                        </div>
+                        <div class="cart-col-top">
+                            <a style="display: none;" href="{{ routes.cart_url }}" id="cart-icon-bubble" class="header__icon header__icon--cart link focus-inset"></a>
+                            <a href="{{ routes.cart_url }}" class="cart-top-icon"><span class="btnTextMobile">Shopping Cart</span> <img loading="lazy" src="{{ 'shopping-cart.svg' | file_url }}" alt=""></a></div>
+                          </div>
                         </div>
 
 
-                        <div class="top-head-right side-bar-new dropdown">
+                        <div class="top-head-right side-bar-new dropdown" style="display:none;">
                             <a href="javascript:void(0)" class="btn-custom btn-md btn-green btn-order-now dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                             <div class="dropdown-menu order-now-menu-box" aria-labelledby="dropdownMenuButton1">
                                 <div class="order-now-title"><span>Shop Now</span> <a href="#" class="order-now-close"><img src="{{ 'side_menu_close.svg' | file_url }}" alt="{{ icon | escape }}" title="" /></a></div>
                                 <ul class="dropdown-menu-inner">
                                     <li class="best-sellers"><a class="dropdown-item" href="{{ sub_folder }}/products/best-sellers" style="color: #41C15F">Best Sellers</a></li>
                                     <li><a class="dropdown-item" href="{{ sub_folder }}/products/">Shop All</a></li>
-
-                                    
-
 
                                     <li class="dropdown-nav-list has-submenu">
                                         <a class="dropdown-item" href="javascript:void(0)">Kits & Bundles</a>
@@ -249,12 +326,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="user-buttontop-menu">
-                            <a href="{{ sub_folder }}/account/" class="cart-top-icon"><img src="{{ 'user-menu-icon.svg' | file_url }}" alt="user_menu_icon"></a>
-                        </div>
-                        <div class="cart-col-top">
-                            <a style="display: none;" href="{{ routes.cart_url }}" id="cart-icon-bubble" class="header__icon header__icon--cart link focus-inset"></a>
-                            <a href="{{ routes.cart_url }}" class="cart-top-icon"><img loading="lazy" src="{{ 'shopping-cart.svg' | file_url }}" alt=""></a></div>
+                      
+                       
                     </div>
                 </nav>
             </div>
