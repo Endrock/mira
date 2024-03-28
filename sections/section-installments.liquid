@@ -33,6 +33,8 @@
 
 {% javascript %}
   const newFeatureViewDetails = () => {
+    console.log('Cargando Script 3');
+
     document.getElementById('button-view-details').addEventListener('click', () => {
       let button = document
         .querySelector('shopify-payment-terms')
@@ -44,20 +46,28 @@
     });
 
     const closeModal = () => {
+      console.log('Cargando Script 5');
+
       const paymentTermsModal = document.getElementById('shopify-payment-terms-cover');
 
       if (paymentTermsModal) {
+        console.log('Cargando Script 6');
+
         paymentTermsModal.addEventListener('click', (event) => {
           const clickedElement = event.target;
 
           const excludedTagName = 'shopify-installments-prequal-modal';
 
           if (!clickedElement.closest(excludedTagName)) {
+            console.log('Cargando Script 7');
+
             const closeButton = paymentTermsModal
               .querySelector('div shopify-installments-prequal-modal')
               ?.shadowRoot.querySelector('#shopify-payment-terms-modal button');
 
             if (closeButton) {
+              console.log('Cargando Script 8');
+
               closeButton.click();
             }
           }
@@ -74,6 +84,8 @@
           if (mutation.type === 'childList') {
             for (const node of mutation.addedNodes) {
               if (node.nodeType === Node.ELEMENT_NODE && node.id === 'shopify-payment-terms-cover') {
+                console.log('Cargando Script 4');
+
                 closeModal();
               }
             }
@@ -88,15 +100,20 @@
     observeDOMChanges();
   };
 
+  console.log('Cargando Script 0');
+
   const targetNode = document.body;
 
   const config = { attributes: true, attributeFilter: ['data-view-details'] };
 
   const callback = function (mutationsList, observer) {
+    console.log('Cargando Script 1');
+
     for (let mutation of mutationsList) {
       if (mutation.type === 'attributes' && mutation.attributeName === 'data-view-details') {
         const newValue = mutation.target.getAttribute('data-view-details');
         if (newValue === 'true') {
+          console.log('Cargando Script 2');
           document.getElementById('button-view-details').innerText = 'View details';
           newFeatureViewDetails();
         }
