@@ -463,6 +463,7 @@
   <body
     class="gradient template-{{ template | split: '.' | first }} {{ template }}{% if template == "product" %} {{ product.handle }}{% endif %} {% for tag in product.tags %} {{ tag }}{% endfor %}"
     data-sticky-original
+		data-view-details="false"
   >
   {% if page.handle == 'products' 
     {% render 'sticky-atc' %}
